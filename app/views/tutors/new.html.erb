@@ -1,0 +1,67 @@
+<h1>New tutor</h1>
+
+<% form_for(@tutor) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :familyname %><br />
+    <%= f.text_field :familyname %>
+  </p>
+  <p>
+    <%= f.label :givenname %><br />
+    <%= f.text_field :givenname %>
+  </p>
+  <p>
+    <%= f.label :givennamefirst %><br />
+    <%= f.check_box :givennamefirst %>
+  </p>
+  <p>
+    <%= f.label :login_name %><br />
+    <%= f.text_field :login_name %>
+  </p>
+	<div> 
+	<%= f.label :user_password, 'Password' %>: 
+	<%= f.password_field :password, :size => 40 %> 
+	</div> 
+	<div> 
+	<%= f.label :user_password_confirmation, 'Confirm' %>: 
+	<%= f.password_field :password_confirmation, :size => 40 %> 
+	</div>
+  <p>
+    <%= f.label :age %><br />
+    <%= f.text_field :age %>
+  </p>
+  <p>
+    <%= f.label :sex %><br />
+    <%= f.text_field :sex %>
+  </p>
+  <p>
+    <%= f.label :flavour %><br />
+    <%= f.text_field :flavour %>
+  </p>
+  <p>
+    <%= f.label :qualifications %><br />
+    <%= f.text_area :qualifications %>
+  </p>
+  <p>
+    <%= f.label :experience %><br />
+    <%= f.text_area :experience %>
+  </p>
+  <p>
+    <%= f.label :nationalknowledge %><br />
+    <%= f.text_area :nationalknowledge %>
+  </p>
+  <p>
+    <%= f.label :courseexperience %><br />
+    <%= f.text_area :courseexperience %>
+  </p>
+  <p>
+    <%= f.label :textbookexperience %><br />
+    <%= f.text_area :textbookexperience %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', tutors_path %>

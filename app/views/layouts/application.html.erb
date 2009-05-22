@@ -1,0 +1,42 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>ConnectTeach: <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'connectteach' %>
+  <% if @stylesheet %>
+	  <% for sh in @stylesheet %>
+	    <%= stylesheet_link_tag sh %>
+	  <% end %>
+  <% end %>
+</head>
+<body>
+
+<div id="wrapper">
+	<div id="header">
+		<h1>Connect Teach</h1>
+		<div id="menu">
+	    <ul>
+		    <li><%= link_to 'Tutors', tutors_path %></li>
+	    </ul>	 
+		</div>
+		<div id="login">
+			<% if session[:tutor_id] %>
+			  <% tutor=Tutor.find(session[:tutor_id]) %>
+			  <%= link_to "Logout #{tutor.login_name}", :controller => 'admin', :action => 'logout' %>
+			<% else %>
+			  <%= link_to "Login", :controller => 'admin', :action => 'login' %>
+			<% end %>
+		</div>
+	</div>
+	<div id="main">
+	<p style="color: green"><%= flash[:notice] %></p>
+
+	<%= yield  %>
+
+	</div>
+	<div id="footer">
+		<p>WebDesign by <%= link_to "RailsIain", "http://railsiain.com" %></p>
+	</div>
+</div>
+</body>
+</html>

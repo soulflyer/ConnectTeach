@@ -1,0 +1,70 @@
+rails connectteach 
+cd connectteach/ 
+script/generate scaffold tutor familyname:string givenname:string givennamefirst:boolean age:integer sex:string \
+flavour:string qualifications:text experience:text nationalknowledge:text courseexperience:text textbookexperience:text 
+rake db:create RAILS_ENV='development' 
+rake db:migrate RAILS_ENV='development' 
+
+script/generate migration add_login_to_tutor login_name:string hashed_password:string salt:string
+
+Modified the views to take account of the new fields and add stuff to the tutors model as per Agile Web Development chapter 11. See attachment 1********
+
+ruby script/generate controller admin login logout index
+add login method and view
+add login box to header in application layout
+add check in update method so the tutor logged in can only alter their own details
+(need to modify this to take account of the format block and to allow a superuser to edit anyones details)
+1********
+(this code is for a model called "user" not "tutor"): 
+{
+	require 'digest/sha1'
+	
+	class User < ActiveRecord::Base
+
+	  validates_presence_of     :name
+	  validates_uniqueness_of   :name
+	  attr_accessor :password_confirmation
+	  validates_confirmation_of :password
+	  validate :password_non_blank
+
+	  def self.authenticate(name, password)
+	    user = self.find_by_name(name)
+	    if user
+	      expected_password = encrypted_password(password, user.salt)
+	      if user.hashed_password != expected_password
+	        user = nil
+	      end
+	    end
+	    user
+	  end
+
+	  # 'password' is a virtual attribute
+	  def password
+	    @password
+	  end
+
+	  def password=(pwd)
+	    @password = pwd
+	    return if pwd.blank?
+	    create_new_salt
+	    self.hashed_password = User.encrypted_password(self.password, self.salt)
+	  end
+
+	private
+
+	  def password_non_blank
+	    errors.add(:password, "Missing password") if hashed_password.blank?
+	  end
+
+	  def create_new_salt
+	    self.salt = self.object_id.to_s + rand.to_s
+	  end
+
+	  def self.encrypted_password(password, salt)
+	    string_to_hash = password + "wibble" + salt
+	    Digest::SHA1.hexdigest(string_to_hash)
+	  end
+
+	end
+}
+

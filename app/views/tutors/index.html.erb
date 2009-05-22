@@ -1,0 +1,32 @@
+<h1>Listing tutors</h1>
+
+<table>
+  <tr>
+		<th>Login</th>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Sex</th>
+    <th>Flavour</th>
+    <th>Qualifications</th>
+    <th>Experience</th>
+  </tr>
+
+<% @tutors.each do |tutor| %>
+  <tr>
+		<td><%=h tutor.login_name %></td>
+    <td><%= highlight(tutor.name, tutor.familyname, :highlighter => '<span class="familyname">\1</span>') %></td>
+    <td><%=h tutor.age %></td>
+    <td><%=h tutor.sex %></td>
+    <td><%=h tutor.flavour %></td>
+    <td><%=h tutor.qualifications %></td>
+    <td><%=h tutor.experience %></td>
+    <td><%= link_to 'Show', tutor %></td>
+    <td><%= link_to 'Edit', edit_tutor_path(tutor) %></td>
+    <td><%= link_to 'Destroy', tutor, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New tutor', new_tutor_path %>

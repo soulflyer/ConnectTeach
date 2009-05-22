@@ -1,0 +1,52 @@
+
+<h2>
+	<%= highlight(@tutor.name, @tutor.familyname, :highlighter => '<span class="familyname">\1</span>') %>
+</h2>
+<p>
+  <b>login_name:</b>
+  <%=h @tutor.login_name %>
+</p>
+
+<p>
+  <b>Age:</b>
+  <%=h @tutor.age %>
+</p>
+
+<p>
+  <b>Sex:</b>
+  <%=h @tutor.sex %>
+</p>
+
+<p>
+  <b>Flavour:</b>
+  <%=h @tutor.flavour %>
+</p>
+
+<p>
+  <b>Qualifications:</b>
+  <%=h @tutor.qualifications %>
+</p>
+
+<p>
+  <b>Experience:</b>
+  <%=h @tutor.experience %>
+</p>
+
+<p>
+  <b>Nationalknowledge:</b>
+  <%=h @tutor.nationalknowledge %>
+</p>
+
+<p>
+  <b>Courseexperience:</b>
+  <%=h @tutor.courseexperience %>
+</p>
+
+<p>
+  <b>Textbookexperience:</b>
+  <%=h @tutor.textbookexperience %>
+</p>
+
+
+<%= link_to 'Edit', edit_tutor_path(@tutor) %> |
+<%= link_to 'Back', tutors_path %>
