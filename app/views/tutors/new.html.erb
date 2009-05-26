@@ -1,6 +1,6 @@
 <h1>New tutor</h1>
 
-<% form_for(@tutor) do |f| %>
+<% form_for @tutor, :html => { :multipart => true } do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -27,6 +27,9 @@
 	<%= f.label :user_password_confirmation, 'Confirm' %>: 
 	<%= f.password_field :password_confirmation, :size => 40 %> 
 	</div>
+	<p>
+		<%= f.file_field :photo %>
+	</p>
   <p>
     <%= f.label :age %><br />
     <%= f.text_field :age %>

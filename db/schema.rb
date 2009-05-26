@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090512034140) do
+ActiveRecord::Schema.define(:version => 20090526163748) do
 
   create_table "tutors", :force => true do |t|
     t.string   "familyname"
@@ -28,6 +28,10 @@ ActiveRecord::Schema.define(:version => 20090512034140) do
     t.string   "login_name"
     t.string   "hashed_password"
     t.string   "salt"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
 end

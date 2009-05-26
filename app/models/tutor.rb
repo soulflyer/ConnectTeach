@@ -10,6 +10,8 @@ class Tutor < ActiveRecord::Base
 
   validate :password_non_blank
   
+  has_attached_file :photo, :styles => { :small => "80x80>" }
+  
   def name
     if givennamefirst
       givenname + " " + familyname

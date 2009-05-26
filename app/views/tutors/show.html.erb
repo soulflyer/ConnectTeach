@@ -2,6 +2,7 @@
 <h2>
 	<%= highlight(@tutor.name, @tutor.familyname, :highlighter => '<span class="familyname">\1</span>') %>
 </h2>
+<%= image_tag @tutor.photo.url %>
 <p>
   <b>login_name:</b>
   <%=h @tutor.login_name %>
