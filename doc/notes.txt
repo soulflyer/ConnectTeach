@@ -7,13 +7,19 @@ rake db:migrate RAILS_ENV='development'
 
 script/generate migration add_login_to_tutor login_name:string hashed_password:string salt:string
 
-Modified the views to take account of the new fields and add stuff to the tutors model as per Agile Web Development chapter 11. See attachment 1********
+# Modified the views to take account of the new fields and add stuff to the tutors model as per Agile Web Development chapter 11. See attachment 1********
 
 ruby script/generate controller admin login logout index
-add login method and view
-add login box to header in application layout
-add check in update method so the tutor logged in can only alter their own details
-(need to modify this to take account of the format block and to allow a superuser to edit anyones details)
+# add login method and view
+# add login box to header in application layout
+# add check in update method so the tutor logged in can only alter their own details
+# (need to modify this to take account of the format block and to allow a superuser to edit anyones details)
+
+# add paperclip plugin to allow photos in models
+script/plugin install git://github.com/thoughtbot/paperclip.git
+script/generate paperclip tutor photo
+rake db:migrate
+
 1********
 (this code is for a model called "user" not "tutor"): 
 {

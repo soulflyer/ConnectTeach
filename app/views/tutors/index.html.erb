@@ -13,7 +13,7 @@
 
 <% @tutors.each do |tutor| %>
   <tr>
-	  <td><%=link_to (image_tag (tutor.photo.url(:small))), tutor%></td>
+	  <td><%=link_to (image_tag (tutor.photo.url(:thumb))), tutor%></td>
 		<td><%=h tutor.login_name %></td>
     <td><%= highlight(tutor.name, tutor.familyname, :highlighter => '<span class="familyname">\1</span>') %></td>
     <td><%=h tutor.age %></td>

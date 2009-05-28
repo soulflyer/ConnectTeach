@@ -7,7 +7,7 @@ class AdminController < ApplicationController
       tutor = Tutor.authenticate(params[:name], params[:password])
       if tutor
         session[:tutor_id] = tutor.id
-        redirect_to(:action => "index")
+        redirect_to(:controller => "tutors", :action => "index")
       else
         flash.now[:notice] = "Invalid tutor/password combination"
       end
