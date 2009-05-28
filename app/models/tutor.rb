@@ -10,7 +10,10 @@ class Tutor < ActiveRecord::Base
 
   validate :password_non_blank
   
-  has_attached_file :photo, :styles => { :small => "80x80>" }
+  has_attached_file :photo,
+                    :styles => { :small => "80x80>" },
+                    :url => ":class/:id/:style.:extension",
+                    :path => ":rails_root/public/images/:class/:id/:style.:extension"
   
   def name
     if givennamefirst
