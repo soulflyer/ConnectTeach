@@ -14,13 +14,13 @@ class TutorsController < ApplicationController
   # GET /tutors/1.xml
   def show
     @tutor = Tutor.find(params[:id])
-    if can_be_accessed_by (@tutor)
+    if can_be_accessed_by(@tutor)
       respond_to do |format|
         format.html # show.html.erb
         format.xml  { render :xml => @tutor }
       end
     else
-      flash[:notice] = "You can't view another tutors private details."
+      flash[:notice] = "You can't view another tutor's private details."
       redirect_to( :action => "index" )
     end
   end
@@ -62,7 +62,7 @@ class TutorsController < ApplicationController
   # PUT /tutors/1.xml
   def update
     @tutor = Tutor.find(params[:id])
-    if can_be_accessed_by (@tutor)
+    if can_be_accessed_by(@tutor)
       respond_to do |format|
         if @tutor.update_attributes(params[:tutor])
           flash[:notice] = 'Tutor was successfully updated.'
@@ -74,7 +74,7 @@ class TutorsController < ApplicationController
         end
       end
     else      
-      flash[:notice] = "You can't update another tutors details."
+      flash[:notice] = "You can't update another tutor's details."
       redirect_to(@tutor)
     end
   end
