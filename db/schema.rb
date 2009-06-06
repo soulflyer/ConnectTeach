@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(:version => 20090526163748) do
     t.string   "login_name"
     t.string   "hashed_password"
     t.string   "salt"
+    t.boolean  "admin"
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
