@@ -2,7 +2,7 @@ class TutorsController < ApplicationController
   # GET /tutors
   # GET /tutors.xml
   def index
-    @tutors = Tutor.find(:all, :order => :familyname)
+    @tutors = Tutor.find(:all, :order => :family_name)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -45,7 +45,7 @@ class TutorsController < ApplicationController
   # POST /tutors.xml
   def create
     @tutor = Tutor.new(params[:tutor])
-
+    @tutor.admin =  @tutor.login_name == "admin"
     respond_to do |format|
       if @tutor.save
         flash[:notice] = 'Tutor was successfully created.'
@@ -94,6 +94,6 @@ class TutorsController < ApplicationController
 private
 
   def can_be_accessed_by (tutor)
-    return tutor.id == session[:tutor_id]
+    return tutor.id == session[:tutor_id] || Tutor.find(session[:tutor_id]).admin
   end
 end

@@ -1,6 +1,6 @@
 
 <h2>
-	<%= highlight(@tutor.name, @tutor.familyname, :highlighter => '<span class="familyname">\1</span>') %>
+	<%= highlight(@tutor.name, @tutor.family_name, :highlighter => '<span class="familyname">\1</span>') %>
 </h2>
 <%= image_tag @tutor.photo.url %>
 <p>
@@ -34,18 +34,18 @@
 </p>
 
 <p>
-  <b>Nationalknowledge:</b>
-  <%=h @tutor.nationalknowledge %>
+  <b>National knowledge:</b>
+  <%=h @tutor.national_knowledge %>
 </p>
 
 <p>
-  <b>Courseexperience:</b>
-  <%=h @tutor.courseexperience %>
+  <b>Course experience:</b>
+  <%=h @tutor.course_experience %>
 </p>
 
 <p>
-  <b>Textbookexperience:</b>
-  <%=h @tutor.textbookexperience %>
+  <b>Textbook experience:</b>
+  <%=h @tutor.textbook_experience %>
 </p>
 
 

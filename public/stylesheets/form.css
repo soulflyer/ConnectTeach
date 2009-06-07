@@ -1,0 +1,48 @@
+/* @override http://localhost:3001/stylesheets/form.css?1244362009 */
+
+/* @override http://localhost:3001/stylesheets/form.css?1244359266 */
+
+form fieldset {
+  margin: 6;
+  padding: 6px;
+  float: left;
+  height: 100px;
+}
+
+form p {
+  margin: 0;
+  padding: 0;
+  text-align: right;
+}
+
+form input {
+  width: 120px;
+  margin: 0;
+  padding: 0;
+}
+
+form textarea {
+  height: 80px;
+  width: 500px;
+}
+form #experience {
+  height: 440px;
+  width: 650px;
+}
+
+form #experience label {
+  vertical-align: 65px;
+}
+
+form #photo {
+  width: 266px;
+}
+
+form #photo img {
+  float: left;
+  margin-right: 6px;
+}
+
+form #photo input {
+  width: 180px;
+}

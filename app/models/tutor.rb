@@ -16,10 +16,10 @@ class Tutor < ActiveRecord::Base
                     :path => ":rails_root/public/images/:class/:id/:style.:extension"
   
   def name
-    if givennamefirst
-      givenname + " " + familyname
+    if given_name_first
+      given_name + " " + family_name
     else
-      familyname + " " + givenname
+      family_name + " " + given_name
     end
   end
   
