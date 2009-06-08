@@ -1,29 +1,33 @@
 <% form_for @tutor , :html => { :multipart => true }, :builder => TaggedBuilder do |f| %>
 	<%= f.error_messages %>
-	<fieldset id="photo">
-		<legend>Photo</legend>
-		<%= image_tag (@tutor.photo.url(:thumb)) %>
-		<%= f.file_field :photo %>
-	</fieldset>
-
-	<fieldset id="name">
-		<legend>Name</legend>
-		<%= f.text_field :family_name %>
-		<%= f.text_field :given_name %>
-		<%= f.check_box :given_name_first %>
-	</fieldset>	
-	<fieldset id="login_details">
-		<legend>Login details</legend>
-		<%= f.text_field :login_name %>
-		<%= f.password_field :password, :size => 40 %> 
-		<%= f.password_field :password_confirmation, :size => 40 %> 
-	</fieldset>	
-	<fieldset id="personal_details">
-		<legend>Personal details</legend>
-		<%= f.text_field :age %>
-		<%= f.text_field :sex %>
-		<%= f.text_field :flavour %>
-	</fieldset>	
+	<div id="form_header"><h1><%= @header %></h1>
+		<%= f.submit 'Submit' %>
+	</div>	
+	<div id="left">
+		<fieldset id="name">
+			<legend>Name</legend>
+			<%= f.text_field :family_name %>
+			<%= f.text_field :given_name %>
+			<%= f.check_box :given_name_first %>
+		</fieldset>	
+		<fieldset id="photo">
+			<legend>Photo</legend>
+			<%= f.file_field :photo %>
+			<%= image_tag (@tutor.photo.url(:thumb)) %>
+		</fieldset>
+		<fieldset id="login_details">
+			<legend>Login details</legend>
+			<%= f.text_field :login_name %>
+			<%= f.password_field :password, :size => 40 %> 
+			<%= f.password_field :password_confirmation, :size => 40 %> 
+		</fieldset>	
+		<fieldset id="personal_details">
+			<legend>Personal details</legend>
+			<%= f.text_field :age %>
+			<%= f.text_field :sex %>
+			<%= f.text_field :flavour %>
+		</fieldset>	
+	</div>
 	<fieldset id="experience">
 		<legend>Experience</legend>
 		<%= f.text_area :qualifications %>
@@ -31,5 +35,5 @@
 		<%= f.text_area :national_knowledge %>
 		<%= f.text_area :course_experience %>
 		<%= f.text_area :textbook_experience %>
-	</fieldset>  <%= f.submit 'Update' %>
-<% end %>
+	</fieldset>  
+	<% end %>

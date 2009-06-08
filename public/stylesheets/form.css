@@ -1,14 +1,27 @@
-/* @override http://localhost:3001/stylesheets/form.css?1244362009 */
+/* @override http://localhost:3001/stylesheets/form.css?1244423252 */
 
-/* @override http://localhost:3001/stylesheets/form.css?1244359266 */
+/* @override http://localhost:3001/stylesheets/form.css?1244422616 */
 
 form fieldset {
   margin: 6;
   padding: 6px;
-  float: left;
-  height: 100px;
+  height: 75px;
+  clear: left;
 }
 
+form #form_header {
+  width: 100%;
+  overflow: hidden;
+}
+
+form h1 {
+  float: left;
+}
+
+form #tutor_submit {
+  margin-left: 200px;
+  float: right;
+}
 form p {
   margin: 0;
   padding: 0;
@@ -22,27 +35,36 @@ form input {
 }
 
 form textarea {
-  height: 80px;
-  width: 500px;
+  width: 100%;
+  height: 57px;
 }
+
+form #left {
+  width: 305px;
+  float: left;
+  clear: left;
+}
+
 form #experience {
-  height: 440px;
-  width: 650px;
+  height: inherit;
+  clear: right;
 }
 
 form #experience label {
-  vertical-align: 65px;
+  display: block;
+  text-align: left;
 }
 
 form #photo {
-  width: 266px;
+  height: 100px;
 }
 
 form #photo img {
-  float: left;
-  margin-right: 6px;
+  margin-left: 6px;
+  float: right;
 }
 
 form #photo input {
   width: 180px;
+  float: left;
 }
