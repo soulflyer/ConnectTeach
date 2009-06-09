@@ -39,6 +39,10 @@ class TutorsController < ApplicationController
   # GET /tutors/1/edit
   def edit
     @tutor = Tutor.find(params[:id])
+    if ! can_be_accessed_by(@tutor)
+      flash[:notice] = "You can't update another tutor's details."
+      redirect_to( :action => "index" )
+    end
   end
 
   # POST /tutors

@@ -21,7 +21,16 @@ Feature: Manage Tutors
 		Then I should <action>
 		Examples:
 		 | login_name | profile | action                                                   |
-		 | ndiw       | ndiw    | see "Edit"                                               |
+		 | ndiw       | ndiw    | see "ndiw's private details"                             |
 		 | ndiw       | admin   | see "You can't view another tutor's private details"     |
-		 | admin      | ndiw    | not see "You can't view another tutor's private details" |
+		 | admin      | ndiw    | see "ndiw's private details" |
 
+  Scenario Outline: Go to edit page and see tutors private details
+    Given I am logged in as "<login_name>" with password "<login_name>"
+		When Visit edit page for "<profile>"
+		Then I should <action>
+		Examples:
+		 | login_name | profile | action                        |
+		 | ndiw       | ndiw    | see "ndiw's private details"  |
+		 | ndiw       | admin   | not see "admin's private details" |
+		 | admin      | ndiw    | see "ndiw's private details"  |

@@ -1,5 +1,6 @@
 Given /^the following (.+) records?$/ do |factory, table|
   table.hashes.each do |hash|
+    hash["experience"] = hash["login_name"] + "'s private details"
     Factory(factory, hash) 
   end
 end
@@ -14,4 +15,16 @@ end
 When /^I visit profile for "([^\"]*)"$/ do |login_name|
   tutor = Tutor.find_by_login_name!(login_name)
   visit tutor_url(tutor) 
+end
+
+When /^Visit edit page for "([^\"]*)"$/ do |login_name|
+  tutor = Tutor.find_by_login_name!(login_name)
+  visit edit_tutor_url(tutor)
+end
+
+When /^I edit profile for "([^\"]*)"$/ do |login_name|
+  tutor = Tutor.find_by_login_name!(login_name)
+  visit edit_tutor_url(tutor)
+  fill_in "age", :with => 100
+  click_button "save"
 end
