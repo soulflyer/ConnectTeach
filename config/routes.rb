@@ -1,6 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :tutors
-  map.login 'login', :controller => 'admin', :action => 'login'
+  map.root :controller => 'pages', :id => '1'
+
+  map.resources :pages
 
   # The priority is based upon order of creation: first created -> highest priority.
 

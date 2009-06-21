@@ -9,32 +9,31 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090526163748) do
+ActiveRecord::Schema.define(:version => 20090621061233) do
 
-  create_table "tutors", :force => true do |t|
-    t.string   "family_name"
-    t.string   "given_name"
-    t.boolean  "given_name_first"
-    t.integer  "age"
-    t.string   "sex"
-    t.string   "email"
-    t.string   "phone"
-    t.string   "flavour"
-    t.text     "qualifications"
-    t.text     "experience"
-    t.text     "national_knowledge"
-    t.text     "course_experience"
-    t.text     "textbook_experience"
+  create_table "pages", :force => true do |t|
+    t.string   "name"
+    t.string   "permalink"
+    t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "login_name"
-    t.string   "hashed_password"
-    t.string   "salt"
-    t.boolean  "admin"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "email"
+    t.string   "encrypted_password", :limit => 128
+    t.string   "salt",               :limit => 128
+    t.string   "token",              :limit => 128
+    t.datetime "token_expires_at"
+    t.boolean  "email_confirmed",                   :default => false, :null => false
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
   end
+
+  add_index "users", ["email"], :name => "index_users_on_email"
+  add_index "users", ["id", "token"], :name => "index_users_on_id_and_token"
+  add_index "users", ["token"], :name => "index_users_on_token"
 
 end
