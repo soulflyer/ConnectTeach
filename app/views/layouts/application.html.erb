@@ -29,7 +29,9 @@
 		</div>
 		<div id="main">
 		<p style="color: green"><%= flash[:notice] %></p>
-
+		<p style="color: green"><%= flash[:sucess] %></p>
+		<p style="color: red"><%= flash[:failure] %></p>
+		
 		<%= yield  %>
 
 		</div>

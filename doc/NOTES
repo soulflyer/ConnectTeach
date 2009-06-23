@@ -1,0 +1,4 @@
+Things that may need doing
+==========================
+Add factory girl to config/environments/cucumber.rb
+config.gem "thoughtbot-factory_girl", :lib => "factory_girl", :version => ">=1.2.1"

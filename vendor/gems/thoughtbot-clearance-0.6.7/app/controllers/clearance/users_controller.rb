@@ -3,7 +3,6 @@ class Clearance::UsersController < ApplicationController
 
   before_filter :redirect_to_root, :only => [:new, :create], :if => :signed_in?
   filter_parameter_logging :password
-
   def new
     @user = ::User.new(params[:user])
     render :template => 'users/new'
@@ -19,7 +18,13 @@ class Clearance::UsersController < ApplicationController
       render :template => 'users/new'
     end
   end
-
+  
+  def destroy
+    @user = ::User.find(params[:id])
+    @user.destroy
+    redirect_to(users_url)
+  end
+  
   private
 
   def flash_notice_after_create

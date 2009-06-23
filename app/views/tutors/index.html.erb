@@ -2,33 +2,15 @@
 
 <table>
   <tr>
-	  <th></th>
-		<th>Login</th>
-		<th>Admin</th>
-    <th>Name</th>
-    <th>Age</th>
-    <th>Sex</th>
-    <th>Flavour</th>
-		<% if session[:tutor_id] && Tutor.find(session[:tutor_id]).admin %>
-			<th></th>
-		<% end %>
+    <th>Email</th>
   </tr>
 
 <% @tutors.each do |tutor| %>
   <tr>
-	  <td><%=link_to (image_tag (tutor.photo.url(:thumb))), tutor%></td>
-		<td><%=h tutor.login_name %></td>
-		<td><%=h tutor.admin %></td>
-    <td><%= highlight(tutor.name, tutor.family_name, :highlighter => '<span class="familyname">\1</span>') %></td>
-    <td><%=h tutor.age %></td>
-    <td><%=h tutor.sex %></td>
-    <td><%=h tutor.flavour %></td>
-		<% if session[:tutor_id] && Tutor.find(session[:tutor_id]).admin %>
-			<td><%= link_to 'Show', tutor %>
-				<%= link_to 'Edit', edit_tutor_path(tutor) %>
-				<%= link_to 'Destroy', tutor, :confirm => 'Are you sure?', :method => :delete %>
-			</td>
-		<% end %>
+    <td><%=h tutor.email %></td>
+    <td><%= link_to 'Show', tutor %></td>
+    <td><%= link_to 'Edit', edit_tutor_path(tutor) %></td>
+    <td><%= link_to 'Destroy', tutor, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
