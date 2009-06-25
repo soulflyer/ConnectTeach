@@ -7,19 +7,19 @@ end
  
 Given /^I am logged in as "([^\"]*)" with password "([^\"]*)"$/ do |login_name, password|
   visit sign_in_url
-  fill_in "email", :with => "#{login_name}@test.com"
+  fill_in "email", :with => login_name
   fill_in "password", :with => password
   click_button "Sign in"
 end
 
 
 When /^I visit profile for "([^\"]*)"$/ do |login_name|
-  tutor = User.find_by_email!("#{login_name}@test.com")
+  tutor = User.find_by_email!(login_name)
   visit tutor_url(tutor) 
 end
  
 When /^Visit edit page for "([^\"]*)"$/ do |login_name|
-  tutor = Tutor.find_by_login_name!(login_name)
+  tutor = User.find_by_email!(login_name)
   visit edit_tutor_url(tutor)
 end
  

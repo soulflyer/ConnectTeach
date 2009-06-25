@@ -8,9 +8,9 @@
 <% @tutors.each do |tutor| %>
   <tr>
     <td><%=h tutor.email %></td>
-    <td><%= link_to 'Show', tutor %></td>
+    <td><%= link_to 'Show', tutor_path(tutor) %></td>
     <td><%= link_to 'Edit', edit_tutor_path(tutor) %></td>
-    <td><%= link_to 'Destroy', tutor, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Destroy', tutor_path(tutor), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
