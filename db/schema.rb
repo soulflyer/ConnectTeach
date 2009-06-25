@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090623085344) do
+ActiveRecord::Schema.define(:version => 20090625015915) do
 
   create_table "pages", :force => true do |t|
     t.string   "name"
@@ -30,6 +30,11 @@ ActiveRecord::Schema.define(:version => 20090623085344) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.string   "family_name"
+    t.string   "given_name"
+    t.boolean  "given_name_first"
+    t.boolean  "admin"
+    t.string   "role"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email"

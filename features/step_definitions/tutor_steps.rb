@@ -1,19 +1,20 @@
 Given /^the following (.+) records?$/ do |factory, table|
   table.hashes.each do |hash|
-    hash["experience"] = hash["login_name"] + "'s private details"
+    # hash["experience"] = hash["login_name"] + "'s private details"
     Factory(factory, hash) 
   end
 end
  
 Given /^I am logged in as "([^\"]*)" with password "([^\"]*)"$/ do |login_name, password|
-  visit login_url
-  fill_in "name", :with => login_name
+  visit sign_in_url
+  fill_in "email", :with => "#{login_name}@test.com"
   fill_in "password", :with => password
-  click_button "login"
+  click_button "Sign in"
 end
- 
+
+
 When /^I visit profile for "([^\"]*)"$/ do |login_name|
-  tutor = Tutor.find_by_login_name!(login_name)
+  tutor = User.find_by_email!("#{login_name}@test.com")
   visit tutor_url(tutor) 
 end
  
