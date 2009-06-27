@@ -1,6 +1,6 @@
 Given /^the following (.+) records?$/ do |factory, table|
   table.hashes.each do |hash|
-    # hash["experience"] = hash["login_name"] + "'s private details"
+    hash["experience"] = hash["email"] + "'s private details"
     Factory(factory, hash) 
   end
 end

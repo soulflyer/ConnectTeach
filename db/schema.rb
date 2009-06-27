@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090625015915) do
+ActiveRecord::Schema.define(:version => 20090627011736) do
 
   create_table "pages", :force => true do |t|
     t.string   "name"
@@ -21,11 +21,11 @@ ActiveRecord::Schema.define(:version => 20090625015915) do
 
   create_table "users", :force => true do |t|
     t.string   "email"
-    t.string   "encrypted_password", :limit => 128
-    t.string   "salt",               :limit => 128
-    t.string   "token",              :limit => 128
+    t.string   "encrypted_password",  :limit => 128
+    t.string   "salt",                :limit => 128
+    t.string   "token",               :limit => 128
     t.datetime "token_expires_at"
-    t.boolean  "email_confirmed",                   :default => false, :null => false
+    t.boolean  "email_confirmed",                    :default => false, :null => false
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
@@ -35,6 +35,15 @@ ActiveRecord::Schema.define(:version => 20090625015915) do
     t.boolean  "given_name_first"
     t.boolean  "admin"
     t.string   "role"
+    t.string   "age"
+    t.integer  "phone"
+    t.string   "sex"
+    t.string   "flavour"
+    t.text     "qualifications"
+    t.text     "experience"
+    t.text     "national_knowledge"
+    t.text     "course_experience"
+    t.text     "textbook_experience"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email"

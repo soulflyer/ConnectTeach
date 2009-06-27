@@ -32,9 +32,9 @@ Feature: Manage Tutors
     When Visit edit page for "<profile>"
     Then I should <action>
     Examples:
-      | login_name     | profile        | password | action                            |
- 			| ndiw@test.com  | ndiw@test.com  | ndiw     | see "ndiw's private details"      |
- 			| ndiw@test.com  | ndiw@test.com  | ndiw     | not see "admin's private details" |
- 			| admin@test.com | admin@test.com | admin    | see "ndiw's private details"      |
+      | login_name     | profile        | password | action                                     |
+      | ndiw@test.com  | ndiw@test.com  | ndiw     | see "ndiw@test.com's private details"      |
+      | ndiw@test.com  | admin@test.com | ndiw     | not see "admin@test.com's private details" |
+      | admin@test.com | ndiw@test.com  | admin    | see "ndiw@test.com's private details"      |
 
    
