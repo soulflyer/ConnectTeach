@@ -16,7 +16,7 @@
 
 <% @tutors.each do |tutor| %>
   <tr>
-	  <td><%=link_to (image_tag (tutor.photo.url(:thumb))), tutor%></td>
+	  <td><%=link_to (image_tag (tutor.detail.photo.url(:thumb))), tutor%></td>
 		<td><%=h tutor.email %></td>
 		<td><%=h tutor.admin %></td>
     <td></td>

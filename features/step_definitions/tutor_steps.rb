@@ -1,6 +1,13 @@
 Given /^the following (.+) records?$/ do |factory, table|
   table.hashes.each do |hash|
-    hash["experience"] = hash["email"] + "'s private details"
+    detail=Factory(:detail)
+    if hash["detail"]
+      hash["detail"].each do |key, value|
+        detail[key] = value
+      end
+    end
+    # hash["detail.experience"] = hash["email"] + "'s private details"
+    hash["detail"] = detail
     Factory(factory, hash) 
   end
 end

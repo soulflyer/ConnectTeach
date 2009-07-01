@@ -5,9 +5,9 @@ Feature: Manage Tutors
   
   Background:
     Given the following user records
-     | email          | role  | password | admin |
-     | ndiw@test.com  | tutor | ndiw     | false |
-     | admin@test.com | tutor | admin    | true  |
+     | email          |  password | admin |
+     | ndiw@test.com  |  ndiw     | false |
+     | admin@test.com |  admin    | true  |
  
   
   Scenario: Tutor list
