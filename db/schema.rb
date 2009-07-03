@@ -9,21 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090701013226) do
-
-  create_table "details", :force => true do |t|
-    t.text     "experience"
-    t.text     "qualifications"
-    t.text     "course_experience"
-    t.text     "textbook_experience"
-    t.text     "national_knowledge"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "photo_file_name"
-    t.string   "photo_content_type"
-    t.integer  "photo_file_size"
-    t.datetime "photo_updated_at"
-  end
+ActiveRecord::Schema.define(:version => 20090703013817) do
 
   create_table "pages", :force => true do |t|
     t.string   "name"
@@ -40,8 +26,6 @@ ActiveRecord::Schema.define(:version => 20090701013226) do
     t.string   "token",              :limit => 128
     t.datetime "token_expires_at"
     t.boolean  "email_confirmed",                   :default => false, :null => false
-    t.boolean  "admin"
-    t.integer  "detail_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email"
