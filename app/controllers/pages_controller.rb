@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  before_filter :must_be_admin, :only => [:index]
+  
   # GET /pages
   # GET /pages.xml
   def index
@@ -13,7 +15,12 @@ class PagesController < ApplicationController
   # GET /pages/1
   # GET /pages/1.xml
   def show
-    @page = Page.find(params[:id])
+    if params[:permalink]
+      @page = Page.find_by_permalink(params[:permalink])
+      raise ActiveRecord::RecordNotFound, "Page not found" if @page.nil?
+    else
+      @page = Page.find(params[:id])
+    end
 
     respond_to do |format|
       format.html # show.html.erb
@@ -34,7 +41,12 @@ class PagesController < ApplicationController
 
   # GET /pages/1/edit
   def edit
-    @page = Page.find(params[:id])
+    if params[:permalink]
+      @page = Page.find_by_permalink(params[:permalink])
+      raise ActiveRecord::RecordNotFound, "Page not found" if @page.nil?
+    else
+      @page = Page.find(params[:id])
+    end
   end
 
   # POST /pages
@@ -80,6 +92,14 @@ class PagesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(pages_url) }
       format.xml  { head :ok }
+    end
+  end
+  
+private
+  def must_be_admin
+    if User.find(session[:user_id]).role != "admin"
+      flash[:error] = 'Must be admin'
+      redirect_to root_url
     end
   end
 end

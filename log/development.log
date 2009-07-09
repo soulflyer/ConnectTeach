@@ -41,3 +41,2904 @@ Migrating to ClearanceCreateUsers (20090703013817)
   [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_users_on_token')[0m
   [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_users_on_email')[0m
   [4;36;1mSQL (0.3ms)[0m   [0;1mPRAGMA index_info('index_users_on_id_and_token')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePages (20090703013813)
+Migrating to ClearanceCreateUsers (20090703013817)
+Migrating to CreateTutors (20090703022556)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCREATE TABLE "tutors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "experience" text, "qualifications" text, "course_experience" text, "textbook_experience" text, "national_knowledge" text, "age" integer, "phone" integer, "sex" varchar(255), "flavour" varchar(255), "given_name" varchar(255), "family_name" varchar(255), "given_name_first" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090703022556')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("pages")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("tutors")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_users_on_token')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_email')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_users_on_id_and_token')[0m
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-07-03 09:54:11) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPage Load (0.6ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Rendering template within layouts/application
+Rendering pages/index
+Completed in 46ms (View: 40, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-03 09:54:24) [GET]
+
+ActionController::RoutingError (No route matches "/tutor/new" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TutorsController#new (for 127.0.0.1 at 2009-07-03 09:56:30) [GET]
+Redirected to http://localhost:3000/clearance/sessions/new
+Completed in 3ms (DB: 0) | 302 Found [http://localhost/tutors/new]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-07-03 09:56:30) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 11ms (View: 9, DB: 0) | 200 OK [http://localhost/clearance/sessions/new]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-07-03 10:09:23) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://localhost/clearance/sessions/new]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-07-03 15:09:54) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/clearance/sessions/new]
+
+
+Processing Clearance::UsersController#new (for 127.0.0.1 at 2009-07-03 15:09:57) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (3.7ms)
+Completed in 23ms (View: 15, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing Clearance::UsersController#create (for 127.0.0.1 at 2009-07-03 15:10:08) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "email"=>"iain@soulflyer.co.uk"}, "commit"=>"Sign up", "action"=>"create", "authenticity_token"=>"Wf8Ii/DuzQ1LqOL+W1w0jjNU/hf7lThu+r8momIW5yo=", "controller"=>"clearance/users"}
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'iain@soulflyer.co.uk') LIMIT 1[0m
+  [4;36;1mUser Create (39.3ms)[0m   [0;1mINSERT INTO "users" ("encrypted_password", "salt", "token", "token_expires_at", "email", "email_confirmed") VALUES('19c3ff7b0991bffe6544fa8473fa4ba2b4a34952', 'd5da38b89899ea9d61e88a20a8983b4b7c9167b9', 'a6821aefaa9352b89b605098a74c758af63e5078', NULL, 'iain@soulflyer.co.uk', 'f')[0m
+Sent mail to iain@soulflyer.co.uk
+
+From: donotreply@example.com
+To: iain@soulflyer.co.uk
+Subject: Account confirmation
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+
+http://localhost:3000/users/1/confirmation/new?token=a6821aefaa9352b89b605098a74c758af63e5078
+Redirected to http://localhost:3000/session/new
+Completed in 477ms (DB: 40) | 302 Found [http://localhost/users]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-07-03 15:10:09) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing Clearance::ConfirmationsController#new (for 127.0.0.1 at 2009-07-03 15:12:12) [GET]
+  Parameters: {"token"=>"[FILTERED]", "action"=>"new", "controller"=>"clearance/confirmations", "user_id"=>"1"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1' AND "users"."token" = 'a6821aefaa9352b89b605098a74c758af63e5078') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1' AND "users"."token" = 'a6821aefaa9352b89b605098a74c758af63e5078') LIMIT 1[0m
+  [4;36;1mUser Update (0.7ms)[0m   [0;1mUPDATE "users" SET "email_confirmed" = 't', "token" = NULL WHERE "id" = 1[0m
+Redirected to http://localhost:3000/
+Completed in 23ms (DB: 1) | 302 Found [http://localhost/users/1/confirmation/new?token=a6821aefaa9352b89b605098a74c758af63e5078]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-07-03 15:12:13) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.5ms)[0m   [0mSELECT * FROM "pages" [0m
+Rendering template within layouts/application
+Rendering pages/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 15ms (View: 9, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing TutorsController#new (for 127.0.0.1 at 2009-07-03 15:12:47) [GET]
+Rendering template within layouts/tutors
+Rendering tutors/new
+Completed in 97ms (View: 89, DB: 0) | 200 OK [http://localhost/tutors/new]
+
+
+Processing TutorsController#index (for 127.0.0.1 at 2009-07-03 18:32:32) [GET]
+  [4;35;1mTutor Load (0.5ms)[0m   [0mSELECT * FROM "tutors" [0m
+Rendering template within layouts/tutors
+Rendering tutors/index
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://localhost/tutors]
+
+
+Processing TutorsController#new (for 127.0.0.1 at 2009-07-03 18:32:36) [GET]
+Rendering template within layouts/tutors
+Rendering tutors/new
+Completed in 16ms (View: 7, DB: 0) | 200 OK [http://localhost/tutors/new]
+
+
+Processing TutorsController#new (for 127.0.0.1 at 2009-07-03 18:32:40) [GET]
+Rendering template within layouts/tutors
+Rendering tutors/new
+Completed in 14ms (View: 6, DB: 0) | 200 OK [http://localhost/tutors/new]
+
+
+Processing TutorsController#new (for 127.0.0.1 at 2009-07-03 18:33:13) [GET]
+Rendering template within layouts/tutors
+Rendering tutors/new
+
+ActionView::TemplateError (uninitialized constant ActionView::Base::CompiledTemplates::TaggedBuilder) on line #1 of app/views/tutors/_tutor_form.html.erb:
+1: <% form_for @tutor, :html => { :multipart => true }, :builder => TaggedBuilder do |f| %>
+2: 	<%= f.error_messages %>
+3: 	<div id="form_header"><h1><%= @header %></h1>
+4: 		<%= f.submit 'Save' %>
+
+    app/views/tutors/_tutor_form.html.erb:1
+    app/views/tutors/new.html.erb:3
+
+Rendered rescues/_trace (62.5ms)
+Rendered rescues/_request_and_response (1.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TutorsController#new (for 127.0.0.1 at 2009-07-03 18:34:43) [GET]
+Rendering template within layouts/tutors
+Rendering tutors/new
+
+ActionView::TemplateError (undefined method `photo' for #<Tutor:0x21ea92c>) on line #16 of app/views/tutors/_tutor_form.html.erb:
+13: 		<fieldset id="photo">
+14: 			<legend>Photo</legend>
+15: 			<%= f.file_field :photo %>
+16: 			<%= image_tag (@tutor.photo.url(:thumb)) %>
+17: 		</fieldset>
+18: 		<fieldset id="login_details">
+19: 			<legend>Login details</legend>
+
+    app/views/tutors/_tutor_form.html.erb:16
+    app/views/tutors/_tutor_form.html.erb:1
+    app/views/tutors/new.html.erb:3
+
+Rendered rescues/_trace (56.3ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TutorsController#new (for 127.0.0.1 at 2009-07-03 18:37:28) [GET]
+Rendering template within layouts/tutors
+Rendering tutors/new
+
+ActionView::TemplateError (undefined method `photo_file_name' for #<Tutor:0x234b708>) on line #16 of app/views/tutors/_tutor_form.html.erb:
+13: 		<fieldset id="photo">
+14: 			<legend>Photo</legend>
+15: 			<%= f.file_field :photo %>
+16: 			<%= image_tag (@tutor.photo.url(:thumb)) %>
+17: 		</fieldset>
+18: 		<fieldset id="login_details">
+19: 			<legend>Login details</legend>
+
+    app/views/tutors/_tutor_form.html.erb:16
+    app/views/tutors/_tutor_form.html.erb:1
+    app/views/tutors/new.html.erb:3
+
+Rendered rescues/_trace (151.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePages (20090703013813)
+Migrating to ClearanceCreateUsers (20090703013817)
+Migrating to CreateTutors (20090703022556)
+Migrating to AddAttachmentsPhotoToTutor (20090703113902)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (25.7ms)[0m   [0mALTER TABLE "tutors" ADD "photo_file_name" varchar(255)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mALTER TABLE "tutors" ADD "photo_content_type" varchar(255)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "tutors" ADD "photo_file_size" integer[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "tutors" ADD "photo_updated_at" datetime[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090703113902')[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("pages")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("tutors")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_token')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_users_on_email')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_users_on_id_and_token')[0m
+
+
+Processing TutorsController#new (for 127.0.0.1 at 2009-07-03 18:40:00) [GET]
+Rendering template within layouts/tutors
+Rendering tutors/new
+
+ActionView::TemplateError (undefined method `email' for #<Tutor:0x243e098>) on line #20 of app/views/tutors/_tutor_form.html.erb:
+17: 		</fieldset>
+18: 		<fieldset id="login_details">
+19: 			<legend>Login details</legend>
+20: 			<%= f.text_field :email %>
+21: 			<%= f.password_field :password, :size => 40 %> 
+22: 			<%= f.password_field :password_confirmation, :size => 40 %> 
+23: 		</fieldset>	
+
+    app/helpers/tagged_builder.rb:13:in `text_field'
+    app/views/tutors/_tutor_form.html.erb:20
+    app/views/tutors/_tutor_form.html.erb:1
+    app/views/tutors/new.html.erb:3
+
+Rendered rescues/_trace (59.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TutorsController#new (for 127.0.0.1 at 2009-07-03 18:40:26) [GET]
+Rendering template within layouts/tutors
+Rendering tutors/new
+Rendered tutors/_tutor_form (95.9ms)
+Completed in 108ms (View: 100, DB: 0) | 200 OK [http://localhost/tutors/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-03 18:40:26) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TutorsController#new (for 127.0.0.1 at 2009-07-03 18:41:44) [GET]
+Rendering template within layouts/tutors
+Rendering tutors/new
+Rendered tutors/_tutor_form (9.4ms)
+Completed in 19ms (View: 11, DB: 0) | 200 OK [http://localhost/tutors/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-03 18:41:45) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TutorsController#new (for 127.0.0.1 at 2009-07-03 18:41:48) [GET]
+Rendering template within layouts/tutors
+Rendering tutors/new
+Rendered tutors/_tutor_form (9.6ms)
+Completed in 19ms (View: 11, DB: 0) | 200 OK [http://localhost/tutors/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-03 18:41:48) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TutorsController#new (for 127.0.0.1 at 2009-07-03 18:42:36) [GET]
+Rendering template within layouts/tutors
+Rendering tutors/new
+Rendered tutors/_tutor_form (9.5ms)
+Completed in 19ms (View: 11, DB: 0) | 200 OK [http://localhost/tutors/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-03 18:42:36) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TutorsController#create (for 127.0.0.1 at 2009-07-03 18:42:42) [POST]
+  Parameters: {"tutor"=>{"textbook_experience"=>"", "course_experience"=>"", "qualifications"=>"", "national_knowledge"=>"", "flavour"=>"", "sex"=>"", "given_name"=>"", "family_name"=>"", "given_name_first"=>"0", "age"=>"", "experience"=>""}, "commit"=>"Save", "authenticity_token"=>"Wf8Ii/DuzQ1LqOL+W1w0jjNU/hf7lThu+r8momIW5yo="}
+  [4;36;1mTutor Create (0.5ms)[0m   [0;1mINSERT INTO "tutors" ("textbook_experience", "updated_at", "photo_file_name", "photo_file_size", "course_experience", "qualifications", "photo_updated_at", "national_knowledge", "sex", "flavour", "given_name", "family_name", "photo_content_type", "phone", "given_name_first", "age", "experience", "created_at") VALUES('', '2009-07-03 11:42:42', NULL, NULL, '', '', NULL, '', '', '', '', '', NULL, NULL, 'f', NULL, '', '2009-07-03 11:42:42')[0m
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/tutors/1
+Completed in 16ms (DB: 0) | 302 Found [http://localhost/tutors]
+
+
+Processing TutorsController#show (for 127.0.0.1 at 2009-07-03 18:42:42) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTutor Load (0.5ms)[0m   [0mSELECT * FROM "tutors" WHERE ("tutors"."id" = 1) [0m
+Rendering template within layouts/tutors
+Rendering tutors/show
+Completed in 18ms (View: 9, DB: 1) | 200 OK [http://localhost/tutors/1]
+
+
+Processing TutorsController#new (for 127.0.0.1 at 2009-07-03 18:44:05) [GET]
+Rendering template within layouts/application
+Rendering tutors/new
+Rendered tutors/_tutor_form (9.3ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 26ms (View: 18, DB: 0) | 200 OK [http://localhost/tutors/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-03 18:44:05) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TutorsController#index (for 127.0.0.1 at 2009-07-03 22:35:19) [GET]
+  [4;35;1mTutor Load (1.1ms)[0m   [0mSELECT * FROM "tutors" [0m
+Rendering template within layouts/application
+Rendering tutors/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 23ms (View: 15, DB: 1) | 200 OK [http://localhost/tutors]
+
+
+Processing Clearance::UsersController#index (for 127.0.0.1 at 2009-07-03 22:35:29) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clearance/users"}
+
+ActionController::UnknownAction (No action responded to index. Actions: create and new):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-07-03 22:35:39) [GET]
+  [4;35;1mPage Load (0.5ms)[0m   [0mSELECT * FROM "pages" [0m
+Rendering template within layouts/application
+Rendering pages/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://localhost/pages]
+
+
+Processing TutorsController#index (for 127.0.0.1 at 2009-07-04 12:28:30) [GET]
+  [4;35;1mTutor Load (1.7ms)[0m   [0mSELECT * FROM "tutors" [0m
+Rendering template within layouts/application
+Rendering tutors/index
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 30ms (View: 18, DB: 3) | 200 OK [http://localhost/tutors]
+
+
+Processing Clearance::UsersController#index (for 127.0.0.1 at 2009-07-04 12:28:32) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clearance/users"}
+
+ActionController::UnknownAction (No action responded to index. Actions: create and new):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TutorsController#new (for 127.0.0.1 at 2009-07-04 12:29:12) [GET]
+Rendering template within layouts/application
+Rendering tutors/new
+Rendered tutors/_tutor_form (9.1ms)
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 106ms (View: 97, DB: 0) | 200 OK [http://localhost/tutors/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-04 12:29:12) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TutorsController#show (for 127.0.0.1 at 2009-07-04 12:29:56) [GET]
+  Parameters: {"id"=>"edit"}
+  [4;36;1mTutor Load (0.2ms)[0m   [0;1mSELECT * FROM "tutors" WHERE ("tutors"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Tutor with ID=edit):
+  app/controllers/tutors_controller.rb:16:in `show'
+
+Rendered rescues/_trace (37.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing TutorsController#edit (for 127.0.0.1 at 2009-07-04 12:30:11) [GET]
+  Parameters: {"id"=>"10"}
+  [4;35;1mTutor Load (0.2ms)[0m   [0mSELECT * FROM "tutors" WHERE ("tutors"."id" = 10) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Tutor with ID=10):
+  app/controllers/tutors_controller.rb:37:in `edit'
+
+Rendered rescues/_trace (37.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing TutorsController#edit (for 127.0.0.1 at 2009-07-04 12:30:19) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mTutor Load (0.2ms)[0m   [0;1mSELECT * FROM "tutors" WHERE ("tutors"."id" = 6) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Tutor with ID=6):
+  app/controllers/tutors_controller.rb:37:in `edit'
+
+Rendered rescues/_trace (122.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing TutorsController#edit (for 127.0.0.1 at 2009-07-04 12:30:26) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTutor Load (0.5ms)[0m   [0mSELECT * FROM "tutors" WHERE ("tutors"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering tutors/edit
+Rendered tutors/_tutor_form (9.7ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 30ms (View: 21, DB: 1) | 200 OK [http://localhost/tutors/edit/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-04 12:30:26) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TutorsController#update (for 127.0.0.1 at 2009-07-04 12:30:42) [PUT]
+  Parameters: {"tutor"=>{"textbook_experience"=>"", "course_experience"=>"", "qualifications"=>"hello", "national_knowledge"=>"", "flavour"=>"", "sex"=>"", "given_name"=>"", "family_name"=>"", "given_name_first"=>"0", "age"=>"", "experience"=>""}, "commit"=>"Save", "authenticity_token"=>"Wf8Ii/DuzQ1LqOL+W1w0jjNU/hf7lThu+r8momIW5yo=", "id"=>"1"}
+  [4;35;1mTutor Load (0.5ms)[0m   [0mSELECT * FROM "tutors" WHERE ("tutors"."id" = 1) [0m
+  [4;36;1mTutor Update (0.4ms)[0m   [0;1mUPDATE "tutors" SET "updated_at" = '2009-07-04 05:30:42', "qualifications" = 'hello' WHERE "id" = 1[0m
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/tutors/1
+Completed in 16ms (DB: 1) | 302 Found [http://localhost/tutors/1]
+
+
+Processing TutorsController#show (for 127.0.0.1 at 2009-07-04 12:30:42) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTutor Load (0.7ms)[0m   [0mSELECT * FROM "tutors" WHERE ("tutors"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering tutors/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 27ms (View: 14, DB: 1) | 200 OK [http://localhost/tutors/1]
+
+
+Processing TutorsController#show (for 127.0.0.1 at 2009-07-04 12:30:47) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTutor Load (0.5ms)[0m   [0mSELECT * FROM "tutors" WHERE ("tutors"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering tutors/show
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 22ms (View: 12, DB: 1) | 200 OK [http://localhost/tutors/1]
+
+
+Processing TutorsController#edit (for 127.0.0.1 at 2009-07-04 12:30:54) [GET]
+  Parameters: {"id"=>"10"}
+  [4;35;1mTutor Load (0.2ms)[0m   [0mSELECT * FROM "tutors" WHERE ("tutors"."id" = 10) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Tutor with ID=10):
+  app/controllers/tutors_controller.rb:37:in `edit'
+
+Rendered rescues/_trace (119.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing TutorsController#edit (for 127.0.0.1 at 2009-07-04 12:30:57) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mTutor Load (0.5ms)[0m   [0;1mSELECT * FROM "tutors" WHERE ("tutors"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering tutors/edit
+Rendered tutors/_tutor_form (9.6ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 28ms (View: 18, DB: 1) | 200 OK [http://localhost/tutors/edit/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-04 12:30:57) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TutorsController#new (for 127.0.0.1 at 2009-07-04 12:42:39) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering tutors/new
+Rendered tutors/_tutor_form (8.9ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 26ms (View: 13, DB: 0) | 200 OK [http://localhost/tutors/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-04 12:42:39) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TutorsController#new (for 127.0.0.1 at 2009-07-04 12:42:44) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering tutors/new
+Rendered tutors/_tutor_form (9.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 26ms (View: 13, DB: 0) | 200 OK [http://localhost/tutors/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-04 12:42:44) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TutorsController#new (for 127.0.0.1 at 2009-07-04 12:44:20) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering tutors/new
+Rendered tutors/_tutor_form (10.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 28ms (View: 14, DB: 0) | 200 OK [http://localhost/tutors/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-04 12:44:21) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TutorsController#edit (for 127.0.0.1 at 2009-07-04 12:44:36) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mTutor Load (0.5ms)[0m   [0;1mSELECT * FROM "tutors" WHERE ("tutors"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering tutors/edit
+Rendered tutors/_tutor_form (9.6ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 29ms (View: 19, DB: 1) | 200 OK [http://localhost/tutors/edit/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-04 12:44:36) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TutorsController#update (for 127.0.0.1 at 2009-07-04 12:44:39) [PUT]
+  Parameters: {"tutor"=>{"textbook_experience"=>"", "course_experience"=>"", "qualifications"=>"hello", "national_knowledge"=>"", "flavour"=>"", "sex"=>"", "given_name"=>"", "family_name"=>"", "given_name_first"=>"0", "age"=>"", "experience"=>""}, "commit"=>"Save", "authenticity_token"=>"Wf8Ii/DuzQ1LqOL+W1w0jjNU/hf7lThu+r8momIW5yo=", "id"=>"1"}
+  [4;36;1mTutor Load (0.5ms)[0m   [0;1mSELECT * FROM "tutors" WHERE ("tutors"."id" = 1) [0m
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/tutors/1
+Completed in 15ms (DB: 1) | 302 Found [http://localhost/tutors/1]
+
+
+Processing TutorsController#show (for 127.0.0.1 at 2009-07-04 12:44:39) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTutor Load (0.5ms)[0m   [0mSELECT * FROM "tutors" WHERE ("tutors"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering tutors/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 21ms (View: 12, DB: 1) | 200 OK [http://localhost/tutors/1]
+
+
+Processing TutorsController#new (for 127.0.0.1 at 2009-07-04 12:58:25) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering tutors/new
+Rendered tutors/_tutor_form (9.3ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 27ms (View: 13, DB: 0) | 200 OK [http://localhost/tutors/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-04 12:58:25) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePages (20090703013813)
+Migrating to ClearanceCreateUsers (20090703013817)
+Migrating to CreateTutors (20090703022556)
+Migrating to AddAttachmentsPhotoToTutor (20090703113902)
+Migrating to AddTutorToUser (20090704060809)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mALTER TABLE "users" ADD "tutor_id" integer[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090704060809')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("pages")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("tutors")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_users_on_token')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_users_on_email')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_users_on_id_and_token')[0m
+
+
+Processing TutorsController#create (for 127.0.0.1 at 2009-07-04 18:54:15) [POST]
+  Parameters: {"tutor"=>{"textbook_experience"=>"", "course_experience"=>"", "qualifications"=>"", "national_knowledge"=>"", "flavour"=>"original", "sex"=>"m", "given_name"=>"Wood", "family_name"=>"Iain", "given_name_first"=>"0", "age"=>"50", "experience"=>""}, "commit"=>"Save", "authenticity_token"=>"Wf8Ii/DuzQ1LqOL+W1w0jjNU/hf7lThu+r8momIW5yo="}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mTutor Create (0.5ms)[0m   [0;1mINSERT INTO "tutors" ("textbook_experience", "updated_at", "photo_file_name", "photo_file_size", "course_experience", "qualifications", "photo_updated_at", "national_knowledge", "sex", "flavour", "given_name", "family_name", "photo_content_type", "phone", "given_name_first", "age", "experience", "created_at") VALUES('', '2009-07-04 11:54:15', NULL, NULL, '', '', NULL, '', 'm', 'original', 'Wood', 'Iain', NULL, NULL, 'f', 50, '', '2009-07-04 11:54:15')[0m
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/tutors/2
+Completed in 25ms (DB: 1) | 302 Found [http://localhost/tutors]
+
+
+Processing TutorsController#show (for 127.0.0.1 at 2009-07-04 18:54:15) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mTutor Load (0.5ms)[0m   [0mSELECT * FROM "tutors" WHERE ("tutors"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering tutors/show
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 22ms (View: 12, DB: 1) | 200 OK [http://localhost/tutors/2]
+
+
+Processing TutorsController#edit (for 127.0.0.1 at 2009-07-04 18:55:04) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mTutor Load (0.5ms)[0m   [0mSELECT * FROM "tutors" WHERE ("tutors"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering tutors/edit
+Rendered tutors/_tutor_form (10.0ms)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 29ms (View: 19, DB: 1) | 200 OK [http://localhost/tutors/edit/2]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-04 18:55:04) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TutorsController#update (for 127.0.0.1 at 2009-07-04 18:55:15) [PUT]
+  Parameters: {"tutor"=>{"textbook_experience"=>"", "course_experience"=>"", "qualifications"=>"hello", "national_knowledge"=>"", "flavour"=>"original", "sex"=>"m", "given_name"=>"Wood", "family_name"=>"Iain", "given_name_first"=>"0", "age"=>"50", "experience"=>""}, "commit"=>"Save", "authenticity_token"=>"Wf8Ii/DuzQ1LqOL+W1w0jjNU/hf7lThu+r8momIW5yo=", "id"=>"2"}
+  [4;35;1mTutor Load (0.5ms)[0m   [0mSELECT * FROM "tutors" WHERE ("tutors"."id" = 2) [0m
+  [4;36;1mTutor Update (0.4ms)[0m   [0;1mUPDATE "tutors" SET "updated_at" = '2009-07-04 11:55:15', "qualifications" = 'hello' WHERE "id" = 2[0m
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/tutors/2
+Completed in 17ms (DB: 1) | 302 Found [http://localhost/tutors/2]
+
+
+Processing TutorsController#show (for 127.0.0.1 at 2009-07-04 18:55:15) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mTutor Load (0.5ms)[0m   [0mSELECT * FROM "tutors" WHERE ("tutors"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering tutors/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 24ms (View: 14, DB: 1) | 200 OK [http://localhost/tutors/2]
+
+
+Processing TutorsController#edit (for 127.0.0.1 at 2009-07-04 18:55:25) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mTutor Load (0.5ms)[0m   [0mSELECT * FROM "tutors" WHERE ("tutors"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering tutors/edit
+Rendered tutors/_tutor_form (9.7ms)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 108ms (View: 98, DB: 1) | 200 OK [http://localhost/tutors/edit/2]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-04 18:55:26) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Clearance::UsersController#index (for 127.0.0.1 at 2009-07-04 18:56:02) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clearance/users"}
+
+ActionController::UnknownAction (No action responded to index. Actions: create and new):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TutorsController#update (for 127.0.0.1 at 2009-07-04 19:08:26) [PUT]
+  Parameters: {"tutor"=>{"textbook_experience"=>"", "course_experience"=>"", "qualifications"=>"hello", "national_knowledge"=>"", "flavour"=>"original", "sex"=>"m", "given_name"=>"Wood", "family_name"=>"Iain", "given_name_first"=>"0", "age"=>"50", "experience"=>""}, "commit"=>"Save", "authenticity_token"=>"Wf8Ii/DuzQ1LqOL+W1w0jjNU/hf7lThu+r8momIW5yo=", "id"=>"2"}
+  [4;35;1mTutor Load (0.5ms)[0m   [0mSELECT * FROM "tutors" WHERE ("tutors"."id" = 2) [0m
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/tutors/2
+Completed in 15ms (DB: 1) | 302 Found [http://localhost/tutors/2]
+
+
+Processing TutorsController#show (for 127.0.0.1 at 2009-07-04 19:08:26) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mTutor Load (0.5ms)[0m   [0;1mSELECT * FROM "tutors" WHERE ("tutors"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering tutors/show
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 27ms (View: 16, DB: 1) | 200 OK [http://localhost/tutors/2]
+
+
+Processing TutorsController#update (for 127.0.0.1 at 2009-07-04 19:09:00) [PUT]
+  Parameters: {"tutor"=>{"textbook_experience"=>"", "course_experience"=>"", "qualifications"=>"bye", "national_knowledge"=>"", "flavour"=>"original", "sex"=>"m", "given_name"=>"Wood", "family_name"=>"Iain", "given_name_first"=>"0", "age"=>"50", "experience"=>""}, "commit"=>"Save", "authenticity_token"=>"Wf8Ii/DuzQ1LqOL+W1w0jjNU/hf7lThu+r8momIW5yo=", "id"=>"2"}
+  [4;36;1mTutor Load (0.5ms)[0m   [0;1mSELECT * FROM "tutors" WHERE ("tutors"."id" = 2) [0m
+  [4;35;1mTutor Update (0.4ms)[0m   [0mUPDATE "tutors" SET "updated_at" = '2009-07-04 12:09:00', "qualifications" = 'bye' WHERE "id" = 2[0m
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/tutors/2
+Completed in 18ms (DB: 1) | 302 Found [http://localhost/tutors/2]
+
+
+Processing TutorsController#show (for 127.0.0.1 at 2009-07-04 19:09:00) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mTutor Load (0.5ms)[0m   [0;1mSELECT * FROM "tutors" WHERE ("tutors"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering tutors/show
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 26ms (View: 15, DB: 2) | 200 OK [http://localhost/tutors/2]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-07-05 15:57:54) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPage Load (30.9ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Rendering template within layouts/application
+Rendering pages/index
+  [4;35;1mUser Load (10.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 465ms (View: 282, DB: 41) | 200 OK [http://localhost/]
+
+
+Processing Clearance::UsersController#index (for 127.0.0.1 at 2009-07-05 15:57:59) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clearance/users"}
+
+ActionController::UnknownAction (No action responded to index. Actions: create and new):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Clearance::UsersController#index (for 127.0.0.1 at 2009-07-05 16:02:38) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clearance/users"}
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 1172ms (View: 21, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing Clearance::UsersController#index (for 127.0.0.1 at 2009-07-05 16:06:57) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clearance/users"}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+
+ActionView::TemplateError (undefined method `detail_id' for #<User:0x24903ac>) on line #15 of vendor/gems/thoughtbot-clearance-0.6.7/app/views/users/index.html.erb:
+12:   <tr>
+13:     <td><%=h user.email %></td>
+14: 		<td><%=h user.email_confirmed %></td>
+15: 		<td><%=h user.detail_id %></td>
+16:     <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+17:   </tr>
+18: <% end %>
+
+    vendor/gems/thoughtbot-clearance-0.6.7/app/views/users/index.html.erb:15
+    vendor/gems/thoughtbot-clearance-0.6.7/app/views/users/index.html.erb:11:in `each'
+    vendor/gems/thoughtbot-clearance-0.6.7/app/views/users/index.html.erb:11
+    vendor/gems/thoughtbot-clearance-0.6.7/app/controllers/clearance/users_controller.rb:9:in `index'
+
+Rendered rescues/_trace (46.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Clearance::UsersController#index (for 127.0.0.1 at 2009-07-05 16:07:31) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clearance/users"}
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+
+ActionView::TemplateError (undefined method `detail' for #<User:0x2322ab0>) on line #15 of vendor/gems/thoughtbot-clearance-0.6.7/app/views/users/index.html.erb:
+12:   <tr>
+13:     <td><%=h user.email %></td>
+14: 		<td><%=h user.email_confirmed %></td>
+15: 		<td><%=h user.detail.experience %></td>
+16:     <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+17:   </tr>
+18: <% end %>
+
+    vendor/gems/thoughtbot-clearance-0.6.7/app/views/users/index.html.erb:15
+    vendor/gems/thoughtbot-clearance-0.6.7/app/views/users/index.html.erb:11:in `each'
+    vendor/gems/thoughtbot-clearance-0.6.7/app/views/users/index.html.erb:11
+    vendor/gems/thoughtbot-clearance-0.6.7/app/controllers/clearance/users_controller.rb:9:in `index'
+
+Rendered rescues/_trace (209.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Clearance::UsersController#index (for 127.0.0.1 at 2009-07-05 17:18:36) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clearance/users"}
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+
+ActionView::TemplateError (undefined method `detail' for #<User:0x2477834>) on line #15 of vendor/gems/thoughtbot-clearance-0.6.7/app/views/users/index.html.erb:
+12:   <tr>
+13:     <td><%=h user.email %></td>
+14: 		<td><%=h user.email_confirmed %></td>
+15: 		<td><%=h user.detail.experience %></td>
+16:     <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+17:   </tr>
+18: <% end %>
+
+    vendor/gems/thoughtbot-clearance-0.6.7/app/views/users/index.html.erb:15
+    vendor/gems/thoughtbot-clearance-0.6.7/app/views/users/index.html.erb:11:in `each'
+    vendor/gems/thoughtbot-clearance-0.6.7/app/views/users/index.html.erb:11
+    vendor/gems/thoughtbot-clearance-0.6.7/app/controllers/clearance/users_controller.rb:9:in `index'
+
+Rendered rescues/_trace (46.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-07-05 17:19:17) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.5ms)[0m   [0mSELECT * FROM "pages" [0m
+Rendering template within layouts/application
+Rendering pages/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 14ms (View: 9, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing Clearance::UsersController#index (for 127.0.0.1 at 2009-07-05 17:19:21) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clearance/users"}
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+
+ActionView::TemplateError (undefined method `detail' for #<User:0x22ac838>) on line #15 of vendor/gems/thoughtbot-clearance-0.6.7/app/views/users/index.html.erb:
+12:   <tr>
+13:     <td><%=h user.email %></td>
+14: 		<td><%=h user.email_confirmed %></td>
+15: 		<td><%=h user.detail.experience %></td>
+16:     <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+17:   </tr>
+18: <% end %>
+
+    vendor/gems/thoughtbot-clearance-0.6.7/app/views/users/index.html.erb:15
+    vendor/gems/thoughtbot-clearance-0.6.7/app/views/users/index.html.erb:11:in `each'
+    vendor/gems/thoughtbot-clearance-0.6.7/app/views/users/index.html.erb:11
+    vendor/gems/thoughtbot-clearance-0.6.7/app/controllers/clearance/users_controller.rb:9:in `index'
+
+Rendered rescues/_trace (132.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Clearance::UsersController#index (for 127.0.0.1 at 2009-07-05 17:20:52) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clearance/users"}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+
+ActionView::TemplateError (undefined method `detail' for #<User:0x241ff1c>) on line #15 of vendor/gems/thoughtbot-clearance-0.6.7/app/views/users/index.html.erb:
+12:   <tr>
+13:     <td><%=h user.email %></td>
+14: 		<td><%=h user.email_confirmed %></td>
+15: 		<td><%=h user.detail.experience %></td>
+16:     <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+17:   </tr>
+18: <% end %>
+
+    vendor/gems/thoughtbot-clearance-0.6.7/app/views/users/index.html.erb:15
+    vendor/gems/thoughtbot-clearance-0.6.7/app/views/users/index.html.erb:11:in `each'
+    vendor/gems/thoughtbot-clearance-0.6.7/app/views/users/index.html.erb:11
+    vendor/gems/thoughtbot-clearance-0.6.7/app/controllers/clearance/users_controller.rb:9:in `index'
+
+Rendered rescues/_trace (46.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Clearance::UsersController#index (for 127.0.0.1 at 2009-07-05 17:20:54) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clearance/users"}
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+
+ActionView::TemplateError (undefined method `detail' for #<User:0x22ad418>) on line #15 of vendor/gems/thoughtbot-clearance-0.6.7/app/views/users/index.html.erb:
+12:   <tr>
+13:     <td><%=h user.email %></td>
+14: 		<td><%=h user.email_confirmed %></td>
+15: 		<td><%=h user.detail.experience %></td>
+16:     <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+17:   </tr>
+18: <% end %>
+
+    vendor/gems/thoughtbot-clearance-0.6.7/app/views/users/index.html.erb:15
+    vendor/gems/thoughtbot-clearance-0.6.7/app/views/users/index.html.erb:11:in `each'
+    vendor/gems/thoughtbot-clearance-0.6.7/app/views/users/index.html.erb:11
+    vendor/gems/thoughtbot-clearance-0.6.7/app/controllers/clearance/users_controller.rb:9:in `index'
+
+Rendered rescues/_trace (150.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Clearance::UsersController#index (for 127.0.0.1 at 2009-07-05 17:21:01) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clearance/users"}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+
+ActionView::TemplateError (undefined method `detail' for #<User:0x24160fc>) on line #15 of vendor/gems/thoughtbot-clearance-0.6.7/app/views/users/index.html.erb:
+12:   <tr>
+13:     <td><%=h user.email %></td>
+14: 		<td><%=h user.email_confirmed %></td>
+15: 		<td><%=h user.detail.experience %></td>
+16:     <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+17:   </tr>
+18: <% end %>
+
+    vendor/gems/thoughtbot-clearance-0.6.7/app/views/users/index.html.erb:15
+    vendor/gems/thoughtbot-clearance-0.6.7/app/views/users/index.html.erb:11:in `each'
+    vendor/gems/thoughtbot-clearance-0.6.7/app/views/users/index.html.erb:11
+    vendor/gems/thoughtbot-clearance-0.6.7/app/controllers/clearance/users_controller.rb:9:in `index'
+
+Rendered rescues/_trace (47.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Clearance::UsersController#index (for 127.0.0.1 at 2009-07-05 17:21:10) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clearance/users"}
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 15ms (View: 9, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing Clearance::UsersController#new (for 127.0.0.1 at 2009-07-05 17:21:13) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/users"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Filter chain halted as [:redirect_to_root] rendered_or_redirected.
+Completed in 9ms (DB: 0) | 302 Found [http://localhost/users/new]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-07-05 17:21:13) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPage Load (0.5ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Rendering template within layouts/application
+Rendering pages/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 15ms (View: 10, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing Clearance::UsersController#index (for 127.0.0.1 at 2009-07-05 17:21:21) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clearance/users"}
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 12ms (View: 6, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing Clearance::SessionsController#destroy (for 127.0.0.1 at 2009-07-05 17:21:23) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"clearance/sessions"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Redirected to http://localhost:3000/session/new
+Completed in 17ms (DB: 0) | 302 Found [http://localhost/clearance/sessions/destroy]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-07-05 17:21:23) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing Clearance::UsersController#new (for 127.0.0.1 at 2009-07-05 17:21:26) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (2.0ms)
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing Clearance::UsersController#create (for 127.0.0.1 at 2009-07-05 17:21:39) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "email"=>"iain@soulflyer.co.uk"}, "commit"=>"Sign up", "action"=>"create", "authenticity_token"=>"cGEqFVIIM/GKWwlARtqr4d4eJJj7mDo5HY63rDHwFts=", "controller"=>"clearance/users"}
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'iain@soulflyer.co.uk') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (1.8ms)
+Completed in 89ms (View: 5, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing Clearance::UsersController#create (for 127.0.0.1 at 2009-07-05 17:21:51) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "email"=>"public@soulflyer.co.uk"}, "commit"=>"Sign up", "action"=>"create", "authenticity_token"=>"cGEqFVIIM/GKWwlARtqr4d4eJJj7mDo5HY63rDHwFts=", "controller"=>"clearance/users"}
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'public@soulflyer.co.uk') LIMIT 1[0m
+  [4;35;1mUser Create (0.5ms)[0m   [0mINSERT INTO "users" ("encrypted_password", "salt", "token", "token_expires_at", "tutor_id", "email", "email_confirmed") VALUES('d1af9286079e9c9c5ec203f64e9136d7f2ac23b7', '1a5a1bd006a2bfdaaeb6eacb3d3a7adf00762e31', '2dceade9912124f28844283717e913c7d5e8c1cd', NULL, NULL, 'public@soulflyer.co.uk', 'f')[0m
+Sent mail to public@soulflyer.co.uk
+
+From: donotreply@example.com
+To: public@soulflyer.co.uk
+Subject: Account confirmation
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+
+http://localhost:3000/users/2/confirmation/new?token=2dceade9912124f28844283717e913c7d5e8c1cd
+Redirected to http://localhost:3000/session/new
+Completed in 241ms (DB: 1) | 302 Found [http://localhost/users]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-07-05 17:21:51) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing Clearance::UsersController#new (for 127.0.0.1 at 2009-07-05 17:30:12) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (2.0ms)
+Completed in 12ms (View: 5, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing Clearance::UsersController#create (for 127.0.0.1 at 2009-07-05 17:30:21) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "email"=>"public@soulflyer.co.uk"}, "commit"=>"Sign up", "action"=>"create", "authenticity_token"=>"cGEqFVIIM/GKWwlARtqr4d4eJJj7mDo5HY63rDHwFts=", "controller"=>"clearance/users"}
+  [4;36;1mUser Exists (0.3ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'public@soulflyer.co.uk') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (1.4ms)
+Completed in 93ms (View: 81, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing Clearance::UsersController#create (for 127.0.0.1 at 2009-07-05 17:30:26) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "email"=>"public@soulflyer.co.uk"}, "commit"=>"Sign up", "action"=>"create", "authenticity_token"=>"cGEqFVIIM/GKWwlARtqr4d4eJJj7mDo5HY63rDHwFts=", "controller"=>"clearance/users"}
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'public@soulflyer.co.uk') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (1.3ms)
+Completed in 18ms (View: 4, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing Clearance::UsersController#create (for 127.0.0.1 at 2009-07-05 17:30:43) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "email"=>"iain@railsiain.com"}, "commit"=>"Sign up", "action"=>"create", "authenticity_token"=>"cGEqFVIIM/GKWwlARtqr4d4eJJj7mDo5HY63rDHwFts=", "controller"=>"clearance/users"}
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'iain@railsiain.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.6ms)[0m   [0mINSERT INTO "users" ("encrypted_password", "salt", "token", "token_expires_at", "tutor_id", "email", "email_confirmed") VALUES('17aa34d7151eff0466f33be52d64175cc6bed8a4', '5f498cc5e4d4d0ebd0391efa1f0cc6e79138bace', 'fca19d50963bc49b7e0c20fe440fdeb7e71e01d6', NULL, NULL, 'iain@railsiain.com', 'f')[0m
+Sent mail to iain@railsiain.com
+
+From: donotreply@example.com
+To: iain@railsiain.com
+Subject: Account confirmation
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+
+http://localhost:3000/users/3/confirmation/new?token=fca19d50963bc49b7e0c20fe440fdeb7e71e01d6
+Redirected to http://localhost:3000/session/new
+Completed in 79ms (DB: 1) | 302 Found [http://localhost/users]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-07-05 17:30:43) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing Clearance::ConfirmationsController#new (for 127.0.0.1 at 2009-07-05 17:31:08) [GET]
+  Parameters: {"token"=>"[FILTERED]", "action"=>"new", "controller"=>"clearance/confirmations", "user_id"=>"2"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2' AND "users"."token" = '2dceade9912124f28844283717e913c7d5e8c1cd') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2' AND "users"."token" = '2dceade9912124f28844283717e913c7d5e8c1cd') LIMIT 1[0m
+  [4;35;1mUser Update (0.7ms)[0m   [0mUPDATE "users" SET "email_confirmed" = 't', "token" = NULL WHERE "id" = 2[0m
+Redirected to http://localhost:3000/
+Completed in 16ms (DB: 1) | 302 Found [http://localhost/users/2/confirmation/new?token=2dceade9912124f28844283717e913c7d5e8c1cd]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-07-05 17:31:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPage Load (0.6ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Rendering template within layouts/application
+Rendering pages/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Completed in 17ms (View: 11, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing Clearance::ConfirmationsController#new (for 127.0.0.1 at 2009-07-05 17:31:15) [GET]
+  Parameters: {"token"=>"[FILTERED]", "action"=>"new", "controller"=>"clearance/confirmations", "user_id"=>"3"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3' AND "users"."token" = 'fca19d50963bc49b7e0c20fe440fdeb7e71e01d6') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '3' AND "users"."token" = 'fca19d50963bc49b7e0c20fe440fdeb7e71e01d6') LIMIT 1[0m
+  [4;35;1mUser Update (0.7ms)[0m   [0mUPDATE "users" SET "email_confirmed" = 't', "token" = NULL WHERE "id" = 3[0m
+Redirected to http://localhost:3000/
+Completed in 19ms (DB: 1) | 302 Found [http://localhost/users/3/confirmation/new?token=fca19d50963bc49b7e0c20fe440fdeb7e71e01d6]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-07-05 17:31:15) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPage Load (0.5ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Rendering template within layouts/application
+Rendering pages/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 15ms (View: 9, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing Clearance::UsersController#index (for 127.0.0.1 at 2009-07-05 17:31:19) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clearance/users"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 13ms (View: 6, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing Clearance::UsersController#destroy (for 127.0.0.1 at 2009-07-05 17:31:25) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"cGEqFVIIM/GKWwlARtqr4d4eJJj7mDo5HY63rDHwFts=", "id"=>"1", "controller"=>"clearance/users"}
+
+ActionController::UnknownAction (No action responded to destroy. Actions: create, index, and new):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Clearance::UsersController#index (for 127.0.0.1 at 2009-07-07 14:28:55) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clearance/users"}
+  [4;36;1mUser Load (10.1ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mUser Load (17.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 158ms (View: 99, DB: 28) | 200 OK [http://localhost/users]
+
+
+Processing Clearance::UsersController#index (for 127.0.0.1 at 2009-07-07 14:29:53) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clearance/users"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 58ms (View: 52, DB: 2) | 200 OK [http://localhost/users]
+
+
+Processing Clearance::UsersController#index (for 127.0.0.1 at 2009-07-07 14:30:05) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clearance/users"}
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.experience) on line #15 of vendor/gems/thoughtbot-clearance-0.6.7/app/views/users/index.html.erb:
+12:   <tr>
+13:     <td><%=h user.email %></td>
+14: 		<td><%=h user.email_confirmed %></td>
+15: 		<td><%=h user.tutor.experience %></td>
+16:     <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+17:   </tr>
+18: <% end %>
+
+    vendor/gems/thoughtbot-clearance-0.6.7/app/views/users/index.html.erb:15
+    vendor/gems/thoughtbot-clearance-0.6.7/app/views/users/index.html.erb:11:in `each'
+    vendor/gems/thoughtbot-clearance-0.6.7/app/views/users/index.html.erb:11
+    vendor/gems/thoughtbot-clearance-0.6.7/app/controllers/clearance/users_controller.rb:9:in `index'
+
+Rendered rescues/_trace (74.8ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Clearance::UsersController#index (for 127.0.0.1 at 2009-07-07 14:36:04) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clearance/users"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.experience) on line #15 of vendor/gems/thoughtbot-clearance-0.6.7/app/views/users/index.html.erb:
+12:   <tr>
+13:     <td><%=h user.email %></td>
+14: 		<td><%=h user.email_confirmed %></td>
+15: 		<td><%=h user.tutor.experience %></td>
+16:     <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+17:   </tr>
+18: <% end %>
+
+    vendor/gems/thoughtbot-clearance-0.6.7/app/views/users/index.html.erb:15
+    vendor/gems/thoughtbot-clearance-0.6.7/app/views/users/index.html.erb:11:in `each'
+    vendor/gems/thoughtbot-clearance-0.6.7/app/views/users/index.html.erb:11
+    vendor/gems/thoughtbot-clearance-0.6.7/app/controllers/clearance/users_controller.rb:9:in `index'
+
+Rendered rescues/_trace (49.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Clearance::UsersController#index (for 127.0.0.1 at 2009-07-07 14:36:40) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clearance/users"}
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 19ms (View: 13, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing Clearance::UsersController#destroy (for 127.0.0.1 at 2009-07-07 14:36:48) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"cGEqFVIIM/GKWwlARtqr4d4eJJj7mDo5HY63rDHwFts=", "id"=>"1", "controller"=>"clearance/users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Destroy (0.4ms)[0m   [0mDELETE FROM "users" WHERE "id" = 1[0m
+Redirected to http://localhost:3000/users
+Completed in 12ms (DB: 1) | 302 Found [http://localhost/users/1]
+
+
+Processing Clearance::UsersController#index (for 127.0.0.1 at 2009-07-07 14:36:48) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clearance/users"}
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 16ms (View: 10, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing Clearance::UsersController#destroy (for 127.0.0.1 at 2009-07-07 14:36:50) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"cGEqFVIIM/GKWwlARtqr4d4eJJj7mDo5HY63rDHwFts=", "id"=>"2", "controller"=>"clearance/users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mUser Destroy (0.5ms)[0m   [0mDELETE FROM "users" WHERE "id" = 2[0m
+Redirected to http://localhost:3000/users
+Completed in 11ms (DB: 1) | 302 Found [http://localhost/users/2]
+
+
+Processing Clearance::UsersController#index (for 127.0.0.1 at 2009-07-07 14:36:50) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clearance/users"}
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 16ms (View: 9, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing Clearance::UsersController#index (for 127.0.0.1 at 2009-07-07 14:37:01) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clearance/users"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.experience) on line #15 of vendor/gems/thoughtbot-clearance-0.6.7/app/views/users/index.html.erb:
+12:   <tr>
+13:     <td><%=h user.email %></td>
+14: 		<td><%=h user.email_confirmed %></td>
+15: 		<td><%=h user.tutor.experience %></td>
+16:     <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+17:   </tr>
+18: <% end %>
+
+    vendor/gems/thoughtbot-clearance-0.6.7/app/views/users/index.html.erb:15
+    vendor/gems/thoughtbot-clearance-0.6.7/app/views/users/index.html.erb:11:in `each'
+    vendor/gems/thoughtbot-clearance-0.6.7/app/views/users/index.html.erb:11
+    vendor/gems/thoughtbot-clearance-0.6.7/app/controllers/clearance/users_controller.rb:9:in `index'
+
+Rendered rescues/_trace (50.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-07-07 16:01:03) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (1.1ms)[0m   [0mSELECT * FROM "pages" [0m
+Rendering template within layouts/application
+Rendering pages/index
+  [4;36;1mUser Load (10.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 50ms (View: 19, DB: 12) | 200 OK [http://localhost/]
+
+
+Processing TutorsController#index (for 127.0.0.1 at 2009-07-07 16:01:12) [GET]
+  [4;35;1mTutor Load (1.1ms)[0m   [0mSELECT * FROM "tutors" [0m
+Rendering template within layouts/application
+Rendering tutors/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 48ms (View: 29, DB: 1) | 200 OK [http://localhost/tutors]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" [0m
+  [4;36;1mUser Exists (0.3ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" IS NULL) LIMIT 1[0m
+  [4;35;1mUser Exists (13.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'public@soulflyer.co.uk') LIMIT 1[0m
+
+
+Processing Clearance::UsersController#index (for 127.0.0.1 at 2009-07-07 16:07:19) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clearance/users"}
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 75ms (View: 68, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mUser Exists (0.3ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'public@soulflyer.co.uk') LIMIT 1[0m
+  [4;35;1mUser Exists (0.3ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'public@soulflyer.co.uk') LIMIT 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'iain@railsiain.com' AND "users".id <> 3) LIMIT 1[0m
+  [4;35;1mTutor Create (0.6ms)[0m   [0mINSERT INTO "tutors" ("textbook_experience", "updated_at", "photo_file_name", "photo_file_size", "course_experience", "qualifications", "photo_updated_at", "national_knowledge", "sex", "flavour", "given_name", "family_name", "photo_content_type", "phone", "given_name_first", "age", "experience", "created_at") VALUES(NULL, '2009-07-07 09:14:12', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'hello', '2009-07-07 09:14:12')[0m
+[paperclip] Saving attachments.
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "tutor_id" = 3 WHERE "id" = 3[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" [0m
+  [4;36;1mTutor Load (0.8ms)[0m   [0;1mSELECT * FROM "tutors" WHERE ("tutors"."id" = 3) [0m
+
+
+Processing Clearance::UsersController#index (for 127.0.0.1 at 2009-07-07 16:44:07) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clearance/users"}
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mTutor Load (4.0ms)[0m   [0;1mSELECT * FROM "tutors" WHERE ("tutors"."id" = 3) [0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+
+ActionView::TemplateError (undefined local variable or method `action' for #<ActionView::Base:0x2256064>) on line #26 of app/views/layouts/application.html.erb:
+23: 				<% if session[:user_id] %>
+24: 				  <% user=User.find(session[:user_id]) %>
+25: 				  <%= link_to "Logout #{user.email}", :controller => 'clearance/sessions', :action => 'destroy' %>
+26: 				  <%= link_to "Details", :controller => 'tutors', action => 'edit' %>
+27: 				<% else %>
+28: 				  <%= link_to "Login", :controller => 'clearance/sessions', :action => 'new' %>
+29: 				<% end %>
+
+    app/views/layouts/application.html.erb:26
+    vendor/gems/thoughtbot-clearance-0.6.7/app/controllers/clearance/users_controller.rb:9:in `index'
+
+Rendered rescues/_trace (45.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Clearance::UsersController#index (for 127.0.0.1 at 2009-07-07 16:44:44) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clearance/users"}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mTutor Load (0.5ms)[0m   [0mSELECT * FROM "tutors" WHERE ("tutors"."id" = 3) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 22ms (View: 16, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-07 16:48:52) [GET]
+
+ActionController::RoutingError (No route matches "/clearance/tutors/edit" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-07 16:55:16) [GET]
+
+ActionController::RoutingError (No route matches "/clearance/tutors/edit" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Clearance::UsersController#index (for 127.0.0.1 at 2009-07-07 16:55:22) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clearance/users"}
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mTutor Load (0.5ms)[0m   [0;1mSELECT * FROM "tutors" WHERE ("tutors"."id" = 3) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+
+ActionView::TemplateError (edit_tutor_url failed to generate from {:controller=>"tutors", :action=>"edit"} - you may have ambiguous routes, or you may need to supply additional parameters for this route.  content_url has the following required parameters: ["tutors", :id, "edit"] - are they all satisfied?) on line #26 of app/views/layouts/application.html.erb:
+23: 				<% if session[:user_id] %>
+24: 				  <% user=User.find(session[:user_id]) %>
+25: 				  <%= link_to "Logout #{user.email}", :controller => 'clearance/sessions', :action => 'destroy' %>
+26: 				  <%= link_to "Details", edit_tutor_path %>
+27: 				<% else %>
+28: 				  <%= link_to "Login", :controller => 'clearance/sessions', :action => 'new' %>
+29: 				<% end %>
+
+    (eval):16:in `edit_tutor_path'
+    app/views/layouts/application.html.erb:26
+    vendor/gems/thoughtbot-clearance-0.6.7/app/controllers/clearance/users_controller.rb:9:in `index'
+
+Rendered rescues/_trace (52.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Clearance::UsersController#index (for 127.0.0.1 at 2009-07-07 16:55:47) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clearance/users"}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mTutor Load (0.5ms)[0m   [0mSELECT * FROM "tutors" WHERE ("tutors"."id" = 3) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+
+ActionView::TemplateError (tutor_url failed to generate from {:controller=>"tutors", :action=>"show"} - you may have ambiguous routes, or you may need to supply additional parameters for this route.  content_url has the following required parameters: ["tutors", :id] - are they all satisfied?) on line #26 of app/views/layouts/application.html.erb:
+23: 				<% if session[:user_id] %>
+24: 				  <% user=User.find(session[:user_id]) %>
+25: 				  <%= link_to "Logout #{user.email}", :controller => 'clearance/sessions', :action => 'destroy' %>
+26: 				  <%= link_to "Details", tutor_path %>
+27: 				<% else %>
+28: 				  <%= link_to "Login", :controller => 'clearance/sessions', :action => 'new' %>
+29: 				<% end %>
+
+    (eval):16:in `tutor_path'
+    app/views/layouts/application.html.erb:26
+    vendor/gems/thoughtbot-clearance-0.6.7/app/controllers/clearance/users_controller.rb:9:in `index'
+
+Rendered rescues/_trace (162.7ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Clearance::UsersController#index (for 127.0.0.1 at 2009-07-07 16:56:20) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clearance/users"}
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mTutor Load (0.5ms)[0m   [0;1mSELECT * FROM "tutors" WHERE ("tutors"."id" = 3) [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 24ms (View: 17, DB: 2) | 200 OK [http://localhost/users]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-07 16:56:32) [GET]
+
+ActionController::RoutingError (No route matches "/clearance/tutors/edit" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-07 16:57:02) [GET]
+
+ActionController::RoutingError (No route matches "/tutor/3/edit" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TutorsController#edit (for 127.0.0.1 at 2009-07-07 16:57:51) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mTutor Load (0.4ms)[0m   [0;1mSELECT * FROM "tutors" WHERE ("tutors"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering tutors/edit
+Rendered tutors/_tutor_form (27.8ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 47ms (View: 37, DB: 1) | 200 OK [http://localhost/tutors/3/edit]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-07 16:57:51) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Clearance::UsersController#index (for 127.0.0.1 at 2009-07-07 16:59:07) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clearance/users"}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mTutor Load (0.5ms)[0m   [0mSELECT * FROM "tutors" WHERE ("tutors"."id" = 3) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 24ms (View: 17, DB: 2) | 200 OK [http://localhost/users]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-07 16:59:09) [GET]
+
+ActionController::RoutingError (No route matches "/clearance/tutors/edit/3" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Clearance::UsersController#index (for 127.0.0.1 at 2009-07-07 17:00:48) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clearance/users"}
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mTutor Load (0.5ms)[0m   [0;1mSELECT * FROM "tutors" WHERE ("tutors"."id" = 3) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 23ms (View: 16, DB: 2) | 200 OK [http://localhost/users]
+
+
+Processing Clearance::UsersController#index (for 127.0.0.1 at 2009-07-07 17:01:13) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clearance/users"}
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mTutor Load (0.5ms)[0m   [0mSELECT * FROM "tutors" WHERE ("tutors"."id" = 3) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 103ms (View: 18, DB: 2) | 200 OK [http://localhost/users]
+
+
+Processing TutorsController#edit (for 127.0.0.1 at 2009-07-07 17:01:17) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mTutor Load (0.6ms)[0m   [0mSELECT * FROM "tutors" WHERE ("tutors"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering tutors/edit
+Rendered tutors/_tutor_form (10.6ms)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 33ms (View: 20, DB: 1) | 200 OK [http://localhost/tutors/3/edit]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-07 17:01:17) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Clearance::UsersController#index (for 127.0.0.1 at 2009-07-07 17:02:58) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clearance/users"}
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mTutor Load (0.5ms)[0m   [0;1mSELECT * FROM "tutors" WHERE ("tutors"."id" = 3) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 23ms (View: 17, DB: 2) | 200 OK [http://localhost/users]
+
+
+Processing TutorsController#edit (for 127.0.0.1 at 2009-07-07 17:03:02) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mTutor Load (0.5ms)[0m   [0;1mSELECT * FROM "tutors" WHERE ("tutors"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering tutors/edit
+Rendered tutors/_tutor_form (9.5ms)
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 28ms (View: 19, DB: 1) | 200 OK [http://localhost/tutors/3/edit]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-07 17:03:02) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TutorsController#edit (for 127.0.0.1 at 2009-07-07 17:04:02) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mTutor Load (0.5ms)[0m   [0;1mSELECT * FROM "tutors" WHERE ("tutors"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering tutors/edit
+Rendered tutors/_tutor_form (9.7ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 32ms (View: 23, DB: 1) | 200 OK [http://localhost/tutors/3/edit]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-07 17:04:02) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TutorsController#edit (for 127.0.0.1 at 2009-07-07 17:04:40) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mTutor Load (0.5ms)[0m   [0;1mSELECT * FROM "tutors" WHERE ("tutors"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering tutors/edit
+Rendered tutors/_tutor_form (9.7ms)
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 33ms (View: 24, DB: 1) | 200 OK [http://localhost/tutors/3/edit]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-07 17:04:40) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TutorsController#edit (for 127.0.0.1 at 2009-07-07 17:05:46) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mTutor Load (0.4ms)[0m   [0;1mSELECT * FROM "tutors" WHERE ("tutors"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering tutors/edit
+Rendered tutors/_tutor_form (9.6ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 33ms (View: 23, DB: 1) | 200 OK [http://localhost/tutors/3/edit]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-07 17:05:46) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TutorsController#edit (for 127.0.0.1 at 2009-07-07 17:06:23) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mTutor Load (0.4ms)[0m   [0;1mSELECT * FROM "tutors" WHERE ("tutors"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering tutors/edit
+Rendered tutors/_tutor_form (9.5ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 33ms (View: 23, DB: 1) | 200 OK [http://localhost/tutors/3/edit]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-07 17:06:23) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Clearance::SessionsController#destroy (for 127.0.0.1 at 2009-07-07 17:09:19) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"clearance/sessions"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Redirected to http://localhost:3000/session/new
+Completed in 13ms (DB: 0) | 302 Found [http://localhost/clearance/sessions/destroy]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-07-07 17:09:19) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing TutorsController#edit (for 127.0.0.1 at 2009-07-07 17:09:25) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mTutor Load (0.5ms)[0m   [0mSELECT * FROM "tutors" WHERE ("tutors"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering tutors/edit
+Rendered tutors/_tutor_form (10.6ms)
+Completed in 22ms (View: 12, DB: 0) | 200 OK [http://localhost/tutors/3/edit]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-07 17:09:25) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TutorsController#edit (for 127.0.0.1 at 2009-07-07 17:13:47) [GET]
+  Parameters: {"id"=>"3"}
+Redirected to http://localhost:3000/clearance/sessions/new
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/tutors/3/edit]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-07-07 17:13:47) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/clearance/sessions/new]
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2009-07-07 18:31:53) [POST]
+  Parameters: {"commit"=>"Sign in", "action"=>"create", "authenticity_token"=>"M8i0NY6lpw1IRDuVkyLvHIl92C640psmU00ktDzXgLA=", "session"=>{"password"=>"[FILTERED]", "remember_me"=>"0", "email"=>"public@soulflyer.co.uk"}, "controller"=>"clearance/sessions"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'public@soulflyer.co.uk') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering sessions/new (unauthorized)
+Completed in 12ms (View: 2, DB: 0) | 401 Unauthorized [http://localhost/session]
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2009-07-07 18:32:07) [POST]
+  Parameters: {"commit"=>"Sign in", "action"=>"create", "authenticity_token"=>"M8i0NY6lpw1IRDuVkyLvHIl92C640psmU00ktDzXgLA=", "session"=>{"password"=>"[FILTERED]", "remember_me"=>"0", "email"=>"iain@railsiain.com"}, "controller"=>"clearance/sessions"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'iain@railsiain.com') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 47ms (DB: 0) | 302 Found [http://localhost/session]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-07-07 18:32:07) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPage Load (0.7ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Rendering template within layouts/application
+Rendering pages/index
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 20ms (View: 13, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing TutorsController#index (for 127.0.0.1 at 2009-07-07 18:32:10) [GET]
+  [4;36;1mTutor Load (1.3ms)[0m   [0;1mSELECT * FROM "tutors" [0m
+Rendering template within layouts/application
+Rendering tutors/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 24ms (View: 16, DB: 2) | 200 OK [http://localhost/tutors]
+
+
+Processing TutorsController#edit (for 127.0.0.1 at 2009-07-07 18:32:13) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mTutor Load (0.5ms)[0m   [0;1mSELECT * FROM "tutors" WHERE ("tutors"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering tutors/edit
+Rendered tutors/_tutor_form (9.9ms)
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 29ms (View: 19, DB: 1) | 200 OK [http://localhost/tutors/3/edit]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-07 18:32:13) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TutorsController#new (for 127.0.0.1 at 2009-07-07 18:32:35) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mTutor Load (0.6ms)[0m   [0mSELECT * FROM "tutors" WHERE ("tutors"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering tutors/new
+Rendered tutors/_tutor_form (13.0ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 37ms (View: 18, DB: 1) | 200 OK [http://localhost/tutors/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-07 18:32:35) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TutorsController#update (for 127.0.0.1 at 2009-07-07 18:32:51) [PUT]
+  Parameters: {"tutor"=>{"textbook_experience"=>"", "course_experience"=>"", "qualifications"=>"hello", "national_knowledge"=>"", "flavour"=>"", "sex"=>"", "given_name"=>"", "family_name"=>"", "given_name_first"=>"0", "age"=>"", "experience"=>"hello"}, "commit"=>"Save", "authenticity_token"=>"M8i0NY6lpw1IRDuVkyLvHIl92C640psmU00ktDzXgLA=", "id"=>"3"}
+  [4;35;1mTutor Load (0.5ms)[0m   [0mSELECT * FROM "tutors" WHERE ("tutors"."id" = 3) [0m
+  [4;36;1mTutor Update (0.5ms)[0m   [0;1mUPDATE "tutors" SET "given_name" = '', "family_name" = '', "given_name_first" = 'f', "national_knowledge" = '', "course_experience" = '', "flavour" = '', "sex" = '', "updated_at" = '2009-07-07 11:32:51', "qualifications" = 'hello', "textbook_experience" = '' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/tutors/3
+Completed in 33ms (DB: 1) | 302 Found [http://localhost/tutors/3]
+
+
+Processing TutorsController#show (for 127.0.0.1 at 2009-07-07 18:32:51) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mTutor Load (0.5ms)[0m   [0mSELECT * FROM "tutors" WHERE ("tutors"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering tutors/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 24ms (View: 14, DB: 1) | 200 OK [http://localhost/tutors/3]
+
+
+Processing TutorsController#edit (for 127.0.0.1 at 2009-07-07 18:32:55) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mTutor Load (0.5ms)[0m   [0mSELECT * FROM "tutors" WHERE ("tutors"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering tutors/edit
+Rendered tutors/_tutor_form (9.5ms)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 28ms (View: 19, DB: 1) | 200 OK [http://localhost/tutors/3/edit]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-07 18:32:55) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TutorsController#new (for 127.0.0.1 at 2009-07-07 18:33:10) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mTutor Load (0.5ms)[0m   [0;1mSELECT * FROM "tutors" WHERE ("tutors"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering tutors/new
+Rendered tutors/_tutor_form (10.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 29ms (View: 14, DB: 1) | 200 OK [http://localhost/tutors/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-07 18:33:10) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TutorsController#index (for 127.0.0.1 at 2009-07-07 19:16:59) [GET]
+  [4;36;1mTutor Load (1.8ms)[0m   [0;1mSELECT * FROM "tutors" [0m
+Rendering template within layouts/application
+Rendering tutors/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 30ms (View: 20, DB: 2) | 200 OK [http://localhost/tutors]
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePages (20090703013813)
+Migrating to ClearanceCreateUsers (20090703013817)
+Migrating to CreateTutors (20090703022556)
+Migrating to AddAttachmentsPhotoToTutor (20090703113902)
+Migrating to AddTutorToUser (20090704060809)
+Migrating to AddRoleToUser (20090707122921)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (84.2ms)[0m   [0mALTER TABLE "users" ADD "role" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090707122921')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("pages")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("tutors")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_token')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_email')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_users_on_id_and_token')[0m
+
+
+Processing TutorsController#index (for 127.0.0.1 at 2009-07-08 10:27:32) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+
+ActionController::Forbidden (must be admin):
+  app/controllers/tutors_controller.rb:99:in `must_be_admin'
+
+Rendered rescues/_trace (43.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (forbidden)
+
+
+Processing TutorsController#index (for 127.0.0.1 at 2009-07-08 10:28:35) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mTutor Load (0.9ms)[0m   [0;1mSELECT * FROM "tutors" [0m
+Rendering template within layouts/application
+Rendering tutors/index
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 24ms (View: 9, DB: 1) | 200 OK [http://localhost/tutors]
+
+
+Processing TutorsController#index (for 127.0.0.1 at 2009-07-08 10:32:01) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Redirected to http://localhost:3000/
+Filter chain halted as [:must_be_admin] rendered_or_redirected.
+Completed in 9ms (DB: 0) | 302 Found [http://localhost/tutors]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-07-08 10:32:01) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.5ms)[0m   [0mSELECT * FROM "pages" [0m
+Rendering template within layouts/application
+Rendering pages/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 16ms (View: 10, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PagesController#new (for 127.0.0.1 at 2009-07-08 17:52:29) [GET]
+Rendering template within layouts/application
+Rendering pages/new
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 54ms (View: 45, DB: 0) | 200 OK [http://localhost/pages/new]
+
+
+Processing PagesController#create (for 127.0.0.1 at 2009-07-08 17:53:03) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"M8i0NY6lpw1IRDuVkyLvHIl92C640psmU00ktDzXgLA=", "page"=>{"permalink"=>"home", "name"=>"Home", "content"=>"This is the default page"}}
+  [4;36;1mPage Create (0.7ms)[0m   [0;1mINSERT INTO "pages" ("name", "permalink", "updated_at", "content", "created_at") VALUES('Home', 'home', '2009-07-08 10:53:03', 'This is the default page', '2009-07-08 10:53:03')[0m
+Redirected to http://localhost:3000/pages/1
+Completed in 11ms (DB: 1) | 302 Found [http://localhost/pages]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-07-08 17:53:03) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 311ms (View: 304, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-08 17:53:11) [GET]
+
+ActionController::RoutingError (No route matches "/home" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-07-08 17:53:30) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.7ms)[0m   [0mSELECT * FROM "pages" [0m
+Rendering template within layouts/application
+Rendering pages/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 18ms (View: 12, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-08 17:54:30) [GET]
+
+ActionController::RoutingError (No route matches "/root" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-07-08 17:54:39) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.7ms)[0m   [0mSELECT * FROM "pages" [0m
+Rendering template within layouts/application
+Rendering pages/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 18ms (View: 12, DB: 1) | 200 OK [http://localhost/]
+/!\ FAILSAFE /!\  Wed Jul 08 17:55:24 +0700 2009
+  Status: 500 Internal Server Error
+  undefined local variable or method `show' for main:Object
+    /Users/iain/code/ConnectTeach/config/routes.rb:4
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:226:in `draw'
+    /Users/iain/code/ConnectTeach/config/routes.rb:1
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:145:in `load_without_new_constant_marking'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:145:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:145:in `load'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:286:in `load_routes_without_clearance!'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:286:in `each'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:286:in `load_routes_without_clearance!'
+    /Users/iain/code/ConnectTeach/vendor/gems/thoughtbot-clearance-0.6.7/lib/clearance/extensions/routes.rb:8:in `load_routes!'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:266:in `load!'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:281:in `reload'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:59:in `reload_application'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:8:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+    /Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+    /Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+    /Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-08 17:55:27) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-08 17:55:31) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+/!\ FAILSAFE /!\  Wed Jul 08 17:55:52 +0700 2009
+  Status: 500 Internal Server Error
+  undefined local variable or method `show' for main:Object
+    /Users/iain/code/ConnectTeach/config/routes.rb:4
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:226:in `draw'
+    /Users/iain/code/ConnectTeach/config/routes.rb:1
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:145:in `load_without_new_constant_marking'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:145:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:145:in `load'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:286:in `load_routes_without_clearance!'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:286:in `each'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:286:in `load_routes_without_clearance!'
+    /Users/iain/code/ConnectTeach/vendor/gems/thoughtbot-clearance-0.6.7/lib/clearance/extensions/routes.rb:8:in `load_routes!'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:266:in `load!'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:281:in `reload'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:59:in `reload_application'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:8:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+    /Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+    /Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+    /Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-08 17:55:54) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-07-08 17:56:10) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 17ms (View: 10, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-07-08 17:59:22) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 19ms (View: 12, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-07-08 18:00:10) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 21ms (View: 14, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-07-08 18:04:43) [GET]
+  [4;35;1mPage Load (0.7ms)[0m   [0mSELECT * FROM "pages" [0m
+Rendering template within layouts/application
+Rendering pages/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 91ms (View: 84, DB: 1) | 200 OK [http://localhost/pages]
+
+
+Processing PagesController#edit (for 127.0.0.1 at 2009-07-08 18:04:45) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/edit
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 29ms (View: 23, DB: 1) | 200 OK [http://localhost/pages/1/edit]
+
+
+Processing PagesController#update (for 127.0.0.1 at 2009-07-08 18:11:02) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"M8i0NY6lpw1IRDuVkyLvHIl92C640psmU00ktDzXgLA=", "id"=>"1", "page"=>{"permalink"=>"home", "name"=>"Home", "content"=>"This is the default page"}}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Redirected to http://localhost:3000/pages/1
+Completed in 9ms (DB: 0) | 302 Found [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-07-08 18:11:02) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+
+ActionView::TemplateError (uninitialized constant ActionView::Helpers::TextHelper::RedCloth) on line #3 of app/views/pages/show.html.erb:
+1: <h1><%=h @page.name %></h1>
+2: 
+3: <%=textilize @page.content %>
+
+    app/views/pages/show.html.erb:3
+    app/controllers/pages_controller.rb:18:in `show'
+
+Rendered rescues/_trace (51.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-07-08 18:11:30) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+
+ActionView::TemplateError (uninitialized constant ActionView::Helpers::TextHelper::RedCloth) on line #3 of app/views/pages/show.html.erb:
+1: <h1><%=h @page.name %></h1>
+2: 
+3: <%= textilize @page.content %>
+
+    app/views/pages/show.html.erb:3
+    app/controllers/pages_controller.rb:18:in `show'
+
+Rendered rescues/_trace (51.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-07-08 18:18:44) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+
+ActionView::TemplateError (uninitialized constant ActionView::Helpers::TextHelper::RedCloth) on line #3 of app/views/pages/show.html.erb:
+1: <h1><%=h @page.name %></h1>
+2: 
+3: <%= textilize @page.content %>
+
+    app/views/pages/show.html.erb:3
+    app/controllers/pages_controller.rb:18:in `show'
+
+Rendered rescues/_trace (49.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-07-08 18:19:57) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 122ms (View: 115, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#edit (for 127.0.0.1 at 2009-07-08 18:20:13) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/edit
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 22ms (View: 15, DB: 1) | 200 OK [http://localhost/pages/1/edit]
+
+
+Processing PagesController#update (for 127.0.0.1 at 2009-07-08 18:20:26) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"M8i0NY6lpw1IRDuVkyLvHIl92C640psmU00ktDzXgLA=", "id"=>"1", "page"=>{"permalink"=>"home", "name"=>"Home", "content"=>"This is the *default* page"}}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+  [4;35;1mPage Update (0.5ms)[0m   [0mUPDATE "pages" SET "content" = 'This is the *default* page', "updated_at" = '2009-07-08 11:20:26' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/pages/1
+Completed in 13ms (DB: 1) | 302 Found [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-07-08 18:20:26) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 20ms (View: 13, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-07-08 18:21:44) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 19ms (View: 11, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PagesController#update (for 127.0.0.1 at 2009-07-08 18:31:42) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"M8i0NY6lpw1IRDuVkyLvHIl92C640psmU00ktDzXgLA=", "id"=>"1", "page"=>{"permalink"=>"home", "name"=>"Home", "content"=>"This is the *default* page\r\n\r\nFirst create a login\r\n\r\nThen :\r\n\r\n\"Register as a tutor\":http://connectteach.com/tutor/new\r\n\r\nor\r\n\r\n\"Look for a tutor\":http://connectteach.com/client/new"}}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+  [4;35;1mPage Update (0.4ms)[0m   [0mUPDATE "pages" SET "content" = 'This is the *default* page
+
+First create a login
+
+Then :
+
+"Register as a tutor":http://connectteach.com/tutor/new
+
+or
+
+"Look for a tutor":http://connectteach.com/client/new', "updated_at" = '2009-07-08 11:31:42' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/pages/1
+Completed in 13ms (DB: 1) | 302 Found [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-07-08 18:31:42) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 22ms (View: 12, DB: 1) | 200 OK [http://localhost/pages/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-07-08 18:37:31) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+Completed in 377ms (View: 369, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-07-08 18:38:47) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 14ms (View: 11, DB: 0) | 200 OK [http://localhost/clearance/sessions/new]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-07-08 18:39:11) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/clearance/sessions/new]
+
+
+Processing TutorsController#index (for 127.0.0.1 at 2009-07-08 18:39:20) [GET]
+
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  app/controllers/tutors_controller.rb:98:in `must_be_admin'
+
+Rendered rescues/_trace (39.7ms)
+Rendered rescues/_request_and_response (1.7ms)
+Rendering rescues/layout (not_found)
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2009-07-08 18:40:29) [POST]
+  Parameters: {"commit"=>"Sign in", "action"=>"create", "authenticity_token"=>"vTEyMVslel33QMPbL4Sx2FoJDVTnjfLumnTuVtuXrJo=", "session"=>{"password"=>"[FILTERED]", "remember_me"=>"0", "email"=>"iain@railsiain.com"}, "controller"=>"clearance/sessions"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'iain@railsiain.com') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 39ms (DB: 0) | 302 Found [http://localhost/session]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-07-08 18:40:29) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 89ms (View: 82, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing TutorsController#index (for 127.0.0.1 at 2009-07-08 18:40:35) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Redirected to http://localhost:3000/
+Filter chain halted as [:must_be_admin] rendered_or_redirected.
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/tutors]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-07-08 18:40:35) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 20ms (View: 12, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-09 10:42:52) [GET]
+
+ActionController::RoutingError (No route matches "/home" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-09 10:43:23) [GET]
+
+ActionController::RoutingError (No route matches "/home" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-07-09 10:44:26) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.5ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 606ms (View: 208, DB: 1) | 200 OK [http://localhost/home]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-09 10:56:03) [GET]
+
+ActionController::RoutingError (No route matches "/home/edit" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PagesController#edit (for 127.0.0.1 at 2009-07-09 10:56:21) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/edit
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 89ms (View: 16, DB: 1) | 200 OK [http://localhost/pages/1/edit]
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePages (20090703013813)
+Migrating to ClearanceCreateUsers (20090703013817)
+Migrating to CreateTutors (20090703022556)
+Migrating to AddAttachmentsPhotoToTutor (20090703113902)
+Migrating to AddTutorToUser (20090704060809)
+Migrating to AddRoleToUser (20090707122921)
+Migrating to LoadPagesData (20090709035205)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePages (20090703013813)
+Migrating to ClearanceCreateUsers (20090703013817)
+Migrating to CreateTutors (20090703022556)
+Migrating to AddAttachmentsPhotoToTutor (20090703113902)
+Migrating to AddTutorToUser (20090704060809)
+Migrating to AddRoleToUser (20090707122921)
+Migrating to LoadPagesData (20090709035205)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mPage Create (0.5ms)[0m   [0mINSERT INTO "pages" ("name", "permalink", "updated_at", "content", "created_at") VALUES(NULL, 'home', '2009-07-09 03:58:30', 'Go to ConnectTeach/pages/1/edit to edit this page...', '2009-07-09 03:58:30')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090709035205')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("pages")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("tutors")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_token')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_users_on_email')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_info('index_users_on_id_and_token')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to LoadPagesData (20090709035205)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mPage Delete all (0.5ms)[0m   [0mDELETE FROM "pages" WHERE 1=1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20090709035205'[0m
+  [4;35;1mSQL (0.9ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("pages")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("tutors")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_token')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_email')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_users_on_id_and_token')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePages (20090703013813)
+Migrating to ClearanceCreateUsers (20090703013817)
+Migrating to CreateTutors (20090703022556)
+Migrating to AddAttachmentsPhotoToTutor (20090703113902)
+Migrating to AddTutorToUser (20090704060809)
+Migrating to AddRoleToUser (20090707122921)
+Migrating to LoadPagesData (20090709035205)
+  [4;36;1mPage Delete all (0.4ms)[0m   [0;1mDELETE FROM "pages" WHERE 1=1[0m
+  [4;35;1mPage Create (0.2ms)[0m   [0mINSERT INTO "pages" ("name", "permalink", "updated_at", "content", "created_at") VALUES(NULL, 'home', '2009-07-09 04:02:42', 'Go to ConnectTeach/pages/1/edit to edit this page...', '2009-07-09 04:02:42')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090709035205')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("pages")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("tutors")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_token')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_users_on_email')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_users_on_id_and_token')[0m
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-07-09 11:03:19) [GET]
+  [4;36;1mPage Load (0.7ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Rendering template within layouts/application
+Rendering pages/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 23ms (View: 16, DB: 1) | 200 OK [http://localhost/pages/]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-07-09 11:03:22) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 18ms (View: 11, DB: 1) | 200 OK [http://localhost/pages/3]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-07-09 11:03:33) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 18ms (View: 11, DB: 1) | 200 OK [http://localhost/home]
+
+
+Processing Clearance::SessionsController#destroy (for 127.0.0.1 at 2009-07-09 11:06:36) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"clearance/sessions"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Redirected to http://localhost:3000/session/new
+Completed in 13ms (DB: 0) | 302 Found [http://localhost/clearance/sessions/destroy]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-07-09 11:06:36) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 79ms (View: 77, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-07-09 11:06:38) [POST]
+  Parameters: {"permalink"=>"session", "commit"=>"Sign in", "authenticity_token"=>"Nd26lGK1tM7pd63Q0hJXwkJqJ9h1WCAg2NSHSTibd+g=", "session"=>{"password"=>".piper", "remember_me"=>"0", "email"=>"iain@railsiain.com"}}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'session') LIMIT 1[0m
+
+ActiveRecord::RecordNotFound (Page not found):
+  app/controllers/pages_controller.rb:18:in `show'
+
+Rendered rescues/_trace (38.8ms)
+Rendered rescues/_request_and_response (1.7ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-07-09 11:08:28) [POST]
+  Parameters: {"permalink"=>"session", "commit"=>"Sign in", "authenticity_token"=>"Nd26lGK1tM7pd63Q0hJXwkJqJ9h1WCAg2NSHSTibd+g=", "session"=>{"password"=>".piper", "remember_me"=>"0", "email"=>"iain@railsiain.com"}}
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'session') LIMIT 1[0m
+
+ActiveRecord::RecordNotFound (Page not found):
+  app/controllers/pages_controller.rb:18:in `show'
+
+Rendered rescues/_trace (109.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-07-09 11:08:50) [POST]
+  Parameters: {"permalink"=>"session", "commit"=>"Sign in", "authenticity_token"=>"Nd26lGK1tM7pd63Q0hJXwkJqJ9h1WCAg2NSHSTibd+g=", "session"=>{"password"=>".piper", "remember_me"=>"0", "email"=>"iain@railsiain.com"}}
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'session') LIMIT 1[0m
+
+ActiveRecord::RecordNotFound (Page not found):
+  app/controllers/pages_controller.rb:18:in `show'
+
+Rendered rescues/_trace (36.9ms)
+Rendered rescues/_request_and_response (1.7ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-07-09 11:09:57) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/show
+Completed in 30ms (View: 15, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-07-09 11:10:02) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 11ms (View: 9, DB: 0) | 200 OK [http://localhost/clearance/sessions/new]
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2009-07-09 11:10:04) [POST]
+  Parameters: {"commit"=>"Sign in", "action"=>"create", "authenticity_token"=>"Nd26lGK1tM7pd63Q0hJXwkJqJ9h1WCAg2NSHSTibd+g=", "session"=>{"password"=>"[FILTERED]", "remember_me"=>"0", "email"=>"iain@railsiain.com"}, "controller"=>"clearance/sessions"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'iain@railsiain.com') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 13ms (DB: 0) | 302 Found [http://localhost/session]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-07-09 11:10:04) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 30ms (View: 22, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing Clearance::SessionsController#destroy (for 127.0.0.1 at 2009-07-09 11:10:32) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"clearance/sessions"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Redirected to http://localhost:3000/session/new
+Completed in 34ms (DB: 0) | 302 Found [http://localhost/clearance/sessions/destroy]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-07-09 11:10:32) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 16ms (View: 14, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-07-09 11:10:35) [POST]
+  Parameters: {"permalink"=>"session", "commit"=>"Sign in", "authenticity_token"=>"78O2FHH+LhOqCnI4EsoFhuhZPLjuNYoTxIWd6yKNHWU=", "session"=>{"password"=>".piper", "remember_me"=>"0", "email"=>"iain@railsiain.com"}}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'session') LIMIT 1[0m
+
+ActiveRecord::RecordNotFound (Page not found):
+  app/controllers/pages_controller.rb:18:in `show'
+
+Rendered rescues/_trace (41.2ms)
+Rendered rescues/_request_and_response (1.9ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-07-09 11:11:31) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.5ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/show
+Completed in 31ms (View: 15, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-07-09 11:11:32) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 14ms (View: 11, DB: 0) | 200 OK [http://localhost/clearance/sessions/new]
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2009-07-09 11:11:36) [POST]
+  Parameters: {"commit"=>"Sign in", "action"=>"create", "authenticity_token"=>"78O2FHH+LhOqCnI4EsoFhuhZPLjuNYoTxIWd6yKNHWU=", "session"=>{"password"=>"[FILTERED]", "remember_me"=>"0", "email"=>"iain@railsiain.com"}, "controller"=>"clearance/sessions"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'iain@railsiain.com') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 13ms (DB: 0) | 302 Found [http://localhost/session]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-07-09 11:11:36) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 30ms (View: 22, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-07-09 11:11:52) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 19ms (View: 11, DB: 1) | 200 OK [http://localhost/static/home]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-09 11:12:01) [GET]
+
+ActionController::RoutingError (No route matches "/home" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-07-09 11:36:21) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 21ms (View: 12, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-09 11:41:54) [GET]
+
+ActionController::RoutingError (No route matches "/home" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-07-09 11:42:00) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 19ms (View: 11, DB: 1) | 200 OK [http://localhost/static/home]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-09 11:42:04) [GET]
+
+ActionController::RoutingError (No route matches "/static/home/edit" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PagesController#edit (for 127.0.0.1 at 2009-07-09 11:42:23) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPage Load (0.1ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Page with ID=1):
+  app/controllers/pages_controller.rb:46:in `edit'
+
+Rendered rescues/_trace (39.1ms)
+Rendered rescues/_request_and_response (1.7ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PagesController#edit (for 127.0.0.1 at 2009-07-09 11:42:27) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering pages/edit
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 24ms (View: 17, DB: 1) | 200 OK [http://localhost/pages/3/edit]
+
+
+Processing PagesController#edit (for 127.0.0.1 at 2009-07-09 11:45:59) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/edit
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 20ms (View: 13, DB: 1) | 200 OK [http://localhost/static/home/edit]
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to LoadPagesData (20090709035205)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mPage Delete all (0.5ms)[0m   [0mDELETE FROM "pages" WHERE 1=1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20090709035205'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("pages")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("tutors")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_token')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_email')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_users_on_id_and_token')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePages (20090703013813)
+Migrating to ClearanceCreateUsers (20090703013817)
+Migrating to CreateTutors (20090703022556)
+Migrating to AddAttachmentsPhotoToTutor (20090703113902)
+Migrating to AddTutorToUser (20090704060809)
+Migrating to AddRoleToUser (20090707122921)
+Migrating to LoadPagesData (20090709035205)
+  [4;36;1mPage Delete all (0.5ms)[0m   [0;1mDELETE FROM "pages" WHERE 1=1[0m
+  [4;35;1mPage Create (0.2ms)[0m   [0mINSERT INTO "pages" ("name", "permalink", "updated_at", "content", "created_at") VALUES(NULL, 'home', '2009-07-09 04:50:38', 'Go to ConnectTeach/static/home/edit to edit this page...', '2009-07-09 04:50:38')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090709035205')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("pages")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("tutors")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_users_on_token')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_users_on_email')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_users_on_id_and_token')[0m
+
+
+Processing TutorsController#index (for 127.0.0.1 at 2009-07-09 12:05:24) [GET]
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Redirected to http://localhost:3000/
+Filter chain halted as [:must_be_admin] rendered_or_redirected.
+Completed in 11ms (DB: 0) | 302 Found [http://localhost/tutors]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-07-09 12:05:24) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 19ms (View: 11, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing Clearance::UsersController#index (for 127.0.0.1 at 2009-07-09 12:05:28) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clearance/users"}
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mTutor Load (0.5ms)[0m   [0mSELECT * FROM "tutors" WHERE ("tutors"."id" = 3) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 29ms (View: 20, DB: 2) | 200 OK [http://localhost/users]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-07-09 12:06:24) [GET]
+  [4;35;1mPage Load (0.9ms)[0m   [0mSELECT * FROM "pages" [0m
+Rendering template within layouts/application
+Rendering pages/index
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 30ms (View: 21, DB: 2) | 200 OK [http://localhost/pages]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-07-09 12:08:25) [GET]
+  [4;35;1mPage Load (0.8ms)[0m   [0mSELECT * FROM "pages" [0m
+Rendering template within layouts/application
+Rendering pages/index
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 24ms (View: 16, DB: 1) | 200 OK [http://localhost/pages]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-07-09 12:11:25) [GET]
+  [4;35;1mPage Load (0.7ms)[0m   [0mSELECT * FROM "pages" [0m
+Rendering template within layouts/application
+Rendering pages/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 19ms (View: 13, DB: 1) | 200 OK [http://localhost/pages]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-07-09 19:24:25) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 255ms (View: 198, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing TutorsController#index (for 127.0.0.1 at 2009-07-09 19:24:28) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Redirected to http://localhost:3000/
+Filter chain halted as [:must_be_admin] rendered_or_redirected.
+Completed in 19ms (DB: 0) | 302 Found [http://localhost/tutors]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-07-09 19:24:28) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 20ms (View: 12, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-07-09 19:24:31) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Redirected to http://localhost:3000/
+Filter chain halted as [:must_be_admin] rendered_or_redirected.
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/pages]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-07-09 19:24:31) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 33ms (View: 24, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing Clearance::UsersController#index (for 127.0.0.1 at 2009-07-09 19:24:36) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clearance/users"}
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mTutor Load (0.6ms)[0m   [0mSELECT * FROM "tutors" WHERE ("tutors"."id" = 3) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 166ms (View: 159, DB: 2) | 200 OK [http://localhost/users]
+
+
+Processing TutorsController#index (for 127.0.0.1 at 2009-07-09 19:24:44) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Redirected to http://localhost:3000/
+Filter chain halted as [:must_be_admin] rendered_or_redirected.
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/tutors]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-07-09 19:24:44) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 26ms (View: 18, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing Clearance::SessionsController#destroy (for 127.0.0.1 at 2009-07-09 19:27:09) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"clearance/sessions"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Redirected to http://localhost:3000/session/new
+Completed in 17ms (DB: 0) | 302 Found [http://localhost/clearance/sessions/destroy]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-07-09 19:27:10) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 13ms (View: 10, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing Clearance::UsersController#new (for 127.0.0.1 at 2009-07-09 19:27:13) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (4.2ms)
+Completed in 54ms (View: 41, DB: 0) | 200 OK [http://localhost/users/new]

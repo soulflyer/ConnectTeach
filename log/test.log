@@ -33,3 +33,147 @@ Migrating to ClearanceCreateUsers (20090703013817)
   [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_users_on_token')[0m
   [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_email')[0m
   [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_users_on_id_and_token')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePages (20090703013813)
+Migrating to ClearanceCreateUsers (20090703013817)
+Migrating to CreateTutors (20090703022556)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCREATE TABLE "tutors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "experience" text, "qualifications" text, "course_experience" text, "textbook_experience" text, "national_knowledge" text, "age" integer, "phone" integer, "sex" varchar(255), "flavour" varchar(255), "given_name" varchar(255), "family_name" varchar(255), "given_name_first" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090703022556')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("pages")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("tutors")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_token')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_email')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_users_on_id_and_token')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePages (20090703013813)
+Migrating to ClearanceCreateUsers (20090703013817)
+Migrating to CreateTutors (20090703022556)
+Migrating to AddAttachmentsPhotoToTutor (20090703113902)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mALTER TABLE "tutors" ADD "photo_file_name" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "tutors" ADD "photo_content_type" varchar(255)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "tutors" ADD "photo_file_size" integer[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "tutors" ADD "photo_updated_at" datetime[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090703113902')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("pages")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("tutors")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_users_on_token')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_email')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_users_on_id_and_token')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePages (20090703013813)
+Migrating to ClearanceCreateUsers (20090703013817)
+Migrating to CreateTutors (20090703022556)
+Migrating to AddAttachmentsPhotoToTutor (20090703113902)
+Migrating to AddTutorToUser (20090704060809)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mALTER TABLE "users" ADD "tutor_id" integer[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090704060809')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("pages")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("tutors")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_users_on_token')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_email')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_users_on_id_and_token')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePages (20090703013813)
+Migrating to ClearanceCreateUsers (20090703013817)
+Migrating to CreateTutors (20090703022556)
+Migrating to AddAttachmentsPhotoToTutor (20090703113902)
+Migrating to AddTutorToUser (20090704060809)
+Migrating to AddRoleToUser (20090707122921)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mALTER TABLE "users" ADD "role" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090707122921')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("pages")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("tutors")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_users_on_token')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_users_on_email')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_info('index_users_on_id_and_token')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePages (20090703013813)
+Migrating to ClearanceCreateUsers (20090703013817)
+Migrating to CreateTutors (20090703022556)
+Migrating to AddAttachmentsPhotoToTutor (20090703113902)
+Migrating to AddTutorToUser (20090704060809)
+Migrating to AddRoleToUser (20090707122921)
+Migrating to LoadPagesData (20090709035205)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mPage Delete all (0.7ms)[0m   [0mDELETE FROM "pages" WHERE 1=1[0m
+  [4;36;1mPage Create (0.2ms)[0m   [0;1mINSERT INTO "pages" ("name", "permalink", "updated_at", "content", "created_at") VALUES(NULL, 'home', '2009-07-09 04:50:54', 'Go to ConnectTeach/static/home/edit to edit this page...', '2009-07-09 04:50:54')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090709035205')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("pages")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("tutors")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_users_on_token')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_users_on_email')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mPRAGMA index_info('index_users_on_id_and_token')[0m

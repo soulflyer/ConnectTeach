@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090703013817) do
+ActiveRecord::Schema.define(:version => 20090709035205) do
 
   create_table "pages", :force => true do |t|
     t.string   "name"
@@ -19,6 +19,27 @@ ActiveRecord::Schema.define(:version => 20090703013817) do
     t.datetime "updated_at"
   end
 
+  create_table "tutors", :force => true do |t|
+    t.text     "experience"
+    t.text     "qualifications"
+    t.text     "course_experience"
+    t.text     "textbook_experience"
+    t.text     "national_knowledge"
+    t.integer  "age"
+    t.integer  "phone"
+    t.string   "sex"
+    t.string   "flavour"
+    t.string   "given_name"
+    t.string   "family_name"
+    t.boolean  "given_name_first"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+  end
+
   create_table "users", :force => true do |t|
     t.string   "email"
     t.string   "encrypted_password", :limit => 128
@@ -26,6 +47,8 @@ ActiveRecord::Schema.define(:version => 20090703013817) do
     t.string   "token",              :limit => 128
     t.datetime "token_expires_at"
     t.boolean  "email_confirmed",                   :default => false, :null => false
+    t.integer  "tutor_id"
+    t.string   "role"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email"

@@ -1,18 +1,4 @@
-<p>
-  <b>Name:</b>
-  <%=h @page.name %>
-</p>
+<h1><%=h @page.name %></h1>
 
-<p>
-  <b>Permalink:</b>
-  <%=h @page.permalink %>
-</p>
+<%= textilize @page.content %>
 
-<p>
-  <b>Content:</b>
-  <%=h @page.content %>
-</p>
-
-
-<%= link_to 'Edit', edit_page_path(@page) %> |
-<%= link_to 'Back', pages_path %>
