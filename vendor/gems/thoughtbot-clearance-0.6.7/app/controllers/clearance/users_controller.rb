@@ -8,6 +8,12 @@ class Clearance::UsersController < ApplicationController
     @user = ::User.all
     render :template => 'users/index'
   end
+  
+  def show
+    @user = ::User.find(params[:id])
+    render :template => 'users/show'
+  end
+  
   def 
     destroy
     @user = ::User.find(params[:id])
@@ -20,6 +26,25 @@ class Clearance::UsersController < ApplicationController
     render :template => 'users/new'
   end
 
+  def edit
+    @user = ::User.find(params[:id])
+    render :template => 'users/edit'
+  end
+  
+  def update
+    @user = ::User.find(params[:id])
+    respond_to do |format|   
+      if @user.update_attributes(params[:user])
+        flash[:notice] = 'User was successfully updated.'
+        format.html { redirect_to(@user) }
+        format.xml  { head :ok }
+      else
+        format.html { render :action => "edit" }
+        format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
+  
   def create
     @user = ::User.new params[:user]
     if @user.save

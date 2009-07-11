@@ -20,6 +20,10 @@ ActionController::Routing::Routes.draw do |map|
   map.sign_up  'sign_up',
     :controller => 'clearance/users',
     :action     => 'new'
+  map.edit_user 'users/:id/edit',
+    :controller => 'clearance/users',
+    :action => 'edit',
+    :method => 'get'
   map.sign_in  'sign_in',
     :controller => 'clearance/sessions',
     :action     => 'new'

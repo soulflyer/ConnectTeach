@@ -16,7 +16,8 @@ module Clearance
     module AttrAccessible
       def self.included(model)
         model.class_eval do
-          attr_accessible :email, :password, :password_confirmation
+          # To do: Remember to remove role!!!!
+          attr_accessible :email, :password, :password_confirmation, :role
         end
       end
     end

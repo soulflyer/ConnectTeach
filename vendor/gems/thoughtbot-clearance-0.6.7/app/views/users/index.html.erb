@@ -5,6 +5,8 @@
     <th>EMail</th>
 		<th>Confirmed</th>
 		<th>Details</th>
+		<th>Role</th>
+		<th></th>
     <th></th>
   </tr>
 
@@ -12,8 +14,10 @@
   <tr>
     <td><%=h user.email %></td>
 		<td><%=h user.email_confirmed %></td>
-		<td><%=h user.tutor %></td>
+		<td><%=h user.tutor_id %></td>
+		<td><%=h user.role %></td>
     <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+		<td><%= link_to 'Edit', edit_user_path(user) %></td>
   </tr>
 <% end %>
 </table>
