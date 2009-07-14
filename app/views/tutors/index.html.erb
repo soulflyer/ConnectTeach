@@ -2,37 +2,29 @@
 
 <table>
   <tr>
-    <th>Experience</th>
-    <th>Qualifications</th>
-    <th>Course experience</th>
-    <th>Textbook experience</th>
-    <th>National knowledge</th>
+	  <th></th>
+    <th>Name</th>
     <th>Age</th>
-    <th>Phone</th>
     <th>Sex</th>
     <th>Flavour</th>
-    <th>Given name</th>
-    <th>Family name</th>
-    <th>Given name first</th>
+		<% if session[:tutor_id] && Tutor.find(session[:tutor_id]).admin %>
+			<th></th>
+		<% end %>
   </tr>
 
 <% @tutors.each do |tutor| %>
   <tr>
-    <td><%=h tutor.experience %></td>
-    <td><%=h tutor.qualifications %></td>
-    <td><%=h tutor.course_experience %></td>
-    <td><%=h tutor.textbook_experience %></td>
-    <td><%=h tutor.national_knowledge %></td>
+	  <td><%=link_to (image_tag (tutor.photo.url(:thumb))), tutor%></td>
+    <td><%= highlight(tutor.name, tutor.family_name, :highlighter => '<span class="familyname">\1</span>') %></td>
     <td><%=h tutor.age %></td>
-    <td><%=h tutor.phone %></td>
     <td><%=h tutor.sex %></td>
     <td><%=h tutor.flavour %></td>
-    <td><%=h tutor.given_name %></td>
-    <td><%=h tutor.family_name %></td>
-    <td><%=h tutor.given_name_first %></td>
-    <td><%= link_to 'Show', tutor %></td>
-    <td><%= link_to 'Edit', edit_tutor_path(tutor) %></td>
-    <td><%= link_to 'Destroy', tutor, :confirm => 'Are you sure?', :method => :delete %></td>
+		<% if session[:tutor_id] && Tutor.find(session[:tutor_id]).admin %>
+			<td><%= link_to 'Show', tutor %>
+				<%= link_to 'Edit', edit_tutor_path(tutor) %>
+				<%= link_to 'Destroy', tutor, :confirm => 'Are you sure?', :method => :delete %>
+			</td>
+		<% end %>
   </tr>
 <% end %>
 </table>
