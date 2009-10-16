@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>ConnectTeach </title>
+	<meta name="generator" content="TextMate http://macromates.com/">
+	<meta name="author" content="Iain Wood, railsiain.com">
+	<%= stylesheet_link_tag 'condelastic' %>
+	<%= stylesheet_link_tag 'site' %>
+	<%= stylesheet_link_tag 'menu' %>
+	<%= stylesheet_link_tag 'footer' %>
+  <% if @stylesheet %>
+	  <% for sh in @stylesheet %>
+	    <%= stylesheet_link_tag sh %>
+	  <% end %>
+  <% end %>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header">
+			<div id="banner">
+			</div>
+			<div id="logo">	
+			</div>
+			<div id="login">
+				<div id="loginlogo">
+
+				</div>
+			</div>
+			<div id="menu">
+				
+			</div>
+		</div>
+		<div id="main">
+			<%= yield  %>
+			<div id="footer">
+				<div id="copyright">
+				<p>	ⓒ ConnectTeach</p>
+				</div>
+				<div id="graphics">
+					<p>Graphics by  <a href="http://www.grindstudio.net">Grindstudio</a></p>
+				</div>
+				<div id="design">
+					<p>WebDesign by <a href="http://www.railsiain.com">RailsIain</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
