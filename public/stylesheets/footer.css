@@ -1,0 +1,33 @@
+/* @override http://soulflyer.com/cthtml/css/footer.css */
+
+#footer {
+  position: relative;
+  font-size: xx-small;
+}
+#footer div {	
+  position: absolute;
+  margin: 0;
+  padding: 0;
+}
+#footer div p {
+  margin: 0;
+  padding: 0;
+}
+#copyright {
+  bottom: 15px;
+  left: 700px;
+}
+#graphics {
+  color: #ffffff;
+  left: 800px;
+  top: 16px;	
+}
+#design {
+  color: #ffffff;
+  left: 802px;
+  bottom: 8px;
+}
+#footer a:link, #footer a:visited, #footer a:active {
+  color: #ffffff;
+  text-decoration: none;
+}

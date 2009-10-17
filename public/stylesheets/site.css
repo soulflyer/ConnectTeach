@@ -1,0 +1,63 @@
+/* @override http://localhost:3000/stylesheets/site.css?1255671322 */
+
+/* @override http://soulflyer.com/cthtml/css/site.css */
+body {
+  margin: 12px 16px 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+}
+#header {
+  position: relative;  
+}
+#banner {
+  height: 372px;
+  margin: 0;
+  padding: 0;
+  background-image: url(../images/Header.jpg);
+}
+#logo {
+  position: absolute;
+  left: 780px;
+  top: 30px;
+  height: 105px;
+  width: 155px;
+  background: url(../images/Logo.png) no-repeat;
+}
+#login {
+  position:  absolute;
+  left: 665px;
+  top: 148px;
+  background: url(../images/Login.png) no-repeat;
+  width: 284px;
+  height: 274px;
+  z-index: 1;
+}
+#loginlogo {
+  background: url(../images/LoginLogo.png) no-repeat;
+}
+/* Most of the styles for the menu are now in a separate file */
+#menu {
+  padding: 0;
+  margin: 0;
+}
+#main {
+  background: url(../images/MainBG.gif) repeat-x;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  width: 1000px;
+}
+#text {
+  margin: 0;
+  padding: 0;
+}
+#text p {
+  padding: 8px;
+  margin-top: -1px;
+}
+#footer {
+  height: 50px;
+  background: url(../images/Footer.png) no-repeat center;
+}

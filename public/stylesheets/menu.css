@@ -1,0 +1,52 @@
+/* @override http://localhost:3000/stylesheets/menu.css?1255629530 */
+
+/* @override http://soulflyer.com/cthtml/css/menu.css */
+#menu {
+  position: relative;
+  height: 50px;
+  background: url(../images/MenuBG.gif) repeat-y;
+}
+#menu a:link, #menu a:visited, #menu a:active {
+  color: #462614;
+  text-decoration: none;
+}
+a:hover .button {
+  background-image: url(../images/HoverButton.png);
+  color: #007e6b;
+}
+.button {
+  
+  float: left;
+  position: absolute;
+  width: 100px;
+  height: 55px;
+  background: url(../images/Button.png) no-repeat;
+  color: white;
+}
+.button p {
+  height: 20px;
+  overflow: hidden;
+  margin-top: 16px;
+  text-align: center;
+  font-size: 12px;
+}
+#homebutton {
+  left: 85px;
+}
+#clientbutton {
+  left: 165px;
+}
+#tutorbutton {
+  left: 245px;
+}
+#coursebutton {
+  background: url(../images/ButtonLarge.png) no-repeat;
+  width:  165px;
+  left: 325px;
+}
+#aboutbutton {
+  left: 465px;
+}
+#contactbutton {
+  left: 545px;
+}
