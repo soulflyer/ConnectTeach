@@ -1,3 +1,5 @@
+/* @override http://localhost:3000/stylesheets/menu.css?1255706767 */
+
 /* @override http://localhost:3000/stylesheets/menu.css?1255629530 */
 
 /* @override http://soulflyer.com/cthtml/css/menu.css */
@@ -13,6 +15,9 @@
 a:hover .button {
   background-image: url(../images/HoverButton.png);
   color: #007e6b;
+}
+a:hover #coursebutton {
+  background: url(../images/HoverButtonLarge.png) no-repeat;
 }
 .button {
   

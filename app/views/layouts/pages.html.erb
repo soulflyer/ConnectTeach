@@ -51,7 +51,14 @@
 			</div>
 		</div>
 		<div id="main">
-			<%= yield  %>
+			<% if @page.news %>
+			<div id="news">
+				<p>news</p>
+			</div>
+      <% end %>
+			<div id="text">
+				<%= yield  %>
+			</div>
 			<div id="footer">
 				<div id="copyright">
 				<p>	ⓒ ConnectTeach</p>

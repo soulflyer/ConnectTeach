@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090709035205) do
+ActiveRecord::Schema.define(:version => 20091018012613) do
 
   create_table "pages", :force => true do |t|
     t.string   "name"
@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(:version => 20090709035205) do
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "news"
   end
 
   create_table "tutors", :force => true do |t|

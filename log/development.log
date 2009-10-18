@@ -4712,3 +4712,172 @@ Processing PagesController#show (for 127.0.0.1 at 2009-10-17 08:30:29) [GET]
 Rendering template within layouts/pages
 Rendering pages/show
 Completed in 19ms (View: 8, DB: 0) | 200 OK [http://localhost/pages/4]
+  [4;36;1mSQL (1.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePages (20090703013813)
+Migrating to ClearanceCreateUsers (20090703013817)
+Migrating to CreateTutors (20090703022556)
+Migrating to AddAttachmentsPhotoToTutor (20090703113902)
+Migrating to AddTutorToUser (20090704060809)
+Migrating to AddRoleToUser (20090707122921)
+Migrating to LoadPagesData (20090709035205)
+Migrating to AddNewsColumnToPages (20091018012613)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mALTER TABLE "pages" ADD "news" boolean[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091018012613')[0m
+  [4;35;1mSQL (1.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("pages")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("tutors")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_token')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_email')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_users_on_id_and_token')[0m
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-18 08:42:19) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (0.5ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+Rendering template within layouts/pages
+Rendering pages/show
+Completed in 53ms (View: 29, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-18 08:42:31) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 4) [0m
+Rendering template within layouts/pages
+Rendering pages/show
+Completed in 15ms (View: 7, DB: 0) | 200 OK [http://localhost/pages/4]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-18 08:42:34) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 4) [0m
+Rendering template within layouts/pages
+Rendering pages/show
+Completed in 13ms (View: 6, DB: 0) | 200 OK [http://localhost/pages/4]
+
+
+Processing PagesController#edit (for 127.0.0.1 at 2009-10-18 08:42:39) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 4) [0m
+Rendering template within layouts/pages
+Rendering pages/edit
+Completed in 14ms (View: 7, DB: 0) | 200 OK [http://localhost/pages/4/edit]
+
+
+Processing PagesController#edit (for 127.0.0.1 at 2009-10-18 08:44:34) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 4) [0m
+Rendering template within layouts/pages
+Rendering pages/edit
+Rendered pages/_page_form (600.0ms)
+Completed in 625ms (View: 619, DB: 0) | 200 OK [http://localhost/pages/4/edit]
+
+
+Processing PagesController#edit (for 127.0.0.1 at 2009-10-18 08:46:04) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 4) [0m
+Rendering template within layouts/pages
+Rendering pages/edit
+Rendered pages/_page_form (9.5ms)
+Completed in 23ms (View: 16, DB: 0) | 200 OK [http://localhost/pages/4/edit]
+
+
+Processing PagesController#edit (for 127.0.0.1 at 2009-10-18 08:47:00) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 4) [0m
+Rendering template within layouts/pages
+Rendering pages/edit
+Rendered pages/_page_form (10.9ms)
+Completed in 24ms (View: 17, DB: 0) | 200 OK [http://localhost/pages/4/edit]
+
+
+Processing PagesController#update (for 127.0.0.1 at 2009-10-18 08:47:10) [PUT]
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"LwsLXpg/+Jb6hPHS2ACCgEE4NV5IwDtcjkEO0AYdbGk=", "id"=>"4", "page"=>{"permalink"=>"home", "name"=>"", "content"=>"text\r\n\r\ntext\r\n\r\ntext\r\n\r\ntext\r\n\r\ntext\r\n\r\ntext\r\n\r\ntext\r\n\r\ntext\r\n\r\ntext\r\n\r\ntext\r\n\r\ntext\r\n\r\ntext\r\n\r\ntext", "news"=>"1"}}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 4) [0m
+  [4;35;1mPage Update (0.4ms)[0m   [0mUPDATE "pages" SET "news" = 't', "updated_at" = '2009-10-18 01:47:10' WHERE "id" = 4[0m
+Redirected to http://localhost:3000/pages/4
+Completed in 13ms (DB: 1) | 302 Found [http://localhost/pages/4]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-18 08:47:10) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 4) [0m
+Rendering template within layouts/pages
+Rendering pages/show
+Completed in 13ms (View: 6, DB: 0) | 200 OK [http://localhost/pages/4]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-18 08:57:30) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 4) [0m
+Rendering template within layouts/pages
+Rendering pages/show
+
+ActionView::TemplateError (undefined local variable or method `page' for #<ActionView::Base:0x236ea78>) on line #55 of app/views/layouts/pages.html.erb:
+52: 		</div>
+53: 		<div id="main">
+54: 			<%= yield  %>
+55: 			<% if page.news %>
+56: 			<div id="news">
+57: 				<p>news</p>
+58: 			</div>
+
+    app/views/layouts/pages.html.erb:55
+    app/controllers/pages_controller.rb:25:in `show'
+
+Rendered rescues/_trace (48.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-18 09:19:21) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 4) [0m
+Rendering template within layouts/pages
+Rendering pages/show
+Completed in 20ms (View: 13, DB: 0) | 200 OK [http://localhost/pages/4]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-18 09:20:13) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 4) [0m
+Rendering template within layouts/pages
+Rendering pages/show
+Completed in 13ms (View: 6, DB: 0) | 200 OK [http://localhost/pages/4]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-18 09:22:18) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 4) [0m
+Rendering template within layouts/pages
+Rendering pages/show
+Completed in 20ms (View: 13, DB: 0) | 200 OK [http://localhost/pages/4]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-18 09:38:25) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 4) [0m
+Rendering template within layouts/pages
+Rendering pages/show
+Completed in 20ms (View: 13, DB: 0) | 200 OK [http://localhost/pages/4]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-18 09:42:02) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 4) [0m
+Rendering template within layouts/pages
+Rendering pages/show
+Completed in 20ms (View: 13, DB: 0) | 200 OK [http://localhost/pages/4]
