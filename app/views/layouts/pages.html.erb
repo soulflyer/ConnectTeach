@@ -55,10 +55,14 @@
 			<div id="news">
 				<p>news</p>
 			</div>
-      <% end %>
+			<div id="text" class="narrow">
+				<%= yield  %>
+			</div>
+      <% else %>
 			<div id="text">
 				<%= yield  %>
 			</div>
+			<% end %>
 			<div id="footer">
 				<div id="copyright">
 				<p>	ⓒ ConnectTeach</p>

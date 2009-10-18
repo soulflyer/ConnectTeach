@@ -1,3 +1,7 @@
+/* @override http://localhost:3000/stylesheets/site.css?1255839463 */
+
+/* @override http://localhost:3000/stylesheets/site.css?1255833857 */
+
 /* @override http://localhost:3000/stylesheets/site.css?1255743874 */
 body {
   margin: 12px 16px 0;
@@ -53,16 +57,19 @@ body {
   width: 1000px;
 }
 #text {
-  margin: 0 0 0 20px;
-  padding-right: 0;
-  padding-top: 0;
-  padding-bottom: 0;
+  margin: 20px;
+  text-align: justify;
+  padding: 0;
+}
+#text.narrow {
+  width: 700px;
 }
 #news {
   float: right;
   width: 250px;
-  margin: 6px;
-  padding: 6px;
+  margin-right: 20px;
+  margin-top: 5px;
+  margin-left: 20px;
 }
 #footer {
   height: 50px;
