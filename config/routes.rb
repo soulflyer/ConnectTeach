@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :newsitems
+
   map.resources :tutors
 
   map.root :controller => 'pages', :action => 'show', :permalink => 'home'

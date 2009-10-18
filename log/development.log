@@ -5332,3 +5332,233 @@ Processing PagesController#show (for 127.0.0.1 at 2009-10-18 15:25:36) [GET]
 Rendering template within layouts/pages
 Rendering pages/show
 Completed in 16ms (View: 8, DB: 0) | 200 OK [http://localhost/static/home]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-18 15:37:31) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+Rendering template within layouts/pages
+Rendering pages/show
+Completed in 16ms (View: 8, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-18 15:39:27) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+Rendering template within layouts/pages
+Rendering pages/show
+Completed in 20ms (View: 13, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePages (20090703013813)
+Migrating to ClearanceCreateUsers (20090703013817)
+Migrating to CreateTutors (20090703022556)
+Migrating to AddAttachmentsPhotoToTutor (20090703113902)
+Migrating to AddTutorToUser (20090704060809)
+Migrating to AddRoleToUser (20090707122921)
+Migrating to LoadPagesData (20090709035205)
+Migrating to AddNewsColumnToPages (20091018012613)
+Migrating to AddVntextColumnToPages (20091018053453)
+Migrating to RenameVntextVncontent (20091018054118)
+Migrating to RenameVncontentVietnameseContent (20091018055834)
+Migrating to CreateNewsitems (20091018085601)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCREATE TABLE "newsitems" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "contents" text, "image_url" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091018085601')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("newsitems")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("pages")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("tutors")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_token')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_email')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_users_on_id_and_token')[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePages (20090703013813)
+Migrating to ClearanceCreateUsers (20090703013817)
+Migrating to CreateTutors (20090703022556)
+Migrating to AddAttachmentsPhotoToTutor (20090703113902)
+Migrating to AddTutorToUser (20090704060809)
+Migrating to AddRoleToUser (20090707122921)
+Migrating to LoadPagesData (20090709035205)
+Migrating to AddNewsColumnToPages (20091018012613)
+Migrating to AddVntextColumnToPages (20091018053453)
+Migrating to RenameVntextVncontent (20091018054118)
+Migrating to RenameVncontentVietnameseContent (20091018055834)
+Migrating to CreateNewsitems (20091018085601)
+Migrating to AddAttachmentsPhotoToNewsitem (20091018091113)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mALTER TABLE "newsitems" ADD "photo_file_name" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "newsitems" ADD "photo_content_type" varchar(255)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "newsitems" ADD "photo_file_size" integer[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "newsitems" ADD "photo_updated_at" datetime[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mCREATE TEMPORARY TABLE "altered_newsitems" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "contents" text, "image_url" varchar(255), "created_at" datetime, "updated_at" datetime, "photo_file_name" varchar(255), "photo_content_type" varchar(255), "photo_file_size" integer, "photo_updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("newsitems")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mDROP TABLE "newsitems"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "newsitems" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "contents" text, "image_url" varchar(255), "created_at" datetime, "updated_at" datetime, "photo_file_name" varchar(255), "photo_content_type" varchar(255), "photo_file_size" integer, "photo_updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("altered_newsitems")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mDROP TABLE "altered_newsitems"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091018091113')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("newsitems")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("pages")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("tutors")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_users_on_token')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_email')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_users_on_id_and_token')[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePages (20090703013813)
+Migrating to ClearanceCreateUsers (20090703013817)
+Migrating to CreateTutors (20090703022556)
+Migrating to AddAttachmentsPhotoToTutor (20090703113902)
+Migrating to AddTutorToUser (20090704060809)
+Migrating to AddRoleToUser (20090707122921)
+Migrating to LoadPagesData (20090709035205)
+Migrating to AddNewsColumnToPages (20091018012613)
+Migrating to AddVntextColumnToPages (20091018053453)
+Migrating to RenameVntextVncontent (20091018054118)
+Migrating to RenameVncontentVietnameseContent (20091018055834)
+Migrating to CreateNewsitems (20091018085601)
+Migrating to AddAttachmentsPhotoToNewsitem (20091018091113)
+Migrating to AddVietnameseContentToNewsitem (20091018102538)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mALTER TABLE "newsitems" ADD "Vietnamese_content" textarea[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePages (20090703013813)
+Migrating to ClearanceCreateUsers (20090703013817)
+Migrating to CreateTutors (20090703022556)
+Migrating to AddAttachmentsPhotoToTutor (20090703113902)
+Migrating to AddTutorToUser (20090704060809)
+Migrating to AddRoleToUser (20090707122921)
+Migrating to LoadPagesData (20090709035205)
+Migrating to AddNewsColumnToPages (20091018012613)
+Migrating to AddVntextColumnToPages (20091018053453)
+Migrating to RenameVntextVncontent (20091018054118)
+Migrating to RenameVncontentVietnameseContent (20091018055834)
+Migrating to CreateNewsitems (20091018085601)
+Migrating to AddAttachmentsPhotoToNewsitem (20091018091113)
+Migrating to AddVietnameseContentToNewsitem (20091018102538)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mALTER TABLE "newsitems" ADD "Vietnamese_content" textarea[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCREATE TEMPORARY TABLE "altered_newsitems" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "English_content" text, "image_url" varchar(255), "created_at" datetime, "updated_at" datetime, "photo_file_name" varchar(255), "photo_content_type" varchar(255), "photo_file_size" integer, "photo_updated_at" datetime, "Vietnamese_content" text) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("newsitems")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mDROP TABLE "newsitems"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TABLE "newsitems" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "English_content" text, "image_url" varchar(255), "created_at" datetime, "updated_at" datetime, "photo_file_name" varchar(255), "photo_content_type" varchar(255), "photo_file_size" integer, "photo_updated_at" datetime, "Vietnamese_content" text) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("altered_newsitems")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mDROP TABLE "altered_newsitems"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091018102538')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("newsitems")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("pages")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("tutors")[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_users_on_token')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_users_on_email')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mPRAGMA index_info('index_users_on_id_and_token')[0m
+
+
+Processing NewsitemsController#new (for 127.0.0.1 at 2009-10-18 17:30:58) [GET]
+Rendering template within layouts/newsitems
+Rendering newsitems/new
+
+ActionView::TemplateError (undefined method `contents' for #<Newsitem:0x22e2640>) on line #12 of app/views/newsitems/new.html.erb:
+9:   </p>
+10:   <p>
+11:     <%= f.label :contents %><br />
+12:     <%= f.text_area :contents %>
+13:   </p>
+14:   <p>
+15:     <%= f.label :image_url %><br />
+
+    app/views/newsitems/new.html.erb:12
+    app/views/newsitems/new.html.erb:3
+    app/controllers/newsitems_controller.rb:29:in `new'
+
+Rendered rescues/_trace (55.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing NewsitemsController#new (for 127.0.0.1 at 2009-10-18 17:31:46) [GET]
+Rendering template within layouts/newsitems
+Rendering newsitems/new
+Completed in 20ms (View: 12, DB: 0) | 200 OK [http://localhost/newsitems/new]
+
+
+Processing NewsitemsController#create (for 127.0.0.1 at 2009-10-18 17:33:12) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"LwsLXpg/+Jb6hPHS2ACCgEE4NV5IwDtcjkEO0AYdbGk=", "newsitem"=>{"image_url"=>"", "title"=>"", "English_content"=>"Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah"}}
+  [4;36;1mNewsitem Create (0.5ms)[0m   [0;1mINSERT INTO "newsitems" ("image_url", "updated_at", "photo_file_name", "photo_file_size", "title", "English_content", "Vietnamese_content", "photo_updated_at", "photo_content_type", "created_at") VALUES('', '2009-10-18 10:33:12', NULL, NULL, '', 'Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah', NULL, NULL, NULL, '2009-10-18 10:33:12')[0m
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/newsitems/1
+Completed in 404ms (DB: 0) | 302 Found [http://localhost/newsitems]
+
+
+Processing NewsitemsController#show (for 127.0.0.1 at 2009-10-18 17:33:12) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mNewsitem Load (0.4ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/newsitems
+Rendering newsitems/show
+
+ActionView::TemplateError (undefined method `contents' for #<Newsitem:0x228d3d4>) on line #8 of app/views/newsitems/show.html.erb:
+5: 
+6: <p>
+7:   <b>Contents:</b>
+8:   <%=h @newsitem.contents %>
+9: </p>
+10: 
+11: <p>
+
+    app/views/newsitems/show.html.erb:8
+    app/controllers/newsitems_controller.rb:18:in `show'
+
+Rendered rescues/_trace (128.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing NewsitemsController#show (for 127.0.0.1 at 2009-10-18 17:33:35) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mNewsitem Load (0.4ms)[0m   [0;1mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/newsitems
+Rendering newsitems/show
+Completed in 17ms (View: 8, DB: 0) | 200 OK [http://localhost/newsitems/1]

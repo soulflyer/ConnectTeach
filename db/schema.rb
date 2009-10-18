@@ -9,7 +9,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091018055834) do
+ActiveRecord::Schema.define(:version => 20091018102538) do
+
+  create_table "newsitems", :force => true do |t|
+    t.string   "title"
+    t.text     "English_content"
+    t.string   "image_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.text     "Vietnamese_content"
+  end
 
   create_table "pages", :force => true do |t|
     t.string   "name"

@@ -1,0 +1,18 @@
+<p>
+  <b>Title:</b>
+  <%=h @newsitem.title %>
+</p>
+
+<p>
+  <b>Contents:</b>
+  <%=h @newsitem.English_content %>
+</p>
+
+<p>
+  <b>Image url:</b>
+  <%=h @newsitem.image_url %>
+</p>
+
+
+<%= link_to 'Edit', edit_newsitem_path(@newsitem) %> |
+<%= link_to 'Back', newsitems_path %>
