@@ -9,16 +9,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091018054118) do
+ActiveRecord::Schema.define(:version => 20091018055834) do
 
   create_table "pages", :force => true do |t|
     t.string   "name"
     t.string   "permalink"
-    t.text     "content"
+    t.text     "English_content"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "news"
-    t.text     "vncontent"
+    t.text     "Vietnamese_content"
   end
 
   create_table "tutors", :force => true do |t|

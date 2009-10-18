@@ -1,4 +1,14 @@
+<% if @page.news %>
+	<% content_for :newsbarcss do %>
+		<%= stylesheet_link_tag 'newsbar' %>
+	<% end %>
+	<% content_for :newsbar do %>
+		<div id="news">
+		
+		</div>
+	<% end %>
+<% end %>
 <h1><%=h @page.name %></h1>
 
-<%= textilize @page.content %>
+<%= textilize @page.English_content %>
 

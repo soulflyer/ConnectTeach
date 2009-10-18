@@ -1,0 +1,20 @@
+/* @override http://localhost:3000/stylesheets/pagesform.css?1255854031 */
+
+form p {
+  width: 450px;
+  text-align: left;
+}
+textarea {
+  width:460px
+}
+
+#left {
+  float: left;
+}
+#right {
+  float: left;
+}
+
+#text {
+  height: 600px;
+}

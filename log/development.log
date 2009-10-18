@@ -5070,3 +5070,265 @@ Rendering template within layouts/pages
 Rendering pages/edit
 Rendered pages/_page_form (13.4ms)
 Completed in 30ms (View: 21, DB: 0) | 200 OK [http://localhost/pages/4/edit]
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePages (20090703013813)
+Migrating to ClearanceCreateUsers (20090703013817)
+Migrating to CreateTutors (20090703022556)
+Migrating to AddAttachmentsPhotoToTutor (20090703113902)
+Migrating to AddTutorToUser (20090704060809)
+Migrating to AddRoleToUser (20090707122921)
+Migrating to LoadPagesData (20090709035205)
+Migrating to AddNewsColumnToPages (20091018012613)
+Migrating to AddVntextColumnToPages (20091018053453)
+Migrating to RenameVntextVncontent (20091018054118)
+Migrating to RenameVncontentVietnameseContent (20091018055834)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TEMPORARY TABLE "altered_pages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "permalink" varchar(255), "content" text, "created_at" datetime, "updated_at" datetime, "news" boolean, "Vietnamese_content" text) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("pages")[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mDROP TABLE "pages"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "pages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "permalink" varchar(255), "content" text, "created_at" datetime, "updated_at" datetime, "news" boolean, "Vietnamese_content" text) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("altered_pages")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mDROP TABLE "altered_pages"[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TEMPORARY TABLE "altered_pages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "permalink" varchar(255), "English_content" text, "created_at" datetime, "updated_at" datetime, "news" boolean, "Vietnamese_content" text) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("pages")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mDROP TABLE "pages"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "pages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "permalink" varchar(255), "English_content" text, "created_at" datetime, "updated_at" datetime, "news" boolean, "Vietnamese_content" text) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("altered_pages")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mDROP TABLE "altered_pages"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091018055834')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("pages")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("tutors")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_token')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_email')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_users_on_id_and_token')[0m
+
+
+Processing PagesController#edit (for 127.0.0.1 at 2009-10-18 13:00:47) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 4) [0m
+Rendering template within layouts/pages
+Rendering pages/edit
+
+ActionView::TemplateError (undefined method `content' for #<Page:0x244eb3c>) on line #8 of app/views/pages/_page_form.html.erb:
+5: 	</div>
+6: 	<%= f.text_field :name %>	
+7: 	<%= f.text_field :permalink %>
+8: 	<%= f.text_area :content %>
+9: 	<%= f.text_area :vncontent %>
+10: 	<%= f.check_box :news %>
+11: <% end %>
+
+    app/helpers/tagged_builder.rb:13:in `text_area'
+    app/views/pages/_page_form.html.erb:8
+    app/views/pages/_page_form.html.erb:1
+    app/views/pages/edit.html.erb:2
+
+Rendered rescues/_trace (62.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PagesController#edit (for 127.0.0.1 at 2009-10-18 13:01:21) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 4) [0m
+Rendering template within layouts/pages
+Rendering pages/edit
+Rendered pages/_page_form (11.9ms)
+Completed in 96ms (View: 18, DB: 0) | 200 OK [http://localhost/pages/4/edit]
+
+
+Processing PagesController#edit (for 127.0.0.1 at 2009-10-18 13:47:23) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mPage Load (69.7ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 4) [0m
+Rendering template within layouts/pages
+Rendering pages/edit
+Rendered pages/_page_form (150.2ms)
+Completed in 823ms (View: 631, DB: 70) | 200 OK [http://localhost/pages/4/edit]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-18 13:51:07) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mPage Load (22.8ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 4) [0m
+Rendering template within layouts/pages
+Rendering pages/show
+
+ActionView::TemplateError (undefined method `content' for #<Page:0x240ccdc>) on line #3 of app/views/pages/show.html.erb:
+1: <h1><%=h @page.name %></h1>
+2: 
+3: <%= textilize @page.content %>
+
+    app/views/pages/show.html.erb:3
+    app/controllers/pages_controller.rb:25:in `show'
+
+Rendered rescues/_trace (252.5ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PagesController#edit (for 127.0.0.1 at 2009-10-18 13:51:48) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mPage Load (0.8ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 4) [0m
+Rendering template within layouts/pages
+Rendering pages/edit
+Rendered pages/_page_form (15.3ms)
+Completed in 51ms (View: 19, DB: 1) | 200 OK [http://localhost/pages/4/edit]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-18 13:51:50) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 4) [0m
+Rendering template within layouts/pages
+Rendering pages/show
+Completed in 103ms (View: 96, DB: 0) | 200 OK [http://localhost/pages/4]
+
+
+Processing PagesController#edit (for 127.0.0.1 at 2009-10-18 13:52:47) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mPage Load (0.5ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 4) [0m
+Rendering template within layouts/pages
+Rendering pages/edit
+Rendered pages/_page_form (22.6ms)
+Completed in 44ms (View: 25, DB: 1) | 200 OK [http://localhost/pages/4/edit]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-18 14:50:09) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mPage Load (0.8ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 4) [0m
+Rendering template within layouts/pages
+Rendering pages/show
+Completed in 102ms (View: 89, DB: 1) | 200 OK [http://localhost/pages/4]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-18 14:50:09) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/newsbar.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PagesController#edit (for 127.0.0.1 at 2009-10-18 14:51:30) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 4) [0m
+Rendering template within layouts/pages
+Rendering pages/edit
+Rendered pages/_page_form (44.2ms)
+Completed in 169ms (View: 145, DB: 0) | 200 OK [http://localhost/pages/4/edit]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-18 14:51:53) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 4) [0m
+Rendering template within layouts/pages
+Rendering pages/show
+Completed in 16ms (View: 8, DB: 0) | 200 OK [http://localhost/pages/4]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-18 14:51:53) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/newsbar.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-18 14:52:00) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/newsbar.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-18 14:54:00) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 4) [0m
+Rendering template within layouts/pages
+Rendering pages/show
+Completed in 17ms (View: 8, DB: 0) | 200 OK [http://localhost/pages/4]
+
+
+Processing PagesController#edit (for 127.0.0.1 at 2009-10-18 14:54:19) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 4) [0m
+Rendering template within layouts/pages
+Rendering pages/edit
+Rendered pages/_page_form (10.4ms)
+Completed in 19ms (View: 13, DB: 0) | 200 OK [http://localhost/pages/4/edit]
+
+
+Processing PagesController#edit (for 127.0.0.1 at 2009-10-18 15:08:06) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 4) [0m
+Rendering template within layouts/pages
+Rendering pages/edit
+Rendered pages/_page_form (10.4ms)
+Completed in 19ms (View: 13, DB: 0) | 200 OK [http://localhost/pages/4/edit]
+
+
+Processing PagesController#edit (for 127.0.0.1 at 2009-10-18 15:20:36) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 4) [0m
+Rendering template within layouts/pages
+Rendering pages/edit
+Rendered pages/_page_form (12.1ms)
+Completed in 25ms (View: 18, DB: 0) | 200 OK [http://localhost/pages/4/edit]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-18 15:25:03) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 4) [0m
+Rendering template within layouts/pages
+Rendering pages/show
+Completed in 15ms (View: 8, DB: 0) | 200 OK [http://localhost/pages/4]
+
+
+Processing PagesController#edit (for 127.0.0.1 at 2009-10-18 15:25:09) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 4) [0m
+Rendering template within layouts/pages
+Rendering pages/edit
+Rendered pages/_page_form (10.2ms)
+Completed in 20ms (View: 13, DB: 0) | 200 OK [http://localhost/pages/4/edit]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-18 15:25:26) [GET]
+  Parameters: {"id"=>"home"}
+  [4;36;1mPage Load (0.1ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Page with ID=home):
+  app/controllers/pages_controller.rb:22:in `show'
+
+Rendered rescues/_trace (37.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-18 15:25:30) [GET]
+
+ActionController::RoutingError (No route matches "/home" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-18 15:25:36) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+Rendering template within layouts/pages
+Rendering pages/show
+Completed in 16ms (View: 8, DB: 0) | 200 OK [http://localhost/static/home]

@@ -16,6 +16,7 @@
 	    <%= stylesheet_link_tag sh %>
 	  <% end %>
   <% end %>
+	<%= yield :newsbarcss %>
 </head>
 <body>
 	<div id="wrapper">
@@ -51,18 +52,10 @@
 			</div>
 		</div>
 		<div id="main">
-			<% if @page.news %>
-			<div id="news">
-				<p>news</p>
-			</div>
-			<div id="text" class="narrow">
-				<%= yield  %>
-			</div>
-      <% else %>
+			<%= yield :newsbar %>
 			<div id="text">
 				<%= yield  %>
 			</div>
-			<% end %>
 			<div id="footer">
 				<div id="copyright">
 				<p>	ⓒ ConnectTeach</p>
