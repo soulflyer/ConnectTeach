@@ -45,6 +45,16 @@
 						<p>Login</p>
 					</div>', :controller => 'clearance/sessions', :action => 'new' %>
 				<% end %>
+				<div id="flash">
+					<p style="color: green">
+						<%= flash[:notice] %>
+						<%= flash[:sucess] %>
+					</p>
+					<p style="color: red">
+						<%= flash[:error] %>
+						<%= flash[:failure] %>
+					</p>
+        </div>
 			</div>
 			<div id="menu">
 				<%= link_to '<div id="contactbutton" class="button">

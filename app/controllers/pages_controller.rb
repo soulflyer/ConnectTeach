@@ -22,7 +22,7 @@ class PagesController < ApplicationController
       @page = Page.find(params[:id])
     end
     
-    @newsitem = Newsitem.find(1)
+    @newsitems = Newsitem.all
 
     respond_to do |format|
       format.html # show.html.erb

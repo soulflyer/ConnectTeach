@@ -23,6 +23,7 @@ Feature: Sign up
     Scenario: User confirms his account
       Given I signed up with "email@person.com/password"
       When I follow the confirmation link sent to "email@person.com"
-      Then I should see "Logout email@person.com"
+      Then I should see "Logged in as:"
+      And I should see "email@person.com"
       And I should be signed in
 
