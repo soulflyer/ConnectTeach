@@ -9,7 +9,7 @@ Feature Administer pages
 		When I sign in as "email@person.com/password"
 		And I go to the list pages page
 		Then I should not see "Listing pages"
-		And I should see "Must be admin"
+		And I should see "Must be logged in as admin"
 		
   Scenario: User with admin privs views static page index
 		Given I am signed up and confirmed as "email@person.com/password"

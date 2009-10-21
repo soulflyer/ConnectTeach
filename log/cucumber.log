@@ -31309,3 +31309,1147 @@ Rendering pages/show
   [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
 Completed in 7ms (View: 5, DB: 1) | 200 OK [http://www.example.com/]
   [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'email@person.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.6ms)[0m   [0mINSERT INTO "users" ("encrypted_password", "salt", "token", "token_expires_at", "tutor_id", "role", "email", "email_confirmed") VALUES('eedd8520b126635fc2ad736685b4b70b0f75c0a2', '1f80e08943e1b12543672580cbcda740bda1588c', '11f9039f47339d7a1bace86aa8ee0b41027892fa', NULL, NULL, NULL, 'email@person.com', 't')[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'email@person.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'email@person.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "role" = 'null' WHERE "id" = 1[0m
+REQUESTING PAGE: GET /session/new with {} and HTTP headers {}
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-10-22 00:54:22) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 49ms (View: 47, DB: 2) | 200 OK [http://www.example.com/session/new]
+REQUESTING PAGE: POST /session with {"commit"=>"Sign in", "session"=>{"password"=>"password", "remember_me"=>"0", "email"=>"email@person.com"}} and HTTP headers {"HTTP_REFERER"=>"/session/new"}
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2009-10-22 00:54:22) [POST]
+  Parameters: {"commit"=>"Sign in", "action"=>"create", "session"=>{"password"=>"[FILTERED]", "email"=>"email@person.com", "remember_me"=>"0"}, "controller"=>"clearance/sessions"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'email@person.com') LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed in 2ms (DB: 0) | 302 Found [http://www.example.com/session]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/session"}
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-22 00:54:22) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.1ms)[0m   [0mSELECT * FROM "newsitems" [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /pages with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/"}
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-10-22 00:54:22) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Redirected to http://www.example.com/
+Filter chain halted as [:must_be_admin] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://www.example.com/pages]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/pages"}
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-22 00:54:22) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.1ms)[0m   [0mSELECT * FROM "newsitems" [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 6ms (View: 4, DB: 1) | 200 OK [http://www.example.com/]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'email@person.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO "users" ("encrypted_password", "salt", "token", "token_expires_at", "tutor_id", "role", "email", "email_confirmed") VALUES('eedd8520b126635fc2ad736685b4b70b0f75c0a2', '1f80e08943e1b12543672580cbcda740bda1588c', '11f9039f47339d7a1bace86aa8ee0b41027892fa', NULL, NULL, NULL, 'email@person.com', 't')[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'email@person.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'email@person.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "role" = 'admin' WHERE "id" = 1[0m
+REQUESTING PAGE: GET /session/new with {} and HTTP headers {}
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-10-22 00:54:22) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 9ms (View: 9, DB: 1) | 200 OK [http://www.example.com/session/new]
+REQUESTING PAGE: POST /session with {"commit"=>"Sign in", "session"=>{"password"=>"password", "remember_me"=>"0", "email"=>"email@person.com"}} and HTTP headers {"HTTP_REFERER"=>"/session/new"}
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2009-10-22 00:54:23) [POST]
+  Parameters: {"commit"=>"Sign in", "action"=>"create", "session"=>{"password"=>"[FILTERED]", "email"=>"email@person.com", "remember_me"=>"0"}, "controller"=>"clearance/sessions"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'email@person.com') LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed in 2ms (DB: 0) | 302 Found [http://www.example.com/session]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/session"}
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-22 00:54:23) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.1ms)[0m   [0;1mSELECT * FROM "newsitems" [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 6ms (View: 4, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /pages with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/"}
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-10-22 00:54:23) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM "pages" [0m
+Rendering template within layouts/application
+Rendering pages/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 19ms (View: 17, DB: 1) | 200 OK [http://www.example.com/pages]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'email@person.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.6ms)[0m   [0mINSERT INTO "users" ("encrypted_password", "salt", "token", "token_expires_at", "tutor_id", "role", "email", "email_confirmed") VALUES('72ea4023834e62c33cf4d72f8b81b5585633df16', 'db4dad7a9a0edf45ad77422277be3a1aacaec38b', '19d1651ab7107659b6b3d0f8020a54be47d92816', NULL, NULL, NULL, 'email@person.com', 't')[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'email@person.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'email@person.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Update (0.9ms)[0m   [0;1mUPDATE "users" SET "role" = 'null' WHERE "id" = 1[0m
+REQUESTING PAGE: GET /session/new with {} and HTTP headers {}
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-10-22 01:16:29) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 50ms (View: 48, DB: 2) | 200 OK [http://www.example.com/session/new]
+REQUESTING PAGE: POST /session with {"commit"=>"Sign in", "session"=>{"password"=>"password", "remember_me"=>"0", "email"=>"email@person.com"}} and HTTP headers {"HTTP_REFERER"=>"/session/new"}
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2009-10-22 01:16:29) [POST]
+  Parameters: {"commit"=>"Sign in", "action"=>"create", "session"=>{"password"=>"[FILTERED]", "email"=>"email@person.com", "remember_me"=>"0"}, "controller"=>"clearance/sessions"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'email@person.com') LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed in 2ms (DB: 0) | 302 Found [http://www.example.com/session]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/session"}
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-22 01:16:29) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.1ms)[0m   [0mSELECT * FROM "newsitems" [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /pages with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/"}
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-10-22 01:16:29) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Redirected to http://www.example.com/
+Filter chain halted as [:must_be_admin] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://www.example.com/pages]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/pages"}
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-22 01:16:29) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.1ms)[0m   [0mSELECT * FROM "newsitems" [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 6ms (View: 4, DB: 1) | 200 OK [http://www.example.com/]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'email@person.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO "users" ("encrypted_password", "salt", "token", "token_expires_at", "tutor_id", "role", "email", "email_confirmed") VALUES('72ea4023834e62c33cf4d72f8b81b5585633df16', 'db4dad7a9a0edf45ad77422277be3a1aacaec38b', '19d1651ab7107659b6b3d0f8020a54be47d92816', NULL, NULL, NULL, 'email@person.com', 't')[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'email@person.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'email@person.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "role" = 'admin' WHERE "id" = 1[0m
+REQUESTING PAGE: GET /session/new with {} and HTTP headers {}
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-10-22 01:16:29) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 10ms (View: 10, DB: 1) | 200 OK [http://www.example.com/session/new]
+REQUESTING PAGE: POST /session with {"commit"=>"Sign in", "session"=>{"password"=>"password", "remember_me"=>"0", "email"=>"email@person.com"}} and HTTP headers {"HTTP_REFERER"=>"/session/new"}
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2009-10-22 01:16:29) [POST]
+  Parameters: {"commit"=>"Sign in", "action"=>"create", "session"=>{"password"=>"[FILTERED]", "email"=>"email@person.com", "remember_me"=>"0"}, "controller"=>"clearance/sessions"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'email@person.com') LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed in 2ms (DB: 0) | 302 Found [http://www.example.com/session]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/session"}
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-22 01:16:29) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.1ms)[0m   [0;1mSELECT * FROM "newsitems" [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 7ms (View: 5, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /pages with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/"}
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-10-22 01:16:29) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM "pages" [0m
+Rendering template within layouts/application
+Rendering pages/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 20ms (View: 18, DB: 1) | 200 OK [http://www.example.com/pages]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'email@person.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.6ms)[0m   [0mINSERT INTO "users" ("encrypted_password", "salt", "token", "token_expires_at", "tutor_id", "role", "email", "email_confirmed") VALUES('ad53b3f595ecb6bbee1c467ab35ef67f0c3b55b6', 'c19ed8d5142e5fb43c61e4b97a354d74a7e839a8', 'a33f4c9b5a953bde91bbc86ddce62a312c98575f', NULL, NULL, NULL, 'email@person.com', 't')[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'email@person.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'email@person.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "role" = 'null' WHERE "id" = 1[0m
+REQUESTING PAGE: GET /session/new with {} and HTTP headers {}
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-10-22 01:18:01) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 50ms (View: 48, DB: 2) | 200 OK [http://www.example.com/session/new]
+REQUESTING PAGE: POST /session with {"commit"=>"Sign in", "session"=>{"password"=>"password", "remember_me"=>"0", "email"=>"email@person.com"}} and HTTP headers {"HTTP_REFERER"=>"/session/new"}
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2009-10-22 01:18:01) [POST]
+  Parameters: {"commit"=>"Sign in", "action"=>"create", "session"=>{"password"=>"[FILTERED]", "email"=>"email@person.com", "remember_me"=>"0"}, "controller"=>"clearance/sessions"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'email@person.com') LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed in 2ms (DB: 0) | 302 Found [http://www.example.com/session]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/session"}
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-22 01:18:01) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.1ms)[0m   [0mSELECT * FROM "newsitems" [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /pages with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/"}
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-10-22 01:18:01) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Redirected to http://www.example.com/
+Filter chain halted as [:must_be_admin] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://www.example.com/pages]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/pages"}
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-22 01:18:01) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.1ms)[0m   [0mSELECT * FROM "newsitems" [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 6ms (View: 4, DB: 1) | 200 OK [http://www.example.com/]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'email@person.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO "users" ("encrypted_password", "salt", "token", "token_expires_at", "tutor_id", "role", "email", "email_confirmed") VALUES('ad53b3f595ecb6bbee1c467ab35ef67f0c3b55b6', 'c19ed8d5142e5fb43c61e4b97a354d74a7e839a8', 'a33f4c9b5a953bde91bbc86ddce62a312c98575f', NULL, NULL, NULL, 'email@person.com', 't')[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'email@person.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'email@person.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Update (0.7ms)[0m   [0mUPDATE "users" SET "role" = 'admin' WHERE "id" = 1[0m
+REQUESTING PAGE: GET /session/new with {} and HTTP headers {}
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-10-22 01:18:01) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 9ms (View: 9, DB: 2) | 200 OK [http://www.example.com/session/new]
+REQUESTING PAGE: POST /session with {"commit"=>"Sign in", "session"=>{"password"=>"password", "remember_me"=>"0", "email"=>"email@person.com"}} and HTTP headers {"HTTP_REFERER"=>"/session/new"}
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2009-10-22 01:18:01) [POST]
+  Parameters: {"commit"=>"Sign in", "action"=>"create", "session"=>{"password"=>"[FILTERED]", "email"=>"email@person.com", "remember_me"=>"0"}, "controller"=>"clearance/sessions"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'email@person.com') LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed in 2ms (DB: 0) | 302 Found [http://www.example.com/session]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/session"}
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-22 01:18:01) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.1ms)[0m   [0;1mSELECT * FROM "newsitems" [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 6ms (View: 4, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /pages with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/"}
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-10-22 01:18:01) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM "pages" [0m
+Rendering template within layouts/application
+Rendering pages/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 20ms (View: 17, DB: 1) | 200 OK [http://www.example.com/pages]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'email@person.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.6ms)[0m   [0mINSERT INTO "users" ("encrypted_password", "salt", "token", "token_expires_at", "tutor_id", "role", "email", "email_confirmed") VALUES('83acb05dee479da1571344caa11cc0c22f7ba0ba', '29b4f0e41d61f6476a8dc01a35dc9a8e9b2b870e', '08f9c9bd35efd2fba39edf87e33d915ebbe57c97', NULL, NULL, NULL, 'email@person.com', 't')[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'email@person.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'email@person.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "role" = 'null' WHERE "id" = 1[0m
+REQUESTING PAGE: GET /session/new with {} and HTTP headers {}
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-10-22 01:18:09) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 51ms (View: 48, DB: 2) | 200 OK [http://www.example.com/session/new]
+REQUESTING PAGE: POST /session with {"commit"=>"Sign in", "session"=>{"password"=>"password", "remember_me"=>"0", "email"=>"email@person.com"}} and HTTP headers {"HTTP_REFERER"=>"/session/new"}
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2009-10-22 01:18:09) [POST]
+  Parameters: {"commit"=>"Sign in", "action"=>"create", "session"=>{"password"=>"[FILTERED]", "email"=>"email@person.com", "remember_me"=>"0"}, "controller"=>"clearance/sessions"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'email@person.com') LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed in 2ms (DB: 0) | 302 Found [http://www.example.com/session]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/session"}
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-22 01:18:09) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.1ms)[0m   [0mSELECT * FROM "newsitems" [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 15ms (View: 8, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /pages with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/"}
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-10-22 01:18:09) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Redirected to http://www.example.com/
+Filter chain halted as [:must_be_admin] rendered_or_redirected.
+Completed in 2ms (DB: 0) | 302 Found [http://www.example.com/pages]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/pages"}
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-22 01:18:09) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.1ms)[0m   [0mSELECT * FROM "newsitems" [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 7ms (View: 5, DB: 1) | 200 OK [http://www.example.com/]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'email@person.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO "users" ("encrypted_password", "salt", "token", "token_expires_at", "tutor_id", "role", "email", "email_confirmed") VALUES('83acb05dee479da1571344caa11cc0c22f7ba0ba', '29b4f0e41d61f6476a8dc01a35dc9a8e9b2b870e', '08f9c9bd35efd2fba39edf87e33d915ebbe57c97', NULL, NULL, NULL, 'email@person.com', 't')[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'email@person.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'email@person.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "role" = 'admin' WHERE "id" = 1[0m
+REQUESTING PAGE: GET /session/new with {} and HTTP headers {}
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-10-22 01:18:09) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 10ms (View: 10, DB: 1) | 200 OK [http://www.example.com/session/new]
+REQUESTING PAGE: POST /session with {"commit"=>"Sign in", "session"=>{"password"=>"password", "remember_me"=>"0", "email"=>"email@person.com"}} and HTTP headers {"HTTP_REFERER"=>"/session/new"}
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2009-10-22 01:18:09) [POST]
+  Parameters: {"commit"=>"Sign in", "action"=>"create", "session"=>{"password"=>"[FILTERED]", "email"=>"email@person.com", "remember_me"=>"0"}, "controller"=>"clearance/sessions"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'email@person.com') LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed in 2ms (DB: 0) | 302 Found [http://www.example.com/session]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/session"}
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-22 01:18:09) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.1ms)[0m   [0;1mSELECT * FROM "newsitems" [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 6ms (View: 4, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /pages with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/"}
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-10-22 01:18:09) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM "pages" [0m
+Rendering template within layouts/application
+Rendering pages/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 21ms (View: 17, DB: 1) | 200 OK [http://www.example.com/pages]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'email@person.com') LIMIT 1[0m
+  [4;36;1mUser Create (1.7ms)[0m   [0;1mINSERT INTO "users" ("encrypted_password", "salt", "token", "token_expires_at", "tutor_id", "role", "email", "email_confirmed") VALUES('83acb05dee479da1571344caa11cc0c22f7ba0ba', '29b4f0e41d61f6476a8dc01a35dc9a8e9b2b870e', '08f9c9bd35efd2fba39edf87e33d915ebbe57c97', NULL, NULL, NULL, 'email@person.com', 't')[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'email@person.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'email@person.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "role" = 'null' WHERE "id" = 1[0m
+REQUESTING PAGE: GET /session/new with {} and HTTP headers {}
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-10-22 01:18:09) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 10ms (View: 9, DB: 3) | 200 OK [http://www.example.com/session/new]
+REQUESTING PAGE: POST /session with {"commit"=>"Sign in", "session"=>{"password"=>"password", "remember_me"=>"0", "email"=>"email@person.com"}} and HTTP headers {"HTTP_REFERER"=>"/session/new"}
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2009-10-22 01:18:09) [POST]
+  Parameters: {"commit"=>"Sign in", "action"=>"create", "session"=>{"password"=>"[FILTERED]", "email"=>"email@person.com", "remember_me"=>"0"}, "controller"=>"clearance/sessions"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'email@person.com') LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed in 2ms (DB: 0) | 302 Found [http://www.example.com/session]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/session"}
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-22 01:18:09) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.1ms)[0m   [0;1mSELECT * FROM "newsitems" [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 10ms (View: 8, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /tutors with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/"}
+
+
+Processing TutorsController#index (for 127.0.0.1 at 2009-10-22 01:18:09) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Redirected to http://www.example.com/
+Filter chain halted as [:must_be_admin] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://www.example.com/tutors]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/tutors"}
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-22 01:18:09) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.1ms)[0m   [0;1mSELECT * FROM "newsitems" [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 8ms (View: 6, DB: 1) | 200 OK [http://www.example.com/]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'email@person.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.4ms)[0m   [0mINSERT INTO "users" ("encrypted_password", "salt", "token", "token_expires_at", "tutor_id", "role", "email", "email_confirmed") VALUES('83acb05dee479da1571344caa11cc0c22f7ba0ba', '29b4f0e41d61f6476a8dc01a35dc9a8e9b2b870e', '08f9c9bd35efd2fba39edf87e33d915ebbe57c97', NULL, NULL, NULL, 'email@person.com', 't')[0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'email@person.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'email@person.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Update (0.6ms)[0m   [0;1mUPDATE "users" SET "role" = 'admin' WHERE "id" = 1[0m
+REQUESTING PAGE: GET /session/new with {} and HTTP headers {}
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-10-22 01:18:09) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 11ms (View: 11, DB: 3) | 200 OK [http://www.example.com/session/new]
+REQUESTING PAGE: POST /session with {"commit"=>"Sign in", "session"=>{"password"=>"password", "remember_me"=>"0", "email"=>"email@person.com"}} and HTTP headers {"HTTP_REFERER"=>"/session/new"}
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2009-10-22 01:18:09) [POST]
+  Parameters: {"commit"=>"Sign in", "action"=>"create", "session"=>{"password"=>"[FILTERED]", "email"=>"email@person.com", "remember_me"=>"0"}, "controller"=>"clearance/sessions"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'email@person.com') LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed in 2ms (DB: 0) | 302 Found [http://www.example.com/session]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/session"}
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-22 01:18:09) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.1ms)[0m   [0mSELECT * FROM "newsitems" [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 6ms (View: 4, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /tutors with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/"}
+
+
+Processing TutorsController#index (for 127.0.0.1 at 2009-10-22 01:18:09) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mTutor Load (0.2ms)[0m   [0;1mSELECT * FROM "tutors" [0m
+Rendering template within layouts/application
+Rendering tutors/index
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://www.example.com/tutors]
+REQUESTING PAGE: GET /tutors/1/edit with {} and HTTP headers {}
+
+
+Processing TutorsController#edit (for 127.0.0.1 at 2009-10-22 01:18:09) [GET]
+  Parameters: {"id"=>"1"}
+Redirected to http://www.example.com/clearance/sessions/new
+Completed in 0ms (DB: 0) | 302 Found [http://www.example.com/tutors/1/edit]
+REQUESTING PAGE: GET http://www.example.com/clearance/sessions/new with {} and HTTP headers {"HTTP_REFERER"=>"/tutors/1/edit"}
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-10-22 01:18:09) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 13ms (View: 12, DB: 0) | 200 OK [http://www.example.com/clearance/sessions/new]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'email@person.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.5ms)[0m   [0mINSERT INTO "users" ("encrypted_password", "salt", "token", "token_expires_at", "tutor_id", "role", "email", "email_confirmed") VALUES('83acb05dee479da1571344caa11cc0c22f7ba0ba', '29b4f0e41d61f6476a8dc01a35dc9a8e9b2b870e', '08f9c9bd35efd2fba39edf87e33d915ebbe57c97', NULL, NULL, NULL, 'email@person.com', 't')[0m
+REQUESTING PAGE: GET /session/new with {} and HTTP headers {}
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-10-22 01:18:09) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 9ms (View: 9, DB: 1) | 200 OK [http://www.example.com/session/new]
+REQUESTING PAGE: POST /session with {"commit"=>"Sign in", "session"=>{"password"=>"password", "remember_me"=>"0", "email"=>"email@person.com"}} and HTTP headers {"HTTP_REFERER"=>"/session/new"}
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2009-10-22 01:18:09) [POST]
+  Parameters: {"commit"=>"Sign in", "action"=>"create", "session"=>{"password"=>"[FILTERED]", "email"=>"email@person.com", "remember_me"=>"0"}, "controller"=>"clearance/sessions"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'email@person.com') LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed in 4ms (DB: 1) | 302 Found [http://www.example.com/session]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/session"}
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-22 01:18:09) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.1ms)[0m   [0;1mSELECT * FROM "newsitems" [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 7ms (View: 5, DB: 1) | 200 OK [http://www.example.com/]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'email@person.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.4ms)[0m   [0mINSERT INTO "users" ("encrypted_password", "salt", "token", "token_expires_at", "tutor_id", "role", "email", "email_confirmed") VALUES('83acb05dee479da1571344caa11cc0c22f7ba0ba', '29b4f0e41d61f6476a8dc01a35dc9a8e9b2b870e', '08f9c9bd35efd2fba39edf87e33d915ebbe57c97', NULL, NULL, NULL, 'email@person.com', 't')[0m
+REQUESTING PAGE: GET /session/new with {} and HTTP headers {}
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-10-22 01:18:09) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 8ms (View: 8, DB: 1) | 200 OK [http://www.example.com/session/new]
+REQUESTING PAGE: POST /session with {"commit"=>"Sign in", "session"=>{"password"=>"password", "remember_me"=>"0", "email"=>"email@person.com"}} and HTTP headers {"HTTP_REFERER"=>"/session/new"}
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2009-10-22 01:18:09) [POST]
+  Parameters: {"commit"=>"Sign in", "action"=>"create", "session"=>{"password"=>"[FILTERED]", "email"=>"email@person.com", "remember_me"=>"0"}, "controller"=>"clearance/sessions"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'email@person.com') LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed in 2ms (DB: 0) | 302 Found [http://www.example.com/session]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/session"}
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-22 01:18:09) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.1ms)[0m   [0;1mSELECT * FROM "newsitems" [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 6ms (View: 4, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /tutors/new with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/"}
+
+
+Processing TutorsController#new (for 127.0.0.1 at 2009-10-22 01:18:10) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering tutors/new
+Rendered tutors/_tutor_form (13.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 22ms (View: 17, DB: 0) | 200 OK [http://www.example.com/tutors/new]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'email@person.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.4ms)[0m   [0mINSERT INTO "users" ("encrypted_password", "salt", "token", "token_expires_at", "tutor_id", "role", "email", "email_confirmed") VALUES('b789b0b1691f18474b4a62189d0d1759054b3929', '7e51e09f174d6dbebb440940a1c480a307896318', '43c51a5c6ef99d7d9b3e79ed18aadba130d59090', NULL, NULL, NULL, 'email@person.com', 't')[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'email@person.com') LIMIT 1[0m
+  [4;35;1mTutor Create (0.2ms)[0m   [0mINSERT INTO "tutors" ("textbook_experience", "updated_at", "photo_file_name", "photo_file_size", "course_experience", "qualifications", "photo_updated_at", "national_knowledge", "sex", "flavour", "given_name", "family_name", "photo_content_type", "phone", "given_name_first", "age", "experience", "created_at") VALUES(NULL, '2009-10-21 18:18:10', NULL, NULL, NULL, NULL, NULL, NULL, 'm', NULL, 'Iain', 'Wood', NULL, NULL, 't', NULL, 'email@person.com''s private details', '2009-10-21 18:18:10')[0m
+[paperclip] Saving attachments.
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'email@person.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "tutor_id" = 1 WHERE "id" = 1[0m
+REQUESTING PAGE: GET /session/new with {} and HTTP headers {}
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-10-22 01:18:10) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 11ms (View: 11, DB: 2) | 200 OK [http://www.example.com/session/new]
+REQUESTING PAGE: POST /session with {"commit"=>"Sign in", "session"=>{"password"=>"password", "remember_me"=>"0", "email"=>"email@person.com"}} and HTTP headers {"HTTP_REFERER"=>"/session/new"}
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2009-10-22 01:18:10) [POST]
+  Parameters: {"commit"=>"Sign in", "action"=>"create", "session"=>{"password"=>"[FILTERED]", "email"=>"email@person.com", "remember_me"=>"0"}, "controller"=>"clearance/sessions"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'email@person.com') LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed in 2ms (DB: 0) | 302 Found [http://www.example.com/session]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/session"}
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-22 01:18:10) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.1ms)[0m   [0;1mSELECT * FROM "newsitems" [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 11ms (View: 8, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /tutors/new with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/"}
+
+
+Processing TutorsController#new (for 127.0.0.1 at 2009-10-22 01:18:10) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mTutor Load (0.5ms)[0m   [0mSELECT * FROM "tutors" WHERE ("tutors"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "tutors" WHERE ("tutors"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering tutors/new
+Rendered tutors/_tutor_form (10.0ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 17ms (View: 14, DB: 1) | 200 OK [http://www.example.com/tutors/new]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'email@person.com') LIMIT 1[0m
+REQUESTING PAGE: GET /passwords/new with {} and HTTP headers {}
+
+
+Processing Clearance::PasswordsController#new (for 127.0.0.1 at 2009-10-22 01:18:10) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/passwords"}
+Rendering template within layouts/application
+Rendering passwords/new
+Completed in 11ms (View: 9, DB: 0) | 200 OK [http://www.example.com/passwords/new]
+REQUESTING PAGE: POST /passwords with {"commit"=>"Reset password", "password"=>{"email"=>"email@person.com"}} and HTTP headers {"HTTP_REFERER"=>"/passwords/new"}
+
+
+Processing Clearance::PasswordsController#create (for 127.0.0.1 at 2009-10-22 01:18:10) [POST]
+  Parameters: {"commit"=>"Reset password", "action"=>"create", "controller"=>"clearance/passwords", "password"=>"[FILTERED]"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'email@person.com') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering passwords/new
+Completed in 8ms (View: 7, DB: 0) | 200 OK [http://www.example.com/passwords]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'email@person.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO "users" ("encrypted_password", "salt", "token", "token_expires_at", "tutor_id", "role", "email", "email_confirmed") VALUES('b789b0b1691f18474b4a62189d0d1759054b3929', '7e51e09f174d6dbebb440940a1c480a307896318', '43c51a5c6ef99d7d9b3e79ed18aadba130d59090', NULL, NULL, NULL, 'email@person.com', 'f')[0m
+REQUESTING PAGE: GET /passwords/new with {} and HTTP headers {}
+
+
+Processing Clearance::PasswordsController#new (for 127.0.0.1 at 2009-10-22 01:18:10) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/passwords"}
+Rendering template within layouts/application
+Rendering passwords/new
+Completed in 7ms (View: 7, DB: 1) | 200 OK [http://www.example.com/passwords/new]
+REQUESTING PAGE: POST /passwords with {"commit"=>"Reset password", "password"=>{"email"=>"email@person.com"}} and HTTP headers {"HTTP_REFERER"=>"/passwords/new"}
+
+
+Processing Clearance::PasswordsController#create (for 127.0.0.1 at 2009-10-22 01:18:10) [POST]
+  Parameters: {"commit"=>"Reset password", "action"=>"create", "controller"=>"clearance/passwords", "password"=>"[FILTERED]"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'email@person.com') LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "token" = '2ba83539b58fca18868d943ecfff8865395c7277' WHERE "id" = 1[0m
+Sent mail to email@person.com
+
+Date: Thu, 22 Oct 2009 01:18:10 +0700
+From: donotreply@example.com
+To: email@person.com
+Subject: Change your password
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Someone, hopefully you, has requested that we send you a link to change your password.
+
+Here's the link:
+
+http://localhost/users/1/password/edit?token=2ba83539b58fca18868d943ecfff8865395c7277
+
+If you didn't request this, ignore this email. Don't worry. Your password hasn't been changed.
+Redirected to http://www.example.com/session/new
+Completed in 40ms (DB: 1) | 302 Found [http://www.example.com/passwords]
+REQUESTING PAGE: GET http://www.example.com/session/new with {} and HTTP headers {"HTTP_REFERER"=>"/passwords"}
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-10-22 01:18:10) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 9ms (View: 9, DB: 0) | 200 OK [http://www.example.com/session/new]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'email@person.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'email@person.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.4ms)[0m   [0mINSERT INTO "users" ("encrypted_password", "salt", "token", "token_expires_at", "tutor_id", "role", "email", "email_confirmed") VALUES('b789b0b1691f18474b4a62189d0d1759054b3929', '7e51e09f174d6dbebb440940a1c480a307896318', '43c51a5c6ef99d7d9b3e79ed18aadba130d59090', NULL, NULL, NULL, 'email@person.com', 'f')[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'email@person.com') LIMIT 1[0m
+REQUESTING PAGE: GET /users/1/password/edit?token=43c51a5c6ef99d7d9b3e79ed18aadba130d59090 with {} and HTTP headers {}
+
+
+Processing Clearance::PasswordsController#edit (for 127.0.0.1 at 2009-10-22 01:18:10) [GET]
+  Parameters: {"token"=>"43c51a5c6ef99d7d9b3e79ed18aadba130d59090", "action"=>"edit", "controller"=>"clearance/passwords", "user_id"=>"1"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."token" = '43c51a5c6ef99d7d9b3e79ed18aadba130d59090' AND "users"."id" = '1') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."token" = '43c51a5c6ef99d7d9b3e79ed18aadba130d59090' AND "users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering passwords/edit
+Completed in 14ms (View: 12, DB: 2) | 200 OK [http://www.example.com/users/1/password/edit?token=43c51a5c6ef99d7d9b3e79ed18aadba130d59090]
+REQUESTING PAGE: POST /users/1/password?token=43c51a5c6ef99d7d9b3e79ed18aadba130d59090 with {"user"=>{"password_confirmation"=>"wrongconfirmation", "password"=>"newpassword"}, "commit"=>"Save this password", "_method"=>"put"} and HTTP headers {"HTTP_REFERER"=>"/users/1/password/edit?token=43c51a5c6ef99d7d9b3e79ed18aadba130d59090"}
+
+
+Processing Clearance::PasswordsController#update (for 127.0.0.1 at 2009-10-22 01:18:10) [PUT]
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]"}, "commit"=>"Save this password", "token"=>"43c51a5c6ef99d7d9b3e79ed18aadba130d59090", "action"=>"update", "_method"=>"put", "controller"=>"clearance/passwords", "user_id"=>"1"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."token" = '43c51a5c6ef99d7d9b3e79ed18aadba130d59090' AND "users"."id" = '1') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."token" = '43c51a5c6ef99d7d9b3e79ed18aadba130d59090' AND "users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'email@person.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'email@person.com' AND "users".id <> 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering passwords/edit
+Completed in 20ms (View: 15, DB: 1) | 200 OK [http://www.example.com/users/1/password?token=43c51a5c6ef99d7d9b3e79ed18aadba130d59090]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'email@person.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO "users" ("encrypted_password", "salt", "token", "token_expires_at", "tutor_id", "role", "email", "email_confirmed") VALUES('b789b0b1691f18474b4a62189d0d1759054b3929', '7e51e09f174d6dbebb440940a1c480a307896318', '43c51a5c6ef99d7d9b3e79ed18aadba130d59090', NULL, NULL, NULL, 'email@person.com', 'f')[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'email@person.com') LIMIT 1[0m
+REQUESTING PAGE: GET /users/1/password/edit?token=43c51a5c6ef99d7d9b3e79ed18aadba130d59090 with {} and HTTP headers {}
+
+
+Processing Clearance::PasswordsController#edit (for 127.0.0.1 at 2009-10-22 01:18:10) [GET]
+  Parameters: {"token"=>"43c51a5c6ef99d7d9b3e79ed18aadba130d59090", "action"=>"edit", "controller"=>"clearance/passwords", "user_id"=>"1"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."token" = '43c51a5c6ef99d7d9b3e79ed18aadba130d59090' AND "users"."id" = '1') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."token" = '43c51a5c6ef99d7d9b3e79ed18aadba130d59090' AND "users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering passwords/edit
+Completed in 12ms (View: 10, DB: 1) | 200 OK [http://www.example.com/users/1/password/edit?token=43c51a5c6ef99d7d9b3e79ed18aadba130d59090]
+REQUESTING PAGE: POST /users/1/password?token=43c51a5c6ef99d7d9b3e79ed18aadba130d59090 with {"user"=>{"password_confirmation"=>"newpassword", "password"=>"newpassword"}, "commit"=>"Save this password", "_method"=>"put"} and HTTP headers {"HTTP_REFERER"=>"/users/1/password/edit?token=43c51a5c6ef99d7d9b3e79ed18aadba130d59090"}
+
+
+Processing Clearance::PasswordsController#update (for 127.0.0.1 at 2009-10-22 01:18:10) [PUT]
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]"}, "commit"=>"Save this password", "token"=>"43c51a5c6ef99d7d9b3e79ed18aadba130d59090", "action"=>"update", "_method"=>"put", "controller"=>"clearance/passwords", "user_id"=>"1"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."token" = '43c51a5c6ef99d7d9b3e79ed18aadba130d59090' AND "users"."id" = '1') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."token" = '43c51a5c6ef99d7d9b3e79ed18aadba130d59090' AND "users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'email@person.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'email@person.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Update (1.3ms)[0m   [0;1mUPDATE "users" SET "token" = NULL, "encrypted_password" = '2ddab5f008429038b8f676117058add2e1d759ca' WHERE "id" = 1[0m
+  [4;35;1mUser Update (0.1ms)[0m   [0mUPDATE "users" SET "email_confirmed" = 't' WHERE "id" = 1[0m
+Redirected to http://www.example.com/
+Completed in 8ms (DB: 2) | 302 Found [http://www.example.com/users/1/password?token=43c51a5c6ef99d7d9b3e79ed18aadba130d59090]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/users/1/password?token=43c51a5c6ef99d7d9b3e79ed18aadba130d59090"}
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-22 01:18:10) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.1ms)[0m   [0mSELECT * FROM "newsitems" [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 8ms (View: 6, DB: 1) | 200 OK [http://www.example.com/]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+REQUESTING PAGE: DELETE /session with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/"}
+
+
+Processing Clearance::SessionsController#destroy (for 127.0.0.1 at 2009-10-22 01:18:10) [DELETE]
+  Parameters: {"action"=>"destroy", "controller"=>"clearance/sessions"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Redirected to http://www.example.com/session/new
+Completed in 2ms (DB: 1) | 302 Found [http://www.example.com/session]
+REQUESTING PAGE: GET http://www.example.com/session/new with {} and HTTP headers {"HTTP_REFERER"=>"/session"}
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-10-22 01:18:10) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 9ms (View: 9, DB: 0) | 200 OK [http://www.example.com/session/new]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."token" = '') LIMIT 1[0m
+REQUESTING PAGE: GET /session/new with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/session/new"}
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-10-22 01:18:10) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 9ms (View: 9, DB: 0) | 200 OK [http://www.example.com/session/new]
+REQUESTING PAGE: POST /session with {"commit"=>"Sign in", "session"=>{"password"=>"newpassword", "remember_me"=>"0", "email"=>"email@person.com"}} and HTTP headers {"HTTP_REFERER"=>"/session/new"}
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2009-10-22 01:18:10) [POST]
+  Parameters: {"commit"=>"Sign in", "action"=>"create", "session"=>{"password"=>"[FILTERED]", "email"=>"email@person.com", "remember_me"=>"0"}, "controller"=>"clearance/sessions"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'email@person.com') LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed in 2ms (DB: 0) | 302 Found [http://www.example.com/session]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/session"}
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-22 01:18:10) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.1ms)[0m   [0;1mSELECT * FROM "newsitems" [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 7ms (View: 4, DB: 1) | 200 OK [http://www.example.com/]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."token" = '') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'email@person.com') LIMIT 1[0m
+REQUESTING PAGE: GET /session/new with {} and HTTP headers {}
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-10-22 01:18:10) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 9ms (View: 9, DB: 1) | 200 OK [http://www.example.com/session/new]
+REQUESTING PAGE: GET /session/new with {} and HTTP headers {"HTTP_REFERER"=>"/session/new"}
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-10-22 01:18:10) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 10ms (View: 9, DB: 0) | 200 OK [http://www.example.com/session/new]
+REQUESTING PAGE: POST /session with {"commit"=>"Sign in", "session"=>{"password"=>"password", "remember_me"=>"0", "email"=>"email@person.com"}} and HTTP headers {"HTTP_REFERER"=>"/session/new"}
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2009-10-22 01:18:10) [POST]
+  Parameters: {"commit"=>"Sign in", "action"=>"create", "session"=>{"password"=>"[FILTERED]", "email"=>"email@person.com", "remember_me"=>"0"}, "controller"=>"clearance/sessions"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'email@person.com') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering sessions/new (unauthorized)
+Completed in 11ms (View: 10, DB: 0) | 401 Unauthorized [http://www.example.com/session]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'email@person.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.5ms)[0m   [0mINSERT INTO "users" ("encrypted_password", "salt", "token", "token_expires_at", "tutor_id", "role", "email", "email_confirmed") VALUES('b789b0b1691f18474b4a62189d0d1759054b3929', '7e51e09f174d6dbebb440940a1c480a307896318', '43c51a5c6ef99d7d9b3e79ed18aadba130d59090', NULL, NULL, NULL, 'email@person.com', 'f')[0m
+REQUESTING PAGE: GET /session/new with {} and HTTP headers {}
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-10-22 01:18:10) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 10ms (View: 9, DB: 1) | 200 OK [http://www.example.com/session/new]
+REQUESTING PAGE: GET /session/new with {} and HTTP headers {"HTTP_REFERER"=>"/session/new"}
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-10-22 01:18:10) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 10ms (View: 9, DB: 0) | 200 OK [http://www.example.com/session/new]
+REQUESTING PAGE: POST /session with {"commit"=>"Sign in", "session"=>{"password"=>"password", "remember_me"=>"0", "email"=>"email@person.com"}} and HTTP headers {"HTTP_REFERER"=>"/session/new"}
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2009-10-22 01:18:10) [POST]
+  Parameters: {"commit"=>"Sign in", "action"=>"create", "session"=>{"password"=>"[FILTERED]", "email"=>"email@person.com", "remember_me"=>"0"}, "controller"=>"clearance/sessions"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'email@person.com') LIMIT 1[0m
+Sent mail to email@person.com
+
+Date: Thu, 22 Oct 2009 01:18:10 +0700
+From: donotreply@example.com
+To: email@person.com
+Subject: Account confirmation
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+
+http://localhost/users/1/confirmation/new?token=43c51a5c6ef99d7d9b3e79ed18aadba130d59090
+Redirected to http://www.example.com/session/new
+Completed in 6ms (DB: 0) | 302 Found [http://www.example.com/session]
+REQUESTING PAGE: GET http://www.example.com/session/new with {} and HTTP headers {"HTTP_REFERER"=>"/session"}
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-10-22 01:18:10) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 10ms (View: 10, DB: 0) | 200 OK [http://www.example.com/session/new]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'email@person.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO "users" ("encrypted_password", "salt", "token", "token_expires_at", "tutor_id", "role", "email", "email_confirmed") VALUES('b789b0b1691f18474b4a62189d0d1759054b3929', '7e51e09f174d6dbebb440940a1c480a307896318', '43c51a5c6ef99d7d9b3e79ed18aadba130d59090', NULL, NULL, NULL, 'email@person.com', 't')[0m
+REQUESTING PAGE: GET /session/new with {} and HTTP headers {}
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-10-22 01:18:10) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 9ms (View: 9, DB: 1) | 200 OK [http://www.example.com/session/new]
+REQUESTING PAGE: GET /session/new with {} and HTTP headers {"HTTP_REFERER"=>"/session/new"}
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-10-22 01:18:10) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 8ms (View: 8, DB: 0) | 200 OK [http://www.example.com/session/new]
+REQUESTING PAGE: POST /session with {"commit"=>"Sign in", "session"=>{"password"=>"wrongpassword", "remember_me"=>"0", "email"=>"email@person.com"}} and HTTP headers {"HTTP_REFERER"=>"/session/new"}
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2009-10-22 01:18:10) [POST]
+  Parameters: {"commit"=>"Sign in", "action"=>"create", "session"=>{"password"=>"[FILTERED]", "email"=>"email@person.com", "remember_me"=>"0"}, "controller"=>"clearance/sessions"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'email@person.com') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering sessions/new (unauthorized)
+Completed in 10ms (View: 8, DB: 0) | 401 Unauthorized [http://www.example.com/session]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'email@person.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.4ms)[0m   [0mINSERT INTO "users" ("encrypted_password", "salt", "token", "token_expires_at", "tutor_id", "role", "email", "email_confirmed") VALUES('d1440c69b4b93c9581a9f0dd3c611a9908e48f67', 'a9a93fb97f4c250ed83ea96315d33db2f84a8f74', '4afc602581b3976319c3bb3660756ed301f079f1', NULL, NULL, NULL, 'email@person.com', 't')[0m
+REQUESTING PAGE: GET /session/new with {} and HTTP headers {}
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-10-22 01:18:11) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 10ms (View: 9, DB: 1) | 200 OK [http://www.example.com/session/new]
+REQUESTING PAGE: GET /session/new with {} and HTTP headers {"HTTP_REFERER"=>"/session/new"}
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-10-22 01:18:11) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 15ms (View: 15, DB: 0) | 200 OK [http://www.example.com/session/new]
+REQUESTING PAGE: POST /session with {"commit"=>"Sign in", "session"=>{"password"=>"password", "remember_me"=>"0", "email"=>"email@person.com"}} and HTTP headers {"HTTP_REFERER"=>"/session/new"}
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2009-10-22 01:18:11) [POST]
+  Parameters: {"commit"=>"Sign in", "action"=>"create", "session"=>{"password"=>"[FILTERED]", "email"=>"email@person.com", "remember_me"=>"0"}, "controller"=>"clearance/sessions"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'email@person.com') LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed in 2ms (DB: 0) | 302 Found [http://www.example.com/session]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/session"}
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-22 01:18:11) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.1ms)[0m   [0;1mSELECT * FROM "newsitems" [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 7ms (View: 5, DB: 1) | 200 OK [http://www.example.com/]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'email@person.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO "users" ("encrypted_password", "salt", "token", "token_expires_at", "tutor_id", "role", "email", "email_confirmed") VALUES('d1440c69b4b93c9581a9f0dd3c611a9908e48f67', 'a9a93fb97f4c250ed83ea96315d33db2f84a8f74', '4afc602581b3976319c3bb3660756ed301f079f1', NULL, NULL, NULL, 'email@person.com', 't')[0m
+REQUESTING PAGE: GET /session/new with {} and HTTP headers {}
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-10-22 01:18:11) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 9ms (View: 9, DB: 1) | 200 OK [http://www.example.com/session/new]
+REQUESTING PAGE: GET /session/new with {} and HTTP headers {"HTTP_REFERER"=>"/session/new"}
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-10-22 01:18:11) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 10ms (View: 10, DB: 0) | 200 OK [http://www.example.com/session/new]
+REQUESTING PAGE: POST /session with {"commit"=>"Sign in", "session"=>{"password"=>"password", "remember_me"=>"1", "email"=>"email@person.com"}} and HTTP headers {"HTTP_REFERER"=>"/session/new"}
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2009-10-22 01:18:11) [POST]
+  Parameters: {"commit"=>"Sign in", "action"=>"create", "session"=>{"password"=>"[FILTERED]", "email"=>"email@person.com", "remember_me"=>"1"}, "controller"=>"clearance/sessions"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'email@person.com') LIMIT 1[0m
+  [4;36;1mUser Update (0.6ms)[0m   [0;1mUPDATE "users" SET "token" = 'c6a67299767b90af9af0178844821eeedc8ed33a', "token_expires_at" = '2009-11-04 18:18:11' WHERE "id" = 1[0m
+Redirected to http://www.example.com/
+Completed in 43ms (DB: 1) | 302 Found [http://www.example.com/session]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/session"}
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-22 01:18:11) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.1ms)[0m   [0;1mSELECT * FROM "newsitems" [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 7ms (View: 5, DB: 1) | 200 OK [http://www.example.com/]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."token" = 'c6a67299767b90af9af0178844821eeedc8ed33a') LIMIT 1[0m
+REQUESTING PAGE: GET / with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/"}
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-22 01:18:11) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.1ms)[0m   [0;1mSELECT * FROM "newsitems" [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 6ms (View: 4, DB: 1) | 200 OK [http://www.example.com/]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."token" = 'c6a67299767b90af9af0178844821eeedc8ed33a') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'email@person.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO "users" ("encrypted_password", "salt", "token", "token_expires_at", "tutor_id", "role", "email", "email_confirmed") VALUES('d1440c69b4b93c9581a9f0dd3c611a9908e48f67', 'a9a93fb97f4c250ed83ea96315d33db2f84a8f74', '4afc602581b3976319c3bb3660756ed301f079f1', NULL, NULL, NULL, 'email@person.com', 't')[0m
+REQUESTING PAGE: GET /session/new with {} and HTTP headers {}
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-10-22 01:18:11) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 105ms (View: 104, DB: 1) | 200 OK [http://www.example.com/session/new]
+REQUESTING PAGE: POST /session with {"commit"=>"Sign in", "session"=>{"password"=>"password", "remember_me"=>"0", "email"=>"email@person.com"}} and HTTP headers {"HTTP_REFERER"=>"/session/new"}
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2009-10-22 01:18:11) [POST]
+  Parameters: {"commit"=>"Sign in", "action"=>"create", "session"=>{"password"=>"[FILTERED]", "email"=>"email@person.com", "remember_me"=>"0"}, "controller"=>"clearance/sessions"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'email@person.com') LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed in 2ms (DB: 0) | 302 Found [http://www.example.com/session]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/session"}
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-22 01:18:11) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.8ms)[0m   [0mSELECT * FROM "newsitems" [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 8ms (View: 4, DB: 1) | 200 OK [http://www.example.com/]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+REQUESTING PAGE: DELETE /session with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/"}
+
+
+Processing Clearance::SessionsController#destroy (for 127.0.0.1 at 2009-10-22 01:18:11) [DELETE]
+  Parameters: {"action"=>"destroy", "controller"=>"clearance/sessions"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mUser Update (0.8ms)[0m   [0mUPDATE "users" SET "token" = NULL WHERE "id" = 1[0m
+Redirected to http://www.example.com/session/new
+Completed in 4ms (DB: 2) | 302 Found [http://www.example.com/session]
+REQUESTING PAGE: GET http://www.example.com/session/new with {} and HTTP headers {"HTTP_REFERER"=>"/session"}
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-10-22 01:18:11) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 9ms (View: 9, DB: 0) | 200 OK [http://www.example.com/session/new]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."token" = '') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'email@person.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.7ms)[0m   [0;1mINSERT INTO "users" ("encrypted_password", "salt", "token", "token_expires_at", "tutor_id", "role", "email", "email_confirmed") VALUES('d1440c69b4b93c9581a9f0dd3c611a9908e48f67', 'a9a93fb97f4c250ed83ea96315d33db2f84a8f74', '4afc602581b3976319c3bb3660756ed301f079f1', NULL, NULL, NULL, 'email@person.com', 't')[0m
+REQUESTING PAGE: GET /session/new with {} and HTTP headers {}
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-10-22 01:18:11) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 9ms (View: 9, DB: 1) | 200 OK [http://www.example.com/session/new]
+REQUESTING PAGE: POST /session with {"commit"=>"Sign in", "session"=>{"password"=>"password", "remember_me"=>"1", "email"=>"email@person.com"}} and HTTP headers {"HTTP_REFERER"=>"/session/new"}
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2009-10-22 01:18:11) [POST]
+  Parameters: {"commit"=>"Sign in", "action"=>"create", "session"=>{"password"=>"[FILTERED]", "email"=>"email@person.com", "remember_me"=>"1"}, "controller"=>"clearance/sessions"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'email@person.com') LIMIT 1[0m
+  [4;36;1mUser Update (0.6ms)[0m   [0;1mUPDATE "users" SET "token" = 'c6a67299767b90af9af0178844821eeedc8ed33a', "token_expires_at" = '2009-11-04 18:18:11' WHERE "id" = 1[0m
+Redirected to http://www.example.com/
+Completed in 4ms (DB: 1) | 302 Found [http://www.example.com/session]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/session"}
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-22 01:18:11) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.1ms)[0m   [0;1mSELECT * FROM "newsitems" [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 9ms (View: 6, DB: 1) | 200 OK [http://www.example.com/]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."token" = 'c6a67299767b90af9af0178844821eeedc8ed33a') LIMIT 1[0m
+REQUESTING PAGE: DELETE /session with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/"}
+
+
+Processing Clearance::SessionsController#destroy (for 127.0.0.1 at 2009-10-22 01:18:11) [DELETE]
+  Parameters: {"action"=>"destroy", "controller"=>"clearance/sessions"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."token" = 'c6a67299767b90af9af0178844821eeedc8ed33a') LIMIT 1[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "token" = NULL, "token_expires_at" = NULL WHERE "id" = 1[0m
+Redirected to http://www.example.com/session/new
+Completed in 3ms (DB: 1) | 302 Found [http://www.example.com/session]
+REQUESTING PAGE: GET http://www.example.com/session/new with {} and HTTP headers {"HTTP_REFERER"=>"/session"}
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-10-22 01:18:11) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 10ms (View: 10, DB: 0) | 200 OK [http://www.example.com/session/new]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."token" = '') LIMIT 1[0m
+REQUESTING PAGE: GET / with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/session/new"}
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-22 01:18:11) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.1ms)[0m   [0mSELECT * FROM "newsitems" [0m
+Rendering template within layouts/application
+Rendering pages/show
+Completed in 6ms (View: 4, DB: 1) | 200 OK [http://www.example.com/]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."token" = '') LIMIT 1[0m
+REQUESTING PAGE: GET /users/new with {} and HTTP headers {}
+
+
+Processing Clearance::UsersController#new (for 127.0.0.1 at 2009-10-22 01:18:11) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (8.5ms)
+Completed in 16ms (View: 12, DB: 0) | 200 OK [http://www.example.com/users/new]
+REQUESTING PAGE: POST /users with {"user"=>{"password_confirmation"=>"", "password"=>"password", "email"=>"invalidemail"}, "commit"=>"Submit"} and HTTP headers {"HTTP_REFERER"=>"/users/new"}
+
+
+Processing Clearance::UsersController#create (for 127.0.0.1 at 2009-10-22 01:18:11) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "email"=>"invalidemail"}, "commit"=>"Submit", "action"=>"create", "controller"=>"clearance/users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'invalidemail') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (11.9ms)
+Completed in 17ms (View: 15, DB: 0) | 200 OK [http://www.example.com/users]
+REQUESTING PAGE: GET /users/new with {} and HTTP headers {}
+
+
+Processing Clearance::UsersController#new (for 127.0.0.1 at 2009-10-22 01:18:11) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (6.1ms)
+Completed in 9ms (View: 9, DB: 0) | 200 OK [http://www.example.com/users/new]
+REQUESTING PAGE: POST /users with {"user"=>{"password_confirmation"=>"password", "password"=>"password", "email"=>"email@person.com"}, "commit"=>"Submit"} and HTTP headers {"HTTP_REFERER"=>"/users/new"}
+
+
+Processing Clearance::UsersController#create (for 127.0.0.1 at 2009-10-22 01:18:11) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "email"=>"email@person.com"}, "commit"=>"Submit", "action"=>"create", "controller"=>"clearance/users"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'email@person.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.7ms)[0m   [0mINSERT INTO "users" ("encrypted_password", "salt", "token", "token_expires_at", "tutor_id", "role", "email", "email_confirmed") VALUES('d1440c69b4b93c9581a9f0dd3c611a9908e48f67', 'a9a93fb97f4c250ed83ea96315d33db2f84a8f74', '4afc602581b3976319c3bb3660756ed301f079f1', NULL, NULL, NULL, 'email@person.com', 'f')[0m
+Sent mail to email@person.com
+
+Date: Thu, 22 Oct 2009 01:18:11 +0700
+From: donotreply@example.com
+To: email@person.com
+Subject: Account confirmation
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+
+http://localhost/users/1/confirmation/new?token=4afc602581b3976319c3bb3660756ed301f079f1
+Redirected to http://www.example.com/session/new
+Completed in 11ms (DB: 1) | 302 Found [http://www.example.com/users]
+REQUESTING PAGE: GET http://www.example.com/session/new with {} and HTTP headers {"HTTP_REFERER"=>"/users"}
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-10-22 01:18:11) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 10ms (View: 10, DB: 0) | 200 OK [http://www.example.com/session/new]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'email@person.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'email@person.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO "users" ("encrypted_password", "salt", "token", "token_expires_at", "tutor_id", "role", "email", "email_confirmed") VALUES('d1440c69b4b93c9581a9f0dd3c611a9908e48f67', 'a9a93fb97f4c250ed83ea96315d33db2f84a8f74', '4afc602581b3976319c3bb3660756ed301f079f1', NULL, NULL, NULL, 'email@person.com', 'f')[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'email@person.com') LIMIT 1[0m
+REQUESTING PAGE: GET /users/1/confirmation/new?token=4afc602581b3976319c3bb3660756ed301f079f1 with {} and HTTP headers {}
+
+
+Processing Clearance::ConfirmationsController#new (for 127.0.0.1 at 2009-10-22 01:18:11) [GET]
+  Parameters: {"token"=>"[FILTERED]", "action"=>"new", "controller"=>"clearance/confirmations", "user_id"=>"1"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."token" = '4afc602581b3976319c3bb3660756ed301f079f1' AND "users"."id" = '1') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."token" = '4afc602581b3976319c3bb3660756ed301f079f1' AND "users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "email_confirmed" = 't', "token" = NULL WHERE "id" = 1[0m
+Redirected to http://www.example.com/
+Completed in 8ms (DB: 3) | 302 Found [http://www.example.com/users/1/confirmation/new?token=4afc602581b3976319c3bb3660756ed301f079f1]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/users/1/confirmation/new?token=4afc602581b3976319c3bb3660756ed301f079f1"}
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-22 01:18:11) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.1ms)[0m   [0mSELECT * FROM "newsitems" [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 7ms (View: 5, DB: 1) | 200 OK [http://www.example.com/]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m

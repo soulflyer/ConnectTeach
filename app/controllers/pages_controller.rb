@@ -99,8 +99,8 @@ class PagesController < ApplicationController
   
 private
   def must_be_admin
-    if User.find(session[:user_id]).role != "admin"
-      flash[:error] = 'Must be admin'
+    if !session[:user_id] || User.find(session[:user_id]).role != "admin"
+      flash[:error] = 'Must be logged in as admin'
       redirect_to root_url
     end
   end
