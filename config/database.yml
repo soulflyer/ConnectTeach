@@ -16,10 +16,13 @@ test: &TEST
   timeout: 5000
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
+  adapter: mysql
+  encoding: utf8
+  reconnect: false
+  database: jphuquoc_connectteach
   pool: 5
-  timeout: 5000
+  username: jphuquoc_connect
+  password: geek
 
 cucumber:
   <<: *TEST

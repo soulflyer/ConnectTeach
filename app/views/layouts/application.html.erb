@@ -1,50 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
 <head>
-  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <title>: <%= controller.action_name %></title>
-  <%= stylesheet_link_tag 'base' %>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>ConnectTeach </title>
+	<meta name="generator" content="TextMate http://macromates.com/">
+	<meta name="author" content="Iain Wood, railsiain.com">
+	<%= stylesheet_link_tag 'condelastic' %>
+	<%= stylesheet_link_tag 'site' %>
+	<%= stylesheet_link_tag 'menu' %>
+	<%= stylesheet_link_tag 'footer' %>
   <% if @stylesheet %>
 	  <% for sh in @stylesheet %>
 	    <%= stylesheet_link_tag sh %>
 	  <% end %>
   <% end %>
+	<%= yield :newsbarcss %>
 </head>
 <body>
 	<div id="wrapper">
 		<div id="header">
-			<h1>ConnectTeach</h1>
-			<div id="menu">
-		    <ul>
-					<li><%= link_to 'Tutors', tutors_path %></li>
-			    <li><%= link_to 'Users', users_path %></li>
-					<li><%= link_to 'Pages', pages_path %></li>
-		    </ul>	 
+			<div id="banner">
+			</div>
+			<div id="logo">	
 			</div>
 			<div id="login">
+				<div id="loginlogo">
+				</div>
 				<% if session[:user_id] %>
 				  <% user=User.find(session[:user_id]) %>
-				  <%= link_to "Logout #{user.email}", :controller => 'clearance/sessions', :action => 'destroy' %>
-				  <%= link_to "Details", :controller => '/tutors', :action => 'edit', :id => user.tutor_id %>
+					<div id="loggedinas">
+						<p>Logged in as: </p>
+					  <p><%= user.email %></p>
+					</div>
+					<%= link_to '<div id="logoutbutton">
+						<p>Logout</p>
+					</div>', :controller => 'clearance/sessions', :action => 'destroy' %>	
+				  <%= link_to '<div id="details">
+				  	<p>Details</p>
+				  </div>', :controller => '/tutors', :action => 'edit', :id => user.tutor_id %>	
 				<% else %>
-				  <%= link_to "Login", :controller => 'clearance/sessions', :action => 'new' %>
+					<%= link_to '<div id="loginbutton">
+						<p>Login</p>
+					</div>', :controller => 'clearance/sessions', :action => 'new' %>
 				<% end %>
-			</div>		
+			</div>
+			<div id="menu">
+				<%= link_to '<div id="contactbutton" class="button">
+					<p>Contact</p>
+				</div>', contact_path %>
+				<%= link_to '<div id="aboutbutton" class="button">
+					<p>About</p>
+				</div>', about_path %>
+				<%= link_to '<div id="coursebutton" class="button">
+					<p>Courses & Programs</p>
+				</div>', courses_path %>
+				<%= link_to '<div id="tutorbutton" class="button">
+					<p>Tutors</p>
+				</div>', tutors_path %>
+				<%= link_to '<div id="clientbutton" class="button">
+					<p>Clients</p>
+				</div>', tutors_path %>
+				<%= link_to '<div id="homebutton" class="button">
+					<p>Home</p>
+				</div>', root_path %>
+				
+			</div>
 		</div>
 		<div id="main">
-		<p style="color: green">
-			<%= flash[:notice] %>
-			<%= flash[:sucess] %>
-		</p>
-		<p style="color: red">
-			<%= flash[:error] %>
-			<%= flash[:failure] %>
-		</p>
-		
-		<%= yield  %>
-
-		</div>
-		<div id="footer">
-			<p>WebDesign by <%= link_to "RailsIain", "http://railsiain.com" %></p>
+			<%= yield :newsbar %>
+			<div id="text">
+				<%= yield  %>
+			</div>
+			<div id="footer">
+				<div id="copyright">
+				<p>	ⓒ ConnectTeach</p>
+				</div>
+				<div id="graphics">
+					<p>Graphics by  <a href="http://www.grindstudio.net">Grindstudio</a></p>
+				</div>
+				<div id="design">
+					<p>WebDesign by <a href="http://www.railsiain.com">RailsIain</a></p>
+				</div>
+			</div>
 		</div>
 	</div>
 </body>
-</html>

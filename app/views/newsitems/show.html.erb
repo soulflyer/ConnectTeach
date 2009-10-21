@@ -1,18 +1,15 @@
-<p>
-  <b>Title:</b>
-  <%=h @newsitem.title %>
-</p>
-
-<p>
-  <b>Contents:</b>
-  <%=h @newsitem.English_content %>
-</p>
-
-<p>
-  <b>Image url:</b>
-  <%=h @newsitem.image_url %>
-</p>
+<h1><%=h @newsitem.title %></h1>
+<div id="photo">
+  <%= image_tag @newsitem.photo.url %>
+</div>
+<div id="left">
+  <p><%=h @newsitem.English_content %></p>
+</div>
+<div id="right">
+  <p><%=h @newsitem.English_content %></p>
+</div>
 
 
-<%= link_to 'Edit', edit_newsitem_path(@newsitem) %> |
-<%= link_to 'Back', newsitems_path %>
+
+
+<%= link_to 'Edit', edit_newsitem_path(@newsitem) %>

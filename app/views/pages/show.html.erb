@@ -4,6 +4,7 @@
 	<% end %>
 	<% content_for :newsbar do %>
 		<div id="news">
+			<p><%= @newsitem.title  %></p>
 			<p>News news news news news news news news news news news news news news news news news 
 				news news news news news news news news news news news news news news news news news 
 				news news news news news news news news news news news news news news news news news 
@@ -12,7 +13,6 @@
 		</div>
 	<% end %>
 <% end %>
-<h1><%=h @page.name %></h1>
 
 <%= textilize @page.English_content %>
 

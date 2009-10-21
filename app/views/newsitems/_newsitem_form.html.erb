@@ -1,0 +1,15 @@
+<% form_for @newsitem, :html => { :multipart => true }, :builder => TaggedBuilder do |f| %>
+	<%= f.error_messages %>
+	<div id="form_header"><h1><%= @header %></h1>
+		<%= f.submit 'Save' %>
+		<%= f.text_field 'title' %>
+		<%= f.file_field :photo %>
+		<%= image_tag (@newsitem.photo.url(:thumb)) %>
+	</div>	
+	<div id="left">
+		<%= f.text_area :English_content %>
+	</div>
+	<div id="right">
+		<%= f.text_area :Vietnamese_content %>
+	</div>
+<% end %>

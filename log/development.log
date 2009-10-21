@@ -5562,3 +5562,2495 @@ Processing NewsitemsController#show (for 127.0.0.1 at 2009-10-18 17:33:35) [GET]
 Rendering template within layouts/newsitems
 Rendering newsitems/show
 Completed in 17ms (View: 8, DB: 0) | 200 OK [http://localhost/newsitems/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-19 14:36:37) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (10.1ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+Rendering template within layouts/pages
+Rendering pages/show
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #7 of app/views/pages/show.html.erb:
+4: 	<% end %>
+5: 	<% content_for :newsbar do %>
+6: 		<div id="news">
+7: 			<% @newsitems.each do |newsitem|%>
+8: 				<%= newsitem.title  %>
+9: 			<% end %>
+10: 			<p>News news news news news news news news news news news news news news news news news 
+
+    app/views/pages/show.html.erb:7
+    app/views/pages/show.html.erb:5
+    app/controllers/pages_controller.rb:25:in `show'
+
+Rendered rescues/_trace (197.9ms)
+Rendered rescues/_request_and_response (27.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-19 15:15:47) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.5ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/pages
+Rendering pages/show
+Completed in 76ms (View: 42, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing NewsitemsController#new (for 127.0.0.1 at 2009-10-19 15:16:27) [GET]
+Rendering template within layouts/newsitems
+Rendering newsitems/new
+Completed in 84ms (View: 75, DB: 0) | 200 OK [http://localhost/newsitems/new]
+
+
+Processing NewsitemsController#create (for 127.0.0.1 at 2009-10-19 15:16:46) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"LwsLXpg/+Jb6hPHS2ACCgEE4NV5IwDtcjkEO0AYdbGk=", "newsitem"=>{"image_url"=>"", "title"=>"Test newsitem", "English_content"=>"empty"}}
+  [4;36;1mNewsitem Create (1.0ms)[0m   [0;1mINSERT INTO "newsitems" ("image_url", "updated_at", "photo_file_name", "photo_file_size", "title", "English_content", "Vietnamese_content", "photo_updated_at", "photo_content_type", "created_at") VALUES('', '2009-10-19 08:16:46', NULL, NULL, 'Test newsitem', 'empty', NULL, NULL, NULL, '2009-10-19 08:16:46')[0m
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/newsitems/2
+Completed in 20ms (DB: 1) | 302 Found [http://localhost/newsitems]
+
+
+Processing NewsitemsController#show (for 127.0.0.1 at 2009-10-19 15:16:46) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mNewsitem Load (0.4ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 2) [0m
+Rendering template within layouts/newsitems
+Rendering newsitems/show
+Completed in 15ms (View: 6, DB: 0) | 200 OK [http://localhost/newsitems/2]
+
+
+Processing NewsitemsController#show (for 127.0.0.1 at 2009-10-19 15:16:52) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mNewsitem Load (0.5ms)[0m   [0;1mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/newsitems
+Rendering newsitems/show
+Completed in 16ms (View: 5, DB: 0) | 200 OK [http://localhost/newsitems/1]
+
+
+Processing NewsitemsController#edit (for 127.0.0.1 at 2009-10-19 15:16:58) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mNewsitem Load (0.5ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/newsitems
+Rendering newsitems/edit
+
+ActionView::TemplateError (undefined method `contents' for #<Newsitem:0x229bd44>) on line #12 of app/views/newsitems/edit.html.erb:
+9:   </p>
+10:   <p>
+11:     <%= f.label :contents %><br />
+12:     <%= f.text_area :contents %>
+13:   </p>
+14:   <p>
+15:     <%= f.label :image_url %><br />
+
+    app/views/newsitems/edit.html.erb:12
+    app/views/newsitems/edit.html.erb:3
+
+Rendered rescues/_trace (127.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing NewsitemsController#edit (for 127.0.0.1 at 2009-10-19 15:17:53) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mNewsitem Load (0.3ms)[0m   [0;1mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/newsitems
+Rendering newsitems/edit
+Completed in 21ms (View: 12, DB: 0) | 200 OK [http://localhost/newsitems/1/edit]
+
+
+Processing NewsitemsController#update (for 127.0.0.1 at 2009-10-19 15:18:00) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"LwsLXpg/+Jb6hPHS2ACCgEE4NV5IwDtcjkEO0AYdbGk=", "id"=>"1", "newsitem"=>{"image_url"=>"", "title"=>"test newsitem", "English_content"=>"Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah"}}
+  [4;35;1mNewsitem Load (0.5ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+  [4;36;1mNewsitem Update (0.5ms)[0m   [0;1mUPDATE "newsitems" SET "title" = 'test newsitem', "updated_at" = '2009-10-19 08:18:00' WHERE "id" = 1[0m
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/newsitems/1
+Completed in 20ms (DB: 1) | 302 Found [http://localhost/newsitems/1]
+
+
+Processing NewsitemsController#show (for 127.0.0.1 at 2009-10-19 15:18:00) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mNewsitem Load (0.3ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/newsitems
+Rendering newsitems/show
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://localhost/newsitems/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-19 15:18:09) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.4ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/pages
+Rendering pages/show
+Completed in 23ms (View: 9, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-20 00:12:08) [GET]
+
+ActionController::RoutingError (No route matches "/login" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-10-20 00:12:22) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" [0m
+Rendering template within layouts/pages
+Rendering pages/index
+
+ActionView::TemplateError (undefined method `content' for #<Page:0x2211694>) on line #17 of app/views/pages/index.html.erb:
+14:   <tr>
+15:     <td><%=h page.name %></td>
+16:     <td><%=h page.permalink %></td>
+17:     <td><%=h page.content %></td>
+18:     <td><%= link_to 'Show', page %></td>
+19:     <td><%= link_to 'Edit', edit_page_path(page) %></td>
+20:     <td><%= link_to 'Destroy', page, :confirm => 'Are you sure?', :method => :delete %></td>
+
+    app/views/pages/index.html.erb:17
+    app/views/pages/index.html.erb:13:in `each'
+    app/views/pages/index.html.erb:13
+    app/controllers/pages_controller.rb:9:in `index'
+
+Rendered rescues/_trace (126.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-10-20 00:13:19) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" [0m
+Rendering template within layouts/pages
+Rendering pages/index
+
+ActionView::TemplateError (undefined method `title' for #<Page:0x23ff53c>) on line #17 of app/views/pages/index.html.erb:
+14:   <tr>
+15:     <td><%=h page.name %></td>
+16:     <td><%=h page.permalink %></td>
+17:     <td><%=h page.title %></td>
+18:     <td><%= link_to 'Show', page %></td>
+19:     <td><%= link_to 'Edit', edit_page_path(page) %></td>
+20:     <td><%= link_to 'Destroy', page, :confirm => 'Are you sure?', :method => :delete %></td>
+
+    app/views/pages/index.html.erb:17
+    app/views/pages/index.html.erb:13:in `each'
+    app/views/pages/index.html.erb:13
+    app/controllers/pages_controller.rb:9:in `index'
+
+Rendered rescues/_trace (51.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-10-20 00:14:05) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mPage Load (0.5ms)[0m   [0mSELECT * FROM "pages" [0m
+Rendering template within layouts/pages
+Rendering pages/index
+
+ActionView::TemplateError (undefined method `title' for #<Page:0x2577fb8>) on line #17 of app/views/pages/index.html.erb:
+14:   <tr>
+15:     <td><%=h page.name %></td>
+16:     <td><%=h page.permalink %></td>
+17:     <td><%=h page.title %></td>
+18:     <td><%= link_to 'Show', page %></td>
+19:     <td><%= link_to 'Edit', edit_page_path(page) %></td>
+20:     <td><%= link_to 'Destroy', page, :confirm => 'Are you sure?', :method => :delete %></td>
+
+    app/views/pages/index.html.erb:17
+    app/views/pages/index.html.erb:13:in `each'
+    app/views/pages/index.html.erb:13
+    app/controllers/pages_controller.rb:9:in `index'
+
+Rendered rescues/_trace (50.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-10-20 00:15:16) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" [0m
+Rendering template within layouts/pages
+Rendering pages/index
+Completed in 26ms (View: 14, DB: 1) | 200 OK [http://localhost/pages]
+
+
+Processing Clearance::UsersController#index (for 127.0.0.1 at 2009-10-20 00:15:29) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clearance/users"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 87ms (View: 78, DB: 2) | 200 OK [http://localhost/users]
+
+
+Processing Clearance::SessionsController#destroy (for 127.0.0.1 at 2009-10-20 00:15:39) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"clearance/sessions"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Redirected to http://localhost:3000/session/new
+Completed in 87ms (DB: 0) | 302 Found [http://localhost/clearance/sessions/destroy]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-10-20 00:15:39) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 20ms (View: 18, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-10-20 00:16:07) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 15ms (View: 12, DB: 0) | 200 OK [http://localhost/clearance/sessions/new]
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2009-10-20 00:16:16) [POST]
+  Parameters: {"commit"=>"Sign in", "action"=>"create", "authenticity_token"=>"VfRYoxcOEU2uLErt12aRFYjumKh0HTWGYftc69mc7C8=", "session"=>{"password"=>"[FILTERED]", "remember_me"=>"0", "email"=>"iain@railsiain.com"}, "controller"=>"clearance/sessions"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'iain@railsiain.com') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 99ms (DB: 0) | 302 Found [http://localhost/session]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 00:16:16) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.4ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/pages
+Rendering pages/show
+Completed in 49ms (View: 9, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 00:34:37) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.5ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/pages
+Rendering pages/show
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 57ms (View: 43, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing Clearance::SessionsController#destroy (for 127.0.0.1 at 2009-10-20 00:35:23) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"clearance/sessions"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Redirected to http://localhost:3000/session/new
+Completed in 18ms (DB: 0) | 302 Found [http://localhost/clearance/sessions/destroy]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-10-20 00:35:23) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 13ms (View: 11, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 00:35:29) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.5ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/pages
+Rendering pages/show
+Completed in 24ms (View: 10, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-10-20 00:35:32) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 13ms (View: 10, DB: 0) | 200 OK [http://localhost/clearance/sessions/new]
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2009-10-20 00:35:40) [POST]
+  Parameters: {"commit"=>"Sign in", "action"=>"create", "authenticity_token"=>"zlYKgdvugYB+ENzXl+dPK8xfs13fCNP35v+7/sNa3+Q=", "session"=>{"password"=>"[FILTERED]", "remember_me"=>"0", "email"=>"iain@railsiain.com"}, "controller"=>"clearance/sessions"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'iain@railsiain.com') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/session]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 00:35:40) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.4ms)[0m   [0;1mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/pages
+Rendering pages/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 33ms (View: 19, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing TutorsController#edit (for 127.0.0.1 at 2009-10-20 00:37:19) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mTutor Load (0.5ms)[0m   [0;1mSELECT * FROM "tutors" WHERE ("tutors"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering tutors/edit
+Rendered tutors/_tutor_form (122.2ms)
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 241ms (View: 214, DB: 1) | 200 OK [http://localhost/tutors/3/edit]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 00:38:01) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 4) [0m
+  [4;35;1mNewsitem Load (0.4ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/pages
+Rendering pages/show
+Completed in 23ms (View: 10, DB: 1) | 200 OK [http://localhost/pages/4]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-10-20 00:38:36) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 11ms (View: 9, DB: 0) | 200 OK [http://localhost/clearance/sessions/new]
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2009-10-20 00:39:28) [POST]
+  Parameters: {"commit"=>"Sign in", "action"=>"create", "authenticity_token"=>"xhWkryHtQnPYCyQwoFwyWGU35PkXV9N+iOhxBHH0eac=", "session"=>{"password"=>"[FILTERED]", "remember_me"=>"0", "email"=>"iain@railsiain.com"}, "controller"=>"clearance/sessions"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'iain@railsiain.com') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 15ms (DB: 1) | 302 Found [http://localhost/session]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 00:39:28) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.4ms)[0m   [0;1mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/pages
+Rendering pages/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 31ms (View: 18, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 00:48:47) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.4ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/pages
+Rendering pages/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 40ms (View: 27, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing Clearance::SessionsController#destroy (for 127.0.0.1 at 2009-10-20 00:53:06) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"clearance/sessions"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Redirected to http://localhost:3000/session/new
+Completed in 14ms (DB: 0) | 302 Found [http://localhost/clearance/sessions/destroy]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-10-20 00:53:06) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 11ms (View: 9, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 00:53:14) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.5ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.4ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/pages
+Rendering pages/show
+Completed in 32ms (View: 17, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-10-20 00:53:45) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 15ms (View: 12, DB: 0) | 200 OK [http://localhost/clearance/sessions/new]
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2009-10-20 00:54:22) [POST]
+  Parameters: {"commit"=>"Sign in", "action"=>"create", "authenticity_token"=>"S8MgfH/6EH7T/2dsv9hoJfGRAyRMeqPJ3T4Yh5W+HWw=", "session"=>{"password"=>"[FILTERED]", "remember_me"=>"0", "email"=>"iain@railsiain.com"}, "controller"=>"clearance/sessions"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'iain@railsiain.com') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/session]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 00:54:22) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.3ms)[0m   [0;1mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/pages
+Rendering pages/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 35ms (View: 22, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 00:57:26) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.4ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/pages
+Rendering pages/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 112ms (View: 95, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 00:58:35) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.5ms)[0m   [0;1mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/pages
+Rendering pages/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 41ms (View: 27, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 01:01:10) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.4ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/pages
+Rendering pages/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 39ms (View: 25, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 01:15:21) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.4ms)[0m   [0;1mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/pages
+Rendering pages/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 31ms (View: 18, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing Clearance::SessionsController#destroy (for 127.0.0.1 at 2009-10-20 01:15:24) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"clearance/sessions"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Redirected to http://localhost:3000/session/new
+Completed in 14ms (DB: 0) | 302 Found [http://localhost/clearance/sessions/destroy]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-10-20 01:15:24) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 11ms (View: 9, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2009-10-20 01:15:31) [POST]
+  Parameters: {"commit"=>"Sign in", "action"=>"create", "authenticity_token"=>"eShKjzdD09g0v325MsFN1qrvNRcbHIyPA1wC8seJqAI=", "session"=>{"password"=>"[FILTERED]", "remember_me"=>"0", "email"=>"iain@railsiain.com"}, "controller"=>"clearance/sessions"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'iain@railsiain.com') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 16ms (DB: 0) | 302 Found [http://localhost/session]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 01:15:31) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.5ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.4ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/pages
+Rendering pages/show
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 46ms (View: 30, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 01:32:11) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.4ms)[0m   [0;1mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 41ms (View: 28, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing Clearance::SessionsController#destroy (for 127.0.0.1 at 2009-10-20 01:32:14) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"clearance/sessions"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Redirected to http://localhost:3000/session/new
+Completed in 13ms (DB: 0) | 302 Found [http://localhost/clearance/sessions/destroy]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-10-20 01:32:15) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 11ms (View: 9, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2009-10-20 01:33:30) [POST]
+  Parameters: {"commit"=>"Sign in", "action"=>"create", "authenticity_token"=>"aa53EqI2f6DoRGaROrPAA6xKUdUw8coEUPnDiAm01wM=", "session"=>{"password"=>"[FILTERED]", "remember_me"=>"0", "email"=>"iain@railsiain.com"}, "controller"=>"clearance/sessions"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'iain@railsiain.com') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 13ms (DB: 0) | 302 Found [http://localhost/session]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 01:33:30) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.4ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 32ms (View: 19, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing TutorsController#index (for 127.0.0.1 at 2009-10-20 01:34:15) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mTutor Load (1.0ms)[0m   [0;1mSELECT * FROM "tutors" [0m
+Rendering template within layouts/application
+Rendering tutors/index
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 58ms (View: 41, DB: 1) | 200 OK [http://localhost/tutors]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-20 01:34:15) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TutorsController#edit (for 127.0.0.1 at 2009-10-20 01:57:49) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mTutor Load (0.5ms)[0m   [0;1mSELECT * FROM "tutors" WHERE ("tutors"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering tutors/edit
+Rendered tutors/_tutor_form (16.8ms)
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 39ms (View: 28, DB: 1) | 200 OK [http://localhost/tutors/3/edit]
+
+
+Processing TutorsController#edit (for 127.0.0.1 at 2009-10-20 02:06:29) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mTutor Load (0.5ms)[0m   [0;1mSELECT * FROM "tutors" WHERE ("tutors"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering tutors/edit
+Rendered tutors/_tutor_form (16.9ms)
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+
+ActionView::TemplateError (undefined local variable or method `home_path' for #<ActionView::Base:0x2221184>) on line #52 of app/views/layouts/application.html.erb:
+49: 			<div id="menu">
+50: 				<%= link_to '<div id="contactbutton" class="button">
+51: 					<p>Contact</p>
+52: 				</div>', home_path %>
+53: 				<%= link_to '<div id="aboutbutton" class="button">
+54: 					<p>About</p>
+55: 				</div>', tutors_path %>
+
+    app/views/layouts/application.html.erb:52
+
+Rendered rescues/_trace (47.6ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TutorsController#edit (for 127.0.0.1 at 2009-10-20 02:10:26) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mTutor Load (0.5ms)[0m   [0;1mSELECT * FROM "tutors" WHERE ("tutors"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering tutors/edit
+Rendered tutors/_tutor_form (16.7ms)
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 45ms (View: 35, DB: 1) | 200 OK [http://localhost/tutors/3/edit]
+
+
+Processing TutorsController#index (for 127.0.0.1 at 2009-10-20 02:10:29) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mTutor Load (1.0ms)[0m   [0mSELECT * FROM "tutors" [0m
+Rendering template within layouts/application
+Rendering tutors/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 28ms (View: 12, DB: 1) | 200 OK [http://localhost/tutors]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-20 02:10:29) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TutorsController#index (for 127.0.0.1 at 2009-10-20 02:10:34) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mTutor Load (1.3ms)[0m   [0;1mSELECT * FROM "tutors" [0m
+Rendering template within layouts/application
+Rendering tutors/index
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 36ms (View: 16, DB: 2) | 200 OK [http://localhost/tutors]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-20 02:10:34) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TutorsController#index (for 127.0.0.1 at 2009-10-20 02:10:37) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mTutor Load (1.1ms)[0m   [0mSELECT * FROM "tutors" [0m
+Rendering template within layouts/application
+Rendering tutors/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 30ms (View: 12, DB: 1) | 200 OK [http://localhost/tutors]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-20 02:10:37) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-20 02:10:37) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TutorsController#index (for 127.0.0.1 at 2009-10-20 02:10:40) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mTutor Load (1.0ms)[0m   [0;1mSELECT * FROM "tutors" [0m
+Rendering template within layouts/application
+Rendering tutors/index
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 27ms (View: 12, DB: 1) | 200 OK [http://localhost/tutors]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-20 02:10:40) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TutorsController#index (for 127.0.0.1 at 2009-10-20 02:11:19) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mTutor Load (1.3ms)[0m   [0mSELECT * FROM "tutors" [0m
+Rendering template within layouts/application
+Rendering tutors/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 106ms (View: 20, DB: 2) | 200 OK [http://localhost/tutors]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-20 02:11:19) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-20 02:11:19) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 02:11:26) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.4ms)[0m   [0;1mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 61ms (View: 19, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing Clearance::SessionsController#destroy (for 127.0.0.1 at 2009-10-20 02:17:50) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"clearance/sessions"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Redirected to http://localhost:3000/session/new
+Completed in 13ms (DB: 0) | 302 Found [http://localhost/clearance/sessions/destroy]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-10-20 02:17:50) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 11ms (View: 9, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2009-10-20 02:17:58) [POST]
+  Parameters: {"commit"=>"Sign in", "action"=>"create", "authenticity_token"=>"j27P8tcbXn+WuAau5472j01dlLiUNDICNE/VARSwOMM=", "session"=>{"password"=>"[FILTERED]", "remember_me"=>"0", "email"=>"iain@railsiain.com"}, "controller"=>"clearance/sessions"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'iain@railsiain.com') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 15ms (DB: 0) | 302 Found [http://localhost/session]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 02:17:58) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.4ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 104ms (View: 91, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 02:49:28) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.4ms)[0m   [0;1mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 34ms (View: 20, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 02:49:52) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.4ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 32ms (View: 18, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 02:49:59) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (0.5ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.5ms)[0m   [0;1mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 37ms (View: 20, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 02:50:06) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.4ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 33ms (View: 19, DB: 1) | 200 OK [http://localhost/static/home]
+
+
+Processing PagesController#edit (for 127.0.0.1 at 2009-10-20 02:50:11) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/edit
+Rendered pages/_page_form (11.4ms)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 31ms (View: 23, DB: 1) | 200 OK [http://localhost/static/home/edit]
+
+
+Processing PagesController#update (for 127.0.0.1 at 2009-10-20 02:50:44) [PUT]
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"j27P8tcbXn+WuAau5472j01dlLiUNDICNE/VARSwOMM=", "id"=>"4", "page"=>{"permalink"=>"home", "name"=>"", "Vietnamese_content"=>"", "English_content"=>"h1. However, if we subsequently create a new migration ﬁle, it will have a version \r\nnumber not in the database. This is true even if the version number was before \r\none or more of the already applied migrations. This can happen when multiple \r\nusers are using a version control system to store the migration ﬁles. If we then \r\nrun migrations, this new migration ﬁle—and only this migration ﬁle—will be \r\nexecuted. This may mean that migrations are run out of order, so you might \r\nwant to take care and ensure that these migrations are independent. Or you \r\nmight want to revert your database to a previous state and then apply the \r\nmigrations in order. \r\nYou can force the database to a speciﬁc version by supplying the VERSION= \r\nparameter to the rake db:migrate command: \r\ndepot> rake db:migrate VERSION=20080601000010 \r\nIf the version you give is greater than any of the migrations that have yet to be \r\napplied, these migrations will be applied. \r\nIf, however, the version number on the command line is less than one or more \r\nversions listed in the schema_migrations table, something different happens. In \r\nthese circumstances, Rails looks for the migration ﬁle whose number matches \r\nthe database version and undoes it. It repeats this process until there are no \r\nmore versions listed in the schema_migrations table that exceed the number \r\nyou speciﬁed on the command line. That is, the migrations are unapplied in \r\nreverse order to take the schema back to the version that you specify. \r\n", "news"=>"1"}}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 4) [0m
+  [4;36;1mPage Update (0.4ms)[0m   [0;1mUPDATE "pages" SET "English_content" = 'h1. However, if we subsequently create a new migration ﬁle, it will have a version 
+number not in the database. This is true even if the version number was before 
+one or more of the already applied migrations. This can happen when multiple 
+users are using a version control system to store the migration ﬁles. If we then 
+run migrations, this new migration ﬁle—and only this migration ﬁle—will be 
+executed. This may mean that migrations are run out of order, so you might 
+want to take care and ensure that these migrations are independent. Or you 
+might want to revert your database to a previous state and then apply the 
+migrations in order. 
+You can force the database to a speciﬁc version by supplying the VERSION= 
+parameter to the rake db:migrate command: 
+depot> rake db:migrate VERSION=20080601000010 
+If the version you give is greater than any of the migrations that have yet to be 
+applied, these migrations will be applied. 
+If, however, the version number on the command line is less than one or more 
+versions listed in the schema_migrations table, something different happens. In 
+these circumstances, Rails looks for the migration ﬁle whose number matches 
+the database version and undoes it. It repeats this process until there are no 
+more versions listed in the schema_migrations table that exceed the number 
+you speciﬁed on the command line. That is, the migrations are unapplied in 
+reverse order to take the schema back to the version that you specify. 
+', "Vietnamese_content" = '', "updated_at" = '2009-10-19 19:50:44' WHERE "id" = 4[0m
+Redirected to http://localhost:3000/pages/4
+Completed in 14ms (DB: 1) | 302 Found [http://localhost/pages/4]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 02:50:44) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 4) [0m
+  [4;36;1mNewsitem Load (0.4ms)[0m   [0;1mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 37ms (View: 21, DB: 2) | 200 OK [http://localhost/pages/4]
+
+
+Processing PagesController#update (for 127.0.0.1 at 2009-10-20 02:51:07) [PUT]
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"j27P8tcbXn+WuAau5472j01dlLiUNDICNE/VARSwOMM=", "id"=>"4", "page"=>{"permalink"=>"home", "name"=>"", "Vietnamese_content"=>"", "English_content"=>"h1. However, if we subsequently \r\n\r\ncreate a new migration ﬁle, it will have a version \r\nnumber not in the database. This is true even if the version number was before \r\none or more of the already applied migrations. This can happen when multiple \r\nusers are using a version control system to store the migration ﬁles. If we then \r\nrun migrations, this new migration ﬁle—and only this migration ﬁle—will be \r\nexecuted. This may mean that migrations are run out of order, so you might \r\nwant to take care and ensure that these migrations are independent. Or you \r\nmight want to revert your database to a previous state and then apply the \r\nmigrations in order. \r\nYou can force the database to a speciﬁc version by supplying the VERSION= \r\nparameter to the rake db:migrate command: \r\ndepot> rake db:migrate VERSION=20080601000010 \r\nIf the version you give is greater than any of the migrations that have yet to be \r\napplied, these migrations will be applied. \r\nIf, however, the version number on the command line is less than one or more \r\nversions listed in the schema_migrations table, something different happens. In \r\nthese circumstances, Rails looks for the migration ﬁle whose number matches \r\nthe database version and undoes it. It repeats this process until there are no \r\nmore versions listed in the schema_migrations table that exceed the number \r\nyou speciﬁed on the command line. That is, the migrations are unapplied in \r\nreverse order to take the schema back to the version that you specify. \r\n", "news"=>"1"}}
+  [4;36;1mPage Load (0.5ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 4) [0m
+  [4;35;1mPage Update (0.6ms)[0m   [0mUPDATE "pages" SET "English_content" = 'h1. However, if we subsequently 
+
+create a new migration ﬁle, it will have a version 
+number not in the database. This is true even if the version number was before 
+one or more of the already applied migrations. This can happen when multiple 
+users are using a version control system to store the migration ﬁles. If we then 
+run migrations, this new migration ﬁle—and only this migration ﬁle—will be 
+executed. This may mean that migrations are run out of order, so you might 
+want to take care and ensure that these migrations are independent. Or you 
+might want to revert your database to a previous state and then apply the 
+migrations in order. 
+You can force the database to a speciﬁc version by supplying the VERSION= 
+parameter to the rake db:migrate command: 
+depot> rake db:migrate VERSION=20080601000010 
+If the version you give is greater than any of the migrations that have yet to be 
+applied, these migrations will be applied. 
+If, however, the version number on the command line is less than one or more 
+versions listed in the schema_migrations table, something different happens. In 
+these circumstances, Rails looks for the migration ﬁle whose number matches 
+the database version and undoes it. It repeats this process until there are no 
+more versions listed in the schema_migrations table that exceed the number 
+you speciﬁed on the command line. That is, the migrations are unapplied in 
+reverse order to take the schema back to the version that you specify. 
+', "updated_at" = '2009-10-19 19:51:07' WHERE "id" = 4[0m
+Redirected to http://localhost:3000/pages/4
+Completed in 18ms (DB: 1) | 302 Found [http://localhost/pages/4]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 02:51:07) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 4) [0m
+  [4;35;1mNewsitem Load (0.4ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 34ms (View: 21, DB: 1) | 200 OK [http://localhost/pages/4]
+
+
+Processing PagesController#edit (for 127.0.0.1 at 2009-10-20 02:51:38) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering pages/edit
+Rendered pages/_page_form (89.6ms)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 111ms (View: 102, DB: 1) | 200 OK [http://localhost/pages/4/edit]
+
+
+Processing PagesController#edit (for 127.0.0.1 at 2009-10-20 02:52:34) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering pages/edit
+Rendered pages/_page_form (10.8ms)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 30ms (View: 22, DB: 1) | 200 OK [http://localhost/pages/4/edit]
+
+
+Processing PagesController#edit (for 127.0.0.1 at 2009-10-20 02:55:31) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering pages/edit
+Rendered pages/_page_form (10.4ms)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 29ms (View: 21, DB: 1) | 200 OK [http://localhost/pages/4/edit]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 02:56:04) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (0.5ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.5ms)[0m   [0;1mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 42ms (View: 25, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing TutorsController#index (for 127.0.0.1 at 2009-10-20 02:56:10) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mTutor Load (1.2ms)[0m   [0mSELECT * FROM "tutors" [0m
+Rendering template within layouts/application
+Rendering tutors/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 36ms (View: 16, DB: 2) | 200 OK [http://localhost/tutors]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-20 02:56:11) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TutorsController#edit (for 127.0.0.1 at 2009-10-20 02:56:18) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mTutor Load (0.8ms)[0m   [0mSELECT * FROM "tutors" WHERE ("tutors"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering tutors/edit
+Rendered tutors/_tutor_form (20.9ms)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 47ms (View: 32, DB: 1) | 200 OK [http://localhost/tutors/3/edit]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 02:58:14) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (0.5ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.5ms)[0m   [0;1mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 42ms (View: 25, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 02:58:24) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.4ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 32ms (View: 18, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 03:11:52) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.4ms)[0m   [0;1mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 32ms (View: 19, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 03:15:51) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.4ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 114ms (View: 20, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 03:24:24) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.4ms)[0m   [0;1mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 34ms (View: 19, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 03:30:10) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.4ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 37ms (View: 24, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePages (20090703013813)
+Migrating to ClearanceCreateUsers (20090703013817)
+Migrating to CreateTutors (20090703022556)
+Migrating to AddAttachmentsPhotoToTutor (20090703113902)
+Migrating to AddTutorToUser (20090704060809)
+Migrating to AddRoleToUser (20090707122921)
+Migrating to LoadPagesData (20090709035205)
+Migrating to AddNewsColumnToPages (20091018012613)
+Migrating to AddVntextColumnToPages (20091018053453)
+Migrating to RenameVntextVncontent (20091018054118)
+Migrating to RenameVncontentVietnameseContent (20091018055834)
+Migrating to CreateNewsitems (20091018085601)
+Migrating to AddAttachmentsPhotoToNewsitem (20091018091113)
+Migrating to AddVietnameseContentToNewsitem (20091018102538)
+Migrating to AddMoreStaticPages (20091019203201)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mPage Delete all (0.5ms)[0m   [0mDELETE FROM "pages" WHERE 1=1[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePages (20090703013813)
+Migrating to ClearanceCreateUsers (20090703013817)
+Migrating to CreateTutors (20090703022556)
+Migrating to AddAttachmentsPhotoToTutor (20090703113902)
+Migrating to AddTutorToUser (20090704060809)
+Migrating to AddRoleToUser (20090707122921)
+Migrating to LoadPagesData (20090709035205)
+Migrating to AddNewsColumnToPages (20091018012613)
+Migrating to AddVntextColumnToPages (20091018053453)
+Migrating to RenameVntextVncontent (20091018054118)
+Migrating to RenameVncontentVietnameseContent (20091018055834)
+Migrating to CreateNewsitems (20091018085601)
+Migrating to AddAttachmentsPhotoToNewsitem (20091018091113)
+Migrating to AddVietnameseContentToNewsitem (20091018102538)
+Migrating to AddMoreStaticPages (20091019203201)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mPage Delete all (0.5ms)[0m   [0mDELETE FROM "pages" WHERE 1=1[0m
+  [4;36;1mPage Create (0.2ms)[0m   [0;1mINSERT INTO "pages" ("name", "permalink", "updated_at", "English_content", "Vietnamese_content", "news", "created_at") VALUES(NULL, 'home', '2009-10-19 20:43:57', 'Go to ConnectTeach/static/home/edit to edit this page...', NULL, NULL, '2009-10-19 20:43:57')[0m
+  [4;35;1mPage Create (0.1ms)[0m   [0mINSERT INTO "pages" ("name", "permalink", "updated_at", "English_content", "Vietnamese_content", "news", "created_at") VALUES(NULL, 'home', '2009-10-19 20:43:57', 'Go to ConnectTeach/static/contact/edit to edit this page...', NULL, NULL, '2009-10-19 20:43:57')[0m
+  [4;36;1mPage Create (0.1ms)[0m   [0;1mINSERT INTO "pages" ("name", "permalink", "updated_at", "English_content", "Vietnamese_content", "news", "created_at") VALUES(NULL, 'home', '2009-10-19 20:43:57', 'Go to ConnectTeach/static/about/edit to edit this page...', NULL, NULL, '2009-10-19 20:43:57')[0m
+  [4;35;1mPage Create (0.1ms)[0m   [0mINSERT INTO "pages" ("name", "permalink", "updated_at", "English_content", "Vietnamese_content", "news", "created_at") VALUES(NULL, 'home', '2009-10-19 20:43:57', 'Go to ConnectTeach/static/courses/edit to edit this page...', NULL, NULL, '2009-10-19 20:43:57')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091019203201')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("newsitems")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("pages")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("tutors")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_token')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_email')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_users_on_id_and_token')[0m
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 03:44:12) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.4ms)[0m   [0;1mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 26ms (View: 12, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 03:44:21) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.4ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 27ms (View: 13, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-10-20 03:44:30) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mPage Load (0.7ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Rendering template within layouts/application
+Rendering pages/index
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 37ms (View: 23, DB: 1) | 200 OK [http://localhost/pages]
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to AddMoreStaticPages (20091019203201)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mPage Delete all (0.5ms)[0m   [0mDELETE FROM "pages" WHERE 1=1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20091019203201'[0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("newsitems")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("pages")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("tutors")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_token')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_email')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_users_on_id_and_token')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreatePages (20090703013813)
+Migrating to ClearanceCreateUsers (20090703013817)
+Migrating to CreateTutors (20090703022556)
+Migrating to AddAttachmentsPhotoToTutor (20090703113902)
+Migrating to AddTutorToUser (20090704060809)
+Migrating to AddRoleToUser (20090707122921)
+Migrating to LoadPagesData (20090709035205)
+Migrating to AddNewsColumnToPages (20091018012613)
+Migrating to AddVntextColumnToPages (20091018053453)
+Migrating to RenameVntextVncontent (20091018054118)
+Migrating to RenameVncontentVietnameseContent (20091018055834)
+Migrating to CreateNewsitems (20091018085601)
+Migrating to AddAttachmentsPhotoToNewsitem (20091018091113)
+Migrating to AddVietnameseContentToNewsitem (20091018102538)
+Migrating to AddMoreStaticPages (20091019203201)
+  [4;35;1mPage Delete all (0.4ms)[0m   [0mDELETE FROM "pages" WHERE 1=1[0m
+  [4;36;1mPage Create (0.2ms)[0m   [0;1mINSERT INTO "pages" ("name", "permalink", "updated_at", "English_content", "Vietnamese_content", "news", "created_at") VALUES(NULL, 'home', '2009-10-19 20:46:41', 'Go to ConnectTeach/static/home/edit to edit this page...', NULL, NULL, '2009-10-19 20:46:41')[0m
+  [4;35;1mPage Create (0.1ms)[0m   [0mINSERT INTO "pages" ("name", "permalink", "updated_at", "English_content", "Vietnamese_content", "news", "created_at") VALUES(NULL, 'contact', '2009-10-19 20:46:41', 'Go to ConnectTeach/static/contact/edit to edit this page...', NULL, NULL, '2009-10-19 20:46:41')[0m
+  [4;36;1mPage Create (0.1ms)[0m   [0;1mINSERT INTO "pages" ("name", "permalink", "updated_at", "English_content", "Vietnamese_content", "news", "created_at") VALUES(NULL, 'about', '2009-10-19 20:46:41', 'Go to ConnectTeach/static/about/edit to edit this page...', NULL, NULL, '2009-10-19 20:46:41')[0m
+  [4;35;1mPage Create (0.1ms)[0m   [0mINSERT INTO "pages" ("name", "permalink", "updated_at", "English_content", "Vietnamese_content", "news", "created_at") VALUES(NULL, 'courses', '2009-10-19 20:46:41', 'Go to ConnectTeach/static/courses/edit to edit this page...', NULL, NULL, '2009-10-19 20:46:41')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091019203201')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("newsitems")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("pages")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("tutors")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_token')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_email')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_users_on_id_and_token')[0m
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-10-20 03:46:47) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mPage Load (0.7ms)[0m   [0mSELECT * FROM "pages" [0m
+Rendering template within layouts/application
+Rendering pages/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 36ms (View: 22, DB: 1) | 200 OK [http://localhost/pages]
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to AddMoreStaticPages (20091019203201)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mPage Delete all (88.2ms)[0m   [0mDELETE FROM "pages" WHERE 1=1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20091019203201'[0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("newsitems")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("pages")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("tutors")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_token')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_email')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_users_on_id_and_token')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreatePages (20090703013813)
+Migrating to ClearanceCreateUsers (20090703013817)
+Migrating to CreateTutors (20090703022556)
+Migrating to AddAttachmentsPhotoToTutor (20090703113902)
+Migrating to AddTutorToUser (20090704060809)
+Migrating to AddRoleToUser (20090707122921)
+Migrating to LoadPagesData (20090709035205)
+Migrating to AddNewsColumnToPages (20091018012613)
+Migrating to AddVntextColumnToPages (20091018053453)
+Migrating to RenameVntextVncontent (20091018054118)
+Migrating to RenameVncontentVietnameseContent (20091018055834)
+Migrating to CreateNewsitems (20091018085601)
+Migrating to AddAttachmentsPhotoToNewsitem (20091018091113)
+Migrating to AddVietnameseContentToNewsitem (20091018102538)
+Migrating to AddMoreStaticPages (20091019203201)
+  [4;35;1mPage Delete all (0.4ms)[0m   [0mDELETE FROM "pages" WHERE 1=1[0m
+  [4;36;1mPage Create (0.5ms)[0m   [0;1mINSERT INTO "pages" ("name", "permalink", "updated_at", "English_content", "Vietnamese_content", "news", "created_at") VALUES('home', 'home', '2009-10-19 20:48:21', 'Go to ConnectTeach/static/home/edit to edit this page...', NULL, NULL, '2009-10-19 20:48:21')[0m
+  [4;35;1mPage Create (0.1ms)[0m   [0mINSERT INTO "pages" ("name", "permalink", "updated_at", "English_content", "Vietnamese_content", "news", "created_at") VALUES('contact', 'contact', '2009-10-19 20:48:21', 'Go to ConnectTeach/static/contact/edit to edit this page...', NULL, NULL, '2009-10-19 20:48:21')[0m
+  [4;36;1mPage Create (0.1ms)[0m   [0;1mINSERT INTO "pages" ("name", "permalink", "updated_at", "English_content", "Vietnamese_content", "news", "created_at") VALUES('about', 'about', '2009-10-19 20:48:21', 'Go to ConnectTeach/static/about/edit to edit this page...', NULL, NULL, '2009-10-19 20:48:21')[0m
+  [4;35;1mPage Create (0.1ms)[0m   [0mINSERT INTO "pages" ("name", "permalink", "updated_at", "English_content", "Vietnamese_content", "news", "created_at") VALUES('courses', 'courses', '2009-10-19 20:48:21', 'Go to ConnectTeach/static/courses/edit to edit this page...', NULL, NULL, '2009-10-19 20:48:21')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091019203201')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("newsitems")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("pages")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("tutors")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_users_on_token')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_email')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_users_on_id_and_token')[0m
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-10-20 03:48:28) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mPage Load (0.7ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Rendering template within layouts/application
+Rendering pages/index
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 36ms (View: 22, DB: 1) | 200 OK [http://localhost/pages]
+
+
+Processing PagesController#edit (for 127.0.0.1 at 2009-10-20 03:48:32) [GET]
+  Parameters: {"id"=>"13"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 13) [0m
+Rendering template within layouts/application
+Rendering pages/edit
+Rendered pages/_page_form (10.4ms)
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 28ms (View: 21, DB: 1) | 200 OK [http://localhost/pages/13/edit]
+
+
+Processing PagesController#update (for 127.0.0.1 at 2009-10-20 03:49:27) [PUT]
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"j27P8tcbXn+WuAau5472j01dlLiUNDICNE/VARSwOMM=", "id"=>"13", "page"=>{"permalink"=>"home", "name"=>"home", "Vietnamese_content"=>"", "English_content"=>".h1 17.2 Anatomy of a Migration \r\n\r\nMigrations are subclasses of the Rails class ActiveRecord::Migration. The class \r\nyou create should contain at least the two class methods up and down: \r\nclass SomeMeaningfulName < ActiveRecord::Migration \r\ndef self.up \r\n# ... \r\nend \r\ndef self.down \r\n# ... \r\nend \r\nend \r\nThe name of the class, after all uppercase letters are downcased and pre- \r\nceded by an underscore, must match the portion of the ﬁlename after the \r\nversion number. For example, the previous class could be found in a ﬁle \r\nnamed 20080601000017_some_meaningful_name.rb. No two migrations can con- \r\ntain classes with the same name. \r\nThe up method is responsible for applying the schema changes for this migra- \r\ntion, while the down method undoes those changes. Let’s make this more con- \r\ncrete. Here’s a migration that adds an e_mail column to the orders table: \r\nclass AddEmailToOrders < ActiveRecord::Migration \r\ndef self.up \r\nadd_column :orders, :e_mail, :string \r\nend \r\ndef self.down \r\nremove_column :orders, :e_mail \r\nend \r\nend \r\n", "news"=>"0"}}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 13) [0m
+  [4;35;1mPage Update (0.5ms)[0m   [0mUPDATE "pages" SET "English_content" = '.h1 17.2 Anatomy of a Migration 
+
+Migrations are subclasses of the Rails class ActiveRecord::Migration. The class 
+you create should contain at least the two class methods up and down: 
+class SomeMeaningfulName < ActiveRecord::Migration 
+def self.up 
+# ... 
+end 
+def self.down 
+# ... 
+end 
+end 
+The name of the class, after all uppercase letters are downcased and pre- 
+ceded by an underscore, must match the portion of the ﬁlename after the 
+version number. For example, the previous class could be found in a ﬁle 
+named 20080601000017_some_meaningful_name.rb. No two migrations can con- 
+tain classes with the same name. 
+The up method is responsible for applying the schema changes for this migra- 
+tion, while the down method undoes those changes. Let’s make this more con- 
+crete. Here’s a migration that adds an e_mail column to the orders table: 
+class AddEmailToOrders < ActiveRecord::Migration 
+def self.up 
+add_column :orders, :e_mail, :string 
+end 
+def self.down 
+remove_column :orders, :e_mail 
+end 
+end 
+', "news" = 'f', "Vietnamese_content" = '', "updated_at" = '2009-10-19 20:49:27' WHERE "id" = 13[0m
+Redirected to http://localhost:3000/pages/13
+Completed in 15ms (DB: 1) | 302 Found [http://localhost/pages/13]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 03:49:27) [GET]
+  Parameters: {"id"=>"13"}
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 13) [0m
+  [4;35;1mNewsitem Load (0.4ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 32ms (View: 19, DB: 1) | 200 OK [http://localhost/pages/13]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 03:49:35) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.5ms)[0m   [0;1mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 30ms (View: 17, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PagesController#update (for 127.0.0.1 at 2009-10-20 03:51:30) [PUT]
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"j27P8tcbXn+WuAau5472j01dlLiUNDICNE/VARSwOMM=", "id"=>"13", "page"=>{"permalink"=>"home", "name"=>"home", "Vietnamese_content"=>"", "English_content"=>".h1 17.2 Anatomy of a Migration \r\n\r\nMigrations are subclasses of the Rails class ActiveRecord::Migration. The class \r\nyou create should contain at least the two class methods up and down: \r\nclass SomeMeaningfulName < ActiveRecord::Migration \r\ndef self.up \r\n# ... \r\nend \r\ndef self.down \r\n# ... \r\nend \r\nend \r\nThe name of the class, after all uppercase letters are downcased and pre- \r\nceded by an underscore, must match the portion of the ﬁlename after the \r\nversion number. For example, the previous class could be found in a ﬁle \r\nnamed 20080601000017_some_meaningful_name.rb. No two migrations can con- \r\ntain classes with the same name. \r\nThe up method is responsible for applying the schema changes for this migra- \r\ntion, while the down method undoes those changes. Let’s make this more con- \r\ncrete. Here’s a migration that adds an e_mail column to the orders table: \r\nclass AddEmailToOrders < ActiveRecord::Migration \r\ndef self.up \r\nadd_column :orders, :e_mail, :string \r\nend \r\ndef self.down \r\nremove_column :orders, :e_mail \r\nend \r\nend \r\n", "news"=>"0"}}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 13) [0m
+Redirected to http://localhost:3000/pages/13
+Completed in 10ms (DB: 0) | 302 Found [http://localhost/pages/13]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 03:51:30) [GET]
+  Parameters: {"id"=>"13"}
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 13) [0m
+  [4;36;1mNewsitem Load (0.5ms)[0m   [0;1mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 30ms (View: 17, DB: 1) | 200 OK [http://localhost/pages/13]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 03:53:17) [GET]
+  Parameters: {"id"=>"13"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 13) [0m
+  [4;35;1mNewsitem Load (0.4ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 35ms (View: 22, DB: 1) | 200 OK [http://localhost/pages/13]
+
+
+Processing PagesController#update (for 127.0.0.1 at 2009-10-20 03:58:10) [PUT]
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"j27P8tcbXn+WuAau5472j01dlLiUNDICNE/VARSwOMM=", "id"=>"13", "page"=>{"permalink"=>"home", "name"=>"home", "Vietnamese_content"=>"", "English_content"=>"h1. 17.2 Anatomy of a Migration \r\n\r\nMigrations are subclasses of the Rails class ActiveRecord::Migration. The class \r\nyou create should contain at least the two class methods up and down: \r\nclass SomeMeaningfulName < ActiveRecord::Migration \r\ndef self.up \r\n# ... \r\nend \r\ndef self.down \r\n# ... \r\nend \r\nend \r\nThe name of the class, after all uppercase letters are downcased and pre- \r\nceded by an underscore, must match the portion of the ﬁlename after the \r\nversion number. For example, the previous class could be found in a ﬁle \r\nnamed 20080601000017_some_meaningful_name.rb. No two migrations can con- \r\ntain classes with the same name. \r\nThe up method is responsible for applying the schema changes for this migra- \r\ntion, while the down method undoes those changes. Let’s make this more con- \r\ncrete. Here’s a migration that adds an e_mail column to the orders table: \r\nclass AddEmailToOrders < ActiveRecord::Migration \r\ndef self.up \r\nadd_column :orders, :e_mail, :string \r\nend \r\ndef self.down \r\nremove_column :orders, :e_mail \r\nend \r\nend \r\n", "news"=>"0"}}
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 13) [0m
+  [4;36;1mPage Update (0.5ms)[0m   [0;1mUPDATE "pages" SET "English_content" = 'h1. 17.2 Anatomy of a Migration 
+
+Migrations are subclasses of the Rails class ActiveRecord::Migration. The class 
+you create should contain at least the two class methods up and down: 
+class SomeMeaningfulName < ActiveRecord::Migration 
+def self.up 
+# ... 
+end 
+def self.down 
+# ... 
+end 
+end 
+The name of the class, after all uppercase letters are downcased and pre- 
+ceded by an underscore, must match the portion of the ﬁlename after the 
+version number. For example, the previous class could be found in a ﬁle 
+named 20080601000017_some_meaningful_name.rb. No two migrations can con- 
+tain classes with the same name. 
+The up method is responsible for applying the schema changes for this migra- 
+tion, while the down method undoes those changes. Let’s make this more con- 
+crete. Here’s a migration that adds an e_mail column to the orders table: 
+class AddEmailToOrders < ActiveRecord::Migration 
+def self.up 
+add_column :orders, :e_mail, :string 
+end 
+def self.down 
+remove_column :orders, :e_mail 
+end 
+end 
+', "updated_at" = '2009-10-19 20:58:10' WHERE "id" = 13[0m
+Redirected to http://localhost:3000/pages/13
+Completed in 15ms (DB: 1) | 302 Found [http://localhost/pages/13]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 03:58:10) [GET]
+  Parameters: {"id"=>"13"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 13) [0m
+  [4;36;1mNewsitem Load (0.4ms)[0m   [0;1mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 36ms (View: 22, DB: 1) | 200 OK [http://localhost/pages/13]
+
+
+Processing PagesController#update (for 127.0.0.1 at 2009-10-20 04:02:29) [PUT]
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"j27P8tcbXn+WuAau5472j01dlLiUNDICNE/VARSwOMM=", "id"=>"13", "page"=>{"permalink"=>"home", "name"=>"home", "Vietnamese_content"=>"", "English_content"=>"h1. 17.2 Anatomy of a Migration \r\n\r\n\r\nMigrations are subclasses of the Rails class ActiveRecord::Migration. The class \r\nyou create should contain at least the two class methods up and down: \r\nclass SomeMeaningfulName < ActiveRecord::Migration \r\ndef self.up \r\n# ... \r\nend \r\ndef self.down \r\n# ... \r\nend \r\nend \r\nThe name of the class, after all uppercase letters are downcased and pre- \r\nceded by an underscore, must match the portion of the ﬁlename after the \r\nversion number. For example, the previous class could be found in a ﬁle \r\nnamed 20080601000017_some_meaningful_name.rb. No two migrations can con- \r\ntain classes with the same name. \r\nThe up method is responsible for applying the schema changes for this migra- \r\ntion, while the down method undoes those changes. Let’s make this more con- \r\ncrete. Here’s a migration that adds an e_mail column to the orders table: \r\nclass AddEmailToOrders < ActiveRecord::Migration \r\ndef self.up \r\nadd_column :orders, :e_mail, :string \r\nend \r\ndef self.down \r\nremove_column :orders, :e_mail \r\nend \r\nend \r\n", "news"=>"0"}}
+  [4;36;1mPage Load (0.5ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 13) [0m
+  [4;35;1mPage Update (0.9ms)[0m   [0mUPDATE "pages" SET "English_content" = 'h1. 17.2 Anatomy of a Migration 
+
+
+Migrations are subclasses of the Rails class ActiveRecord::Migration. The class 
+you create should contain at least the two class methods up and down: 
+class SomeMeaningfulName < ActiveRecord::Migration 
+def self.up 
+# ... 
+end 
+def self.down 
+# ... 
+end 
+end 
+The name of the class, after all uppercase letters are downcased and pre- 
+ceded by an underscore, must match the portion of the ﬁlename after the 
+version number. For example, the previous class could be found in a ﬁle 
+named 20080601000017_some_meaningful_name.rb. No two migrations can con- 
+tain classes with the same name. 
+The up method is responsible for applying the schema changes for this migra- 
+tion, while the down method undoes those changes. Let’s make this more con- 
+crete. Here’s a migration that adds an e_mail column to the orders table: 
+class AddEmailToOrders < ActiveRecord::Migration 
+def self.up 
+add_column :orders, :e_mail, :string 
+end 
+def self.down 
+remove_column :orders, :e_mail 
+end 
+end 
+', "updated_at" = '2009-10-19 21:02:29' WHERE "id" = 13[0m
+Redirected to http://localhost:3000/pages/13
+Completed in 19ms (DB: 1) | 302 Found [http://localhost/pages/13]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 04:02:29) [GET]
+  Parameters: {"id"=>"13"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 13) [0m
+  [4;35;1mNewsitem Load (0.4ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 31ms (View: 18, DB: 1) | 200 OK [http://localhost/pages/13]
+
+
+Processing PagesController#update (for 127.0.0.1 at 2009-10-20 04:03:27) [PUT]
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"j27P8tcbXn+WuAau5472j01dlLiUNDICNE/VARSwOMM=", "id"=>"13", "page"=>{"permalink"=>"home", "name"=>"home", "Vietnamese_content"=>"", "English_content"=>"h1. 17.2 Anatomy of a Migration \r\n\r\nIf, however, the version number on the command line is less than one or more \r\nversions listed in the schema_migrations table, something different happens. In \r\nthese circumstances, Rails looks for the migration ﬁle whose number matches \r\nthe database version and undoes it. It repeats this process until there are no \r\nmore versions listed in the schema_migrations table that exceed the number \r\nyou speciﬁed on the command line. That is, the migrations are unapplied in \r\nreverse order to take the schema back to the version that you specify. \r\n", "news"=>"0"}}
+  [4;35;1mPage Load (0.5ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 13) [0m
+  [4;36;1mPage Update (0.5ms)[0m   [0;1mUPDATE "pages" SET "English_content" = 'h1. 17.2 Anatomy of a Migration 
+
+If, however, the version number on the command line is less than one or more 
+versions listed in the schema_migrations table, something different happens. In 
+these circumstances, Rails looks for the migration ﬁle whose number matches 
+the database version and undoes it. It repeats this process until there are no 
+more versions listed in the schema_migrations table that exceed the number 
+you speciﬁed on the command line. That is, the migrations are unapplied in 
+reverse order to take the schema back to the version that you specify. 
+', "updated_at" = '2009-10-19 21:03:27' WHERE "id" = 13[0m
+Redirected to http://localhost:3000/pages/13
+Completed in 17ms (DB: 1) | 302 Found [http://localhost/pages/13]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 04:03:27) [GET]
+  Parameters: {"id"=>"13"}
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 13) [0m
+  [4;36;1mNewsitem Load (0.4ms)[0m   [0;1mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 95ms (View: 82, DB: 1) | 200 OK [http://localhost/pages/13]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 04:05:08) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.4ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 29ms (View: 15, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to AddMoreStaticPages (20091019203201)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mPage Delete all (0.6ms)[0m   [0mDELETE FROM "pages" WHERE 1=1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20091019203201'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("newsitems")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("pages")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("tutors")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_users_on_token')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_email')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_users_on_id_and_token')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreatePages (20090703013813)
+Migrating to ClearanceCreateUsers (20090703013817)
+Migrating to CreateTutors (20090703022556)
+Migrating to AddAttachmentsPhotoToTutor (20090703113902)
+Migrating to AddTutorToUser (20090704060809)
+Migrating to AddRoleToUser (20090707122921)
+Migrating to LoadPagesData (20090709035205)
+Migrating to AddNewsColumnToPages (20091018012613)
+Migrating to AddVntextColumnToPages (20091018053453)
+Migrating to RenameVntextVncontent (20091018054118)
+Migrating to RenameVncontentVietnameseContent (20091018055834)
+Migrating to CreateNewsitems (20091018085601)
+Migrating to AddAttachmentsPhotoToNewsitem (20091018091113)
+Migrating to AddVietnameseContentToNewsitem (20091018102538)
+Migrating to AddMoreStaticPages (20091019203201)
+  [4;35;1mPage Delete all (0.4ms)[0m   [0mDELETE FROM "pages" WHERE 1=1[0m
+  [4;36;1mPage Create (0.2ms)[0m   [0;1mINSERT INTO "pages" ("name", "permalink", "updated_at", "English_content", "Vietnamese_content", "news", "created_at") VALUES('home', 'home', '2009-10-19 21:07:39', 'Go to ConnectTeach/static/home/edit to edit this page...', NULL, 't', '2009-10-19 21:07:39')[0m
+  [4;35;1mPage Create (0.1ms)[0m   [0mINSERT INTO "pages" ("name", "permalink", "updated_at", "English_content", "Vietnamese_content", "news", "created_at") VALUES('contact', 'contact', '2009-10-19 21:07:39', 'Go to ConnectTeach/static/contact/edit to edit this page...', NULL, NULL, '2009-10-19 21:07:39')[0m
+  [4;36;1mPage Create (0.1ms)[0m   [0;1mINSERT INTO "pages" ("name", "permalink", "updated_at", "English_content", "Vietnamese_content", "news", "created_at") VALUES('about', 'about', '2009-10-19 21:07:39', 'Go to ConnectTeach/static/about/edit to edit this page...', NULL, NULL, '2009-10-19 21:07:39')[0m
+  [4;35;1mPage Create (0.1ms)[0m   [0mINSERT INTO "pages" ("name", "permalink", "updated_at", "English_content", "Vietnamese_content", "news", "created_at") VALUES('courses', 'courses', '2009-10-19 21:07:39', 'Go to ConnectTeach/static/courses/edit to edit this page...', NULL, NULL, '2009-10-19 21:07:39')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091019203201')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("newsitems")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("pages")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("tutors")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_users_on_token')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_users_on_email')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_users_on_id_and_token')[0m
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 04:07:43) [GET]
+  Parameters: {"id"=>"13"}
+  [4;35;1mPage Load (0.1ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 13) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Page with ID=13):
+  app/controllers/pages_controller.rb:22:in `show'
+
+Rendered rescues/_trace (38.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-10-20 04:07:55) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mPage Load (0.7ms)[0m   [0mSELECT * FROM "pages" [0m
+Rendering template within layouts/application
+Rendering pages/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 36ms (View: 23, DB: 1) | 200 OK [http://localhost/pages/]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 04:07:59) [GET]
+  Parameters: {"id"=>"17"}
+  [4;35;1mPage Load (0.5ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 17) [0m
+  [4;36;1mNewsitem Load (0.4ms)[0m   [0;1mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 104ms (View: 88, DB: 1) | 200 OK [http://localhost/pages/17]
+
+
+Processing PagesController#edit (for 127.0.0.1 at 2009-10-20 04:08:30) [GET]
+  Parameters: {"id"=>"17"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 17) [0m
+Rendering template within layouts/application
+Rendering pages/edit
+Rendered pages/_page_form (11.3ms)
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 30ms (View: 22, DB: 1) | 200 OK [http://localhost/pages/17/edit]
+
+
+Processing PagesController#update (for 127.0.0.1 at 2009-10-20 04:09:02) [PUT]
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"j27P8tcbXn+WuAau5472j01dlLiUNDICNE/VARSwOMM=", "id"=>"17", "page"=>{"permalink"=>"home", "name"=>"home", "Vietnamese_content"=>"", "English_content"=>"h1. Hello\r\n\r\nIf, however, the version number on the command line is less than one or more \r\nversions listed in the schema_migrations table, something different happens. In \r\nthese circumstances, Rails looks for the migration ﬁle whose number matches \r\nthe database version and undoes it. It repeats this process until there are no \r\nmore versions listed in the schema_migrations table that exceed the number \r\nyou speciﬁed on the command line. That is, the migrations are unapplied in \r\nreverse order to take the schema back to the version that you specify. \r\n", "news"=>"1"}}
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 17) [0m
+  [4;35;1mPage Update (0.4ms)[0m   [0mUPDATE "pages" SET "English_content" = 'h1. Hello
+
+If, however, the version number on the command line is less than one or more 
+versions listed in the schema_migrations table, something different happens. In 
+these circumstances, Rails looks for the migration ﬁle whose number matches 
+the database version and undoes it. It repeats this process until there are no 
+more versions listed in the schema_migrations table that exceed the number 
+you speciﬁed on the command line. That is, the migrations are unapplied in 
+reverse order to take the schema back to the version that you specify. 
+', "Vietnamese_content" = '', "updated_at" = '2009-10-19 21:09:02' WHERE "id" = 17[0m
+Redirected to http://localhost:3000/pages/17
+Completed in 15ms (DB: 1) | 302 Found [http://localhost/pages/17]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 04:09:02) [GET]
+  Parameters: {"id"=>"17"}
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 17) [0m
+  [4;35;1mNewsitem Load (0.4ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 31ms (View: 18, DB: 1) | 200 OK [http://localhost/pages/17]
+
+
+Processing TutorsController#index (for 127.0.0.1 at 2009-10-20 04:10:38) [GET]
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mTutor Load (1.2ms)[0m   [0;1mSELECT * FROM "tutors" [0m
+Rendering template within layouts/application
+Rendering tutors/index
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 33ms (View: 13, DB: 2) | 200 OK [http://localhost/tutors]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-20 04:10:38) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TutorsController#index (for 127.0.0.1 at 2009-10-20 04:10:41) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mTutor Load (1.0ms)[0m   [0mSELECT * FROM "tutors" [0m
+Rendering template within layouts/application
+Rendering tutors/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 28ms (View: 12, DB: 1) | 200 OK [http://localhost/tutors]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-20 04:10:41) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 04:10:42) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (0.5ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.5ms)[0m   [0;1mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 39ms (View: 21, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 04:15:23) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.4ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+
+ActionView::TemplateError (No route matches {:controller=>"clearance/sessions", :action=>"destroy"}) on line #39 of app/views/layouts/application.html.erb:
+36: 					</div>
+37: 					<%= link_to '<div id="logoutbutton">
+38: 						<p>Logout</p>
+39: 					</div>', :controller => 'clearance/sessions', :action => 'destroy' %>	
+40: 				  <%= link_to '<div id="details">
+41: 				  	<p>Details</p>
+42: 				  </div>', :controller => '/tutors', :action => 'edit', :id => user.tutor_id %>	
+
+    app/views/layouts/application.html.erb:39
+    app/controllers/pages_controller.rb:27:in `show'
+
+Rendered rescues/_trace (69.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 04:15:51) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.4ms)[0m   [0;1mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+
+ActionView::TemplateError (No route matches {:controller=>"clearance/sessions", :action=>"destroy"}) on line #39 of app/views/layouts/application.html.erb:
+36: 					</div>
+37: 					<%= link_to '<div id="logoutbutton">
+38: 						<p>Logout</p>
+39: 					</div>', :controller => 'clearance/sessions', :action => 'destroy' %>	
+40: 				  <%= link_to '<div id="details">
+41: 				  	<p>Details</p>
+42: 				  </div>', :controller => '/tutors', :action => 'edit', :id => user.tutor_id %>	
+
+    app/views/layouts/application.html.erb:39
+    app/controllers/pages_controller.rb:27:in `show'
+
+Rendered rescues/_trace (58.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 04:16:07) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.5ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.4ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+
+ActionView::TemplateError (undefined local variable or method `contact_path' for #<ActionView::Base:0x2504888>) on line #52 of app/views/layouts/application.html.erb:
+49: 			<div id="menu">
+50: 				<%= link_to '<div id="contactbutton" class="button">
+51: 					<p>Contact</p>
+52: 				</div>', contact_path %>
+53: 				<%= link_to '<div id="aboutbutton" class="button">
+54: 					<p>About</p>
+55: 				</div>', about_path %>
+
+    app/views/layouts/application.html.erb:52
+    app/controllers/pages_controller.rb:27:in `show'
+
+Rendered rescues/_trace (58.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 04:16:43) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (0.5ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.5ms)[0m   [0;1mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+
+ActionView::TemplateError (undefined local variable or method `about_path' for #<ActionView::Base:0x233ea6c>) on line #55 of app/views/layouts/application.html.erb:
+52: 				</div>', root_path %>
+53: 				<%= link_to '<div id="aboutbutton" class="button">
+54: 					<p>About</p>
+55: 				</div>', about_path %>
+56: 				<%= link_to '<div id="coursebutton" class="button">
+57: 					<p>Courses & Programs</p>
+58: 				</div>', root_path %>
+
+    app/views/layouts/application.html.erb:55
+    app/controllers/pages_controller.rb:27:in `show'
+
+Rendered rescues/_trace (67.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 04:17:03) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.4ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+
+ActionView::TemplateError (No route matches {:controller=>"clearance/sessions", :action=>"destroy"}) on line #39 of app/views/layouts/application.html.erb:
+36: 					</div>
+37: 					<%= link_to '<div id="logoutbutton">
+38: 						<p>Logout</p>
+39: 					</div>', :controller => 'clearance/sessions', :action => 'destroy' %>	
+40: 				  <%= link_to '<div id="details">
+41: 				  	<p>Details</p>
+42: 				  </div>', :controller => '/tutors', :action => 'edit', :id => user.tutor_id %>	
+
+    app/views/layouts/application.html.erb:39
+    app/controllers/pages_controller.rb:27:in `show'
+
+Rendered rescues/_trace (162.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 04:18:14) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.5ms)[0m   [0;1mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 50ms (View: 32, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 04:18:30) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.5ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.5ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 41ms (View: 23, DB: 2) | 200 OK [http://localhost/static/home]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 04:18:34) [GET]
+  Parameters: {"permalink"=>"about"}
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'about') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.6ms)[0m   [0;1mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 36ms (View: 17, DB: 1) | 200 OK [http://localhost/static/about]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-20 10:13:27) [GET]
+
+ActionController::RoutingError (No route matches "/static/about" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-20 10:13:41) [GET]
+
+ActionController::RoutingError (No route matches "/about" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-20 10:13:44) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 10:14:30) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.4ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 30ms (View: 16, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 10:14:37) [GET]
+  Parameters: {"permalink"=>"about"}
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'about') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.4ms)[0m   [0;1mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 27ms (View: 13, DB: 1) | 200 OK [http://localhost/about]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 10:15:02) [GET]
+  Parameters: {"permalink"=>"contact"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'contact') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.4ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 27ms (View: 14, DB: 1) | 200 OK [http://localhost/contact]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 10:15:46) [GET]
+  Parameters: {"permalink"=>"courses"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'courses') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.4ms)[0m   [0;1mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 28ms (View: 15, DB: 1) | 200 OK [http://localhost/static/courses]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-20 10:15:57) [GET]
+
+ActionController::RoutingError (No route matches "/courses" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-20 10:16:23) [GET]
+
+ActionController::RoutingError (No route matches "/static/courses" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-20 10:16:36) [GET]
+
+ActionController::RoutingError (No route matches "/courses" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-20 10:16:40) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 10:17:55) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.4ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 30ms (View: 17, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 10:18:51) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.4ms)[0m   [0;1mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 36ms (View: 23, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing TutorsController#index (for 127.0.0.1 at 2009-10-20 10:18:56) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mTutor Load (1.2ms)[0m   [0mSELECT * FROM "tutors" [0m
+Rendering template within layouts/application
+Rendering tutors/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 49ms (View: 14, DB: 2) | 200 OK [http://localhost/tutors]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-20 10:18:56) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 10:18:57) [GET]
+  Parameters: {"permalink"=>"courses"}
+  [4;35;1mPage Load (0.5ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'courses') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.5ms)[0m   [0;1mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 100ms (View: 82, DB: 1) | 200 OK [http://localhost/courses]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 10:19:00) [GET]
+  Parameters: {"permalink"=>"about"}
+  [4;36;1mPage Load (0.5ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'about') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.5ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 36ms (View: 18, DB: 1) | 200 OK [http://localhost/about]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 10:19:01) [GET]
+  Parameters: {"permalink"=>"contact"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'contact') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.4ms)[0m   [0;1mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 26ms (View: 13, DB: 1) | 200 OK [http://localhost/contact]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-20 11:18:12) [GET]
+
+ActionController::RoutingError (No route matches "/contact/edit" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 11:18:28) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 4) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Page with ID=4):
+  app/controllers/pages_controller.rb:22:in `show'
+
+Rendered rescues/_trace (48.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-10-20 11:18:35) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mPage Load (0.7ms)[0m   [0;1mSELECT * FROM "pages" [0m
+Rendering template within layouts/application
+Rendering pages/index
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 37ms (View: 23, DB: 1) | 200 OK [http://localhost/pages]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 11:22:33) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.4ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 110ms (View: 17, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing NewsitemsController#index (for 127.0.0.1 at 2009-10-20 11:30:31) [GET]
+  [4;35;1mNewsitem Load (1.2ms)[0m   [0mSELECT * FROM "newsitems" [0m
+Rendering template within layouts/newsitems
+Rendering newsitems/index
+
+ActionView::TemplateError (undefined method `contents' for #<Newsitem:0x24636e0>) on line #13 of app/views/newsitems/index.html.erb:
+10: <% @newsitems.each do |newsitem| %>
+11:   <tr>
+12:     <td><%=h newsitem.title %></td>
+13:     <td><%=h newsitem.contents %></td>
+14:     <td><%=h newsitem.image_url %></td>
+15:     <td><%= link_to 'Show', newsitem %></td>
+16:     <td><%= link_to 'Edit', edit_newsitem_path(newsitem) %></td>
+
+    app/views/newsitems/index.html.erb:13
+    app/views/newsitems/index.html.erb:10:in `each'
+    app/views/newsitems/index.html.erb:10
+    app/controllers/newsitems_controller.rb:7:in `index'
+
+Rendered rescues/_trace (51.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing NewsitemsController#index (for 127.0.0.1 at 2009-10-20 11:31:14) [GET]
+  [4;36;1mNewsitem Load (1.0ms)[0m   [0;1mSELECT * FROM "newsitems" [0m
+Rendering template within layouts/newsitems
+Rendering newsitems/index
+
+ActionView::TemplateError (undefined method `English_contents' for #<Newsitem:0x22b4dbc>) on line #13 of app/views/newsitems/index.html.erb:
+10: <% @newsitems.each do |newsitem| %>
+11:   <tr>
+12:     <td><%=h newsitem.title %></td>
+13:     <td><%=h newsitem.English_contents %></td>
+14:     <td><%=h newsitem.image_url %></td>
+15:     <td><%= link_to 'Show', newsitem %></td>
+16:     <td><%= link_to 'Edit', edit_newsitem_path(newsitem) %></td>
+
+    app/views/newsitems/index.html.erb:13
+    app/views/newsitems/index.html.erb:10:in `each'
+    app/views/newsitems/index.html.erb:10
+    app/controllers/newsitems_controller.rb:7:in `index'
+
+Rendered rescues/_trace (56.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing NewsitemsController#index (for 127.0.0.1 at 2009-10-20 11:31:45) [GET]
+  [4;35;1mNewsitem Load (1.0ms)[0m   [0mSELECT * FROM "newsitems" [0m
+Rendering template within layouts/newsitems
+Rendering newsitems/index
+Completed in 26ms (View: 19, DB: 1) | 200 OK [http://localhost/newsitems]
+
+
+Processing NewsitemsController#edit (for 127.0.0.1 at 2009-10-20 11:33:34) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mNewsitem Load (0.5ms)[0m   [0;1mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/newsitems
+Rendering newsitems/edit
+Completed in 21ms (View: 11, DB: 0) | 200 OK [http://localhost/newsitems/1/edit]
+
+
+Processing NewsitemsController#edit (for 127.0.0.1 at 2009-10-20 11:52:20) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mNewsitem Load (0.4ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/newsitems
+Rendering newsitems/edit
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.photo) on line #7 of app/views/newsitems/_newsitem_form.html.erb:
+4: 		<%= f.submit 'Save' %>
+5: 		<%= f.text_field 'title' %>
+6: 		<%= f.file_field :photo %>
+7: 		<%= image_tag (@tutor.photo.url(:thumb)) %>
+8: 	</div>	
+9: 	<div id="left">
+10: 		<%= f.text_area :English_content %>
+
+    app/views/newsitems/_newsitem_form.html.erb:7
+    app/views/newsitems/_newsitem_form.html.erb:1
+    app/views/newsitems/edit.html.erb:3
+
+Rendered rescues/_trace (141.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing NewsitemsController#edit (for 127.0.0.1 at 2009-10-20 11:53:49) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mNewsitem Load (0.3ms)[0m   [0;1mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/newsitems
+Rendering newsitems/edit
+Rendered newsitems/_newsitem_form (12.3ms)
+Completed in 26ms (View: 18, DB: 0) | 200 OK [http://localhost/newsitems/1/edit]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-20 11:53:49) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing NewsitemsController#update (for 127.0.0.1 at 2009-10-20 11:54:12) [PUT]
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"j27P8tcbXn+WuAau5472j01dlLiUNDICNE/VARSwOMM=", "id"=>"1", "newsitem"=>{"photo"=>#<File:/var/folders/y2/y24uraoZE0G5D2TvpD8ym++++TM/-Tmp-/RackMultipart.47337.0>, "title"=>"test newsitem", "Vietnamese_content"=>"", "English_content"=>"Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah"}}
+  [4;35;1mNewsitem Load (0.4ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+[paperclip] An error was received while processing: #<Paperclip::NotIdentifiedByImageMagickError: /var/folders/y2/y24uraoZE0G5D2TvpD8ym++++TM/-Tmp-/stream.47337.0 is not recognized by the 'identify' command.>
+[paperclip] An error was received while processing: #<Paperclip::NotIdentifiedByImageMagickError: /var/folders/y2/y24uraoZE0G5D2TvpD8ym++++TM/-Tmp-/stream.47337.0 is not recognized by the 'identify' command.>
+Rendering template within layouts/newsitems
+Rendering newsitems/edit
+Rendered newsitems/_newsitem_form (23.8ms)
+Completed in 326ms (View: 26, DB: 0) | 200 OK [http://localhost/newsitems/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-20 11:54:12) [GET]
+  Parameters: {"1256014452"=>nil}
+
+ActionController::RoutingError (No route matches "/images/newsitems/1/thumb.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing NewsitemsController#update (for 127.0.0.1 at 2009-10-20 11:54:45) [PUT]
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"j27P8tcbXn+WuAau5472j01dlLiUNDICNE/VARSwOMM=", "id"=>"1", "newsitem"=>{"photo"=>#<File:/var/folders/y2/y24uraoZE0G5D2TvpD8ym++++TM/-Tmp-/RackMultipart.47337.1>, "title"=>"test newsitem", "Vietnamese_content"=>"", "English_content"=>"Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah"}}
+  [4;36;1mNewsitem Load (0.4ms)[0m   [0;1mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+[paperclip] An error was received while processing: #<Paperclip::NotIdentifiedByImageMagickError: /var/folders/y2/y24uraoZE0G5D2TvpD8ym++++TM/-Tmp-/stream.47337.1 is not recognized by the 'identify' command.>
+[paperclip] An error was received while processing: #<Paperclip::NotIdentifiedByImageMagickError: /var/folders/y2/y24uraoZE0G5D2TvpD8ym++++TM/-Tmp-/stream.47337.1 is not recognized by the 'identify' command.>
+Rendering template within layouts/newsitems
+Rendering newsitems/edit
+Rendered newsitems/_newsitem_form (30.7ms)
+Completed in 76ms (View: 33, DB: 0) | 200 OK [http://localhost/newsitems/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-20 11:54:45) [GET]
+  Parameters: {"1256014485"=>nil}
+
+ActionController::RoutingError (No route matches "/images/newsitems/1/thumb.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 11:58:45) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.4ms)[0m   [0;1mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+Completed in 23ms (View: 9, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing TutorsController#index (for 127.0.0.1 at 2009-10-20 12:05:10) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mTutor Load (1.1ms)[0m   [0;1mSELECT * FROM "tutors" [0m
+Rendering template within layouts/application
+Rendering tutors/index
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 30ms (View: 14, DB: 1) | 200 OK [http://localhost/tutors]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-20 12:05:11) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TutorsController#edit (for 127.0.0.1 at 2009-10-20 12:05:16) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mTutor Load (0.6ms)[0m   [0;1mSELECT * FROM "tutors" WHERE ("tutors"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering tutors/edit
+Rendered tutors/_tutor_form (18.3ms)
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 42ms (View: 30, DB: 1) | 200 OK [http://localhost/tutors/3/edit]
+
+
+Processing TutorsController#update (for 127.0.0.1 at 2009-10-20 12:05:30) [PUT]
+  Parameters: {"tutor"=>{"photo"=>#<File:/var/folders/y2/y24uraoZE0G5D2TvpD8ym++++TM/-Tmp-/RackMultipart.47337.2>, "textbook_experience"=>"", "course_experience"=>"", "qualifications"=>"hello", "national_knowledge"=>"", "flavour"=>"original", "sex"=>"m", "given_name"=>"Iain", "family_name"=>"Wood", "given_name_first"=>"1", "age"=>"50", "experience"=>"hello"}, "commit"=>"Save", "authenticity_token"=>"j27P8tcbXn+WuAau5472j01dlLiUNDICNE/VARSwOMM=", "id"=>"3"}
+  [4;36;1mTutor Load (0.6ms)[0m   [0;1mSELECT * FROM "tutors" WHERE ("tutors"."id" = 3) [0m
+[paperclip] An error was received while processing: #<Paperclip::NotIdentifiedByImageMagickError: /var/folders/y2/y24uraoZE0G5D2TvpD8ym++++TM/-Tmp-/stream.47337.0 is not recognized by the 'identify' command.>
+[paperclip] An error was received while processing: #<Paperclip::NotIdentifiedByImageMagickError: /var/folders/y2/y24uraoZE0G5D2TvpD8ym++++TM/-Tmp-/stream.47337.0 is not recognized by the 'identify' command.>
+Rendering template within layouts/application
+Rendering tutors/edit
+Rendered tutors/_tutor_form (33.7ms)
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 210ms (View: 47, DB: 1) | 200 OK [http://localhost/tutors/3]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-20 12:05:30) [GET]
+  Parameters: {"1256015130"=>nil}
+
+ActionController::RoutingError (No route matches "/images/tutors/3/thumb.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 13:23:47) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.5ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+Completed in 51ms (View: 12, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 16:36:40) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.5ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+Completed in 81ms (View: 11, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 17:32:27) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.5ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 58ms (View: 22, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-20 22:27:39) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (10.0ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.9ms)[0m   [0;1mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 1095ms (View: 573, DB: 12) | 200 OK [http://localhost/]
+
+
+Processing NewsitemsController#index (for 127.0.0.1 at 2009-10-20 22:28:10) [GET]
+  [4;36;1mNewsitem Load (1.0ms)[0m   [0;1mSELECT * FROM "newsitems" [0m
+Rendering template within layouts/newsitems
+Rendering newsitems/index
+Completed in 143ms (View: 135, DB: 1) | 200 OK [http://localhost/newsitems]
+
+
+Processing NewsitemsController#edit (for 127.0.0.1 at 2009-10-20 22:28:13) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mNewsitem Load (0.5ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/newsitems
+Rendering newsitems/edit
+Rendered newsitems/_newsitem_form (47.9ms)
+Completed in 61ms (View: 50, DB: 0) | 200 OK [http://localhost/newsitems/1/edit]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-20 22:28:13) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing NewsitemsController#update (for 127.0.0.1 at 2009-10-20 22:28:23) [PUT]
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"j27P8tcbXn+WuAau5472j01dlLiUNDICNE/VARSwOMM=", "id"=>"1", "newsitem"=>{"photo"=>#<File:/var/folders/y2/y24uraoZE0G5D2TvpD8ym++++TM/-Tmp-/RackMultipart.47337.0>, "title"=>"test newsitem", "Vietnamese_content"=>"", "English_content"=>"Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah"}}
+  [4;36;1mNewsitem Load (0.3ms)[0m   [0;1mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+  [4;35;1mNewsitem Update (155.2ms)[0m   [0mUPDATE "newsitems" SET "photo_content_type" = 'image/jpeg', "photo_file_name" = 'bug.JPG', "photo_updated_at" = '2009-10-20 15:28:23', "photo_file_size" = 26515, "Vietnamese_content" = '', "updated_at" = '2009-10-20 15:28:24' WHERE "id" = 1[0m
+[paperclip] Saving attachments.
+[paperclip] saving /Users/iain/Sites/connectteach/public/images/newsitems/1/small.JPG
+[paperclip] saving /Users/iain/Sites/connectteach/public/images/newsitems/1/thumb.JPG
+[paperclip] saving /Users/iain/Sites/connectteach/public/images/newsitems/1/original.JPG
+Redirected to http://localhost:3000/newsitems/1
+Completed in 1456ms (DB: 156) | 302 Found [http://localhost/newsitems/1]
+
+
+Processing NewsitemsController#show (for 127.0.0.1 at 2009-10-20 22:28:25) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mNewsitem Load (0.4ms)[0m   [0;1mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/newsitems
+Rendering newsitems/show
+Completed in 14ms (View: 4, DB: 0) | 200 OK [http://localhost/newsitems/1]
+
+
+Processing NewsitemsController#index (for 127.0.0.1 at 2009-10-20 22:37:02) [GET]
+  [4;35;1mNewsitem Load (1.4ms)[0m   [0mSELECT * FROM "newsitems" [0m
+Rendering template within layouts/newsitems
+Rendering newsitems/index
+Completed in 27ms (View: 17, DB: 1) | 200 OK [http://localhost/newsitems]
+
+
+Processing NewsitemsController#show (for 127.0.0.1 at 2009-10-20 22:37:19) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mNewsitem Load (0.4ms)[0m   [0;1mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/newsitems
+Rendering newsitems/show
+Completed in 25ms (View: 4, DB: 0) | 200 OK [http://localhost/newsitems/1]
+
+
+Processing NewsitemsController#show (for 127.0.0.1 at 2009-10-20 22:44:23) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mNewsitem Load (0.7ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering newsitems/show
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 174ms (View: 161, DB: 1) | 200 OK [http://localhost/newsitems/1]
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePages (20090703013813)
+Migrating to ClearanceCreateUsers (20090703013817)
+Migrating to CreateTutors (20090703022556)
+Migrating to AddAttachmentsPhotoToTutor (20090703113902)
+Migrating to AddTutorToUser (20090704060809)
+Migrating to AddRoleToUser (20090707122921)
+Migrating to LoadPagesData (20090709035205)
+Migrating to AddNewsColumnToPages (20091018012613)
+Migrating to AddVntextColumnToPages (20091018053453)
+Migrating to RenameVntextVncontent (20091018054118)
+Migrating to RenameVncontentVietnameseContent (20091018055834)
+Migrating to CreateNewsitems (20091018085601)
+Migrating to AddAttachmentsPhotoToNewsitem (20091018091113)
+Migrating to AddVietnameseContentToNewsitem (20091018102538)
+Migrating to AddMoreStaticPages (20091019203201)
+Migrating to CleanUpNewsitem (20091020154948)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (74.4ms)[0m   [0mCREATE TEMPORARY TABLE "altered_newsitems" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "English_content" text, "image_url" varchar(255), "created_at" datetime, "updated_at" datetime, "photo_file_name" varchar(255), "photo_content_type" varchar(255), "photo_file_size" integer, "photo_updated_at" datetime, "Vietnamese_content" text) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("newsitems")[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mDROP TABLE "newsitems"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "newsitems" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "English_content" text, "created_at" datetime, "updated_at" datetime, "photo_file_name" varchar(255), "photo_content_type" varchar(255), "photo_file_size" integer, "photo_updated_at" datetime, "Vietnamese_content" text) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("altered_newsitems")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mDROP TABLE "altered_newsitems"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091020154948')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("newsitems")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("pages")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("tutors")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_token')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_email')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_users_on_id_and_token')[0m
+
+
+Processing NewsitemsController#show (for 127.0.0.1 at 2009-10-20 22:54:46) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mNewsitem Load (0.4ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering newsitems/show
+
+ActionView::TemplateError (undefined method `image_url' for #<Newsitem:0x24b1b38>) on line #13 of app/views/newsitems/show.html.erb:
+10: 
+11: <p>
+12:   <b>Image url:</b>
+13:   <%=h @newsitem.image_url %>
+14: </p>
+15: 
+16: 
+
+    app/views/newsitems/show.html.erb:13
+    app/controllers/newsitems_controller.rb:18:in `show'
+
+Rendered rescues/_trace (50.5ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TutorsController#index (for 127.0.0.1 at 2009-10-20 23:01:41) [GET]
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mTutor Load (1.3ms)[0m   [0mSELECT * FROM "tutors" [0m
+Rendering template within layouts/application
+Rendering tutors/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 55ms (View: 14, DB: 2) | 200 OK [http://localhost/tutors/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-20 23:01:41) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TutorsController#show (for 127.0.0.1 at 2009-10-20 23:01:44) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mTutor Load (0.5ms)[0m   [0mSELECT * FROM "tutors" WHERE ("tutors"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering tutors/show
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 113ms (View: 101, DB: 1) | 200 OK [http://localhost/tutors/3]
+
+
+Processing NewsitemsController#show (for 127.0.0.1 at 2009-10-20 23:11:50) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mNewsitem Load (0.5ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering newsitems/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 37ms (View: 25, DB: 1) | 200 OK [http://localhost/newsitems/1]
+
+
+Processing NewsitemsController#show (for 127.0.0.1 at 2009-10-20 23:25:41) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mNewsitem Load (0.5ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering newsitems/show
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 37ms (View: 26, DB: 1) | 200 OK [http://localhost/newsitems/1]
+
+
+Processing NewsitemsController#show (for 127.0.0.1 at 2009-10-20 23:27:06) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mNewsitem Load (0.4ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering newsitems/show
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 24ms (View: 14, DB: 1) | 200 OK [http://localhost/newsitems/1]
+
+
+Processing NewsitemsController#edit (for 127.0.0.1 at 2009-10-20 23:43:17) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mNewsitem Load (0.3ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering newsitems/edit
+Rendered newsitems/_newsitem_form (78.2ms)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 122ms (View: 90, DB: 1) | 200 OK [http://localhost/newsitems/1/edit]
+
+
+Processing NewsitemsController#edit (for 127.0.0.1 at 2009-10-20 23:44:00) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mNewsitem Load (0.4ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering newsitems/edit
+Rendered newsitems/_newsitem_form (12.2ms)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 36ms (View: 28, DB: 1) | 200 OK [http://localhost/newsitems/1/edit]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-21 07:29:46) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (0.5ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.4ms)[0m   [0;1mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+Completed in 57ms (View: 9, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing TutorsController#index (for 127.0.0.1 at 2009-10-21 08:27:43) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mTutor Load (1.0ms)[0m   [0;1mSELECT * FROM "tutors" [0m
+Rendering template within layouts/application
+Rendering tutors/index
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 28ms (View: 12, DB: 1) | 200 OK [http://localhost/tutors]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-21 08:27:43) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-21 14:06:52) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.6ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.6ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pages/show
+Completed in 191ms (View: 103, DB: 1) | 200 OK [http://localhost/]

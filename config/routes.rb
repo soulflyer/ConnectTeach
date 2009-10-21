@@ -4,7 +4,10 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :tutors
 
   map.root :controller => 'pages', :action => 'show', :permalink => 'home'
-
+  map.about 'about', :controller => 'pages', :action => 'show', :permalink => 'about'
+  map.contact 'contact', :controller => 'pages', :action => 'show', :permalink => 'contact'
+  map.courses 'courses', :controller => 'pages', :action => 'show', :permalink => 'courses'
+  
   map.resources :pages
   
   map.static 'static/:permalink', :controller => 'pages', :action => 'show'

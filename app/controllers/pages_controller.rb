@@ -21,6 +21,8 @@ class PagesController < ApplicationController
     else
       @page = Page.find(params[:id])
     end
+    
+    @newsitem = Newsitem.find(1)
 
     respond_to do |format|
       format.html # show.html.erb

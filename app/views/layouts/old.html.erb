@@ -1,0 +1,50 @@
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>: <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'base' %>
+  <% if @stylesheet %>
+	  <% for sh in @stylesheet %>
+	    <%= stylesheet_link_tag sh %>
+	  <% end %>
+  <% end %>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header">
+			<h1>ConnectTeach</h1>
+			<div id="menu">
+		    <ul>
+					<li><%= link_to 'Tutors', tutors_path %></li>
+			    <li><%= link_to 'Users', users_path %></li>
+					<li><%= link_to 'Pages', pages_path %></li>
+		    </ul>	 
+			</div>
+			<div id="login">
+				<% if session[:user_id] %>
+				  <% user=User.find(session[:user_id]) %>
+				  <%= link_to "Logout #{user.email}", :controller => 'clearance/sessions', :action => 'destroy' %>
+				  <%= link_to "Details", :controller => '/tutors', :action => 'edit', :id => user.tutor_id %>
+				<% else %>
+				  <%= link_to "Login", :controller => 'clearance/sessions', :action => 'new' %>
+				<% end %>
+			</div>		
+		</div>
+		<div id="main">
+		<p style="color: green">
+			<%= flash[:notice] %>
+			<%= flash[:sucess] %>
+		</p>
+		<p style="color: red">
+			<%= flash[:error] %>
+			<%= flash[:failure] %>
+		</p>
+		
+		<%= yield  %>
+
+		</div>
+		<div id="footer">
+			<p>WebDesign by <%= link_to "RailsIain", "http://railsiain.com" %></p>
+		</div>
+	</div>
+</body>
+</html>
