@@ -22,7 +22,7 @@ class PagesController < ApplicationController
       @page = Page.find(params[:id])
     end
     
-    @newsitems = Newsitem.all
+    @newsitems = Newsitem.all(:limit => 3, :order => "created_at DESC")
 
     respond_to do |format|
       format.html # show.html.erb

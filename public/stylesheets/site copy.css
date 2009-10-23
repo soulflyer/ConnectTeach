@@ -1,18 +1,4 @@
-/* @override http://localhost:3000/stylesheets/site.css?1256230028 */
-h1{
-  color: #0c7b6b;
-  font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
-}
-h1 {
-  font-size: 28px;
-  font-weight: normal;
-  font-style: normal;
-}
-h3 {
-  font-size: 18px;
-  font-weight: normal;
-  font-style: normal;
-}
+/* @override http://localhost:3000/stylesheets/site.css?1255986413 */
 body {
   margin: 0;
   padding-top: 0;
@@ -91,15 +77,10 @@ a:link,  a:visited,  a:active {
   padding: 0;
   margin: 0 0 0 90px;
   width: 820px;
-  position: relative;
+  position: absolute;
 }
 #text.narrow {
   width: 700px;
-}
-#text img {
-  width: 400px;
-  float: left;
-  margin-right: 20px;
 }
 /*This may need moving into newsbar.css so it only gets applied when the newsbar is to be displayed*/
 #news {
@@ -109,27 +90,34 @@ a:link,  a:visited,  a:active {
   margin-right: 85px;
 }
 #footer {
-  height: 49px;
+  height: 50px;
   background: url(../images/Footer.png) no-repeat center;
   clear: both;
 }
-
+#text h1{
+  color: #0c7b6b;
+  font: 26px "Lucida Grande", Lucida, Verdana, sans-serif;
+}
 #text p {
   font-size: 14px;
   color: #6e5973;
+}
+#news p {
+  font-size: 14px;
+  color: #6e5973;
+ 
 }
 
 #editbutton {
   background: url(../images/ButtonLarge.png) no-repeat;
   width: 170px;
-  right: -60px;
+  right: 0;
+  top: 0;
   height: 45px;
-  position: absolute;
-  top: -14px;
 }
 #editbutton p {
   margin: 0;
-  padding-top: 16px;
+  padding: 16px 0 0;
 }
 a:hover #editbutton{
   background: url(../images/HoverButtonLarge.png) no-repeat;

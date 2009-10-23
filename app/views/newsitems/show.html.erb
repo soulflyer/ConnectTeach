@@ -1,15 +1,10 @@
+<%= image_tag @newsitem.photo.url %>
 <h1><%=h @newsitem.title %></h1>
-<div id="photo">
-  <%= image_tag @newsitem.photo.url %>
-</div>
-<div id="left">
-  <p><%=h @newsitem.English_content %></p>
-</div>
-<div id="right">
-  <p><%=h @newsitem.English_content %></p>
-</div>
-
-
-
-
-<%= link_to 'Edit', edit_newsitem_path(@newsitem) %>
+<% if session[:user_id] && User.find(session[:user_id]).role=="admin" %>
+	<% content_for :edit_this_page_button do %>
+	  <%= link_to '<div id="editbutton" class="button">
+			<p>Edit this page</p>
+		</div>', edit_newsitem_path(@newsitem.id) %>
+	<% end %>
+<% end %>
+<p><%=h @newsitem.English_content %></p>

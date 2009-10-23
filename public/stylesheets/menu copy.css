@@ -1,10 +1,16 @@
+/* @override http://localhost:3000/stylesheets/menu.css?1255743888 */
+
+/* @override http://localhost:3000/stylesheets/menu.css?1255706767 */
+
+/* @override http://localhost:3000/stylesheets/menu.css?1255629530 */
+
+/* @override http://soulflyer.com/cthtml/css/menu.css */
 #menu {
   position: relative;
   height: 50px;
   background: url(../images/MenuBG.gif) repeat-y;
 }
 #menu a:link, #menu a:visited, #menu a:active {
-  color: #462614;
   text-decoration: none;
 }
 a:hover .button {

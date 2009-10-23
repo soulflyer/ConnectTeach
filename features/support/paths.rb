@@ -24,7 +24,8 @@ module NavigationHelpers
       tutors_path
     when /the list pages page/i
       pages_path
-    
+    when /the first newsitem page/i
+      newsitem_path(1)
     # Add more mappings here.
     # Here is a more fancy example:
     #

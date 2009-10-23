@@ -2,19 +2,14 @@
 	<% content_for :newsbarcss do %>
 		<%= stylesheet_link_tag 'newsbar' %>
 	<% end %>
-	<% content_for :newsbar do %>
-		<div id="news">
-			<% if @newsitems[1] %>
-			<p><%= @newsitems[1].title  %></p>
-			<% end %>
-			<p>News news news news news news news news news news news news news news news news news 
-				news news news news news news news news news news news news news news news news news 
-				news news news news news news news news news news news news news news news news news 
-				news news news news news news news news news news news news news news news news news 
-				news news news news news news news news news news news news news</p>
-		</div>
+  <%= render :partial => 'content_for_newsbar' %>
+<% end %>
+<% if session[:user_id] && User.find(session[:user_id]).role=="admin" %>
+	<% content_for :edit_this_page_button do %>
+	  <%= link_to '<div id="editbutton" class="button">
+			<p>Edit this page</p>
+		</div>', static_edit_path(@page.permalink) %>
 	<% end %>
 <% end %>
 
 <%= textilize @page.English_content %>
-

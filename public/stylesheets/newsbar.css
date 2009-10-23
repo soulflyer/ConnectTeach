@@ -1,5 +1,38 @@
-/* @override http://localhost:3000/stylesheets/newsbar.css?1255852422 */
+/* @override http://localhost:3000/stylesheets/newsbar.css?1256230125 */
+
+/* @override http://localhost:3000/stylesheets/newsbar.css?1256228480 */
 
 #text {
 	width: 500px;
+}
+div.item {
+  clear: both;
+  height: 75px;
+  margin-bottom: 18px;
+  overflow: hidden;
+}
+div.item img {
+  width: 100px;
+  height: 68px;
+}
+div.item p {
+  color: #6e5973;
+  margin: 0;
+  padding: 0;
+  font-size: xx-small;
+}
+#image {
+  width: 105px;
+  height: 73px;
+  background-image: url(../images/newspicshadow.png);
+  padding: 0;
+  float: left;
+  margin: 0 8px 0 0;
+}
+#news h1,#news h2,#news h3,#news h4{
+    color: #0c7b6b;
+  font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+}
+#news h3 {
+  margin: 0;
 }

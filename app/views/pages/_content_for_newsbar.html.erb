@@ -1,0 +1,16 @@
+<% content_for :newsbar do %>
+	<div id="news">
+		<h1>News</h1>
+		<% @newsitems.each do |newsitem| %>
+		  <% link_to  (newsitem_path(newsitem.id)) do %>
+				<div class="item">
+				  <div id="image">
+					  <%= image_tag (newsitem.photo.url(:small)) %>
+				  </div>
+				  <h3><%= newsitem.title %></h3>
+				  <p><%= newsitem.English_content %></p>
+				</div>
+		  <% end %>
+		<% end %>
+	</div>
+<% end %>
