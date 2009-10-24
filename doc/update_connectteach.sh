@@ -11,6 +11,7 @@ gunzip soulflyer-ConnectTeach*.tar.gz
 tar xvf soulflyer-ConnectTeach*.tar
 rm soulflyer-ConnectTeach*.tar
 rm -r ~/public_html/connectteach
-cp soulflyer-ConnectTeach*/doc/update_connectteach ~/public_html
+cp soulflyer-ConnectTeach*/doc/update_connectteach.sh ~/
+chmod a+x ~/update_connectteach.sh
 mv soulflyer-ConnectTeach* ~/public_html/connectteach
 echo "Now restart the server"
