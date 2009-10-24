@@ -13723,3 +13723,693 @@ ActionController::RoutingError (No route matches "/photos/small/missing.png" wit
   
 
 Rendering rescues/layout (not_found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-23 17:15:22) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (1.4ms)[0m   [0;1mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (8.4ms)
+Completed in 51ms (View: 17, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-23 17:15:22) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (1.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePages (20090703013813)
+Migrating to ClearanceCreateUsers (20090703013817)
+Migrating to CreateTutors (20090703022556)
+Migrating to AddAttachmentsPhotoToTutor (20090703113902)
+Migrating to AddTutorToUser (20090704060809)
+Migrating to AddRoleToUser (20090707122921)
+Migrating to LoadPagesData (20090709035205)
+Migrating to AddNewsColumnToPages (20091018012613)
+Migrating to AddVntextColumnToPages (20091018053453)
+Migrating to RenameVntextVncontent (20091018054118)
+Migrating to RenameVncontentVietnameseContent (20091018055834)
+Migrating to CreateNewsitems (20091018085601)
+Migrating to AddAttachmentsPhotoToNewsitem (20091018091113)
+Migrating to AddVietnameseContentToNewsitem (20091018102538)
+Migrating to AddMoreStaticPages (20091019203201)
+Migrating to CleanUpNewsitem (20091020154948)
+Migrating to AddExampleNewsitem (20091022064838)
+Migrating to AddLanguageToUser (20091023105856)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (25.4ms)[0m   [0mALTER TABLE "users" ADD "language" varchar(255)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091023105856')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("newsitems")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("pages")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("tutors")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_token')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_email')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_users_on_id_and_token')[0m
+
+
+Processing Clearance::SessionsController#destroy (for 127.0.0.1 at 2009-10-23 18:03:12) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"clearance/sessions"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Redirected to http://localhost:3000/session/new
+Completed in 30ms (DB: 0) | 302 Found [http://localhost/clearance/sessions/destroy]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-10-23 18:03:12) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 12ms (View: 10, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing Clearance::UsersController#new (for 127.0.0.1 at 2009-10-23 18:03:16) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (12.9ms)
+Completed in 35ms (View: 27, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing Clearance::UsersController#new (for 127.0.0.1 at 2009-10-23 18:06:49) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (13.7ms)
+Completed in 28ms (View: 21, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-23 18:18:51) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (1.2ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (7.1ms)
+Completed in 52ms (View: 17, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-23 18:18:51) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-10-23 19:07:07) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 12ms (View: 10, DB: 0) | 200 OK [http://localhost/clearance/sessions/new]
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2009-10-23 19:07:16) [POST]
+  Parameters: {"commit"=>"Sign in", "action"=>"create", "authenticity_token"=>"vqhJJ6UK7rXJJKK1fNb88l4grsxKJqFGNkTeFmPc0+s=", "session"=>{"password"=>"[FILTERED]", "remember_me"=>"0", "email"=>"iain@railsiain.com"}, "controller"=>"clearance/sessions"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'iain@railsiain.com') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 35ms (DB: 1) | 302 Found [http://localhost/session]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-23 19:07:16) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (1.2ms)[0m   [0;1mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (8.7ms)
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 38ms (View: 25, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-23 19:07:16) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-23 19:07:16) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing NewsitemsController#index (for 127.0.0.1 at 2009-10-23 19:11:57) [GET]
+  [4;35;1mNewsitem Load (1.3ms)[0m   [0mSELECT * FROM "newsitems" [0m
+Rendering template within layouts/application
+Rendering newsitems/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 48ms (View: 40, DB: 2) | 200 OK [http://localhost/newsitems]
+
+
+Processing NewsitemsController#index (for 127.0.0.1 at 2009-10-23 19:18:01) [GET]
+  [4;35;1mNewsitem Load (1.2ms)[0m   [0mSELECT * FROM "newsitems" [0m
+Rendering template within layouts/application
+Rendering newsitems/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 44ms (View: 37, DB: 2) | 200 OK [http://localhost/newsitems]
+
+
+Processing NewsitemsController#index (for 127.0.0.1 at 2009-10-23 19:18:32) [GET]
+  [4;35;1mNewsitem Load (1.3ms)[0m   [0mSELECT * FROM "newsitems" [0m
+Rendering template within layouts/application
+Rendering newsitems/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 121ms (View: 41, DB: 2) | 200 OK [http://localhost/newsitems]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-23 19:18:32) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-23 19:18:32) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-23 22:39:36) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (1.4ms)[0m   [0;1mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (8.0ms)
+Completed in 53ms (View: 15, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-23 22:39:37) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-23 23:04:33) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (1.3ms)[0m   [0;1mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (6.7ms)
+Completed in 52ms (View: 14, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-23 23:04:34) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-10-23 23:19:03) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 12ms (View: 10, DB: 0) | 200 OK [http://localhost/clearance/sessions/new]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-23 23:19:13) [GET]
+  Parameters: {"permalink"=>"contact"}
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'contact') LIMIT 1[0m
+  [4;36;1mNewsitem Load (1.2ms)[0m   [0;1mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Completed in 39ms (View: 5, DB: 2) | 200 OK [http://localhost/contact]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-10-23 23:27:40) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 12ms (View: 10, DB: 0) | 200 OK [http://localhost/clearance/sessions/new]
+
+
+Processing NewsitemsController#index (for 127.0.0.1 at 2009-10-23 23:28:07) [GET]
+  [4;35;1mNewsitem Load (16.7ms)[0m   [0mSELECT * FROM "newsitems" [0m
+Rendering template within layouts/application
+Rendering newsitems/index
+Completed in 418ms (View: 35, DB: 17) | 200 OK [http://localhost/newsitems]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-23 23:28:08) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-23 23:46:27) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (1.3ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (6.9ms)
+Completed in 48ms (View: 14, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-23 23:46:27) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-24 00:13:33) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.9ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (2.1ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (9.0ms)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 62ms (View: 26, DB: 3) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-24 00:13:33) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing NewsitemsController#show (for 127.0.0.1 at 2009-10-24 00:13:35) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mNewsitem Load (0.4ms)[0m   [0;1mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 6) [0m
+Rendering template within layouts/application
+Rendering newsitems/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 40ms (View: 31, DB: 1) | 200 OK [http://localhost/newsitems/6]
+
+
+Processing NewsitemsController#show (for 127.0.0.1 at 2009-10-24 08:23:44) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mNewsitem Load (0.3ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering newsitems/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 28ms (View: 19, DB: 1) | 200 OK [http://localhost/newsitems/3]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-24 08:23:44) [GET]
+
+ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing NewsitemsController#show (for 127.0.0.1 at 2009-10-24 08:23:56) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mNewsitem Load (0.4ms)[0m   [0;1mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 6) [0m
+Rendering template within layouts/application
+Rendering newsitems/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 25ms (View: 15, DB: 1) | 200 OK [http://localhost/newsitems/6]
+
+
+Processing NewsitemsController#show (for 127.0.0.1 at 2009-10-24 08:30:37) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mNewsitem Load (0.4ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 6) [0m
+Rendering template within layouts/application
+Rendering newsitems/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 28ms (View: 19, DB: 1) | 200 OK [http://localhost/newsitems/6]
+
+
+Processing NewsitemsController#show (for 127.0.0.1 at 2009-10-24 08:31:43) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mNewsitem Load (0.4ms)[0m   [0;1mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 6) [0m
+Rendering template within layouts/application
+Rendering newsitems/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 25ms (View: 16, DB: 1) | 200 OK [http://localhost/newsitems/6]
+
+
+Processing NewsitemsController#index (for 127.0.0.1 at 2009-10-24 08:33:02) [GET]
+  [4;35;1mNewsitem Load (1.7ms)[0m   [0mSELECT * FROM "newsitems" [0m
+Rendering template within layouts/application
+Rendering newsitems/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 53ms (View: 42, DB: 2) | 200 OK [http://localhost/newsitems]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-24 08:33:02) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing NewsitemsController#index (for 127.0.0.1 at 2009-10-24 08:57:34) [GET]
+  [4;35;1mNewsitem Load (1.2ms)[0m   [0mSELECT * FROM "newsitems" [0m
+Rendering template within layouts/application
+Rendering newsitems/index
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 47ms (View: 40, DB: 2) | 200 OK [http://localhost/newsitems/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-24 08:57:34) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing NewsitemsController#index (for 127.0.0.1 at 2009-10-24 08:57:51) [GET]
+  [4;35;1mNewsitem Load (1.2ms)[0m   [0mSELECT * FROM "newsitems" [0m
+Rendering template within layouts/application
+Rendering newsitems/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 124ms (View: 116, DB: 2) | 200 OK [http://localhost/newsitems/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-24 08:57:52) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-24 08:57:52) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing NewsitemsController#index (for 127.0.0.1 at 2009-10-24 08:59:56) [GET]
+  [4;35;1mNewsitem Load (1.2ms)[0m   [0mSELECT * FROM "newsitems" [0m
+Rendering template within layouts/application
+Rendering newsitems/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 47ms (View: 39, DB: 2) | 200 OK [http://localhost/newsitems/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-24 08:59:56) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-24 08:59:56) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing NewsitemsController#index (for 127.0.0.1 at 2009-10-24 09:30:25) [GET]
+  [4;35;1mNewsitem Load (14.5ms)[0m   [0mSELECT * FROM "newsitems" [0m
+Rendering template within layouts/application
+Rendering newsitems/index
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 156ms (View: 135, DB: 15) | 200 OK [http://localhost/newsitems/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-24 09:30:25) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-24 09:30:25) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing NewsitemsController#index (for 127.0.0.1 at 2009-10-24 09:33:47) [GET]
+  [4;35;1mNewsitem Load (1.2ms)[0m   [0mSELECT * FROM "newsitems" [0m
+Rendering template within layouts/application
+Rendering newsitems/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 50ms (View: 42, DB: 2) | 200 OK [http://localhost/newsitems/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-24 09:33:47) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-24 09:33:47) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing NewsitemsController#index (for 127.0.0.1 at 2009-10-24 09:36:34) [GET]
+  [4;35;1mNewsitem Load (1.2ms)[0m   [0mSELECT * FROM "newsitems" [0m
+Rendering template within layouts/application
+Rendering newsitems/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 51ms (View: 43, DB: 2) | 200 OK [http://localhost/newsitems/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-24 09:36:34) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-24 09:36:34) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing NewsitemsController#index (for 127.0.0.1 at 2009-10-24 09:37:09) [GET]
+  [4;35;1mNewsitem Load (1.2ms)[0m   [0mSELECT * FROM "newsitems" [0m
+Rendering template within layouts/application
+Rendering newsitems/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 43ms (View: 36, DB: 2) | 200 OK [http://localhost/newsitems]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-24 09:37:09) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-24 09:37:09) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing NewsitemsController#index (for 127.0.0.1 at 2009-10-24 09:39:10) [GET]
+  [4;35;1mNewsitem Load (1.3ms)[0m   [0mSELECT * FROM "newsitems" [0m
+Rendering template within layouts/application
+Rendering newsitems/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 53ms (View: 45, DB: 2) | 200 OK [http://localhost/newsitems]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-24 09:39:10) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-24 09:39:10) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-24 12:38:04) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (1.3ms)[0m   [0;1mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (6.7ms)
+Completed in 26ms (View: 14, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-24 12:38:05) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-24 15:45:19) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (1.6ms)[0m   [0;1mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (9.7ms)
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 86ms (View: 48, DB: 3) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-24 15:45:19) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing NewsitemsController#show (for 127.0.0.1 at 2009-10-24 15:45:28) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mNewsitem Load (0.4ms)[0m   [0mSELECT * FROM "newsitems" WHERE ("newsitems"."id" = 6) [0m
+Rendering template within layouts/application
+Rendering newsitems/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 26ms (View: 16, DB: 1) | 200 OK [http://localhost/newsitems/6]
+
+
+Processing NewsitemsController#index (for 127.0.0.1 at 2009-10-24 15:54:26) [GET]
+  [4;36;1mNewsitem Load (1.2ms)[0m   [0;1mSELECT * FROM "newsitems" [0m
+Rendering template within layouts/application
+Rendering newsitems/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 129ms (View: 121, DB: 2) | 200 OK [http://localhost/newsitems]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-24 15:54:26) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-24 15:54:26) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing NewsitemsController#index (for 127.0.0.1 at 2009-10-24 16:04:49) [GET]
+  [4;36;1mNewsitem Load (1.3ms)[0m   [0;1mSELECT * FROM "newsitems" [0m
+Rendering template within layouts/application
+Rendering newsitems/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 52ms (View: 45, DB: 2) | 200 OK [http://localhost/newsitems]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-24 16:04:50) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing NewsitemsController#index (for 127.0.0.1 at 2009-10-24 16:05:01) [GET]
+  [4;36;1mNewsitem Load (1.3ms)[0m   [0;1mSELECT * FROM "newsitems" [0m
+Rendering template within layouts/application
+Rendering newsitems/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 44ms (View: 36, DB: 2) | 200 OK [http://localhost/newsitems]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-24 16:05:01) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-24 16:05:01) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-10-24 21:33:03) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.5ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (1.5ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (9.2ms)
+Completed in 75ms (View: 18, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-24 21:33:03) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)

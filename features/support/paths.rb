@@ -26,6 +26,8 @@ module NavigationHelpers
       pages_path
     when /the first newsitem page/i
       newsitem_path(1)
+    when /the list newsitems page/i
+      newsitems_path
     # Add more mappings here.
     # Here is a more fancy example:
     #

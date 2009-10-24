@@ -16,4 +16,22 @@ Feature Administer newsitems
 		When I sign in as "email@person.com/password"
 		And I go to the first newsitem page
 		Then I should see "Edit this page"
-	
+		
+	Scenario: User views newsitems list
+	  Given I am signed up and confirmed as "email@person.com/password"
+		And "email@person.com" has "null" role
+		When I sign in as "email@person.com/password"
+		And I go to the list newsitems page  
+	  Then I should not see "Edit"
+	  And I should not see "Destroy"
+	  And I should not see "New newsitem"
+
+	Scenario: User with admin privs views newsitems list
+	  Given I am signed up and confirmed as "email@person.com/password"
+		And "email@person.com" has "admin" role
+		When I sign in as "email@person.com/password"
+		And I go to the list newsitems page  
+	  Then I should see "Edit"
+	  And I should see "Destroy"
+	  And I should see "New newsitem"
+		

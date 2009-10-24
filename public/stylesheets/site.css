@@ -1,4 +1,4 @@
-/* @override http://localhost:3000/stylesheets/site.css?1256230028 */
+/* @override http://localhost:3000/stylesheets/site.css?1256272436 */
 h1{
   color: #0c7b6b;
   font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
@@ -96,7 +96,7 @@ a:link,  a:visited,  a:active {
 #text.narrow {
   width: 700px;
 }
-#text img {
+#text img.large {
   width: 400px;
   float: left;
   margin-right: 20px;

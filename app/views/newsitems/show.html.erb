@@ -1,10 +1,12 @@
-<%= image_tag @newsitem.photo.url %>
+<%= image_tag @newsitem.photo.url, :class => "large" %>
 <h1><%=h @newsitem.title %></h1>
 <% if session[:user_id] && User.find(session[:user_id]).role=="admin" %>
 	<% content_for :edit_this_page_button do %>
-	  <%= link_to '<div id="editbutton" class="button">
-			<p>Edit this page</p>
-		</div>', edit_newsitem_path(@newsitem.id) %>
+		<% link_to (edit_newsitem_path(@newsitem.id)) do %>
+		  <div id="editbutton", class="button">
+		  	<p>Edit this page</p>
+		  </div>
+		<% end %>
 	<% end %>
 <% end %>
 <p><%=h @newsitem.English_content %></p>

@@ -1,0 +1,16 @@
+/* @override http://localhost:3000/stylesheets/table.css?1256351942 */
+
+#destroy {
+  bottom: 0px;
+}
+#edit {
+  bottom: 35px;
+}
+#show {
+  bottom: 70px;
+}
+.showeditdestroy {
+  position: relative;
+  width: 90px;
+  height: 110px;
+}

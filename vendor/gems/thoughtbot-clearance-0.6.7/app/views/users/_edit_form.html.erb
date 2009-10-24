@@ -4,5 +4,6 @@
   <%= form.password_field :password %>
   <%= form.password_field :password_confirmation %>
   <%= form.text_field :role %>
+  <%= form.select :language, [['English', 'en'], ['Vietnamese', 'vn']] %>
 	<%= form.submit 'Submit', :disable_with => 'Please wait...' %>
 <% end %>
