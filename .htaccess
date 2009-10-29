@@ -1,3 +1,4 @@
+RewriteEngine on 
 RewriteCond %{HTTP_HOST} ^connectteach.com$ [OR]
 RewriteCond %{HTTP_HOST} ^connectteach.soulflyer.com$ [OR]
 RewriteCond %{HTTP_HOST} ^www.connectteach.soulflyer.com$

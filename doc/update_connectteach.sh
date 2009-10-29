@@ -1,8 +1,10 @@
 #! /bin/bash
+echo "*****************************************"
 echo "Stop the mongrel server before continuing"
+echo "*****************************************"
 echo ""
 echo "The following files will be deleted by this script:"
-ls soulflyer-ConnectTeach*.tar
+ls soulflyer-ConnectTeach*
 echo "Hit ctrl C now if this is a problem"
 read -e INPUT
 rm soulflyer-ConnectTeach*
