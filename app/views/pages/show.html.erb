@@ -6,9 +6,11 @@
 <% end %>
 <% if session[:user_id] && User.find(session[:user_id]).role=="admin" %>
 	<% content_for :edit_this_page_button do %>
-	  <%= link_to '<div id="editbutton" class="button">
+	  <% link_to (static_edit_path(@page.permalink)) do %>
+	  <div id="editbutton" class="button">
 			<p>Edit this page</p>
-		</div>', static_edit_path(@page.permalink) %>
+		</div>
+	  <% end %>
 	<% end %>
 <% end %>
 

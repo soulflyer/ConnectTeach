@@ -1,6 +1,13 @@
 <% content_for :newsbar do %>
 	<div id="news">
 		<h1>News</h1>
+		<% if session[:user_id] && User.find(session[:user_id]).role=="admin" %>
+		  <% link_to (newsitems_path) do %>
+		  <div id="editnewsitemsbutton" class="button">
+				<p>Edit newsitems</p>
+			</div>
+		  <% end %>
+		<% end %>
 		<% @newsitems.each do |newsitem| %>
 		  <% link_to  (newsitem_path(newsitem.id)) do %>
 				<div class="item">

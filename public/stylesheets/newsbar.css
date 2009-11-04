@@ -1,6 +1,4 @@
-/* @override http://localhost:3000/stylesheets/newsbar.css?1256230125 */
-
-/* @override http://localhost:3000/stylesheets/newsbar.css?1256228480 */
+/* @override http://localhost:3000/stylesheets/newsbar.css?1256270264 */
 
 #text {
 	width: 500px;
@@ -36,3 +34,14 @@ div.item p {
 #news h3 {
   margin: 0;
 }
+#editnewsitemsbutton {
+  background: url(../images/ButtonLarge.png) no-repeat;
+  width:  165px;
+  position: absolute;
+  top: 8px;
+  right: 45px;
+}
+a:hover #editnewsitemsbutton{
+  background: url(../images/HoverButtonLarge.png) no-repeat;
+}
+

@@ -1,3 +1,4 @@
+<% @stylesheet = "table" %>
 <h1>Listing tutors</h1>
 
 <table>
@@ -7,13 +8,11 @@
     <th>Age</th>
     <th>Sex</th>
     <th>Flavour</th>
-		<% if session[:tutor_id] && Tutor.find(session[:tutor_id]).admin %>
-			<th></th>
-		<% end %>
+		<th></th>
   </tr>
 
 <% @tutors.each do |tutor| %>
-  <tr>
+  <tr class="<%= cycle("even", "odd") %>">
 	  <td><%=link_to (image_tag (tutor.photo.url(:thumb))), tutor%></td>
     <td><%= highlight(tutor.name, tutor.family_name, :highlighter => '<span class="familyname">\1</span>') %></td>
     <td><%=h tutor.age %></td>
@@ -25,6 +24,28 @@
 				<%= link_to 'Destroy', tutor, :confirm => 'Are you sure?', :method => :delete %>
 			</td>
 		<% end %>
+		<td>
+		  <div id="showeditdestroy#{<%= tutor.name %>}", class="showeditdestroy">
+				<% link_to (tutor) do %>
+					<div id="show", class="button">
+						<p>Show</p>
+					</div>
+			  <% end %>
+				<% if session[:user_id] && User.find(session[:user_id]).role=="admin" %>				
+					<% link_to (edit_tutor_path(tutor)) do %>
+						<div id="edit", class="button">
+							<p>Edit</p>
+						</div>
+				  <% end %>
+					<% link_to (tutor, :confirm => 'Are you sure?', :method => :delete ) do %>
+						<div id="destroy", class="button">
+							<p>Delete</p>
+						</div>
+				  <% end %>
+				<% end %>
+			</div>
+    </td>
+    
   </tr>
 <% end %>
 </table>

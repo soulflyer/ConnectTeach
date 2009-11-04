@@ -1,4 +1,4 @@
-/* @override http://localhost:3000/stylesheets/table.css?1256351942 */
+/* @override http://localhost:3000/stylesheets/table.css?1257252212 */
 
 #destroy {
   bottom: 0px;
@@ -11,6 +11,29 @@
 }
 .showeditdestroy {
   position: relative;
-  width: 90px;
+  width: 102px;
   height: 110px;
+}
+.even {
+  background-color: #f1eef4;
+}
+.odd {
+  background-color: #e7e1ec;
+}
+.showeditdestroy .button {
+  margin: 0;
+  padding: 0;
+  background-position: center center;
+  height: 40px;
+}
+.showeditdestroy p {
+  margin: 12px 0 0;
+  padding: 0;
+}
+td img {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+table {
+  border-spacing: 0px;
 }

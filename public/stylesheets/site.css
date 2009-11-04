@@ -1,4 +1,4 @@
-/* @override http://localhost:3000/stylesheets/site.css?1256272436 */
+/* @override http://localhost:3000/stylesheets/site.css?1256347970 */
 h1{
   color: #0c7b6b;
   font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
@@ -87,6 +87,8 @@ a:link,  a:visited,  a:active {
   width: 1000px;
 }
 #text {
+  font-size: 14px;
+  color: #6e5973;
   text-align: justify;
   padding: 0;
   margin: 0 0 0 90px;
@@ -112,11 +114,6 @@ a:link,  a:visited,  a:active {
   height: 49px;
   background: url(../images/Footer.png) no-repeat center;
   clear: both;
-}
-
-#text p {
-  font-size: 14px;
-  color: #6e5973;
 }
 
 #editbutton {

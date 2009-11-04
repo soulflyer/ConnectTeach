@@ -9,11 +9,11 @@
   </tr>
 
 <% @newsitems.each do |newsitem| %>
-  <tr>
+  <tr class="<%= cycle("even", "odd") %>">
 	  <td><%= image_tag (newsitem.photo.url(:thumb)) %></td>
     <td><%=h newsitem.title %></td>
     <td>
-			<div id="header"><%= newsitem.title %></div>
+			<div id="newsitemheader"><%= newsitem.title %></div>
 			<%=h newsitem.English_content[0..160] %>
 		</td>
     <td>
@@ -31,7 +31,7 @@
 				  <% end %>
 					<% link_to (newsitem, :confirm => 'Are you sure?', :method => :delete ) do %>
 						<div id="destroy", class="button">
-							<p>Destroy</p>
+							<p>Delete</p>
 						</div>
 				  <% end %>
 				<% end %>
