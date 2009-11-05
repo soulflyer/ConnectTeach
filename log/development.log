@@ -19019,3 +19019,367 @@ ActionController::RoutingError (No route matches "/photos/small/missing.png" wit
   
 
 Rendering rescues/layout (not_found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-11-04 16:05:49) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (2.0ms)[0m   [0;1mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (20.5ms)
+Completed in 62ms (View: 29, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-11-04 16:05:49) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-11-04 17:34:39) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (1.3ms)[0m   [0;1mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (15.3ms)
+Completed in 65ms (View: 27, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-11-04 17:34:40) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Clearance::SessionsController#destroy (for 127.0.0.1 at 2009-11-05 17:31:03) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"clearance/sessions"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 7) LIMIT 1[0m
+  [4;36;1mUser Update (0.8ms)[0m   [0;1mUPDATE "users" SET "token" = NULL WHERE "id" = 7[0m
+Redirected to http://localhost:3000/session/new
+Completed in 128ms (DB: 1) | 302 Found [http://localhost/clearance/sessions/destroy]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-11-05 17:31:03) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 12ms (View: 10, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing Clearance::UsersController#new (for 127.0.0.1 at 2009-11-05 17:31:06) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (65.3ms)
+Completed in 102ms (View: 95, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing Clearance::UsersController#create (for 127.0.0.1 at 2009-11-05 17:31:25) [POST]
+  Parameters: {"user"=>{"language"=>"en", "password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "email"=>"iain@soulflyer.com"}, "commit"=>"Submit", "action"=>"create", "authenticity_token"=>"Dn/qE6NKIjyFNic9KCuchiokYWxVuYOR26I5234mGRQ=", "controller"=>"clearance/users"}
+WARNING: Can't mass-assign these protected attributes: language
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'iain@soulflyer.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.5ms)[0m   [0;1mINSERT INTO "users" ("encrypted_password", "salt", "language", "token", "token_expires_at", "tutor_id", "role", "email", "email_confirmed") VALUES('6718ec77101096d1e26f5348055cc7ac4ab73dfb', 'b749e87e57fe1e8c1e0b4cb9f5d676eca8b76683', NULL, '04c80ef90e7cb0bb1e51d16b431848fc2baac799', NULL, NULL, NULL, 'iain@soulflyer.com', 'f')[0m
+Sent mail to iain@soulflyer.com
+
+Date: Thu, 5 Nov 2009 17:31:25 +0700
+From: donotreply@example.com
+To: iain@soulflyer.com
+Subject: Account confirmation
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+
+http://localhost/users/8/confirmation/new?token=04c80ef90e7cb0bb1e51d16b431848fc2baac799
+Redirected to http://localhost:3000/session/new
+Completed in 634ms (DB: 1) | 302 Found [http://localhost/users]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-11-05 17:31:26) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 13ms (View: 11, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing Clearance::UsersController#new (for 127.0.0.1 at 2009-11-05 17:39:48) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (42.0ms)
+Completed in 58ms (View: 47, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing Clearance::UsersController#create (for 127.0.0.1 at 2009-11-05 17:40:04) [POST]
+  Parameters: {"user"=>{"language"=>"en", "password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "email"=>"D_I_Wood@hotmail.com"}, "commit"=>"Submit", "action"=>"create", "authenticity_token"=>"Dn/qE6NKIjyFNic9KCuchiokYWxVuYOR26I5234mGRQ=", "controller"=>"clearance/users"}
+WARNING: Can't mass-assign these protected attributes: language
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'd_i_wood@hotmail.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.7ms)[0m   [0;1mINSERT INTO "users" ("encrypted_password", "salt", "language", "token", "token_expires_at", "tutor_id", "role", "email", "email_confirmed") VALUES('7cd98bd70344d703a0cc0d413004388209891690', '824987efb915ab1f31e2ab76fb8130241d50e2fc', NULL, '8300ef8368c462228e1d7c5a720cf2f87c0fb5cd', NULL, NULL, NULL, 'D_I_Wood@hotmail.com', 'f')[0m
+Sent mail to D_I_Wood@hotmail.com
+
+Date: Thu, 5 Nov 2009 17:40:04 +0700
+From: donotreply@example.com
+To: D_I_Wood@hotmail.com
+Subject: Account confirmation
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+
+http://localhost/users/9/confirmation/new?token=8300ef8368c462228e1d7c5a720cf2f87c0fb5cd
+Redirected to http://localhost:3000/session/new
+Completed in 369ms (DB: 1) | 302 Found [http://localhost/users]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-11-05 17:40:05) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 15ms (View: 13, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing Clearance::UsersController#new (for 127.0.0.1 at 2009-11-05 17:55:21) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (95.4ms)
+Completed in 252ms (View: 223, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing Clearance::UsersController#create (for 127.0.0.1 at 2009-11-05 17:55:34) [POST]
+  Parameters: {"user"=>{"language"=>"en", "password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "email"=>"D_I_Wood@hotmail.com"}, "commit"=>"Submit", "action"=>"create", "authenticity_token"=>"Dn/qE6NKIjyFNic9KCuchiokYWxVuYOR26I5234mGRQ=", "controller"=>"clearance/users"}
+WARNING: Can't mass-assign these protected attributes: language
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'd_i_wood@hotmail.com') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (17.5ms)
+Completed in 224ms (View: 22, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing Clearance::UsersController#index (for 127.0.0.1 at 2009-11-05 17:55:39) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clearance/users"}
+  [4;35;1mUser Load (1.6ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+Completed in 65ms (View: 57, DB: 2) | 200 OK [http://localhost/users]
+
+
+Processing Clearance::UsersController#destroy (for 127.0.0.1 at 2009-11-05 17:55:44) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"Dn/qE6NKIjyFNic9KCuchiokYWxVuYOR26I5234mGRQ=", "id"=>"9", "controller"=>"clearance/users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 9) [0m
+  [4;35;1mUser Destroy (0.5ms)[0m   [0mDELETE FROM "users" WHERE "id" = 9[0m
+Redirected to http://localhost:3000/users
+Completed in 13ms (DB: 1) | 302 Found [http://localhost/users/9]
+
+
+Processing Clearance::UsersController#index (for 127.0.0.1 at 2009-11-05 17:55:45) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clearance/users"}
+  [4;36;1mUser Load (1.6ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+Completed in 53ms (View: 42, DB: 2) | 200 OK [http://localhost/users]
+
+
+Processing Clearance::UsersController#destroy (for 127.0.0.1 at 2009-11-05 17:55:48) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"Dn/qE6NKIjyFNic9KCuchiokYWxVuYOR26I5234mGRQ=", "id"=>"8", "controller"=>"clearance/users"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 8) [0m
+  [4;36;1mUser Destroy (0.4ms)[0m   [0;1mDELETE FROM "users" WHERE "id" = 8[0m
+Redirected to http://localhost:3000/users
+Completed in 12ms (DB: 1) | 302 Found [http://localhost/users/8]
+
+
+Processing Clearance::UsersController#index (for 127.0.0.1 at 2009-11-05 17:55:48) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clearance/users"}
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+Completed in 31ms (View: 24, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing Clearance::UsersController#destroy (for 127.0.0.1 at 2009-11-05 17:56:00) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"Dn/qE6NKIjyFNic9KCuchiokYWxVuYOR26I5234mGRQ=", "id"=>"4", "controller"=>"clearance/users"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;35;1mUser Destroy (0.5ms)[0m   [0mDELETE FROM "users" WHERE "id" = 4[0m
+Redirected to http://localhost:3000/users
+Completed in 14ms (DB: 1) | 302 Found [http://localhost/users/4]
+
+
+Processing Clearance::UsersController#index (for 127.0.0.1 at 2009-11-05 17:56:00) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clearance/users"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+Completed in 33ms (View: 27, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-11-05 17:56:05) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 23ms (View: 21, DB: 0) | 200 OK [http://localhost/clearance/sessions/new]
+
+
+Processing Clearance::UsersController#new (for 127.0.0.1 at 2009-11-05 17:56:08) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (12.7ms)
+Completed in 24ms (View: 17, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing Clearance::UsersController#create (for 127.0.0.1 at 2009-11-05 17:56:21) [POST]
+  Parameters: {"user"=>{"language"=>"en", "password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "email"=>"iain@soulflyer.co.uk"}, "commit"=>"Submit", "action"=>"create", "authenticity_token"=>"Dn/qE6NKIjyFNic9KCuchiokYWxVuYOR26I5234mGRQ=", "controller"=>"clearance/users"}
+WARNING: Can't mass-assign these protected attributes: language
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'iain@soulflyer.co.uk') LIMIT 1[0m
+  [4;36;1mUser Create (0.5ms)[0m   [0;1mINSERT INTO "users" ("encrypted_password", "salt", "language", "token", "token_expires_at", "tutor_id", "role", "email", "email_confirmed") VALUES('85134b7ab143ce5fe6a2a81bed0cf167192955a3', '2bd245785bedbbd8d2d393149d627febb73c1ff6', NULL, '87443b27a0ce554fe8cfa5f0589ec6f20126c4ca', NULL, NULL, NULL, 'iain@soulflyer.co.uk', 'f')[0m
+Sent mail to iain@soulflyer.co.uk
+
+Date: Thu, 5 Nov 2009 17:56:21 +0700
+From: donotreply@example.com
+To: iain@soulflyer.co.uk
+Subject: Account confirmation
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+
+http://localhost/users/10/confirmation/new?token=87443b27a0ce554fe8cfa5f0589ec6f20126c4ca
+Redirected to http://localhost:3000/session/new
+Completed in 293ms (DB: 1) | 302 Found [http://localhost/users]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-11-05 17:56:21) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 13ms (View: 10, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing Clearance::UsersController#new (for 127.0.0.1 at 2009-11-05 18:05:03) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (12.3ms)
+Completed in 23ms (View: 16, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-11-05 18:18:52) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 15ms (View: 11, DB: 0) | 200 OK [http://localhost/clearance/sessions/new]
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2009-11-05 18:18:57) [POST]
+  Parameters: {"commit"=>"Sign in", "action"=>"create", "authenticity_token"=>"Dn/qE6NKIjyFNic9KCuchiokYWxVuYOR26I5234mGRQ=", "session"=>{"password"=>"[FILTERED]", "remember_me"=>"0", "email"=>"iain@railsiain.com"}, "controller"=>"clearance/sessions"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'iain@railsiain.com') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 13ms (DB: 0) | 302 Found [http://localhost/session]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-11-05 18:18:57) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.5ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (1.1ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendered pages/_content_for_newsbar (146.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 305ms (View: 272, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-11-05 18:18:57) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-11-05 18:18:57) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TutorsController#index (for 127.0.0.1 at 2009-11-05 18:18:59) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mTutor Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such column: name: SELECT * FROM "tutors" ORDER BY name LIMIT 30 OFFSET 0[0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: name: SELECT * FROM "tutors"  ORDER BY name LIMIT 30 OFFSET 0):
+  /Library/Ruby/Gems/1.8/gems/mislav-will_paginate-2.3.11/lib/will_paginate/finder.rb:82:in `send'
+  /Library/Ruby/Gems/1.8/gems/mislav-will_paginate-2.3.11/lib/will_paginate/finder.rb:82:in `paginate'
+  /Library/Ruby/Gems/1.8/gems/mislav-will_paginate-2.3.11/lib/will_paginate/collection.rb:87:in `create'
+  /Library/Ruby/Gems/1.8/gems/mislav-will_paginate-2.3.11/lib/will_paginate/finder.rb:76:in `paginate'
+  app/controllers/tutors_controller.rb:8:in `index'
+
+Rendered rescues/_trace (130.9ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TutorsController#index (for 127.0.0.1 at 2009-11-05 18:19:28) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mTutor Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such column: email: SELECT * FROM "tutors" ORDER BY email LIMIT 30 OFFSET 0[0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: email: SELECT * FROM "tutors"  ORDER BY email LIMIT 30 OFFSET 0):
+  /Library/Ruby/Gems/1.8/gems/mislav-will_paginate-2.3.11/lib/will_paginate/finder.rb:82:in `send'
+  /Library/Ruby/Gems/1.8/gems/mislav-will_paginate-2.3.11/lib/will_paginate/finder.rb:82:in `paginate'
+  /Library/Ruby/Gems/1.8/gems/mislav-will_paginate-2.3.11/lib/will_paginate/collection.rb:87:in `create'
+  /Library/Ruby/Gems/1.8/gems/mislav-will_paginate-2.3.11/lib/will_paginate/finder.rb:76:in `paginate'
+  app/controllers/tutors_controller.rb:8:in `index'
+
+Rendered rescues/_trace (45.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TutorsController#index (for 127.0.0.1 at 2009-11-05 18:19:44) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mTutor Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such column: familyname: SELECT * FROM "tutors" ORDER BY familyname LIMIT 30 OFFSET 0[0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: familyname: SELECT * FROM "tutors"  ORDER BY familyname LIMIT 30 OFFSET 0):
+  /Library/Ruby/Gems/1.8/gems/mislav-will_paginate-2.3.11/lib/will_paginate/finder.rb:82:in `send'
+  /Library/Ruby/Gems/1.8/gems/mislav-will_paginate-2.3.11/lib/will_paginate/finder.rb:82:in `paginate'
+  /Library/Ruby/Gems/1.8/gems/mislav-will_paginate-2.3.11/lib/will_paginate/collection.rb:87:in `create'
+  /Library/Ruby/Gems/1.8/gems/mislav-will_paginate-2.3.11/lib/will_paginate/finder.rb:76:in `paginate'
+  app/controllers/tutors_controller.rb:8:in `index'
+
+Rendered rescues/_trace (47.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TutorsController#index (for 127.0.0.1 at 2009-11-05 18:20:23) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mTutor Load (1.5ms)[0m   [0;1mSELECT * FROM "tutors" ORDER BY family_name LIMIT 30 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering tutors/index
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 67ms (View: 51, DB: 2) | 200 OK [http://localhost/tutors]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-11-05 18:20:23) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-11-05 18:20:23) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
