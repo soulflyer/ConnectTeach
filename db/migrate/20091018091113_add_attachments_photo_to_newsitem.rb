@@ -4,7 +4,7 @@ class AddAttachmentsPhotoToNewsitem < ActiveRecord::Migration
     add_column :newsitems, :photo_content_type, :string
     add_column :newsitems, :photo_file_size, :integer
     add_column :newsitems, :photo_updated_at, :datetime
-    remove_column :newsitems, :photo_url
+    remove_column :newsitems, :image_url
   end
 
   def self.down
@@ -12,6 +12,6 @@ class AddAttachmentsPhotoToNewsitem < ActiveRecord::Migration
     remove_column :newsitems, :photo_content_type
     remove_column :newsitems, :photo_file_size
     remove_column :newsitems, :photo_updated_at
-    add_column :photo_url
+    add_column :image_url
   end
 end
