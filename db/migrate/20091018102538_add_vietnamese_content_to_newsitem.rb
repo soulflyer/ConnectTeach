@@ -1,6 +1,6 @@
 class AddVietnameseContentToNewsitem < ActiveRecord::Migration
   def self.up
-    add_column :newsitems, :Vietnamese_content, :textarea
+    add_column :newsitems, :Vietnamese_content, :text
     rename_column :newsitems, :contents, :English_content
   end
 
