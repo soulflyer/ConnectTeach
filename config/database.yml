@@ -23,6 +23,7 @@ production:
   pool: 5
   username: jphuquoc_connect
   password: geek
+  socket: /tmp/mysql.sock
 
 cucumber:
   <<: *TEST
