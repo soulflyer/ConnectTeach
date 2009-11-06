@@ -1,6 +1,6 @@
 class AddVntextColumnToPages < ActiveRecord::Migration
   def self.up
-    add_column :pages, :vntext, :textarea
+    add_column :pages, :vntext, :text
   end
 
   def self.down
