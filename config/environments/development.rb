@@ -18,6 +18,7 @@ config.action_controller.perform_caching             = false
 config.action_mailer.raise_delivery_errors = false
 config.action_mailer.smtp_settings = {
   :address => "mail.soulflyer.com",
-  :port =>  25
+  :port =>  25,
+  :enable_starttls_auto => false
 } 
 HOST="connectteach.com"
