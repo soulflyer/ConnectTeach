@@ -1,3 +1,5 @@
+/* @override http://connectteach.com/stylesheets/newsbar.css?1257920061 */
+
 /* @override http://localhost:3000/stylesheets/newsbar.css?1256270264 */
 
 #text {
@@ -11,7 +13,6 @@ div.item {
 }
 div.item img {
   width: 100px;
-  height: 68px;
 }
 div.item p {
   color: #6e5973;

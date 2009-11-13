@@ -1,3 +1,5 @@
+/* @override http://connectteach.com/stylesheets/menu.css?1257920061 */
+
 /* @override http://localhost:3000/stylesheets/menu.css?1257257024 */
 
 /* @override http://localhost:3000/stylesheets/menu.css?1256186733 */
@@ -23,7 +25,7 @@ a:hover #coursebutton {
   float: left;
   position: absolute;
   width: 100px;
-  height: 55px;
+  height: 50px;
   background: url(../images/Button.png) no-repeat;
   color: white;
 }
