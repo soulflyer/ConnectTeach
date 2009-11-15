@@ -2,7 +2,6 @@ class Clearance::UsersController < ApplicationController
   unloadable
 
   before_filter :redirect_to_root, :only => [:new, :create], :if => :signed_in?
-  before_filter :must_be_admin, :only => [:index]
   filter_parameter_logging :password
 
   def index
@@ -68,12 +67,5 @@ class Clearance::UsersController < ApplicationController
 
   def url_after_create
     new_session_url
-  end
-  
-  def must_be_admin
-    if !session[:user_id] || ::User.find(session[:user_id]).role != "admin"
-      flash[:error] = 'Must be admin'
-      redirect_to root_url
-    end
   end
 end

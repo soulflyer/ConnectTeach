@@ -23,7 +23,7 @@ Feature Administer newsitems
 		When I sign in as "email@person.com/password"
 		And I go to the list newsitems page  
 	  Then I should not see "Edit"
-	  And I should not see "Destroy"
+	  And I should not see "Delete"
 	  And I should not see "New newsitem"
 
 	Scenario: User with admin privs views newsitems list
@@ -32,6 +32,6 @@ Feature Administer newsitems
 		When I sign in as "email@person.com/password"
 		And I go to the list newsitems page  
 	  Then I should see "Edit"
-	  And I should see "Destroy"
+	  And I should see "Delete"
 	  And I should see "New newsitem"
 		

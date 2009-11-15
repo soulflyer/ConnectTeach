@@ -2,7 +2,6 @@
 
 <table>
   <tr>
-    <th>Name</th>
     <th>Permalink</th>
 		<th></th>
 		<th></th>
@@ -11,7 +10,6 @@
 
 <% @pages.each do |page| %>
   <tr>
-    <td><%=h page.name %></td>
     <td><%=h page.permalink %></td>
     <td><%= link_to 'Show', page %></td>
     <td><%= link_to 'Edit', edit_page_path(page) %></td>
