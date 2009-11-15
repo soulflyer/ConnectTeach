@@ -1,3 +1,5 @@
+/* @override http://localhost:3000/stylesheets/form.css?1255701903 */
+
 form fieldset {
   margin: 6;
   padding: 6px;
@@ -63,4 +65,16 @@ form #photo img {
 form #photo input {
   width: 180px;
   float: left;
+}
+form #contact {
+  height: 112px;
+}
+form #contact label {
+    display: block;
+  text-align: left;
+  width: 60px;
+  float: left;
+}
+form #contact input {
+  width: 220px;
 }

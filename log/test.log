@@ -471,3 +471,136 @@ Migrating to AddLanguageToUser (20091023105856)
   [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_token')[0m
   [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_email')[0m
   [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_users_on_id_and_token')[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePages (20090703013813)
+Migrating to ClearanceCreateUsers (20090703013817)
+Migrating to CreateTutors (20090703022556)
+Migrating to AddAttachmentsPhotoToTutor (20090703113902)
+Migrating to AddTutorToUser (20090704060809)
+Migrating to AddRoleToUser (20090707122921)
+Migrating to LoadPagesData (20090709035205)
+Migrating to AddNewsColumnToPages (20091018012613)
+Migrating to AddVntextColumnToPages (20091018053453)
+Migrating to RenameVntextVncontent (20091018054118)
+Migrating to RenameVncontentVietnameseContent (20091018055834)
+Migrating to CreateNewsitems (20091018085601)
+Migrating to AddAttachmentsPhotoToNewsitem (20091018091113)
+Migrating to AddVietnameseContentToNewsitem (20091018102538)
+Migrating to AddMoreStaticPages (20091019203201)
+Migrating to AddExampleNewsitem (20091022064838)
+Migrating to AddLanguageToUser (20091023105856)
+Migrating to AddInitialAdminUser (20091104035939)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'admin@connectteach.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'admin@connectteach.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.6ms)[0m   [0mINSERT INTO "users" ("encrypted_password", "salt", "language", "token", "token_expires_at", "tutor_id", "role", "email", "email_confirmed") VALUES('2d38e1f1e4fb1e441679cdea316c09a2559e82e6', '28340b97f9d7117a5412b4ebaf8dde40aba1ee3c', NULL, '3d4d135f291ce7a34caa1be11c1d572661e3a784', NULL, NULL, 'admin', 'admin@connectteach.com', 't')[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'admin@connectteach.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091104035939')[0m
+Migrating to AddPhoneAndAddressToTutor (20091114215759)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mALTER TABLE "users" ADD "address" text[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "users" ADD "phone" integer[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091114215759')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("newsitems")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("pages")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("tutors")[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_users_on_token')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_users_on_email')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_users_on_id_and_token')[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to AddPhoneAndAddressToTutor (20091114215759)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TEMPORARY TABLE "altered_tutors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "experience" text, "qualifications" text, "course_experience" text, "textbook_experience" text, "national_knowledge" text, "age" integer, "phone" integer, "sex" varchar(255), "flavour" varchar(255), "given_name" varchar(255), "family_name" varchar(255), "given_name_first" boolean, "created_at" datetime, "updated_at" datetime, "photo_file_name" varchar(255), "photo_content_type" varchar(255), "photo_file_size" integer, "photo_updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("tutors")[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mDROP TABLE "tutors"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "tutors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "experience" text, "qualifications" text, "course_experience" text, "textbook_experience" text, "national_knowledge" text, "age" integer, "phone" integer, "sex" varchar(255), "flavour" varchar(255), "given_name" varchar(255), "family_name" varchar(255), "given_name_first" boolean, "created_at" datetime, "updated_at" datetime, "photo_file_name" varchar(255), "photo_content_type" varchar(255), "photo_file_size" integer, "photo_updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("altered_tutors")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mDROP TABLE "altered_tutors"[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TEMPORARY TABLE "altered_tutors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "experience" text, "qualifications" text, "course_experience" text, "textbook_experience" text, "national_knowledge" text, "age" integer, "phone" integer, "sex" varchar(255), "flavour" varchar(255), "given_name" varchar(255), "family_name" varchar(255), "given_name_first" boolean, "created_at" datetime, "updated_at" datetime, "photo_file_name" varchar(255), "photo_content_type" varchar(255), "photo_file_size" integer, "photo_updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("tutors")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mDROP TABLE "tutors"[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "tutors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "experience" text, "qualifications" text, "course_experience" text, "textbook_experience" text, "national_knowledge" text, "age" integer, "sex" varchar(255), "flavour" varchar(255), "given_name" varchar(255), "family_name" varchar(255), "given_name_first" boolean, "created_at" datetime, "updated_at" datetime, "photo_file_name" varchar(255), "photo_content_type" varchar(255), "photo_file_size" integer, "photo_updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("altered_tutors")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mDROP TABLE "altered_tutors"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20091114215759'[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("newsitems")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("pages")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("tutors")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_users_on_token')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_email')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_users_on_id_and_token')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePages (20090703013813)
+Migrating to ClearanceCreateUsers (20090703013817)
+Migrating to CreateTutors (20090703022556)
+Migrating to AddAttachmentsPhotoToTutor (20090703113902)
+Migrating to AddTutorToUser (20090704060809)
+Migrating to AddRoleToUser (20090707122921)
+Migrating to LoadPagesData (20090709035205)
+Migrating to AddNewsColumnToPages (20091018012613)
+Migrating to AddVntextColumnToPages (20091018053453)
+Migrating to RenameVntextVncontent (20091018054118)
+Migrating to RenameVncontentVietnameseContent (20091018055834)
+Migrating to CreateNewsitems (20091018085601)
+Migrating to AddAttachmentsPhotoToNewsitem (20091018091113)
+Migrating to AddVietnameseContentToNewsitem (20091018102538)
+Migrating to AddMoreStaticPages (20091019203201)
+Migrating to AddExampleNewsitem (20091022064838)
+Migrating to AddLanguageToUser (20091023105856)
+Migrating to AddInitialAdminUser (20091104035939)
+Migrating to AddPhoneAndAddressToTutor (20091114215759)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mALTER TABLE "tutors" ADD "address" text[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "tutors" ADD "phone" integer[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091114215759')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("newsitems")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("pages")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("tutors")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_token')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_email')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_users_on_id_and_token')[0m

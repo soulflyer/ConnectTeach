@@ -40,7 +40,6 @@ ActiveRecord::Schema.define(:version => 20091104035939) do
     t.text     "textbook_experience"
     t.text     "national_knowledge"
     t.integer  "age"
-    t.integer  "phone"
     t.string   "sex"
     t.string   "flavour"
     t.string   "given_name"
@@ -52,6 +51,8 @@ ActiveRecord::Schema.define(:version => 20091104035939) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.text     "address"
+    t.integer  "phone"
   end
 
   create_table "users", :force => true do |t|
