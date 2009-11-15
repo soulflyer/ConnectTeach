@@ -1,7 +1,7 @@
 <% form_for @tutor, :html => { :multipart => true }, :builder => TaggedBuilder do |f| %>
 	<%= f.error_messages %>
 	<div id="form_header"><h1><%= @header %></h1>
-		<%= f.submit 'Save' %>
+		<%= f.submit 'Save' , :class => "form_submit_button"%>
 	</div>	
 	<div id="left">
 		<fieldset id="name">

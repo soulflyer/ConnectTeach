@@ -1,28 +1,18 @@
-<h2>Sign in</h2>
-
-<% form_for :session, :url => session_path do |form| %>
-  <div class="text_field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>  
-  </div>
-  <div class="text_field">
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
-  <div class="text_field">
-    <%= form.check_box :remember_me %>
-    <%= form.label :remember_me %>
-  </div>
-  <div class="submit_field">
-    <%= form.submit "Sign in", :disable_with => "Please wait..." %>
-  </div>
+<% @stylesheet = "signin" %>
+<% link_to(new_user_path) do %>
+<div id="sign_up_button" class="button">
+	<p>Sign up</p>
+</div>
+<% end %>
+<% link_to(new_password_path) do %>
+<div id="new_password_button" class="button">
+	<p>Forgot password</p>
+</div>
+<% end %>
+<% form_for :session, :url => session_path, :builder => TaggedBuilder do |form| %>
+  <%= form.text_field :email %>  
+  <%= form.password_field :password %>
+  <%= form.check_box :remember_me %>
+  <%= form.submit "Sign in", :disable_with => "Please wait...", :class => "form_submit_button" %>
 <% end %>
 
-<ul>
-  <li>
-    <%= link_to "Sign up", new_user_path %>
-  </li>
-  <li>
-    <%= link_to "Forgot password?", new_password_path %>
-  </li>
-</ul>

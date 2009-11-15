@@ -1,8 +1,6 @@
-/* @override http://connectteach.com/stylesheets/menu.css?1257920061 */
+/* @override http://localhost:3000/stylesheets/menu.css?1258277579 */
 
-/* @override http://localhost:3000/stylesheets/menu.css?1257257024 */
-
-/* @override http://localhost:3000/stylesheets/menu.css?1256186733 */
+/* @override http://localhost:3000/stylesheets/menu.css?1257928398 */
 
 #menu {
   position: relative;
@@ -55,4 +53,19 @@ a:hover #coursebutton {
 }
 #contactbutton {
   left: 545px;
+}
+.form_submit_button {
+  width: 100px;
+  height: 50px;
+  background: url(../images/Button.png) no-repeat;
+  color: white;
+  border-style: none;
+  font-size: 12px;
+}
+.form_submit_button:hover {
+  width: 100px;
+  height: 50px;
+  background-image: url(../images/HoverButton.png);
+  color: #007e6b;
+  border-style: none;
 }

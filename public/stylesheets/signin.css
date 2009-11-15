@@ -1,0 +1,35 @@
+/* @override http://localhost:3000/stylesheets/signin.css?1258278171 */
+
+#session_submit {
+  top: 23px;
+  right: 260px;
+  position: absolute;
+}
+#new_password_button {
+  background: url(../images/ButtonLarge.png) no-repeat;
+  width:  165px;
+  right: 115px;
+  top: 23px;
+}
+#sign_up_button {
+  top: 23px;
+  right: 40px;
+}
+label {
+  width: 170px;
+  float: left;
+  text-align: right;
+  padding: 0 10px 0 0;
+  margin: 4px 0 0;
+}
+#session_remember_me {
+  margin-top: 7px;
+}
+form p {
+  margin: 0;
+  padding: 0;
+}
+form {
+  margin: 0;
+  padding: 30px 0 40px;
+}
