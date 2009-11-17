@@ -88,16 +88,19 @@
 					  <% if user.tutor_id %>
 					    <% tutor_link=url_for(:controller => '/tutors', :action => 'edit', :id => user.tutor_id) %>
 					  <% else %>
-					    <% user.tutor_id=Tutor.new %>
-					    <% tutor_link=url_for(:controller => '/tutors', :action => 'edit', :id => user.tutor_id) %>
+					    <% tutor_link=url_for(:controller => '/tutors', :action => 'new') %>
 					    <!-- need to create new tutor record here and add it to user -->
 					  <% end %>
 					<% end %>
+					<% Rails.logger.info "***************************************" %>
+					<% Rails.logger.info "user.tutor_id = #{user.tutor_id}" %>
+					<% Rails.logger.info "***************************************" %>
+					
 				<% else %>
-				  <% tutor_link=url_for(:controller => 'session', :action => 'new') %>
+				  <% tutor_link=url_for(new_session_path) %>
 				<% end %>
 				<% Rails.logger.info "***************************************" %>
-				<% Rails.logger.info tutor_link %>
+				<% Rails.logger.info "tutor_link = #{tutor_link}" %>
 				<% Rails.logger.info "***************************************" %>
 				<% link_to(tutor_link) do %>		
 		    <div id="tutorbutton" class="button">
