@@ -1,5 +1,5 @@
 /* @override http://localhost:3000/stylesheets/site.css?1256347970 */
-h1{
+h1, h2, h3, h4{
   color: #0c7b6b;
   font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
 }

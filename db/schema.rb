@@ -64,8 +64,6 @@ ActiveRecord::Schema.define(:version => 20091115123342) do
     t.integer  "tutor_id"
     t.string   "role"
     t.string   "language"
-    t.text     "address"
-    t.integer  "phone"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email"

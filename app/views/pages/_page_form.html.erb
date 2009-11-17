@@ -1,9 +1,13 @@
+<% link_to(textilehelp_path) do %>
+<div id="textilehelp_button" class="button">
+	<p>Help</p>
+</div>
+<% end %>
 <% form_for @page, :html => { :multipart => true }, :builder => TaggedBuilder do |f| %>
 	<%= f.error_messages %>
 	<div id="form_header"><h1><%= @header %></h1>
-		<%= f.submit 'Save' %>
+		<%= f.submit 'Save', :class => "form_submit_button"%>
 	</div>
-	<%= f.text_field :name %>	
 	<%= f.text_field :permalink %>
 	<%= f.check_box :news %>
 	<div id="left">

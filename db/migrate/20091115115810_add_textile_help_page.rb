@@ -20,7 +20,7 @@ class AddTextileHelpPage < ActiveRecord::Migration
     courses_page.save
     help_page = Page.new
     help_page.permalink = "textilehelp"
-    help_page.English_content = "h1.Textile Help\n\nSeparate paragraphs with a newline." 
+    help_page.English_content = "h1. Textile Help\n\nSeparate paragraphs with a newline.\n\nh1. h1. header\n\nh2. h2. header\n\nh3. h3. header\n\nh4. h4. header" 
     help_page.save
   end
 
