@@ -14,6 +14,6 @@ class TaggedBuilder < ActionView::Helpers::FormBuilder
     end 
   end 
   field_helpers.each do |name| 
-    create_tagged_field(name) unless name == "file_field"
+    create_tagged_field(name) unless (name == "file_field" || name =="check_box" || name =="label") 
   end 
 end 

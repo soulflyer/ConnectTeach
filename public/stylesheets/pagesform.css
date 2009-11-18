@@ -1,6 +1,4 @@
-/* @override http://localhost:3000/stylesheets/pagesform.css?1255854292 */
-
-/* @override http://localhost:3000/stylesheets/pagesform.css?1255854031 */
+/* @override http://localhost:3000/stylesheets/pagesform.css?1255982107 */
 
 form p {
   width: 410px;
@@ -19,4 +17,23 @@ textarea {
 
 #text {
   height: 600px;
+}
+#textilehelp_button {
+    top: 23px;
+  right: 40px;
+
+}
+#page_submit {
+  right: 115px;
+  top: 23px;
+  position: absolute;
+}
+#form_header {
+  margin: 0;
+  padding: 0;
+  float: left;
+}
+
+form p {
+  clear: both;
 }

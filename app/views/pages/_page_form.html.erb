@@ -8,12 +8,15 @@
 	<div id="form_header"><h1><%= @header %></h1>
 		<%= f.submit 'Save', :class => "form_submit_button"%>
 	</div>
-	<%= f.text_field :permalink %>
-	<%= f.check_box :news %>
+	<p>
+  	<%= f.label "Add newsbar" %>
+	  <%= f.check_box :news %>
+	</p>
 	<div id="left">
 		<%= f.text_area :English_content %>
 	</div>
 	<div id="right">
 		<%= f.text_area :Vietnamese_content %>
 	</div>
+	<%= f.text_field :permalink %>
 <% end %>
