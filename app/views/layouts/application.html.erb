@@ -34,18 +34,18 @@
 						<p>Logged in as: </p>
 					  <p><%= user.email %></p>
 					</div>
-					<% link_to (:controller => 'clearance/sessions', :action => 'destroy') do %>	
+					<% link_to(:controller => 'clearance/sessions', :action => 'destroy') do %>	
 					<div id="logoutbutton">
 						<p>Logout</p>
 					</div>
 					<% end %>
-				  <% link_to (:controller => '/tutors', :action => 'edit', :id => user.tutor_id) do %>	
+				  <% link_to(:controller => '/tutors', :action => 'edit', :id => user.tutor_id) do %>	
 				  <div id="details">
 				  	<p>Details</p>
 				  </div>
 				  <% end %>
 				<% else %>
-					<% link_to (:controller => 'clearance/sessions', :action => 'new') do %>
+					<% link_to(:controller => 'clearance/sessions', :action => 'new') do %>
 					<div id="loginbutton">
 						<p>Login</p>
 					</div>

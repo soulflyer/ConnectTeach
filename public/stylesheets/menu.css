@@ -1,3 +1,5 @@
+/* @override http://localhost:3000/stylesheets/menu.css?1258280227 */
+
 /* @override http://localhost:3000/stylesheets/menu.css?1258277579 */
 
 /* @override http://localhost:3000/stylesheets/menu.css?1257928398 */
@@ -68,4 +70,12 @@ a:hover #coursebutton {
   background-image: url(../images/HoverButton.png);
   color: #007e6b;
   border-style: none;
+}
+#button1 {
+  top: -14px;
+  right: 85px;
+}
+#button2 {
+  right: 160px;
+  top: -14px;
 }

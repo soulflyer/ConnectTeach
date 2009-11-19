@@ -18,5 +18,9 @@
 	<div id="right">
 		<%= f.text_area :Vietnamese_content %>
 	</div>
-	<%= f.text_field :permalink %>
+	<h3>Be careful about editing anything below here!</h3>
+  <div id="dont_edit">
+		<%= f.text_field :permalink %>
+  	<%= f.text_area :html %>
+  </div>
 <% end %>

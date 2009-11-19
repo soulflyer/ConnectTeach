@@ -17,4 +17,5 @@ cp soulflyer-ConnectTeach*/doc/update_connectteach.sh ~/
 chmod a+x ~/update_connectteach.sh
 mv soulflyer-ConnectTeach* ~/public_html/connectteach
 echo "Now restarting the server"
+cd public_html/connectteach
 /usr/local/bin/ruby /usr/local/bin/mongrel_rails start -p 12002 -d -e production -P log/mongrel.pid

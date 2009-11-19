@@ -1,4 +1,4 @@
-/* @override http://localhost:3000/stylesheets/pagesform.css?1255982107 */
+/* @override http://localhost:3000/stylesheets/pagesform.css?1258544659 */
 
 form p {
   width: 410px;
@@ -10,6 +10,7 @@ textarea {
 
 #left {
   float: left;
+  clear: both;
 }
 #right {
   float: left;
@@ -33,7 +34,21 @@ textarea {
   padding: 0;
   float: left;
 }
-
 form p {
   clear: both;
+}
+#dont_edit {
+  clear: both;
+}
+#dont_edit textarea {
+  height: 100px;
+}
+#dont_edit p{
+  float: left;
+  clear: none;
+  margin: 0;
+  padding: 0;
+}
+#dont_edit p:first-child {
+  margin-top:16px;
 }

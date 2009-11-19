@@ -12,7 +12,10 @@
 <% form_for :session, :url => session_path, :builder => TaggedBuilder do |form| %>
   <%= form.text_field :email %>  
   <%= form.password_field :password %>
-  <%= form.check_box :remember_me %>
+  <p>
+	  <%= form.label "Remember me" %>
+    <%= form.check_box :remember_me %>
+  </p>
   <%= form.submit "Sign in", :disable_with => "Please wait...", :class => "form_submit_button" %>
 <% end %>
 

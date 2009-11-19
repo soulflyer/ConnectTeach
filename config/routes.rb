@@ -9,6 +9,7 @@ ActionController::Routing::Routes.draw do |map|
   map.courses 'courses', :controller => 'pages', :action => 'show', :permalink => 'courses'
   map.textilehelp 'textilehelp', :controller => 'pages', :action => 'show', :permalink => 'textilehelp'
   map.clientinfo 'clientinfo', :controller => 'pages', :action => 'show', :permalink => 'clientinfo'
+  map.tutorinfo 'tutorinfo', :controller => 'pages', :action => 'show', :permalink => 'tutorinfo'
   
   map.resources :pages
   
