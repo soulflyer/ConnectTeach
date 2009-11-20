@@ -1,4 +1,4 @@
-/* @override http://localhost:3000/stylesheets/signin.css?1258278171 */
+/* @override http://localhost:3000/stylesheets/signin.css?1258279853 */
 
 #session_submit {
   top: 23px;
@@ -32,4 +32,9 @@ form p {
 form {
   margin: 0;
   padding: 30px 0 40px;
+}
+#user_submit {
+  top: 23px;
+  right: 280px;
+  position: absolute;
 }

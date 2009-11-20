@@ -313,3 +313,618 @@ Migrating to AddClientSubpages (20091120030723)
   [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_users_on_token')[0m
   [4;36;1mSQL (0.4ms)[0m   [0;1mPRAGMA index_info('index_users_on_email')[0m
   [4;35;1mSQL (1.0ms)[0m   [0mPRAGMA index_info('index_users_on_id_and_token')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePages (20090703013813)
+Migrating to ClearanceCreateUsers (20090703013817)
+Migrating to CreateTutors (20090703022556)
+Migrating to AddAttachmentsPhotoToTutor (20090703113902)
+Migrating to AddTutorToUser (20090704060809)
+Migrating to AddRoleToUser (20090707122921)
+Migrating to LoadPagesData (20090709035205)
+Migrating to AddNewsColumnToPages (20091018012613)
+Migrating to AddVntextColumnToPages (20091018053453)
+Migrating to RenameVntextVncontent (20091018054118)
+Migrating to RenameVncontentVietnameseContent (20091018055834)
+Migrating to CreateNewsitems (20091018085601)
+Migrating to AddAttachmentsPhotoToNewsitem (20091018091113)
+Migrating to AddVietnameseContentToNewsitem (20091018102538)
+Migrating to AddMoreStaticPages (20091019203201)
+Migrating to AddExampleNewsitem (20091022064838)
+Migrating to AddLanguageToUser (20091023105856)
+Migrating to AddInitialAdminUser (20091104035939)
+Migrating to AddPhoneAndAddressToTutor (20091114215759)
+Migrating to AddTextileHelpPage (20091115115810)
+Migrating to RemoveNameFromPages (20091115123342)
+Migrating to AddClientsAndTutorsPages (20091117114024)
+Migrating to AddHtmlToPages (20091118180934)
+Migrating to AddClientSubpages (20091120030723)
+Migrating to AddTutorsUserForEmailConfirmations (20091120034746)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'tutors@connectteach.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'tutors@connectteach.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.6ms)[0m   [0mINSERT INTO "users" ("encrypted_password", "salt", "language", "token", "token_expires_at", "tutor_id", "role", "email", "email_confirmed") VALUES('74a24b2a4e135c97a7e7d0b0c6d1832cb81b8fc6', 'b1675b578ac35b8de4dfa823a1267768e11bda2a', NULL, '9a25b7ff053f0a485ec1d93dab07afa0af44d6e3', NULL, NULL, 'admin', 'tutors@connectteach.com', 't')[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'tutors@connectteach.com' AND "users".id <> 2) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091120034746')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("newsitems")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("pages")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("tutors")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_token')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_users_on_email')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_users_on_id_and_token')[0m
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2009-11-20 11:31:31) [POST]
+  Parameters: {"commit"=>"Sign in", "action"=>"create", "authenticity_token"=>"vSIeM6oTvorwPiQG2hiASXTnEGJfnztzNUOO3UK4aVA=", "session"=>{"password"=>"[FILTERED]", "remember_me"=>"0", "email"=>""}, "controller"=>"clearance/sessions"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = '') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering sessions/new (unauthorized)
+Completed in 98ms (View: 65, DB: 0) | 401 Unauthorized [http://localhost/session]
+
+
+Processing Clearance::UsersController#new (for 127.0.0.1 at 2009-11-20 11:31:33) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (15.2ms)
+Completed in 41ms (View: 33, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing Clearance::UsersController#create (for 127.0.0.1 at 2009-11-20 11:31:46) [POST]
+  Parameters: {"user"=>{"language"=>"en", "password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "email"=>"D_I_Wood@hotmail.com"}, "commit"=>"Submit", "action"=>"create", "authenticity_token"=>"vSIeM6oTvorwPiQG2hiASXTnEGJfnztzNUOO3UK4aVA=", "controller"=>"clearance/users"}
+WARNING: Can't mass-assign these protected attributes: language
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'tutors@connectteach.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'd_i_wood@hotmail.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.6ms)[0m   [0mINSERT INTO "users" ("encrypted_password", "salt", "language", "token", "token_expires_at", "tutor_id", "role", "email", "email_confirmed") VALUES('1977ac6d76811b15fdec9346424518dd70ba9d53', 'ff3893c4addae2c3f97172c75d33bcfbcafc99fa', NULL, 'd138aefd271da22ccb99ea4cd939552b20c0dfca', NULL, NULL, NULL, 'D_I_Wood@hotmail.com', 'f')[0m
+Sent mail to D_I_Wood@hotmail.com
+
+Date: Fri, 20 Nov 2009 11:31:46 +0700
+From: donotreply@example.com
+To: D_I_Wood@hotmail.com
+Subject: Connectteach account confirmation
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+
+http://connectteach.com/users/13/confirmation/new?token=d138aefd271da22ccb99ea4cd939552b20c0dfca
+Redirected to http://localhost:3000/session/new
+Completed in 4574ms (DB: 1) | 302 Found [http://localhost/users]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-11-20 11:31:50) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 18ms (View: 16, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing Clearance::UsersController#new (for 127.0.0.1 at 2009-11-20 11:33:06) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (12.4ms)
+Completed in 25ms (View: 16, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing Clearance::UsersController#create (for 127.0.0.1 at 2009-11-20 11:33:20) [POST]
+  Parameters: {"user"=>{"language"=>"en", "password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "email"=>"public@soulflyer.co.uk"}, "commit"=>"Submit", "action"=>"create", "authenticity_token"=>"vSIeM6oTvorwPiQG2hiASXTnEGJfnztzNUOO3UK4aVA=", "controller"=>"clearance/users"}
+WARNING: Can't mass-assign these protected attributes: language
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'tutors@connectteach.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'public@soulflyer.co.uk') LIMIT 1[0m
+  [4;36;1mUser Create (0.5ms)[0m   [0;1mINSERT INTO "users" ("encrypted_password", "salt", "language", "token", "token_expires_at", "tutor_id", "role", "email", "email_confirmed") VALUES('efc4124fc92ce0a502ab257b7166146ba80a54da', '47a06bce70cb93967606b7f12f807b3bba8683dd', NULL, '3850bdd4c080b73eee6e92dc2c15612835e6cdae', NULL, NULL, NULL, 'public@soulflyer.co.uk', 'f')[0m
+Sent mail to public@soulflyer.co.uk
+
+Date: Fri, 20 Nov 2009 11:33:20 +0700
+From: donotreply@example.com
+To: public@soulflyer.co.uk
+Subject: Connectteach account confirmation
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+
+http://connectteach.com/users/14/confirmation/new?token=3850bdd4c080b73eee6e92dc2c15612835e6cdae
+Redirected to http://localhost:3000/session/new
+Completed in 4373ms (DB: 1) | 302 Found [http://localhost/users]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-11-20 11:33:24) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 17ms (View: 15, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2009-11-20 11:33:52) [POST]
+  Parameters: {"commit"=>"Sign in", "action"=>"create", "authenticity_token"=>"vSIeM6oTvorwPiQG2hiASXTnEGJfnztzNUOO3UK4aVA=", "session"=>{"password"=>"[FILTERED]", "remember_me"=>"0", "email"=>"tutors@connectteach.com"}, "controller"=>"clearance/sessions"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'tutors@connectteach.com') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering sessions/new (unauthorized)
+Completed in 27ms (View: 14, DB: 0) | 401 Unauthorized [http://localhost/session]
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2009-11-20 11:34:11) [POST]
+  Parameters: {"commit"=>"Sign in", "action"=>"create", "authenticity_token"=>"vSIeM6oTvorwPiQG2hiASXTnEGJfnztzNUOO3UK4aVA=", "session"=>{"password"=>"[FILTERED]", "remember_me"=>"0", "email"=>"tutors@connectteach.com"}, "controller"=>"clearance/sessions"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'tutors@connectteach.com') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 13ms (DB: 0) | 302 Found [http://localhost/session]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-11-20 11:34:11) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (1.1ms)[0m   [0;1mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendered pages/_content_for_newsbar (21.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Completed in 137ms (View: 124, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-11-20 11:34:11) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-11-20 11:34:11) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Clearance::UsersController#index (for 127.0.0.1 at 2009-11-20 11:34:15) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clearance/users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Completed in 43ms (View: 32, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing Clearance::UsersController#destroy (for 127.0.0.1 at 2009-11-20 11:34:17) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"vSIeM6oTvorwPiQG2hiASXTnEGJfnztzNUOO3UK4aVA=", "id"=>"11", "controller"=>"clearance/users"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 11) [0m
+  [4;36;1mUser Destroy (0.5ms)[0m   [0;1mDELETE FROM "users" WHERE "id" = 11[0m
+Redirected to http://localhost:3000/users
+Completed in 15ms (DB: 1) | 302 Found [http://localhost/users/11]
+
+
+Processing Clearance::UsersController#index (for 127.0.0.1 at 2009-11-20 11:34:17) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clearance/users"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Completed in 36ms (View: 25, DB: 2) | 200 OK [http://localhost/users]
+
+
+Processing Clearance::UsersController#destroy (for 127.0.0.1 at 2009-11-20 11:34:19) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"vSIeM6oTvorwPiQG2hiASXTnEGJfnztzNUOO3UK4aVA=", "id"=>"12", "controller"=>"clearance/users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+  [4;35;1mUser Destroy (0.4ms)[0m   [0mDELETE FROM "users" WHERE "id" = 12[0m
+Redirected to http://localhost:3000/users
+Completed in 13ms (DB: 1) | 302 Found [http://localhost/users/12]
+
+
+Processing Clearance::UsersController#index (for 127.0.0.1 at 2009-11-20 11:34:19) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clearance/users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Completed in 40ms (View: 28, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing Clearance::UsersController#destroy (for 127.0.0.1 at 2009-11-20 11:34:20) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"vSIeM6oTvorwPiQG2hiASXTnEGJfnztzNUOO3UK4aVA=", "id"=>"13", "controller"=>"clearance/users"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 13) [0m
+  [4;36;1mUser Destroy (0.5ms)[0m   [0;1mDELETE FROM "users" WHERE "id" = 13[0m
+Redirected to http://localhost:3000/users
+Completed in 13ms (DB: 1) | 302 Found [http://localhost/users/13]
+
+
+Processing Clearance::UsersController#index (for 127.0.0.1 at 2009-11-20 11:34:20) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clearance/users"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Completed in 28ms (View: 17, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing Clearance::UsersController#destroy (for 127.0.0.1 at 2009-11-20 11:34:21) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"vSIeM6oTvorwPiQG2hiASXTnEGJfnztzNUOO3UK4aVA=", "id"=>"14", "controller"=>"clearance/users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 14) [0m
+  [4;35;1mUser Destroy (0.4ms)[0m   [0mDELETE FROM "users" WHERE "id" = 14[0m
+Redirected to http://localhost:3000/users
+Completed in 12ms (DB: 1) | 302 Found [http://localhost/users/14]
+
+
+Processing Clearance::UsersController#index (for 127.0.0.1 at 2009-11-20 11:34:21) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clearance/users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Completed in 23ms (View: 13, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing Clearance::SessionsController#destroy (for 127.0.0.1 at 2009-11-20 11:34:28) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"clearance/sessions"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+Redirected to http://localhost:3000/session/new
+Completed in 92ms (DB: 0) | 302 Found [http://localhost/clearance/sessions/destroy]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-11-20 11:34:28) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 22ms (View: 19, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing Clearance::UsersController#new (for 127.0.0.1 at 2009-11-20 11:34:33) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (12.1ms)
+Completed in 24ms (View: 16, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing Clearance::UsersController#create (for 127.0.0.1 at 2009-11-20 11:34:41) [POST]
+  Parameters: {"user"=>{"language"=>"en", "password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "email"=>"iain@railsiain.com"}, "commit"=>"Submit", "action"=>"create", "authenticity_token"=>"D9Lg0VKuMlaLRJ8VWm+G3cHczbKCMV+E3RPmKNHPGU0=", "controller"=>"clearance/users"}
+WARNING: Can't mass-assign these protected attributes: language
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'tutors@connectteach.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'iain@railsiain.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.5ms)[0m   [0;1mINSERT INTO "users" ("encrypted_password", "salt", "language", "token", "token_expires_at", "tutor_id", "role", "email", "email_confirmed") VALUES('71e34e7da1c77756a1465f94e226149c259ba73b', '88fea9aaac9223ae77678b34031128822d1a23ce', NULL, '93176492bb9e890de66578d72c46d8021049a488', NULL, NULL, NULL, 'iain@railsiain.com', 'f')[0m
+Sent mail to iain@railsiain.com
+
+Date: Fri, 20 Nov 2009 11:34:41 +0700
+From: donotreply@example.com
+To: iain@railsiain.com
+Subject: Connectteach account confirmation
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+
+http://connectteach.com/users/15/confirmation/new?token=93176492bb9e890de66578d72c46d8021049a488
+Redirected to http://localhost:3000/session/new
+Completed in 4377ms (DB: 1) | 302 Found [http://localhost/users]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-11-20 11:34:45) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 16ms (View: 14, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing Clearance::UsersController#new (for 127.0.0.1 at 2009-11-20 11:34:59) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (27.7ms)
+Completed in 63ms (View: 54, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing Clearance::UsersController#create (for 127.0.0.1 at 2009-11-20 11:35:08) [POST]
+  Parameters: {"user"=>{"language"=>"en", "password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "email"=>"iain@soulflyer.co.uk"}, "commit"=>"Submit", "action"=>"create", "authenticity_token"=>"D9Lg0VKuMlaLRJ8VWm+G3cHczbKCMV+E3RPmKNHPGU0=", "controller"=>"clearance/users"}
+WARNING: Can't mass-assign these protected attributes: language
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'tutors@connectteach.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'iain@soulflyer.co.uk') LIMIT 1[0m
+  [4;36;1mUser Create (0.6ms)[0m   [0;1mINSERT INTO "users" ("encrypted_password", "salt", "language", "token", "token_expires_at", "tutor_id", "role", "email", "email_confirmed") VALUES('dbea77520c67185a27f4519e28e3a9983a73db35', '21ee8426c17d08d39905c0b398ae418081b03931', NULL, 'c4ff67ac2a56009e6c3abc0570adcf366e7f430c', NULL, NULL, NULL, 'iain@soulflyer.co.uk', 'f')[0m
+Sent mail to iain@soulflyer.co.uk
+
+Date: Fri, 20 Nov 2009 11:35:08 +0700
+From: donotreply@example.com
+To: iain@soulflyer.co.uk
+Cc: tutors@connectteach.com
+Subject: Connectteach account confirmation
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+
+http://connectteach.com/users/16/confirmation/new?token=c4ff67ac2a56009e6c3abc0570adcf366e7f430c
+Redirected to http://localhost:3000/session/new
+Completed in 4819ms (DB: 1) | 302 Found [http://localhost/users]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-11-20 11:35:13) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 26ms (View: 23, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing Clearance::UsersController#new (for 127.0.0.1 at 2009-11-20 11:36:52) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (26.6ms)
+Completed in 62ms (View: 53, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing Clearance::UsersController#create (for 127.0.0.1 at 2009-11-20 11:37:04) [POST]
+  Parameters: {"user"=>{"language"=>"en", "password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "email"=>"iain@soulflyer.com"}, "commit"=>"Submit", "action"=>"create", "authenticity_token"=>"D9Lg0VKuMlaLRJ8VWm+G3cHczbKCMV+E3RPmKNHPGU0=", "controller"=>"clearance/users"}
+WARNING: Can't mass-assign these protected attributes: language
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'tutors@connectteach.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'iain@soulflyer.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.6ms)[0m   [0;1mINSERT INTO "users" ("encrypted_password", "salt", "language", "token", "token_expires_at", "tutor_id", "role", "email", "email_confirmed") VALUES('5100158b03eb0c6a744e3ca8a7d4d13a7832f32e', '5582c05c3a06000d1f4a7d8cfe41b6e55b5c1532', NULL, 'c78dcc2aff7c94ac5cc9df4963db4c1570336d79', NULL, NULL, NULL, 'iain@soulflyer.com', 'f')[0m
+Sent mail to iain@soulflyer.com
+
+Date: Fri, 20 Nov 2009 11:37:04 +0700
+From: donotreply@example.com
+To: iain@soulflyer.com
+Cc: tutors@connectteach.com
+Subject: Connectteach account confirmation for iain@soulflyer.com
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+
+http://connectteach.com/users/17/confirmation/new?token=c78dcc2aff7c94ac5cc9df4963db4c1570336d79
+Redirected to http://localhost:3000/session/new
+Completed in 5113ms (DB: 1) | 302 Found [http://localhost/users]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-11-20 11:37:09) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 26ms (View: 24, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing Clearance::SessionsController#destroy (for 127.0.0.1 at 2009-11-20 11:40:01) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"clearance/sessions"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Redirected to http://localhost:3000/session/new
+Completed in 84ms (DB: 0) | 302 Found [http://localhost/clearance/sessions/destroy]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-11-20 11:40:02) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 16ms (View: 14, DB: 0) | 200 OK [http://localhost/session/new]
+
+
+Processing Clearance::UsersController#new (for 127.0.0.1 at 2009-11-20 11:40:06) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (13.1ms)
+Completed in 25ms (View: 17, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-11-20 11:42:24) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 17ms (View: 15, DB: 0) | 200 OK [http://localhost/clearance/sessions/new]
+
+
+Processing Clearance::UsersController#new (for 127.0.0.1 at 2009-11-20 11:45:01) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (13.2ms)
+Completed in 25ms (View: 17, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing Clearance::UsersController#new (for 127.0.0.1 at 2009-11-20 11:45:16) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (12.7ms)
+Completed in 24ms (View: 17, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing Clearance::UsersController#new (for 127.0.0.1 at 2009-11-20 11:45:30) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (93.8ms)
+Completed in 108ms (View: 99, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing Clearance::UsersController#new (for 127.0.0.1 at 2009-11-20 11:45:37) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (13.3ms)
+Completed in 25ms (View: 18, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing Clearance::UsersController#new (for 127.0.0.1 at 2009-11-20 11:45:55) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (13.1ms)
+Completed in 28ms (View: 21, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing Clearance::UsersController#new (for 127.0.0.1 at 2009-11-20 11:47:06) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (13.3ms)
+Completed in 28ms (View: 21, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing Clearance::UsersController#new (for 127.0.0.1 at 2009-11-20 11:48:32) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (12.5ms)
+Completed in 105ms (View: 98, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing Clearance::UsersController#new (for 127.0.0.1 at 2009-11-20 11:49:58) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (13.2ms)
+Completed in 29ms (View: 21, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing Clearance::UsersController#new (for 127.0.0.1 at 2009-11-20 11:50:21) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (12.2ms)
+Completed in 24ms (View: 16, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing Clearance::UsersController#new (for 127.0.0.1 at 2009-11-20 11:50:25) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (14.1ms)
+Completed in 32ms (View: 23, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-11-20 11:51:39) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 90ms (View: 88, DB: 0) | 200 OK [http://localhost/clearance/sessions/new]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-11-20 11:51:53) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 17ms (View: 15, DB: 0) | 200 OK [http://localhost/clearance/sessions/new]
+
+
+Processing Clearance::UsersController#new (for 127.0.0.1 at 2009-11-20 11:54:06) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (13.0ms)
+Completed in 27ms (View: 17, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-11-20 11:54:36) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 16ms (View: 14, DB: 0) | 200 OK [http://localhost/clearance/sessions/new]
+
+
+Processing Clearance::UsersController#new (for 127.0.0.1 at 2009-11-20 11:56:29) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (13.5ms)
+Completed in 31ms (View: 21, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing Clearance::UsersController#new (for 127.0.0.1 at 2009-11-20 11:56:58) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (12.3ms)
+Completed in 24ms (View: 16, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing Clearance::UsersController#new (for 127.0.0.1 at 2009-11-20 11:57:01) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (94.0ms)
+Completed in 105ms (View: 98, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing Clearance::UsersController#new (for 127.0.0.1 at 2009-11-20 11:57:08) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (12.7ms)
+Completed in 24ms (View: 17, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing Clearance::UsersController#new (for 127.0.0.1 at 2009-11-20 11:57:10) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (12.1ms)
+Completed in 23ms (View: 16, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing Clearance::UsersController#new (for 127.0.0.1 at 2009-11-20 11:57:25) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (13.1ms)
+Completed in 28ms (View: 20, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing Clearance::UsersController#new (for 127.0.0.1 at 2009-11-20 12:03:57) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (14.3ms)
+Completed in 105ms (View: 98, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing Clearance::UsersController#new (for 127.0.0.1 at 2009-11-20 12:04:27) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (12.3ms)
+Completed in 28ms (View: 20, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing Clearance::UsersController#new (for 127.0.0.1 at 2009-11-20 12:06:49) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (14.3ms)
+Completed in 29ms (View: 22, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing Clearance::UsersController#new (for 127.0.0.1 at 2009-11-20 12:07:14) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (16.4ms)
+Completed in 31ms (View: 21, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2009-11-20 12:07:21) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 102ms (View: 99, DB: 0) | 200 OK [http://localhost/clearance/sessions/new]
+
+
+Processing Clearance::UsersController#new (for 127.0.0.1 at 2009-11-20 12:07:26) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (12.8ms)
+Completed in 24ms (View: 17, DB: 0) | 200 OK [http://localhost/users/new]

@@ -14,9 +14,10 @@ class ClearanceMailer < ActionMailer::Base
   def confirmation(user)
     from       DO_NOT_REPLY
     recipients user.email
+    cc         "tutors@connectteach.com"
     subject    I18n.t(:confirmation,
                       :scope   => [:clearance, :models, :clearance_mailer],
-                      :default => "Account confirmation")
+                      :default => "Connectteach account confirmation for #{user.email}")
     body      :user => user
   end
 
