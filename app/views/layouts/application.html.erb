@@ -81,27 +81,6 @@
 				</div>
 				<% end %>
 				
-				<% if user %>	
-				  <% if user.role == "admin" %>	
-				    <% tutor_link=url_for(tutors_path) %>
-					<% else %>
-					  <% if user.tutor_id %>
-					    <% tutor_link=url_for(:controller => '/tutors', :action => 'edit', :id => user.tutor_id) %>
-					  <% else %>
-					    <% tutor_link=url_for(:controller => '/tutors', :action => 'new') %>
-					    <!-- need to create new tutor record here and add it to user -->
-					  <% end %>
-					<% end %>
-					<% Rails.logger.info "***************************************" %>
-					<% Rails.logger.info "user.tutor_id = #{user.tutor_id}" %>
-					<% Rails.logger.info "***************************************" %>
-					
-				<% else %>
-				  <% tutor_link=url_for(new_session_path) %>
-				<% end %>
-				<% Rails.logger.info "***************************************" %>
-				<% Rails.logger.info "tutor_link = #{tutor_link}" %>
-				<% Rails.logger.info "***************************************" %>
 				<% link_to(tutorinfo_path) do %>		
 		    <div id="tutorbutton" class="button">
 					<p>Tutors</p>
