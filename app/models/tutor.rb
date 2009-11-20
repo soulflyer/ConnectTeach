@@ -7,7 +7,6 @@ class Tutor < ActiveRecord::Base
   validates_presence_of :given_name, :on => :create, :message => "can't be blank"
   validates_presence_of :family_name, :on => :create, :message => "can't be blank"
   validates_presence_of :sex, :on => :create, :message => "can't be blank"
-  validates_presence_of :given_name_first, :on => :create, :message => "can't be blank"
   
   def name
     if given_name_first

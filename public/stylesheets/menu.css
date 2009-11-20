@@ -1,3 +1,5 @@
+/* @override http://localhost:3000/stylesheets/menu.css?1258627441 */
+
 /* @override http://localhost:3000/stylesheets/menu.css?1258280227 */
 
 /* @override http://localhost:3000/stylesheets/menu.css?1258277579 */
@@ -76,6 +78,14 @@ a:hover #coursebutton {
   right: 85px;
 }
 #button2 {
-  right: 160px;
+  right: 165px;
+  top: -14px;
+}
+#button3 {
+  top: -14px;
+  right: 245px;
+}
+#button4 {
+  right: 325px;
   top: -14px;
 }

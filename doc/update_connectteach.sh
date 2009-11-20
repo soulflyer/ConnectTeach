@@ -19,6 +19,8 @@ mv soulflyer-ConnectTeach* ~/public_html/connectteach
 echo "Now restarting the server"
 cd public_html/connectteach
 /usr/local/bin/ruby /usr/local/bin/mongrel_rails start -p 12002 -d -e production -P log/mongrel.pid
+echo "*****************************************************************************"
 echo "Now go to http://connectteach.com and check the bloody thing is still working"
 echo "Did you add a migration? If so go to public_html/connectteach and run:"
 echo "rake db:migrate RAILS_ENV=production"
+echo "*****************************************************************************"

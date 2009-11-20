@@ -10,6 +10,10 @@ ActionController::Routing::Routes.draw do |map|
   map.textilehelp 'textilehelp', :controller => 'pages', :action => 'show', :permalink => 'textilehelp'
   map.clientinfo 'clientinfo', :controller => 'pages', :action => 'show', :permalink => 'clientinfo'
   map.tutorinfo 'tutorinfo', :controller => 'pages', :action => 'show', :permalink => 'tutorinfo'
+  map.corporate 'corporate', :controller => 'pages', :action => 'show', :permalink => 'corporate'
+  map.adults 'adults', :controller => 'pages', :action => 'show', :permalink => 'adults'
+  map.parents 'parents', :controller => 'pages', :action => 'show', :permalink => 'parents'
+  map.students 'students', :controller => 'pages', :action => 'show', :permalink => 'students'
   
   map.resources :pages
   
