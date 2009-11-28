@@ -29,7 +29,7 @@ div.item p {
   margin: 0 8px 0 0;
 }
 #news h1,#news h2,#news h3,#news h4{
-    color: #0c7b6b;
+  color: #0c7b6b;
   font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
 }
 #news h3 {
@@ -45,4 +45,8 @@ div.item p {
 a:hover #editnewsitemsbutton{
   background: url(../images/HoverButtonLarge.png) no-repeat;
 }
+#image img {
+  border: 0px;
+}
+
 

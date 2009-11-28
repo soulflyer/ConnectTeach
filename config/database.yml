@@ -24,7 +24,7 @@ production:
   username: jphuquoc_connect
   password: geek
   socket: /tmp/mysql.sock
-  host: rhea.nocdirect.com
+  host: localhost
 
 cucumber:
   <<: *TEST
