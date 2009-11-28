@@ -22,7 +22,7 @@ echo "restoring links to tutor and newsitem images"
 cd ~/public_html/connectteach/public/images/
 rm -r newsitems
 rm -r tutors
-ln -s ~/public_html/connectteach_images/newitems newsitems
+ln -s ~/public_html/connectteach_images/newsitems newsitems
 ln -s ~/public_html/connectteach_images/tutors tutors
 echo "Now restarting the server"
 cd ~/public_html/connectteach
