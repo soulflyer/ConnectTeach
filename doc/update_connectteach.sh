@@ -8,16 +8,24 @@ ls soulflyer-ConnectTeach*
 echo "Hit ctrl C now if this is a problem"
 read -e INPUT
 rm soulflyer-ConnectTeach*
+echo "Fetching new version"
 wget http://github.com/soulflyer/ConnectTeach/tarball/master
 gunzip soulflyer-ConnectTeach*.tar.gz
 tar xvf soulflyer-ConnectTeach*.tar
 rm soulflyer-ConnectTeach*.tar
+echo "Deleting old version and installing new"
 rm -r ~/public_html/connectteach
 cp soulflyer-ConnectTeach*/doc/update_connectteach.sh ~/
 chmod a+x ~/update_connectteach.sh
 mv soulflyer-ConnectTeach* ~/public_html/connectteach
+echo "restoring links to tutor and newsitem images"
+cd ~/public_html/connectteach/public/images/
+rm -r newsitems
+rm -r tutors
+ln -s ~/public_html/connectteach_images/newitems newsitems
+ln -s ~/public_html/connectteach_images/tutors tutors
 echo "Now restarting the server"
-cd public_html/connectteach
+cd ~/public_html/connectteach
 /usr/bin/ruby /usr/bin/mongrel_rails start -p 12002 -d -e production -P log/mongrel.pid
 echo "*****************************************************************************"
 echo "Now go to http://connectteach.com and check the bloody thing is still working"
