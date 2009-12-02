@@ -23,7 +23,7 @@
 						<p>Show</p>
 					</div>
 			  <% end %>
-				<% if session[:user_id] && User.find(session[:user_id]).role=="admin" %>				
+				<% if session[:user_id] && User.find(session[:user_id]).admin? %>				
 					<% link_to (edit_newsitem_path(newsitem)) do %>
 						<div id="edit", class="button">
 							<p>Edit</p>
@@ -40,6 +40,6 @@
   </tr>
 <% end %>
 </table>
-<% if session[:user_id] && User.find(session[:user_id]).role=="admin" %>
+<% if session[:user_id] && User.find(session[:user_id]).admin? %>
   <%= link_to 'New newsitem', new_newsitem_path %>
 <% end %>

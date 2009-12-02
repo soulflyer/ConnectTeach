@@ -1,0 +1,232 @@
+# Logfile created on Tue Dec 01 11:22:41 +0700 2009  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (3.5ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.9ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePages (20090703013813)
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCREATE TABLE "pages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "permalink" varchar(255), "content" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090703013813')[0m
+Migrating to ClearanceCreateUsers (20090703013817)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255), "encrypted_password" varchar(128), "salt" varchar(128), "token" varchar(128), "token_expires_at" datetime, "email_confirmed" boolean DEFAULT 'f' NOT NULL) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE INDEX "index_users_on_id_and_token" ON "users" ("id", "token")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE INDEX "index_users_on_token" ON "users" ("token")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090703013817')[0m
+Migrating to CreateTutors (20090703022556)
+  [4;35;1mSQL (0.8ms)[0m   [0mCREATE TABLE "tutors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "experience" text, "qualifications" text, "course_experience" text, "textbook_experience" text, "national_knowledge" text, "age" integer, "phone" integer, "sex" varchar(255), "flavour" varchar(255), "given_name" varchar(255), "family_name" varchar(255), "given_name_first" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090703022556')[0m
+Migrating to AddAttachmentsPhotoToTutor (20090703113902)
+  [4;35;1mSQL (0.7ms)[0m   [0mALTER TABLE "tutors" ADD "photo_file_name" varchar(255)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "tutors" ADD "photo_content_type" varchar(255)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "tutors" ADD "photo_file_size" integer[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "tutors" ADD "photo_updated_at" datetime[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090703113902')[0m
+Migrating to AddTutorToUser (20090704060809)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mALTER TABLE "users" ADD "tutor_id" integer[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090704060809')[0m
+Migrating to AddRoleToUser (20090707122921)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mALTER TABLE "users" ADD "role" varchar(255)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090707122921')[0m
+Migrating to LoadPagesData (20090709035205)
+  [4;36;1mPage Delete all (0.4ms)[0m   [0;1mDELETE FROM "pages" WHERE 1=1[0m
+  [4;35;1mPage Create (0.2ms)[0m   [0mINSERT INTO "pages" ("name", "permalink", "updated_at", "content", "created_at") VALUES(NULL, 'home', '2009-12-01 04:22:42', 'Go to ConnectTeach/static/home/edit to edit this page...', '2009-12-01 04:22:42')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090709035205')[0m
+Migrating to AddNewsColumnToPages (20091018012613)
+  [4;35;1mSQL (0.7ms)[0m   [0mALTER TABLE "pages" ADD "news" boolean[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091018012613')[0m
+Migrating to AddVntextColumnToPages (20091018053453)
+  [4;35;1mSQL (0.6ms)[0m   [0mALTER TABLE "pages" ADD "vntext" text[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091018053453')[0m
+Migrating to RenameVntextVncontent (20091018054118)
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TEMPORARY TABLE "altered_pages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "permalink" varchar(255), "content" text, "created_at" datetime, "updated_at" datetime, "news" boolean, "vncontent" text) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("pages")[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mDROP TABLE "pages"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "pages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "permalink" varchar(255), "content" text, "created_at" datetime, "updated_at" datetime, "news" boolean, "vncontent" text) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("altered_pages")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mDROP TABLE "altered_pages"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091018054118')[0m
+Migrating to RenameVncontentVietnameseContent (20091018055834)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TEMPORARY TABLE "altered_pages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "permalink" varchar(255), "content" text, "created_at" datetime, "updated_at" datetime, "news" boolean, "Vietnamese_content" text) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("pages")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mDROP TABLE "pages"[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "pages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "permalink" varchar(255), "content" text, "created_at" datetime, "updated_at" datetime, "news" boolean, "Vietnamese_content" text) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mPRAGMA index_list("altered_pages")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mDROP TABLE "altered_pages"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TEMPORARY TABLE "altered_pages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "permalink" varchar(255), "English_content" text, "created_at" datetime, "updated_at" datetime, "news" boolean, "Vietnamese_content" text) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("pages")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mDROP TABLE "pages"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TABLE "pages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "permalink" varchar(255), "English_content" text, "created_at" datetime, "updated_at" datetime, "news" boolean, "Vietnamese_content" text) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("altered_pages")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mDROP TABLE "altered_pages"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091018055834')[0m
+Migrating to CreateNewsitems (20091018085601)
+  [4;35;1mSQL (0.7ms)[0m   [0mCREATE TABLE "newsitems" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "contents" text, "image_url" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091018085601')[0m
+Migrating to AddAttachmentsPhotoToNewsitem (20091018091113)
+  [4;35;1mSQL (0.5ms)[0m   [0mALTER TABLE "newsitems" ADD "photo_file_name" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "newsitems" ADD "photo_content_type" varchar(255)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "newsitems" ADD "photo_file_size" integer[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mALTER TABLE "newsitems" ADD "photo_updated_at" datetime[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TEMPORARY TABLE "altered_newsitems" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "contents" text, "image_url" varchar(255), "created_at" datetime, "updated_at" datetime, "photo_file_name" varchar(255), "photo_content_type" varchar(255), "photo_file_size" integer, "photo_updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("newsitems")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mDROP TABLE "newsitems"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "newsitems" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "contents" text, "created_at" datetime, "updated_at" datetime, "photo_file_name" varchar(255), "photo_content_type" varchar(255), "photo_file_size" integer, "photo_updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("altered_newsitems")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mDROP TABLE "altered_newsitems"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091018091113')[0m
+Migrating to AddVietnameseContentToNewsitem (20091018102538)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mALTER TABLE "newsitems" ADD "Vietnamese_content" text[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TEMPORARY TABLE "altered_newsitems" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "English_content" text, "created_at" datetime, "updated_at" datetime, "photo_file_name" varchar(255), "photo_content_type" varchar(255), "photo_file_size" integer, "photo_updated_at" datetime, "Vietnamese_content" text) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("newsitems")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mDROP TABLE "newsitems"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "newsitems" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "English_content" text, "created_at" datetime, "updated_at" datetime, "photo_file_name" varchar(255), "photo_content_type" varchar(255), "photo_file_size" integer, "photo_updated_at" datetime, "Vietnamese_content" text) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("altered_newsitems")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mDROP TABLE "altered_newsitems"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091018102538')[0m
+Migrating to AddMoreStaticPages (20091019203201)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091019203201')[0m
+Migrating to AddExampleNewsitem (20091022064838)
+  [4;35;1mNewsitem Delete all (0.6ms)[0m   [0mDELETE FROM "newsitems" WHERE 1=1[0m
+  [4;36;1mNewsitem Create (0.2ms)[0m   [0;1mINSERT INTO "newsitems" ("updated_at", "photo_file_name", "photo_file_size", "title", "English_content", "Vietnamese_content", "photo_updated_at", "photo_content_type", "created_at") VALUES('2009-12-01 04:22:42', NULL, NULL, 'First Newsitem', 'Example Newsitem', NULL, NULL, NULL, '2009-12-01 04:22:42')[0m
+[paperclip] Saving attachments.
+  [4;35;1mNewsitem Create (0.1ms)[0m   [0mINSERT INTO "newsitems" ("updated_at", "photo_file_name", "photo_file_size", "title", "English_content", "Vietnamese_content", "photo_updated_at", "photo_content_type", "created_at") VALUES('2009-12-01 04:22:42', NULL, NULL, 'Second Newsitem', 'Example Newsitem', NULL, NULL, NULL, '2009-12-01 04:22:42')[0m
+[paperclip] Saving attachments.
+  [4;36;1mNewsitem Create (0.1ms)[0m   [0;1mINSERT INTO "newsitems" ("updated_at", "photo_file_name", "photo_file_size", "title", "English_content", "Vietnamese_content", "photo_updated_at", "photo_content_type", "created_at") VALUES('2009-12-01 04:22:42', NULL, NULL, 'Third Newsitem', 'Example Newsitem - please edit', NULL, NULL, NULL, '2009-12-01 04:22:42')[0m
+[paperclip] Saving attachments.
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091022064838')[0m
+Migrating to AddLanguageToUser (20091023105856)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mALTER TABLE "users" ADD "language" varchar(255)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091023105856')[0m
+Migrating to AddInitialAdminUser (20091104035939)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'admin@connectteach.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'admin@connectteach.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.6ms)[0m   [0;1mINSERT INTO "users" ("encrypted_password", "salt", "language", "token", "token_expires_at", "tutor_id", "role", "email", "email_confirmed") VALUES('880b09ac492780f8b3218860f3752551d9c91f15', 'ab40ca72de0d9ad8354880df3a814530cfb47552', NULL, '232cbdda24e9e6e2fea9b13c530aceb3bcebe23c', NULL, NULL, 'admin', 'admin@connectteach.com', 't')[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'admin@connectteach.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091104035939')[0m
+Migrating to AddPhoneAndAddressToTutor (20091114215759)
+  [4;35;1mSQL (0.7ms)[0m   [0mALTER TABLE "tutors" ADD "address" text[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091114215759')[0m
+Migrating to AddTextileHelpPage (20091115115810)
+  [4;35;1mPage Delete all (0.6ms)[0m   [0mDELETE FROM "pages" WHERE 1=1[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePages (20090703013813)
+Migrating to ClearanceCreateUsers (20090703013817)
+Migrating to CreateTutors (20090703022556)
+Migrating to AddAttachmentsPhotoToTutor (20090703113902)
+Migrating to AddTutorToUser (20090704060809)
+Migrating to AddRoleToUser (20090707122921)
+Migrating to LoadPagesData (20090709035205)
+Migrating to AddNewsColumnToPages (20091018012613)
+Migrating to AddVntextColumnToPages (20091018053453)
+Migrating to RenameVntextVncontent (20091018054118)
+Migrating to RenameVncontentVietnameseContent (20091018055834)
+Migrating to CreateNewsitems (20091018085601)
+Migrating to AddAttachmentsPhotoToNewsitem (20091018091113)
+Migrating to AddVietnameseContentToNewsitem (20091018102538)
+Migrating to AddMoreStaticPages (20091019203201)
+Migrating to AddExampleNewsitem (20091022064838)
+Migrating to AddLanguageToUser (20091023105856)
+Migrating to AddInitialAdminUser (20091104035939)
+Migrating to AddPhoneAndAddressToTutor (20091114215759)
+Migrating to AddTextileHelpPage (20091115115810)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mPage Delete all (0.5ms)[0m   [0mDELETE FROM "pages" WHERE 1=1[0m
+  [4;36;1mPage Create (0.3ms)[0m   [0;1mINSERT INTO "pages" ("name", "permalink", "updated_at", "English_content", "Vietnamese_content", "news", "created_at") VALUES(NULL, 'home', '2009-12-01 04:22:48', 'Go to ConnectTeach/static/home/edit to edit this page...', NULL, 't', '2009-12-01 04:22:48')[0m
+  [4;35;1mPage Create (0.1ms)[0m   [0mINSERT INTO "pages" ("name", "permalink", "updated_at", "English_content", "Vietnamese_content", "news", "created_at") VALUES(NULL, 'contact', '2009-12-01 04:22:48', 'Go to ConnectTeach/static/contact/edit to edit this page...', NULL, NULL, '2009-12-01 04:22:48')[0m
+  [4;36;1mPage Create (0.1ms)[0m   [0;1mINSERT INTO "pages" ("name", "permalink", "updated_at", "English_content", "Vietnamese_content", "news", "created_at") VALUES(NULL, 'about', '2009-12-01 04:22:48', 'Go to ConnectTeach/static/about/edit to edit this page...', NULL, NULL, '2009-12-01 04:22:48')[0m
+  [4;35;1mPage Create (0.1ms)[0m   [0mINSERT INTO "pages" ("name", "permalink", "updated_at", "English_content", "Vietnamese_content", "news", "created_at") VALUES(NULL, 'courses', '2009-12-01 04:22:48', 'Go to ConnectTeach/static/courses/edit to edit this page...', NULL, NULL, '2009-12-01 04:22:48')[0m
+  [4;36;1mPage Create (0.1ms)[0m   [0;1mINSERT INTO "pages" ("name", "permalink", "updated_at", "English_content", "Vietnamese_content", "news", "created_at") VALUES(NULL, 'textilehelp', '2009-12-01 04:22:48', 'h1. Textile Help
+
+Separate paragraphs with a newline.
+
+h1. h1. header
+
+h2. h2. header
+
+h3. h3. header
+
+h4. h4. header', NULL, NULL, '2009-12-01 04:22:48')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091115115810')[0m
+Migrating to RemoveNameFromPages (20091115123342)
+  [4;36;1mSQL (1.3ms)[0m   [0;1mCREATE TEMPORARY TABLE "altered_pages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "permalink" varchar(255), "English_content" text, "created_at" datetime, "updated_at" datetime, "news" boolean, "Vietnamese_content" text) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("pages")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mDROP TABLE "pages"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TABLE "pages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "permalink" varchar(255), "English_content" text, "created_at" datetime, "updated_at" datetime, "news" boolean, "Vietnamese_content" text) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("altered_pages")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mDROP TABLE "altered_pages"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091115123342')[0m
+Migrating to AddClientsAndTutorsPages (20091117114024)
+  [4;35;1mPage Create (0.0ms)[0m   [0mSQLite3::SQLException: table pages has no column named name: INSERT INTO "pages" ("name", "permalink", "updated_at", "English_content", "Vietnamese_content", "news", "created_at") VALUES(NULL, 'clientinfo', '2009-12-01 04:22:49', 'Add some details here', NULL, NULL, '2009-12-01 04:22:49')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePages (20090703013813)
+Migrating to ClearanceCreateUsers (20090703013817)
+Migrating to CreateTutors (20090703022556)
+Migrating to AddAttachmentsPhotoToTutor (20090703113902)
+Migrating to AddTutorToUser (20090704060809)
+Migrating to AddRoleToUser (20090707122921)
+Migrating to LoadPagesData (20090709035205)
+Migrating to AddNewsColumnToPages (20091018012613)
+Migrating to AddVntextColumnToPages (20091018053453)
+Migrating to RenameVntextVncontent (20091018054118)
+Migrating to RenameVncontentVietnameseContent (20091018055834)
+Migrating to CreateNewsitems (20091018085601)
+Migrating to AddAttachmentsPhotoToNewsitem (20091018091113)
+Migrating to AddVietnameseContentToNewsitem (20091018102538)
+Migrating to AddMoreStaticPages (20091019203201)
+Migrating to AddExampleNewsitem (20091022064838)
+Migrating to AddLanguageToUser (20091023105856)
+Migrating to AddInitialAdminUser (20091104035939)
+Migrating to AddPhoneAndAddressToTutor (20091114215759)
+Migrating to AddTextileHelpPage (20091115115810)
+Migrating to RemoveNameFromPages (20091115123342)
+Migrating to AddClientsAndTutorsPages (20091117114024)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mPage Create (0.6ms)[0m   [0mINSERT INTO "pages" ("permalink", "updated_at", "English_content", "Vietnamese_content", "news", "created_at") VALUES('clientinfo', '2009-12-01 04:22:59', 'Add some details here', NULL, NULL, '2009-12-01 04:22:59')[0m
+  [4;36;1mPage Create (0.1ms)[0m   [0;1mINSERT INTO "pages" ("permalink", "updated_at", "English_content", "Vietnamese_content", "news", "created_at") VALUES('tutorinfo', '2009-12-01 04:22:59', 'Add some details here', NULL, NULL, '2009-12-01 04:22:59')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091117114024')[0m
+Migrating to AddHtmlToPages (20091118180934)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mALTER TABLE "pages" ADD "html" text[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091118180934')[0m
+Migrating to AddClientSubpages (20091120030723)
+  [4;36;1mPage Create (0.4ms)[0m   [0;1mINSERT INTO "pages" ("permalink", "updated_at", "English_content", "Vietnamese_content", "news", "created_at") VALUES('corporate', '2009-12-01 04:22:59', 'Go to ConnectTeach/static/courses/edit to edit this page...', NULL, NULL, '2009-12-01 04:22:59')[0m
+  [4;35;1mPage Create (0.1ms)[0m   [0mINSERT INTO "pages" ("permalink", "updated_at", "English_content", "Vietnamese_content", "news", "created_at") VALUES('adults', '2009-12-01 04:22:59', 'Go to ConnectTeach/static/courses/edit to edit this page...', NULL, NULL, '2009-12-01 04:22:59')[0m
+  [4;36;1mPage Create (0.1ms)[0m   [0;1mINSERT INTO "pages" ("permalink", "updated_at", "English_content", "Vietnamese_content", "news", "created_at") VALUES('parents', '2009-12-01 04:22:59', 'Go to ConnectTeach/static/courses/edit to edit this page...', NULL, NULL, '2009-12-01 04:22:59')[0m
+  [4;35;1mPage Create (0.1ms)[0m   [0mINSERT INTO "pages" ("permalink", "updated_at", "English_content", "Vietnamese_content", "news", "created_at") VALUES('students', '2009-12-01 04:22:59', 'Go to ConnectTeach/static/courses/edit to edit this page...', NULL, NULL, '2009-12-01 04:22:59')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091120030723')[0m
+Migrating to AddTutorsUserForEmailConfirmations (20091120034746)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'tutors@connectteach.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'tutors@connectteach.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.6ms)[0m   [0mINSERT INTO "users" ("encrypted_password", "salt", "language", "token", "token_expires_at", "tutor_id", "role", "email", "email_confirmed") VALUES('5df8867c25025a2ae9b9231fef5bf5ba2015196e', '8e7da36c459526a7d46a072bae0d7d50ea0335f0', NULL, 'ffb0cac850a21559b370a955a8ea971642e153a3', NULL, NULL, 'admin', 'tutors@connectteach.com', 't')[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'tutors@connectteach.com' AND "users".id <> 2) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091120034746')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("newsitems")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("pages")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("tutors")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_token')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_email')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_users_on_id_and_token')[0m

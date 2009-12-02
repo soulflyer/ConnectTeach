@@ -97,7 +97,7 @@ class TutorsController < ApplicationController
   
 private
   def must_be_admin
-    if User.find(session[:user_id]).role != "admin"
+    if !User.find(session[:user_id]).admin?
       flash[:error] = 'Must be admin'
       redirect_to root_url
     end

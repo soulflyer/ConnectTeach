@@ -137,3 +137,6 @@ a:link #editbutton p , a:link #editbutton p , a:link #editbutton p  {
 a:hover #editbutton p {
   color: #007e6b;
 }
+img {
+	border: 0px;
+}

@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>config/database.yml</string>
+	<string>app/views/layouts/application.html.erb</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -21,12 +21,26 @@
 	<integer>444</integer>
 	<key>metaData</key>
 	<dict>
+		<key>app/views/layouts/application.html.erb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>83</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
 		<key>config/database.yml</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>26</integer>
+				<integer>17</integer>
 				<key>line</key>
 				<integer>26</integer>
 			</dict>
@@ -34,6 +48,62 @@
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
+		</dict>
+		<key>db/migrate/20091120030723_add_client_subpages.rb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>22</integer>
+				<key>line</key>
+				<integer>17</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>doc/update_connectteach.sh</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>44</integer>
+				<key>line</key>
+				<integer>24</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>public/stylesheets/newsbar.css</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>2</integer>
+				<key>line</key>
+				<integer>31</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>8</integer>
+		</dict>
+		<key>public/stylesheets/site.css</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>12</integer>
+				<key>line</key>
+				<integer>140</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>99</integer>
 		</dict>
 		<key>vendor/gems/thoughtbot-clearance-0.6.7/app/views/sessions/new.html.erb</key>
 		<dict>
@@ -99,6 +169,11 @@
 		<string>vendor/gems/thoughtbot-clearance-0.6.7/app/views/sessions/new.html.erb</string>
 		<string>vendor/gems/thoughtbot-clearance-0.6.7/app/views/users/_form.html.erb</string>
 		<string>config/database.yml</string>
+		<string>public/stylesheets/newsbar.css</string>
+		<string>doc/update_connectteach.sh</string>
+		<string>db/migrate/20091120030723_add_client_subpages.rb</string>
+		<string>public/stylesheets/site.css</string>
+		<string>app/views/layouts/application.html.erb</string>
 		<string>vendor/gems/thoughtbot-clearance-0.6.7/app/views/users/new.html.erb</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>

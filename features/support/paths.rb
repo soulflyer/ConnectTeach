@@ -28,6 +28,8 @@ module NavigationHelpers
       newsitem_path(1)
     when /the list newsitems page/i
       newsitems_path
+    when /the tutor info page/i
+      '/tutorinfo'
     # Add more mappings here.
     # Here is a more fancy example:
     #

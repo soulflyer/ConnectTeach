@@ -1,3 +1,4 @@
+<% @stylesheet = "signin" %>
 <% form_for @user, :builder => TaggedBuilder do |form| %>
 	<%= form.error_messages %>
   <%= form.text_field :email %>

@@ -18,12 +18,6 @@
     <td><%=h tutor.age %></td>
     <td><%=h tutor.sex %></td>
     <td><%=h tutor.flavour %></td>
-		<% if session[:tutor_id] && Tutor.find(session[:tutor_id]).admin %>
-			<td><%= link_to 'Show', tutor %>
-				<%= link_to 'Edit', edit_tutor_path(tutor) %>
-				<%= link_to 'Destroy', tutor, :confirm => 'Are you sure?', :method => :delete %>
-			</td>
-		<% end %>
 		<td>
 		  <div id="showeditdestroy#{<%= tutor.name %>}", class="showeditdestroy">
 				<% link_to(tutor) do %>
@@ -31,7 +25,7 @@
 						<p>Show</p>
 					</div>
 			  <% end %>
-				<% if session[:user_id] && User.find(session[:user_id]).role=="admin" %>				
+				<% if session[:user_id] && User.find(session[:user_id]).admin? %>				
 					<% link_to(edit_tutor_path(tutor)) do %>
 						<div id="edit", class="button">
 							<p>Edit</p>
@@ -44,12 +38,7 @@
 				  <% end %>
 				<% end %>
 			</div>
-    </td>
-    
+    </td>    
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New tutor', new_tutor_path %>
