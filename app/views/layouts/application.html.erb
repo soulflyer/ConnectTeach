@@ -28,8 +28,8 @@
 			<div id="login">
 				<div id="loginlogo">
 				</div>
-				<% if session[:user_id] %>
-				  <% user=User.find(session[:user_id]) %>
+				<% if signed_in? %>
+				  <% user=current_user %>
 					<div id="loggedinas">
 						<p>Logged in as: </p>
 					  <p><%= user.email %></p>

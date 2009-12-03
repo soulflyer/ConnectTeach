@@ -18,6 +18,13 @@
 		<td><%=h user.role %></td>
     <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
 		<td><%= link_to 'Edit', edit_user_path(user) %></td>
+		<td>
+			<% if user.tutor_id %>
+		    <%= link_to "Edit tutor details", :controller => '/tutors', :action => 'edit', :id => user.tutor_id %>	
+			<% else %>
+			  <p>No tutor details!</p>	
+			<% end %>
+		</td>
   </tr>
 <% end %>
 </table>

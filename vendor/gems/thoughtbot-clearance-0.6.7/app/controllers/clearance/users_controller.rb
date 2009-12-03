@@ -48,6 +48,9 @@ class Clearance::UsersController < ApplicationController
   
   def create
     @user = ::User.new params[:user]
+    # Todo
+    # Create a tutor record if the user is signing up as a tutor
+    # may need another field in the user model
     if @user.save
       ::ClearanceMailer.deliver_confirmation @user
       flash_notice_after_create
@@ -71,7 +74,7 @@ class Clearance::UsersController < ApplicationController
   end
   
   def must_be_admin
-    if !session[:user_id] || !::User.find(session[:user_id]).admin?
+    if !signed_in? || !::User.find(session[:user_id]).admin?
       flash[:error] = 'Must be admin'
       redirect_to root_url
     end

@@ -20,8 +20,8 @@
 		    </ul>	 
 			</div>
 			<div id="login">
-				<% if session[:user_id] %>
-				  <% user=User.find(session[:user_id]) %>
+				<% if signed_in? %>
+				  <% user=current_user                 %>
 				  <%= link_to "Logout #{user.email}", :controller => 'clearance/sessions', :action => 'destroy' %>
 				  <%= link_to "Details", :controller => '/tutors', :action => 'edit', :id => user.tutor_id %>
 				<% else %>

@@ -4,9 +4,12 @@
   <%= form.text_field :email %>
   <%= form.password_field :password %>
   <%= form.password_field :password_confirmation %>
-	<% if session[:user_id] && User.find(session[:user_id]).admin? %>
+	<% if signed_in? && current_user.admin? %>
     <%= form.text_field :role %>
   <% end %>
-  <%= form.select :language, [['English', 'en'], ['Vietnamese', 'vn']] %>
-	<%= form.submit 'Submit', :disable_with => 'Please wait...' %>
+  <p>
+	  <%= form.label :language %>
+    <%= form.select :language, [['English', 'en'], ['Vietnamese', 'vn']] %>
+  </p>
+	<%= form.submit 'Submit', :disable_with => 'Please wait...', :class => "form_submit_button" %>
 <% end %>

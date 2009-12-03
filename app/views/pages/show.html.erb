@@ -5,7 +5,7 @@
   <%= render :partial => 'content_for_newsbar' %>
 <% end %>
 
-<% if session[:user_id] && User.find(session[:user_id]).admin? %>
+<% if signed_in? && current_user.admin? %>
 	<% content_for :edit_this_page_button do %>
 	  <% link_to (static_edit_path(@page.permalink)) do %>
 	  <div id="editbutton" class="button">
@@ -16,9 +16,9 @@
 <% end %>
 
 <% if @page.permalink=="tutorinfo" %>
-  <% if session[:user_id] %>
-    <% if User.find(session[:user_id]).tutor_id %>
-	    <% link_to(:controller => '/tutors', :action => 'edit', :id => user.tutor_id) do %>	
+  <% if signed_in? %>
+    <% if current_user.tutor_id %>
+	    <% link_to(:controller => '/tutors', :action => 'edit', :id => current_user.tutor_id) do %>	
 		  <div id="button1", class="button">
 		  	<p>Profile</p>
 		  </div>
@@ -30,7 +30,7 @@
 		  </div>
 		  <% end %>
 		<% end %>
-		<% if User.find(session[:user_id]).admin? %>
+		<% if current_user.admin? %>
 		  <% link_to(:controller => '/tutors', :action => 'index') do %>	
 		  <div id="button2", class="button">
 		  	<p>Tutors</p>

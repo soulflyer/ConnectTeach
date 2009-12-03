@@ -27,16 +27,18 @@ class TutorsController < ApplicationController
   # GET /tutors/new
   # GET /tutors/new.xml
   def new
-    if session[:user_id] && User.find(session[:user_id]).tutor 
-      @tutor = User.find(session[:user_id]).tutor
+    if signed_in? && current_user.tutor 
+      @tutor = current_user.tutor
     else
       @tutor = Tutor.new
+      # current_user.tutor_id = @tutor
+      # current_user.save
     end
   end
 
   # GET /tutors/1/edit
   def edit
-    if session[:user_id]
+    if signed_in?
       @tutor = Tutor.find(params[:id])
     else
       flash[:error] = 'Please login first'
@@ -47,22 +49,36 @@ class TutorsController < ApplicationController
   # POST /tutors
   # POST /tutors.xml
   def create
+    # Todo
+    # This is creating the tutor the first time the user goes to edit their tutor details
+    # It might make more sense to create the tutor when the user is created and clean up
+    # this section. 
     @tutor = Tutor.new(params[:tutor])
-    @user = User.find(session[:user_id])
-    # puts "***************************************************************************"
-    # puts @user.tutor_id
+    @user = current_user
+    puts "***************************************************************************"
+    puts @user.tutor_id
+    puts @tutor.id
     @user.tutor_id = @tutor.id
-    # puts @user.tutor_id
-    # puts "***************************************************************************"
+    puts @user.tutor_id
+    puts "***************************************************************************"
     respond_to do |format|
-      if @tutor.save && @user.save
-        flash[:notice] = 'Tutor was successfully created.'
-        format.html { redirect_to(@tutor) }
-        format.xml  { render :xml => @tutor, :status => :created, :location => @tutor }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @tutor.errors, :status => :unprocessable_entity }
+      if @tutor.save
+        puts "Saved tutor"
+        @user.tutor_id = @tutor.id
+        if @user.save
+          puts "saved user"
+          flash[:notice] = 'Tutor was successfully created.'
+          format.html { redirect_to(@tutor) }
+          format.xml  { render :xml => @tutor, :status => :created, :location => @tutor }
+        else
+          puts "Failed to save user"
+          # Todo 
+          # can we delete the failed tutor here?
+        end
       end
+      puts "Failed to save tutor"
+      format.html { render :action => "new" }
+      format.xml  { render :xml => @tutor.errors, :status => :unprocessable_entity }      
     end
   end
 
@@ -97,7 +113,7 @@ class TutorsController < ApplicationController
   
 private
   def must_be_admin
-    if !User.find(session[:user_id]).admin?
+    if !current_user  .admin?
       flash[:error] = 'Must be admin'
       redirect_to root_url
     end
