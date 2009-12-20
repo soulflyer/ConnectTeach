@@ -10,6 +10,11 @@ class Clearance::UsersController < ApplicationController
     render :template => 'users/index'
   end
   
+  def email
+    @user = ::User.all
+    render :template => 'users/email'
+  end
+  
   def show
     @user = ::User.find(params[:id])
     render :template => 'users/show'

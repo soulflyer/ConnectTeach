@@ -20,6 +20,8 @@ ActionController::Routing::Routes.draw do |map|
   map.static 'static/:permalink', :controller => 'pages', :action => 'show'
   map.static_edit 'static/:permalink/edit', :controller => 'pages', :action => 'edit'
   
+  map.users_email 'users/email', :controller => 'clearance/users', :action => 'email'
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
 

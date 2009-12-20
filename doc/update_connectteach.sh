@@ -1,8 +1,8 @@
 #! /bin/bash
 echo "***************************"
-echo "Stopping the mongrel server"
+echo "Stop the mongrel server"
 echo "***************************"
-kill  `cat ~/public_html/connectteach/log/mongrel.pid`
+# kill  `cat ~/public_html/connectteach/log/mongrel.pid`
 echo "The following files will be deleted by this script:"
 ls soulflyer-ConnectTeach*
 echo "Hit ctrl C now if this is a problem"
@@ -24,9 +24,9 @@ rm -r newsitems
 rm -r tutors
 ln -s ~/public_html/connectteach_images/newsitems newsitems
 ln -s ~/public_html/connectteach_images/tutors tutors
-echo "Now restarting the server"
-cd ~/public_html/connectteach
-/usr/bin/ruby /usr/bin/mongrel_rails start -p 12002 -d -e production -P log/mongrel.pid
+echo "Now restart the server"
+# cd ~/public_html/connectteach
+# /usr/bin/ruby /usr/bin/mongrel_rails start -p 12002 -d -e production -P log/mongrel.pid
 echo "*****************************************************************************"
 echo "Now go to http://connectteach.com and check the bloody thing is still working"
 echo "Did you add a migration? If so go to public_html/connectteach and run:"
