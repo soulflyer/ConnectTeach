@@ -3,6 +3,10 @@
 
 class ApplicationController < ActionController::Base
   include Clearance::Authentication
+  include ExceptionNotifiable
+  
+  local_addresses.clear # always send email notifications instead of displaying the error
+  
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 

@@ -9,6 +9,8 @@ echo "Hit ctrl C now if this is a problem"
 read -e INPUT
 rm soulflyer-ConnectTeach*
 echo "Fetching new version"
+# replace this with:
+# git clone git://github.com/soulflyer/ConnectTeach.git
 wget http://github.com/soulflyer/ConnectTeach/tarball/master
 gunzip soulflyer-ConnectTeach*.tar.gz
 tar xvf soulflyer-ConnectTeach*.tar

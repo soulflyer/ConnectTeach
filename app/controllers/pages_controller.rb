@@ -97,6 +97,10 @@ class PagesController < ApplicationController
     end
   end
   
+  def error
+    raise RuntimeError, "Generating an error"
+  end
+  
 private
   def must_be_admin
     if !signed_in? || !current_user.admin?

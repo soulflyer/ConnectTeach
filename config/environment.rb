@@ -42,3 +42,6 @@ Rails::Initializer.run do |config|
   # config.i18n.default_locale = :de
 end 
 DO_NOT_REPLY="donotreply@example.com"
+ExceptionNotifier.exception_recipients = %w(iain@soulflyer.com)
+ExceptionNotifier.sender_address = "iain@soulflyer.com"
+ExceptionNotifier.email_prefix = "[CONNECTTEACH] "
