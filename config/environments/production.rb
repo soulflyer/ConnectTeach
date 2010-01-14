@@ -26,8 +26,15 @@ config.action_view.cache_template_loading            = true
 
 # Enable threaded mode
 # config.threadsafe!
+
+config.action_mailer.raise_delivery_errors = true # debugging exception_notifier
 config.action_mailer.smtp_settings = {
   :address => "mail.soulflyer.com",
-  :enable_starttls_auto => false
+  :enable_starttls_auto => false,
+  :port => 25,
+  :authentication => :login,
+  :user_name => "error@connectteach.com",
+  :password => "J3tE8WncA2Hz"
+
 }
 HOST="connectteach.com"

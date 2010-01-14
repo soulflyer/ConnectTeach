@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>vendor/gems/thoughtbot-clearance-0.6.7/app/controllers/clearance/users_controller.rb</string>
+	<string>config/environments/production.rb</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -21,98 +21,100 @@
 	<integer>295</integer>
 	<key>metaData</key>
 	<dict>
-		<key>app/controllers/pages_controller.rb</key>
+		<key>config/environment.rb</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>35</integer>
-				<key>line</key>
-				<integer>101</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>69</integer>
-		</dict>
-		<key>app/controllers/tutors_controller.rb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>20</integer>
-				<key>line</key>
 				<integer>54</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>43</integer>
-		</dict>
-		<key>app/views/pages/show.html.erb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>76</integer>
 				<key>line</key>
-				<integer>20</integer>
+				<integer>45</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>12</integer>
+			<integer>9</integer>
 		</dict>
-		<key>vendor/gems/thoughtbot-clearance-0.6.7/app/controllers/clearance/users_controller.rb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>46</integer>
-				<key>line</key>
-				<integer>52</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>vendor/gems/thoughtbot-clearance-0.6.7/app/views/users/_edit_form.html.erb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>32</integer>
-				<key>line</key>
-				<integer>7</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>vendor/gems/thoughtbot-clearance-0.6.7/app/views/users/index.html.erb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>25</integer>
-				<key>line</key>
-				<integer>24</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>vendor/gems/thoughtbot-clearance-0.6.7/app/views/users/new.html.erb</key>
+		<key>config/environments/development.rb</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
 				<integer>0</integer>
 				<key>line</key>
-				<integer>1</integer>
+				<integer>23</integer>
+			</dict>
+			<key>columnSelection</key>
+			<false/>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+			<key>selectFrom</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>22</integer>
+			</dict>
+			<key>selectTo</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>23</integer>
+			</dict>
+		</dict>
+		<key>config/environments/production.rb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>30</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>vendor/gems/thoughtbot-clearance-0.6.7/app/controllers/clearance/confirmations_controller.rb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>0</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>vendor/gems/thoughtbot-clearance-0.6.7/app/models/clearance_mailer.rb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>85</integer>
+				<key>line</key>
+				<integer>19</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>vendor/plugins/exception_notification/README</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>0</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -122,13 +124,12 @@
 	</dict>
 	<key>openDocuments</key>
 	<array>
-		<string>vendor/gems/thoughtbot-clearance-0.6.7/app/views/users/index.html.erb</string>
-		<string>app/controllers/tutors_controller.rb</string>
-		<string>vendor/gems/thoughtbot-clearance-0.6.7/app/controllers/clearance/users_controller.rb</string>
-		<string>vendor/gems/thoughtbot-clearance-0.6.7/app/views/users/new.html.erb</string>
-		<string>vendor/gems/thoughtbot-clearance-0.6.7/app/views/users/_edit_form.html.erb</string>
-		<string>app/controllers/pages_controller.rb</string>
-		<string>app/views/pages/show.html.erb</string>
+		<string>config/environments/development.rb</string>
+		<string>config/environments/production.rb</string>
+		<string>vendor/plugins/exception_notification/README</string>
+		<string>config/environment.rb</string>
+		<string>vendor/gems/thoughtbot-clearance-0.6.7/app/controllers/clearance/confirmations_controller.rb</string>
+		<string>vendor/gems/thoughtbot-clearance-0.6.7/app/models/clearance_mailer.rb</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<true/>

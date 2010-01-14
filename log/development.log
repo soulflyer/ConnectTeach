@@ -8477,3 +8477,11 @@ Backtrace:
   script/server:3
 
 
+
+
+Processing Clearance::UsersController#new (for 127.0.0.1 at 2009-12-22 20:08:39) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_edit_form (82.2ms)
+Completed in 547ms (View: 242, DB: 0) | 200 OK [http://localhost/users/new]

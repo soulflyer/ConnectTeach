@@ -20,8 +20,7 @@ class Clearance::UsersController < ApplicationController
     render :template => 'users/show'
   end
   
-  def 
-    destroy
+  def destroy
     @user = ::User.find(params[:id])
     @user.destroy
     redirect_to(users_url) 
