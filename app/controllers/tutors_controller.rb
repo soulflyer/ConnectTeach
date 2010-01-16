@@ -113,7 +113,7 @@ class TutorsController < ApplicationController
   
 private
   def must_be_admin
-    if !current_user  .admin?
+    if !current_user.admin?
       flash[:error] = 'Must be admin'
       redirect_to root_url
     end

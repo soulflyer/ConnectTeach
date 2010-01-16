@@ -1,0 +1,31 @@
+/* @override http://localhost:3000/stylesheets/show_tutor.css */
+#left_panel {
+  float: left;
+  padding-right: 12px;
+}
+#left_top {
+  float: left;
+}
+#left_top img {
+  margin-right: 12px;
+}
+#name_age_sex {
+  float: left;
+}
+#tutor_img {
+  float: left;
+}
+#contact_details {
+  float: left;
+  clear: both;
+}
+#experience {
+  float: left;
+}
+p {
+  margin: 0;
+  padding: 0;
+}
+#text {
+  padding-top: 12px;
+}

@@ -1,63 +1,43 @@
-<p>
-  <b>Experience:</b>
-  <%=h @tutor.experience %>
-</p>
+<% @stylesheet = "show_tutor" %>
+<div id="left_panel">
+	<div id="left_top">
+		<div id="tutor_img">
+		  <%= image_tag (@tutor.photo.url(:thumb)) %>
+		</div>
+		<div id="name_age_sex">
+			<p><%= highlight(@tutor.name, @tutor.family_name, :highlighter => '<span class="familyname">\1</span>') %></p>
+			<p><%= @tutor.age %> year old <%= @tutor.sex %></p>
+			<p>Flavour: <%= @tutor.flavour %></p>
+		</div>
+	</div>
+	<div id="contact_details">
+		<p>Phone: <%= @tutor.phone %></p>
+		<p>Email: <%= mail_to(@tutor.User.email) %></p>
+	</div>
+</div>
+<div id="experience">
+	<p>
+	  <b>Experience:</b>
+	  <%=h @tutor.experience %>
+	</p>
 
-<p>
-  <b>Qualifications:</b>
-  <%=h @tutor.qualifications %>
-</p>
+	<p>
+	  <b>Qualifications:</b>
+	  <%=h @tutor.qualifications %>
+	</p>
 
-<p>
-  <b>Course experience:</b>
-  <%=h @tutor.course_experience %>
-</p>
+	<p>
+	  <b>Course experience:</b>
+	  <%=h @tutor.course_experience %>
+	</p>
 
-<p>
-  <b>Textbook experience:</b>
-  <%=h @tutor.textbook_experience %>
-</p>
+	<p>
+	  <b>Textbook experience:</b>
+	  <%=h @tutor.textbook_experience %>
+	</p>
 
-<p>
-  <b>National knowledge:</b>
-  <%=h @tutor.national_knowledge %>
-</p>
-
-<p>
-  <b>Age:</b>
-  <%=h @tutor.age %>
-</p>
-
-<p>
-  <b>Phone:</b>
-  <%=h @tutor.phone %>
-</p>
-
-<p>
-  <b>Sex:</b>
-  <%=h @tutor.sex %>
-</p>
-
-<p>
-  <b>Flavour:</b>
-  <%=h @tutor.flavour %>
-</p>
-
-<p>
-  <b>Given name:</b>
-  <%=h @tutor.given_name %>
-</p>
-
-<p>
-  <b>Family name:</b>
-  <%=h @tutor.family_name %>
-</p>
-
-<p>
-  <b>Given name first:</b>
-  <%=h @tutor.given_name_first %>
-</p>
-
-
-<%= link_to 'Edit', edit_tutor_path(@tutor) %> |
-<%= link_to 'Back', tutors_path %>
+	<p>
+	  <b>National knowledge:</b>
+	  <%=h @tutor.national_knowledge %>
+	</p>
+</div>
