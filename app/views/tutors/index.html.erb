@@ -8,10 +8,14 @@
 	  <td><%=link_to (image_tag (tutor.photo.url(:thumb))), tutor%></td>
     <td><%= highlight(tutor.name, tutor.family_name, :highlighter => '<span class="familyname">\1</span>') %></td>
     <td><%= tutor.age %> year old <%= tutor.sex %></td>
+
     <td>
-	    <% if !(tutor.flavour == "") %>
-        <%= image_tag (Flavour.find_by_name(tutor.flavour).photo.url(:thumb)) %>
-      <% end %>
+      <% begin %>
+	      <% flavour=Flavour.find_by_name(tutor.flavour) %>
+	      <%= image_tag (flavour.photo.url(:thumb)) %>
+	    <% rescue %>
+        Unknown
+	    <% end %>
     </td>
 		<td>
 		  <div id="showeditdestroy#{<%= tutor.name %>}", class="showeditdestroy">
