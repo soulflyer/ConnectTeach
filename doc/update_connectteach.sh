@@ -24,8 +24,10 @@ echo "restoring links to tutor and newsitem images"
 cd ~/public_html/connectteach/public/images/
 rm -r newsitems
 rm -r tutors
+rm -r flavours
 ln -s ~/public_html/connectteach_images/newsitems newsitems
 ln -s ~/public_html/connectteach_images/tutors tutors
+ln -s ~/public_html/connectteach_images/flavours flavours
 echo "Now restart the server"
 # cd ~/public_html/connectteach
 # /usr/bin/ruby /usr/bin/mongrel_rails start -p 12002 -d -e production -P log/mongrel.pid

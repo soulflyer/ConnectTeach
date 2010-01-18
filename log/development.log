@@ -16712,3 +16712,301 @@ ActionController::RoutingError (No route matches "/images/tutors/53/thumb." with
   
 
 Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing PicturesController#index (for 127.0.0.1 at 2010-01-18 17:22:43) [GET]
+  [4;36;1mPicture Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such table: pictures: SELECT * FROM "pictures" [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: pictures: SELECT * FROM "pictures" ):
+  app/controllers/pictures_controller.rb:5:in `index'
+
+Rendering /Users/iain/Sites/connectteach/public/500.html (500 Error)
+rendering section "request"
+Rendered /Users/iain/Sites/connectteach/vendor/plugins/exception_notification/lib/../views/exception_notifier/_request (0.1ms)
+Rendered /Users/iain/Sites/connectteach/vendor/plugins/exception_notification/lib/../views/exception_notifier/_title (0.1ms)
+rendering section "session"
+Rendered /Users/iain/Sites/connectteach/vendor/plugins/exception_notification/lib/../views/exception_notifier/_session (0.2ms)
+Rendered /Users/iain/Sites/connectteach/vendor/plugins/exception_notification/lib/../views/exception_notifier/_title (0.1ms)
+rendering section "environment"
+Rendered /Users/iain/Sites/connectteach/vendor/plugins/exception_notification/lib/../views/exception_notifier/_environment (29.2ms)
+Rendered /Users/iain/Sites/connectteach/vendor/plugins/exception_notification/lib/../views/exception_notifier/_title (0.7ms)
+rendering section "backtrace"
+Rendered /Users/iain/Sites/connectteach/vendor/plugins/exception_notification/lib/../views/exception_notifier/_backtrace (0.4ms)
+Rendered /Users/iain/Sites/connectteach/vendor/plugins/exception_notification/lib/../views/exception_notifier/_title (0.4ms)
+Sent mail to error@connectteach.com
+
+Date: Mon, 18 Jan 2010 17:22:43 +0700
+From: error@connectteach.com
+To: error@connectteach.com
+Subject: [CONNECTTEACH] pictures#index (ActiveRecord::StatementInvalid) "SQLite3::SQLException: no such table: pictures: SELECT * FROM \"pictures\" "
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+A ActiveRecord::StatementInvalid occurred in pictures#index:
+
+  SQLite3::SQLException: no such table: pictures: SELECT * FROM "pictures" 
+  /Library/Ruby/Gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract_adapter.rb:219:in `log'
+
+-------------------------------
+Request:
+-------------------------------
+
+  * URL       : http://localhost:3000/pictures
+  * IP address: 127.0.0.1
+  * Parameters: {"action"=>"index", "controller"=>"pictures"}
+  * Rails root: /Users/iain/Sites/connectteach
+
+-------------------------------
+Session:
+-------------------------------
+
+  * session id: nil
+  * data: nil
+
+-------------------------------
+Environment:
+-------------------------------
+
+  * GATEWAY_INTERFACE                           : CGI/1.2
+  * HTTP_ACCEPT                                 : application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+  * HTTP_ACCEPT_ENCODING                        : gzip, deflate
+  * HTTP_ACCEPT_LANGUAGE                        : en-gb
+  * HTTP_CONNECTION                             : keep-alive
+  * HTTP_COOKIE                                 : _ConnectTeach_session=BAh7CToPc2Vzc2lvbl9pZCIlMjIwMTg4MWE5YzMyYWMzYWVkZDhjOTY1ZWJiYmVhMWY6DHVzZXJfaWRpBjoQX2NzcmZfdG9rZW4iMXNCOWQvNmR4YTM1MmpVdDVoOVROVmRGVjY1cGFCaHcxZG9Call4TWhnN3M9IgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--88c288e43be99d622c947cb61c4896744994f11e
+  * HTTP_HOST                                   : localhost:3000
+  * HTTP_USER_AGENT                             : Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_8; en-gb) AppleWebKit/531.21.8 (KHTML, like Gecko) Version/4.0.4 Safari/531.21.10
+  * HTTP_VERSION                                : HTTP/1.1
+  * PATH_INFO                                   : /pictures
+  * QUERY_STRING                                : 
+  * REMOTE_ADDR                                 : 127.0.0.1
+  * REQUEST_METHOD                              : GET
+  * REQUEST_PATH                                : /pictures
+  * REQUEST_URI                                 : /pictures
+  * SCRIPT_NAME                                 : 
+  * SERVER_NAME                                 : localhost
+  * SERVER_PORT                                 : 3000
+  * SERVER_PROTOCOL                             : HTTP/1.1
+  * SERVER_SOFTWARE                             : Mongrel 1.1.4
+  * action_controller.request.path_parameters   : actionindexcontrollerpictures
+  * action_controller.request.query_parameters  : 
+  * action_controller.request.request_parameters: 
+  * action_controller.rescue.request            : #<ActionController::Request:0x252e4f8>
+  * action_controller.rescue.response           : #<ActionController::Response:0x252e4e4>
+  * rack.errors                                 : #<IO:0x2f7c4>
+  * rack.input                                  : #<StringIO:0x2304434>
+  * rack.multiprocess                           : false
+  * rack.multithread                            : false
+  * rack.request.query_hash                     : 
+  * rack.request.query_string                   : 
+  * rack.run_once                               : false
+  * rack.session                                : 
+  * rack.session.options                        : httponlytruepath/domainkey_session_idexpire_after
+  * rack.url_scheme                             : http
+  * rack.version                                : 01
+  
+  * Process: 1042
+  * Server : soulflyer
+
+-------------------------------
+Backtrace:
+-------------------------------
+
+  /Library/Ruby/Gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract_adapter.rb:219:in `log'
+  /Library/Ruby/Gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/sqlite_adapter.rb:172:in `execute'
+  /Library/Ruby/Gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/sqlite_adapter.rb:417:in `catch_schema_changes'
+  /Library/Ruby/Gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/sqlite_adapter.rb:172:in `execute'
+  /Library/Ruby/Gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/sqlite_adapter.rb:320:in `select'
+  /Library/Ruby/Gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/database_statements.rb:7:in `select_all_without_query_cache'
+  /Library/Ruby/Gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/query_cache.rb:60:in `select_all'
+  /Library/Ruby/Gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/query_cache.rb:81:in `cache_sql'
+  /Library/Ruby/Gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/query_cache.rb:60:in `select_all'
+  /Library/Ruby/Gems/1.8/gems/activerecord-2.3.4/lib/active_record/base.rb:661:in `find_by_sql'
+  /Library/Ruby/Gems/1.8/gems/activerecord-2.3.4/lib/active_record/base.rb:1548:in `find_every'
+  /Library/Ruby/Gems/1.8/gems/activerecord-2.3.4/lib/active_record/base.rb:615:in `find'
+  /Library/Ruby/Gems/1.8/gems/activerecord-2.3.4/lib/active_record/base.rb:635:in `all'
+  [RAILS_ROOT]/app/controllers/pictures_controller.rb:5:in `index'
+  /Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1331:in `send'
+  /Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+  /Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:617:in `call_filters'
+  /Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+  /Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+  /Library/Ruby/Gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+  /Library/Ruby/Gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+  /Library/Ruby/Gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+  /Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+  /Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+  /Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/flash.rb:146:in `perform_action'
+  /Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `send'
+  /Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `process_without_filters'
+  /Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:606:in `process'
+  /Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:391:in `process'
+  /Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:386:in `call'
+  /Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/routing/route_set.rb:437:in `call'
+  /Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:87:in `dispatch'
+  /Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:121:in `_call'
+  /Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+  /Library/Ruby/Gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+  /Library/Ruby/Gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+  /Library/Ruby/Gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+  /Library/Ruby/Gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:9:in `cache'
+  /Library/Ruby/Gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:28:in `call'
+  /Library/Ruby/Gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+  /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+  /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+  /Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/params_parser.rb:15:in `call'
+  /Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/session/cookie_store.rb:93:in `call'
+  /Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/failsafe.rb:26:in `call'
+  /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+  /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+  /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+  /Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:114:in `call'
+  /Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/reloader.rb:34:in `run'
+  /Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:108:in `call'
+  /Library/Ruby/Gems/1.8/gems/rails-2.3.4/lib/rails/rack/static.rb:31:in `call'
+  /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+  /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+  /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+  /Library/Ruby/Gems/1.8/gems/rails-2.3.4/lib/rails/rack/log_tailer.rb:17:in `call'
+  /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+  /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+  /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+  /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+  /Library/Ruby/Gems/1.8/gems/rails-2.3.4/lib/commands/server.rb:111
+  /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+  /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+  script/server:3
+
+
+  [4;36;1mSQL (1.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePages (20090703013813)
+Migrating to ClearanceCreateUsers (20090703013817)
+Migrating to CreateTutors (20090703022556)
+Migrating to AddAttachmentsPhotoToTutor (20090703113902)
+Migrating to AddTutorToUser (20090704060809)
+Migrating to AddRoleToUser (20090707122921)
+Migrating to LoadPagesData (20090709035205)
+Migrating to AddNewsColumnToPages (20091018012613)
+Migrating to AddVntextColumnToPages (20091018053453)
+Migrating to RenameVntextVncontent (20091018054118)
+Migrating to RenameVncontentVietnameseContent (20091018055834)
+Migrating to CreateNewsitems (20091018085601)
+Migrating to AddAttachmentsPhotoToNewsitem (20091018091113)
+Migrating to AddVietnameseContentToNewsitem (20091018102538)
+Migrating to AddMoreStaticPages (20091019203201)
+Migrating to AddExampleNewsitem (20091022064838)
+Migrating to AddLanguageToUser (20091023105856)
+Migrating to AddInitialAdminUser (20091104035939)
+Migrating to AddPhoneAndAddressToTutor (20091114215759)
+Migrating to AddTextileHelpPage (20091115115810)
+Migrating to RemoveNameFromPages (20091115123342)
+Migrating to AddClientsAndTutorsPages (20091117114024)
+Migrating to AddHtmlToPages (20091118180934)
+Migrating to AddClientSubpages (20091120030723)
+Migrating to AddTutorsUserForEmailConfirmations (20091120034746)
+Migrating to CreateFlavours (20100117195443)
+Migrating to CreatePictures (20100118101027)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCREATE TABLE "pictures" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "photo_file_name" varchar(255), "photo_content_type" varchar(255), "photo_file_size" integer, "photo_updated_at" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100118101027')[0m
+  [4;35;1mSQL (0.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("flavours")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("newsitems")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("pages")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("pictures")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("tutors")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_token')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_users_on_email')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_users_on_id_and_token')[0m
+
+
+Processing PicturesController#index (for 127.0.0.1 at 2010-01-18 17:24:05) [GET]
+  [4;35;1mPicture Load (0.6ms)[0m   [0mSELECT * FROM "pictures" [0m
+Rendering template within layouts/pictures
+Rendering pictures/index
+Completed in 487ms (View: 480, DB: 1) | 200 OK [http://localhost/pictures]
+
+
+Processing PicturesController#index (for 127.0.0.1 at 2010-01-18 17:24:47) [GET]
+  [4;36;1mPicture Load (0.7ms)[0m   [0;1mSELECT * FROM "pictures" [0m
+Rendering template within layouts/application
+Rendering pictures/index
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 24ms (View: 15, DB: 1) | 200 OK [http://localhost/pictures]
+
+
+Processing PicturesController#new (for 127.0.0.1 at 2010-01-18 17:24:51) [GET]
+Rendering template within layouts/application
+Rendering pictures/new
+Rendered pictures/_picture_form (97.0ms)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 133ms (View: 122, DB: 0) | 200 OK [http://localhost/pictures/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 17:24:51) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing PicturesController#create (for 127.0.0.1 at 2010-01-18 17:31:28) [POST]
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"sB9d/6dxa352jUt5h9TNVdFV65paBhw1doBjYxMhg7s=", "picture"=>{"photo"=>#<File:/var/folders/y2/y24uraoZE0G5D2TvpD8ym++++TM/-Tmp-/RackMultipart.1042.0>, "name"=>""}}
+  [4;35;1mPicture Create (0.6ms)[0m   [0mINSERT INTO "pictures" ("name", "photo_file_name", "photo_file_size", "updated_at", "photo_updated_at", "photo_content_type", "created_at") VALUES('', 'double.jpg', 40897, '2010-01-18 10:31:29', '2010-01-18 10:31:28', 'image/jpeg', '2010-01-18 10:31:29')[0m
+[paperclip] Saving attachments.
+[paperclip] saving /Users/iain/Sites/connectteach/public/images/pictures/1/original.jpg
+[paperclip] saving /Users/iain/Sites/connectteach/public/images/pictures/1/medium.jpg
+[paperclip] saving /Users/iain/Sites/connectteach/public/images/pictures/1/thumb.jpg
+[paperclip] saving /Users/iain/Sites/connectteach/public/images/pictures/1/small.jpg
+Redirected to http://localhost:3000/pictures/1
+Completed in 1007ms (DB: 1) | 302 Found [http://localhost/pictures]
+
+
+Processing PicturesController#show (for 127.0.0.1 at 2010-01-18 17:31:29) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPicture Load (0.3ms)[0m   [0;1mSELECT * FROM "pictures" WHERE ("pictures"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pictures/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 34ms (View: 25, DB: 1) | 200 OK [http://localhost/pictures/1]
+
+
+Processing PicturesController#show (for 127.0.0.1 at 2010-01-18 17:32:56) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPicture Load (0.5ms)[0m   [0;1mSELECT * FROM "pictures" WHERE ("pictures"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pictures/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 35ms (View: 24, DB: 1) | 200 OK [http://localhost/pictures/1]
+
+
+Processing PicturesController#show (for 127.0.0.1 at 2010-01-18 17:34:20) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPicture Load (0.3ms)[0m   [0;1mSELECT * FROM "pictures" WHERE ("pictures"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering pictures/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 30ms (View: 21, DB: 1) | 200 OK [http://localhost/pictures/1]

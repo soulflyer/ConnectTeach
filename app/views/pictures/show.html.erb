@@ -1,0 +1,16 @@
+<p>
+  <%= image_tag (@picture.photo.url(:thumb)) %>
+  <%= @picture.photo.url(:thumb) %>
+</p>
+<p>
+  <%= image_tag (@picture.photo.url(:small)) %>
+  <%= @picture.photo.url(:small) %>
+</p>
+<p>
+	<%= image_tag (@picture.photo.url(:medium)) %>
+	<%= @picture.photo.url(:medium) %>
+</p>
+<p>
+	<%= image_tag (@picture.photo.url) %>
+	<%= @picture.photo.url %>
+</p>
