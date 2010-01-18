@@ -1,0 +1,9 @@
+<div id="flag_img">
+  <%= image_tag (@flavour.photo.url(:thumb)) %>
+</div>
+<div id="name">
+  <%=h @flavour.name %>
+</div>
+
+<%= link_to 'Edit', edit_flavour_path(@flavour) %> |
+<%= link_to 'Back', flavours_path %>

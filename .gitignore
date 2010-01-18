@@ -1,4 +1,7 @@
 .DS_Store
 log/*.log
 tmp/**/*
+public/images/flags
+public/images/flavours
+public/images/tutors
 db/*.sqlite3

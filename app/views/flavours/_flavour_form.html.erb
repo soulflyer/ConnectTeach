@@ -1,0 +1,14 @@
+<% form_for(@flavour, :html => { :multipart => true }, :builder => TaggedBuilder) do |f| %>
+  <%= f.error_messages %>
+  <div id="form_header"><h1><%= @header %></h1>
+		<%= f.submit 'Save' , :class => "form_submit_button"%>
+	</div>	
+	<div id="left">
+		<%= f.text_field :name %>
+		<fieldset id="photo">
+			<legend>Photo</legend>
+			<%= f.file_field :photo %>
+			<%= image_tag (@flavour.photo.url(:thumb)) %>
+		</fieldset>
+	</div>
+<% end %>

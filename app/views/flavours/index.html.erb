@@ -1,0 +1,22 @@
+<h1>Listing flavours</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+  </tr>
+
+<% @flavours.each do |flavour| %>
+  <tr>
+	  <td><%= image_tag (flavour.photo.url(:thumb)) %></td>
+    <td><%=h flavour.name %></td>
+    <td><%= link_to 'Show', flavour %></td>
+    <td><%= link_to 'Edit', edit_flavour_path(flavour) %></td>
+    <td><%= link_to 'Destroy', flavour, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New flavour', new_flavour_path %>

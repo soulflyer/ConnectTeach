@@ -27,6 +27,7 @@ class TutorsController < ApplicationController
   # GET /tutors/new
   # GET /tutors/new.xml
   def new
+    @flavours = Flavour.all
     if signed_in? && current_user.tutor 
       @tutor = current_user.tutor
     else
@@ -38,6 +39,7 @@ class TutorsController < ApplicationController
 
   # GET /tutors/1/edit
   def edit
+    @flavours = Flavour.all
     if signed_in?
       @tutor = Tutor.find(params[:id])
     else

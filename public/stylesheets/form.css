@@ -1,3 +1,5 @@
+/* @override http://localhost:3000/stylesheets/form.css?1258277650 */
+
 /* @override http://localhost:3000/stylesheets/form.css?1258275411 */
 
 /* @override http://localhost:3000/stylesheets/form.css?1255701903 */
@@ -33,7 +35,11 @@ form input {
   margin: 0;
   padding: 0;
 }
-
+form select {
+  width: 125px;
+  margin: 0;
+  padding: 0;
+}
 form textarea {
   width: 100%;
   height: 57px;

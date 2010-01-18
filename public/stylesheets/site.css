@@ -1,4 +1,4 @@
-/* @override http://localhost:3000/stylesheets/site.css?1256347970 */
+/* @override http://localhost:3000/stylesheets/site.css?1259383085 */
 h1, h2, h3, h4{
   color: #0c7b6b;
   font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
@@ -80,7 +80,7 @@ a:link,  a:visited,  a:active {
   margin: 0;
 }
 #main {
-  background: url(../images/MainBG.gif) repeat-x;
+  background: #fff url(../images/MainBG.gif) repeat-x;
   margin: 0;
   padding: 0;
   position: absolute;

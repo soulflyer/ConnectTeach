@@ -2,43 +2,40 @@
 <h1>Listing tutors</h1>
 
 <table>
-  <tr>
-	  <th></th>
-    <th>Name</th>
-    <th>Age</th>
-    <th>Sex</th>
-    <th>Flavour</th>
-		<th></th>
-  </tr>
 
 <% @tutors.each do |tutor| %>
   <tr class="<%= cycle("even", "odd") %>">
 	  <td><%=link_to (image_tag (tutor.photo.url(:thumb))), tutor%></td>
     <td><%= highlight(tutor.name, tutor.family_name, :highlighter => '<span class="familyname">\1</span>') %></td>
-    <td><%=h tutor.age %></td>
-    <td><%=h tutor.sex %></td>
-    <td><%=h tutor.flavour %></td>
+    <td><%= tutor.age %> year old <%= tutor.sex %></td>
+    <td>
+	    <% if !(tutor.flavour == "") %>
+        <%= image_tag (Flavour.find_by_name(tutor.flavour).photo.url(:thumb)) %>
+      <% end %>
+    </td>
 		<td>
 		  <div id="showeditdestroy#{<%= tutor.name %>}", class="showeditdestroy">
-				<% link_to(tutor) do %>
-					<div id="show", class="button">
-						<p>Show</p>
-					</div>
-			  <% end %>
-				<% if signed_in? && current_user.admin? %>				
-					<% link_to(edit_tutor_path(tutor)) do %>
-						<div id="edit", class="button">
-							<p>Edit</p>
-						</div>
-				  <% end %>
+			  <% if signed_in? && current_user.admin? %>				
 					<% link_to(tutor, :confirm => 'Are you sure?', :method => :delete ) do %>
 						<div id="destroy", class="button">
 							<p>Delete</p>
 						</div>
 				  <% end %>
+				  <% link_to(edit_tutor_path(tutor)) do %>
+						<div id="edit", class="button">
+							<p>Edit</p>
+						</div>
+				  <% end %>
 				<% end %>
+				<% link_to(tutor) do %>
+					<div id="show", class="button">
+						<p>Show</p>
+					</div>
+			  <% end %>
+
 			</div>
     </td>    
   </tr>
 <% end %>
 </table>
+<%= will_paginate @tutors %>
