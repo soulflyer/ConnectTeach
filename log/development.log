@@ -17010,3 +17010,11 @@ Rendering template within layouts/application
 Rendering pictures/show
   [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
 Completed in 30ms (View: 21, DB: 1) | 200 OK [http://localhost/pictures/1]
+
+
+Processing PicturesController#index (for 127.0.0.1 at 2010-01-18 17:48:12) [GET]
+  [4;36;1mPicture Load (0.8ms)[0m   [0;1mSELECT * FROM "pictures" [0m
+Rendering template within layouts/application
+Rendering pictures/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 31ms (View: 24, DB: 1) | 200 OK [http://localhost/pictures]
