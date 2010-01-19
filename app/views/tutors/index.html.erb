@@ -13,15 +13,17 @@
 			  <p><%= mail_to(tutor.User.email) %></p>
 			<% else %>
 			  <p>No associated user</p>
-			<% end %>
+			<% end %>	
     </td>
     <td>
-      <% begin %>
-	      <% flavour=Flavour.find_by_name(tutor.flavour) %>
-	      <%= image_tag (flavour.photo.url(:thumb)) %>
-	    <% rescue %>
-        Unknown
-	    <% end %>
+	    <div id="flavour_image">
+	      <% begin %>
+		      <% flavour=Flavour.find_by_name(tutor.flavour) %>
+		      <%= image_tag (flavour.photo.url(:thumb)) %>
+		    <% rescue %>
+	        ??
+		    <% end %>
+	    </div>
     </td>
 		<td>
 		  <div id="showeditdestroy#{<%= tutor.name %>}", class="showeditdestroy">

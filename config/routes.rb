@@ -18,6 +18,7 @@ ActionController::Routing::Routes.draw do |map|
   map.adults 'adults', :controller => 'pages', :action => 'show', :permalink => 'adults'
   map.parents 'parents', :controller => 'pages', :action => 'show', :permalink => 'parents'
   map.students 'students', :controller => 'pages', :action => 'show', :permalink => 'students'
+  map.admin 'admin', :controller => 'pages', :action => 'show', :permalink => 'admin'
   
   map.resources :pages
   

@@ -17018,3 +17018,848 @@ Rendering template within layouts/application
 Rendering pictures/index
   [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
 Completed in 31ms (View: 24, DB: 1) | 200 OK [http://localhost/pictures]
+
+
+Processing TutorsController#index (for 127.0.0.1 at 2010-01-18 18:39:35) [GET]
+  Parameters: {"page"=>"2"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mTutor Load (2.0ms)[0m   [0mSELECT * FROM "tutors" ORDER BY family_name LIMIT 30 OFFSET 30[0m
+Rendering template within layouts/application
+Rendering tutors/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".tutor_id = 53) LIMIT 1[0m
+  [4;35;1mFlavour Load (0.2ms)[0m   [0mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".tutor_id = 54) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".tutor_id = 55) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".tutor_id = 22) LIMIT 1[0m
+  [4;35;1mFlavour Load (0.3ms)[0m   [0mSELECT * FROM "flavours" WHERE ("flavours"."name" = 'Original') LIMIT 1[0m
+Completed in 71ms (View: 53, DB: 4) | 200 OK [http://localhost/tutors?page=2]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:39:35) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/53/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing TutorsController#index (for 127.0.0.1 at 2010-01-18 18:40:07) [GET]
+  Parameters: {"page"=>"2"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mTutor Load (2.4ms)[0m   [0mSELECT * FROM "tutors" ORDER BY family_name LIMIT 30 OFFSET 30[0m
+Rendering template within layouts/application
+Rendering tutors/index
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".tutor_id = 53) LIMIT 1[0m
+  [4;35;1mFlavour Load (0.3ms)[0m   [0mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".tutor_id = 54) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".tutor_id = 55) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".tutor_id = 22) LIMIT 1[0m
+  [4;35;1mFlavour Load (0.3ms)[0m   [0mSELECT * FROM "flavours" WHERE ("flavours"."name" = 'Original') LIMIT 1[0m
+Completed in 73ms (View: 54, DB: 4) | 200 OK [http://localhost/tutors?page=2]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:40:07) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/53/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-01-18 18:40:43) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (1.4ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered pages/_content_for_newsbar (17.3ms)
+Completed in 63ms (View: 23, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:40:43) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-01-18 18:40:47) [GET]
+  Parameters: {"permalink"=>"tutorinfo"}
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'tutorinfo') LIMIT 1[0m
+  [4;36;1mNewsitem Load (1.2ms)[0m   [0;1mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 32ms (View: 17, DB: 2) | 200 OK [http://localhost/tutorinfo]
+
+
+Processing TutorsController#index (for 127.0.0.1 at 2010-01-18 18:40:49) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mTutor Load (8.7ms)[0m   [0mSELECT * FROM "tutors" ORDER BY family_name LIMIT 30 OFFSET 0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "tutors" [0m
+Rendering template within layouts/application
+Rendering tutors/index
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users".tutor_id = 23) LIMIT 1[0m
+  [4;36;1mFlavour Load (0.2ms)[0m   [0;1mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users".tutor_id = 24) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users".tutor_id = 25) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users".tutor_id = 26) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users".tutor_id = 27) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users".tutor_id = 28) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users".tutor_id = 29) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users".tutor_id = 30) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users".tutor_id = 31) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users".tutor_id = 32) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users".tutor_id = 33) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users".tutor_id = 34) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users".tutor_id = 35) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users".tutor_id = 36) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users".tutor_id = 37) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users".tutor_id = 38) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users".tutor_id = 39) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users".tutor_id = 40) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users".tutor_id = 41) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users".tutor_id = 42) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users".tutor_id = 43) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users".tutor_id = 44) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users".tutor_id = 45) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users".tutor_id = 46) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users".tutor_id = 47) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users".tutor_id = 48) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users".tutor_id = 49) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users".tutor_id = 50) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users".tutor_id = 51) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users".tutor_id = 52) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+Completed in 245ms (View: 207, DB: 16) | 200 OK [http://localhost/tutors]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:40:50) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/23/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:40:50) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/25/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:40:50) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/24/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:40:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/26/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:40:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/27/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:40:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/28/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:40:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/29/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:40:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/30/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:40:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/31/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:40:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/32/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:40:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/33/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:40:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/34/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:40:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/35/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:40:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/36/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:40:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/37/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:40:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/38/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:40:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/39/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:40:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/40/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:40:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/41/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:40:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/42/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:40:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/43/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:40:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/44/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:40:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/45/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:40:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/46/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:40:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/47/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:40:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/48/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:40:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/49/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:40:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/50/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:40:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/51/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:40:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/52/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing TutorsController#index (for 127.0.0.1 at 2010-01-18 18:43:17) [GET]
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mTutor Load (9.1ms)[0m   [0;1mSELECT * FROM "tutors" ORDER BY family_name LIMIT 30 OFFSET 0[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "tutors" [0m
+Rendering template within layouts/application
+Rendering tutors/index
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".tutor_id = 23) LIMIT 1[0m
+  [4;35;1mFlavour Load (0.2ms)[0m   [0mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".tutor_id = 24) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".tutor_id = 25) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".tutor_id = 26) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".tutor_id = 27) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".tutor_id = 28) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".tutor_id = 29) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".tutor_id = 30) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".tutor_id = 31) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".tutor_id = 32) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".tutor_id = 33) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".tutor_id = 34) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".tutor_id = 35) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".tutor_id = 36) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".tutor_id = 37) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".tutor_id = 38) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".tutor_id = 39) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".tutor_id = 40) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".tutor_id = 41) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".tutor_id = 42) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".tutor_id = 43) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".tutor_id = 44) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".tutor_id = 45) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".tutor_id = 46) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".tutor_id = 47) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".tutor_id = 48) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".tutor_id = 49) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".tutor_id = 50) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".tutor_id = 51) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".tutor_id = 52) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+Completed in 248ms (View: 206, DB: 15) | 200 OK [http://localhost/tutors]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:43:17) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/25/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:43:18) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/23/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:43:18) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/24/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:43:18) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/26/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:43:18) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/27/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:43:18) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/28/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:43:18) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/29/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:43:18) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/30/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:43:18) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/31/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:43:18) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/32/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:43:18) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/33/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:43:18) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/35/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:43:18) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/34/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:43:18) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/36/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:43:18) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/37/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:43:18) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/38/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:43:18) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/39/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:43:18) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/40/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:43:18) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/41/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:43:18) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/42/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:43:18) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/43/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:43:18) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/44/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:43:18) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/45/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:43:18) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/46/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:43:18) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/47/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:43:18) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/48/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:43:19) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/49/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:43:19) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/50/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:43:19) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/51/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:43:19) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/52/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing TutorsController#index (for 127.0.0.1 at 2010-01-18 18:43:37) [GET]
+  Parameters: {"page"=>"2"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mTutor Load (2.0ms)[0m   [0mSELECT * FROM "tutors" ORDER BY family_name LIMIT 30 OFFSET 30[0m
+Rendering template within layouts/application
+Rendering tutors/index
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".tutor_id = 53) LIMIT 1[0m
+  [4;35;1mFlavour Load (0.3ms)[0m   [0mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".tutor_id = 54) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".tutor_id = 55) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".tutor_id = 22) LIMIT 1[0m
+  [4;35;1mFlavour Load (0.3ms)[0m   [0mSELECT * FROM "flavours" WHERE ("flavours"."name" = 'Original') LIMIT 1[0m
+Completed in 141ms (View: 48, DB: 4) | 200 OK [http://localhost/tutors?page=2]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:43:37) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/53/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing TutorsController#index (for 127.0.0.1 at 2010-01-18 18:52:23) [GET]
+  Parameters: {"page"=>"2"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mTutor Load (2.1ms)[0m   [0mSELECT * FROM "tutors" ORDER BY family_name LIMIT 30 OFFSET 30[0m
+Rendering template within layouts/application
+Rendering tutors/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".tutor_id = 53) LIMIT 1[0m
+  [4;35;1mFlavour Load (0.2ms)[0m   [0mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".tutor_id = 54) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".tutor_id = 55) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "flavours" WHERE ("flavours"."name" = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".tutor_id = 22) LIMIT 1[0m
+  [4;35;1mFlavour Load (0.3ms)[0m   [0mSELECT * FROM "flavours" WHERE ("flavours"."name" = 'Original') LIMIT 1[0m
+Completed in 71ms (View: 52, DB: 4) | 200 OK [http://localhost/tutors?page=2]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-18 18:52:23) [GET]
+
+ActionController::RoutingError (No route matches "/images/tutors/53/thumb." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePages (20090703013813)
+Migrating to ClearanceCreateUsers (20090703013817)
+Migrating to CreateTutors (20090703022556)
+Migrating to AddAttachmentsPhotoToTutor (20090703113902)
+Migrating to AddTutorToUser (20090704060809)
+Migrating to AddRoleToUser (20090707122921)
+Migrating to LoadPagesData (20090709035205)
+Migrating to AddNewsColumnToPages (20091018012613)
+Migrating to AddVntextColumnToPages (20091018053453)
+Migrating to RenameVntextVncontent (20091018054118)
+Migrating to RenameVncontentVietnameseContent (20091018055834)
+Migrating to CreateNewsitems (20091018085601)
+Migrating to AddAttachmentsPhotoToNewsitem (20091018091113)
+Migrating to AddVietnameseContentToNewsitem (20091018102538)
+Migrating to AddMoreStaticPages (20091019203201)
+Migrating to AddExampleNewsitem (20091022064838)
+Migrating to AddLanguageToUser (20091023105856)
+Migrating to AddInitialAdminUser (20091104035939)
+Migrating to AddPhoneAndAddressToTutor (20091114215759)
+Migrating to AddTextileHelpPage (20091115115810)
+Migrating to RemoveNameFromPages (20091115123342)
+Migrating to AddClientsAndTutorsPages (20091117114024)
+Migrating to AddHtmlToPages (20091118180934)
+Migrating to AddClientSubpages (20091120030723)
+Migrating to AddTutorsUserForEmailConfirmations (20091120034746)
+Migrating to CreateFlavours (20100117195443)
+Migrating to CreatePictures (20100118101027)
+Migrating to AddAdminPage (20100119082925)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePages (20090703013813)
+Migrating to ClearanceCreateUsers (20090703013817)
+Migrating to CreateTutors (20090703022556)
+Migrating to AddAttachmentsPhotoToTutor (20090703113902)
+Migrating to AddTutorToUser (20090704060809)
+Migrating to AddRoleToUser (20090707122921)
+Migrating to LoadPagesData (20090709035205)
+Migrating to AddNewsColumnToPages (20091018012613)
+Migrating to AddVntextColumnToPages (20091018053453)
+Migrating to RenameVntextVncontent (20091018054118)
+Migrating to RenameVncontentVietnameseContent (20091018055834)
+Migrating to CreateNewsitems (20091018085601)
+Migrating to AddAttachmentsPhotoToNewsitem (20091018091113)
+Migrating to AddVietnameseContentToNewsitem (20091018102538)
+Migrating to AddMoreStaticPages (20091019203201)
+Migrating to AddExampleNewsitem (20091022064838)
+Migrating to AddLanguageToUser (20091023105856)
+Migrating to AddInitialAdminUser (20091104035939)
+Migrating to AddPhoneAndAddressToTutor (20091114215759)
+Migrating to AddTextileHelpPage (20091115115810)
+Migrating to RemoveNameFromPages (20091115123342)
+Migrating to AddClientsAndTutorsPages (20091117114024)
+Migrating to AddHtmlToPages (20091118180934)
+Migrating to AddClientSubpages (20091120030723)
+Migrating to AddTutorsUserForEmailConfirmations (20091120034746)
+Migrating to CreateFlavours (20100117195443)
+Migrating to CreatePictures (20100118101027)
+Migrating to AddAdminPage (20100119082925)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mPage Create (0.6ms)[0m   [0mINSERT INTO "pages" ("permalink", "html", "updated_at", "English_content", "Vietnamese_content", "news", "created_at") VALUES('admin', NULL, '2010-01-19 08:42:19', 'Go to ConnectTeach/static/admin/edit to edit this page...', NULL, NULL, '2010-01-19 08:42:19')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100119082925')[0m
+  [4;35;1mSQL (0.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("flavours")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("newsitems")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("pages")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("pictures")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("tutors")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_token')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_email')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_users_on_id_and_token')[0m
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-01-19 16:53:43) [GET]
+  Parameters: {"permalink"=>"admin"}
+  [4;36;1mPage Load (0.8ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'admin') LIMIT 1[0m
+  [4;35;1mNewsitem Load (1.4ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 34ms (View: 15, DB: 3) | 200 OK [http://localhost/admin]
