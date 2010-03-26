@@ -1,3 +1,5 @@
+/* @override http://localhost:3000/stylesheets/footer.css?1255629001 */
+
 /* @override http://soulflyer.com/cthtml/css/footer.css */
 
 #footer {
@@ -14,18 +16,18 @@
   padding: 0;
 }
 #copyright {
-  bottom: 15px;
-  left: 700px;
+  bottom: 9px;
+  left: 420px;
 }
 #graphics {
-  color: #ffffff;
-  left: 800px;
-  top: 16px;	
+  color: #e0e0e0;
+  left: 520px;
+  top: 3px;	
 }
 #design {
-  color: #ffffff;
-  left: 802px;
-  bottom: 8px;
+  color: #e0e0e0;
+  left: 522px;
+  top: 14px;
 }
 #footer a:link, #footer a:visited, #footer a:active {
   color: #ffffff;

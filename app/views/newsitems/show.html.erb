@@ -3,7 +3,7 @@
 <% if signed_in? && current_user.admin? %>
 	<% content_for :edit_this_page_button do %>
 		<% link_to (edit_newsitem_path(@newsitem.id)) do %>
-		  <div id="editbutton", class="button">
+		  <div id="editbutton", class="extrabutton">
 		  	<p>Edit this page</p>
 		  </div>
 		<% end %>

@@ -1,0 +1,111 @@
+/* @override http://localhost:3000/stylesheets/sidemenu.css?1269593953 */
+
+/* @override http://localhost:3000/stylesheets/sidemenu.css?1269593437 */
+
+/* @override http://localhost:3000/stylesheets/sidemenu.css?1269592269 */
+
+#menu {
+  width: 171px;
+  height: 400px;
+  float: none;
+  background-color: #c5c7c8;
+  padding-bottom: 20010px;  /* X + padding-bottom */
+  margin-bottom: -20000px;  /* X */
+}
+#menu a:link, #menu a:visited, #menu a:active {
+  color: #462614;
+  text-decoration: none;
+}
+a:hover .button {
+}
+a:hover #coursebutton {
+}
+.button {
+  background: url(../images/menubuttonbackground.png) no-repeat;
+
+  width: 173px;
+  height: 22px;
+  color: white;
+  margin: 0 0 2px;
+  text-transform: uppercase;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+.button p {
+  overflow: hidden;
+  text-align: center;
+  font-size: 12px;
+  margin: 0;
+  padding: 3px 0 0;
+  visibility: hidden;
+}
+#menuheader {
+  height: 27px;
+  background: url(../images/connectteach.png) no-repeat;
+  text-transform: capitalize;
+  padding-bottom: 2px;
+  margin-top: 1px;
+}
+#menuheader p {
+  padding-top: 7px;
+}
+#homebutton {
+  background: url(../images/homebutton.png) no-repeat;
+
+}
+#clientbutton {
+  background: url(../images/clientbutton.png) no-repeat;
+}
+#tutorbutton {
+  background: url(../images/tutorsbutton.png) no-repeat;
+}
+#coursebutton {
+  background: url(../images/coursesbutton.png) no-repeat;
+}
+#aboutbutton {
+  background: url(../images/aboutusbutton.png) no-repeat;
+}
+#contactbutton {
+  background: url(../images/contactbutton.png) no-repeat;
+}
+#visitor {
+  height: 27px;
+  background: url(../images/visitorbutton.png) no-repeat;
+  margin-top: 3px;
+}
+
+.extrabutton {
+  margin: 0;
+  padding: 0;
+  color: #f0f0f0;
+  font-size: 11px;
+  width: 100px;
+  float: left;
+}
+
+.extrabutton p {
+  margin: 0;
+  padding: 0;
+}
+
+#button1 {
+  top: -14px;
+  right: 85px;
+  visibility: visible;
+}
+#button2 {
+  right: 165px;
+  top: -14px;
+  visibility: visible;
+}
+#button3 {
+  top: -14px;
+  right: 245px;
+  visibility: visible;
+}
+#button4 {
+  right: 325px;
+  top: -14px;
+  visibility: visible;
+}

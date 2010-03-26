@@ -8,8 +8,8 @@
 	<meta name="generator" content="TextMate http://macromates.com/">
 	<meta name="author" content="Iain Wood, railsiain.com">
 	<%= stylesheet_link_tag 'condelastic' %>
-	<%= stylesheet_link_tag 'site' %>
-	<%= stylesheet_link_tag 'menu' %>
+	<%= stylesheet_link_tag 'newsite' %>
+	<%= stylesheet_link_tag 'sidemenu' %>
 	<%= stylesheet_link_tag 'footer' %>
   <% if @stylesheet %>
 	  <% for sh in @stylesheet %>
@@ -25,66 +25,14 @@
 			</div>
 			<div id="logo">	
 			</div>
-			<div id="login">
-				<div id="loginlogo">
-				</div>
-				<% if signed_in? %>
-				  <% user=current_user %>
-					<div id="loggedinas">
-						<p>Logged in as: </p>
-					  <p><%= user.email %></p>
-					</div>
-					<% link_to(:controller => 'clearance/sessions', :action => 'destroy') do %>	
-					<div id="logoutbutton">
-						<p>Logout</p>
-					</div>
-					<% end %>
-				<% else %>
-					<% link_to(:controller => 'clearance/sessions', :action => 'new') do %>
-					<div id="loginbutton">
-						<p>Login</p>
-					</div>
-					<% end %>
-				<% end %>
-				<div id="flash">
-					<p style="color: green">
-						<%= flash[:notice] %>
-						<%= flash[:sucess] %>
-					</p>
-					<p style="color: red">
-						<%= flash[:error] %>
-						<%= flash[:failure] %>
-					</p>
-        </div>
-			</div>
+			
+		</div>
+		<div id="main">
+			
+			<%= yield :newsbar %>
 			<div id="menu">
-				<% link_to (contact_path) do %>
-				<div id="contactbutton" class="button">
-					<p>Contact</p>
-				</div>
-				<% end %>
-				
-				<% link_to(about_path) do %>
-				<div id="aboutbutton" class="button">
-					<p>About</p>
-				</div>
-				<% end %>
-				
-				<% link_to(courses_path) do %>
-				<div id="coursebutton" class="button">
-					<p>Courses & Programs</p>
-				</div>
-				<% end %>
-				
-				<% link_to(tutorinfo_path) do %>		
-		    <div id="tutorbutton" class="button">
-					<p>Tutors</p>
-				</div>
-		    <% end %>
-		
-				<% link_to(clientinfo_path) do %>
-				<div id="clientbutton" class="button">
-					<p>Clients</p>
+				<% link_to (root_path) do %>
+				<div id="menuheader" class="button">
 				</div>
 				<% end %>
 				
@@ -93,15 +41,49 @@
 					<p>Home</p>
 				</div>
 				<% end %>
+								
+				<% link_to(about_path) do %>
+				<div id="aboutbutton" class="button">
+					<p>About</p>
+				</div>
+				<% end %>
+								
+				<% link_to(tutorinfo_path) do %>		
+		    <div id="tutorbutton" class="button">
+					<p>Tutors</p>
+				</div>
+		    <% end %>
+		
+		    <% link_to(courses_path) do %>
+				<div id="coursebutton" class="button">
+					<p>Courses & Programs</p>
+				</div>
+				<% end %>
+				
+				<% link_to(clientinfo_path) do %>
+				<div id="clientbutton" class="button">
+					<p>Clients</p>
+				</div>
+				<% end %>
+				
+				<% link_to (contact_path) do %>
+				<div id="contactbutton" class="button">
+					<p>Contact</p>
+				</div>
+				<% end %>
+				
+				<div id="visitor" class="button">
+					<p></p>
+				</div>
+				
 				
 			</div>
-		</div>
-		<div id="main">
-			<%= yield :newsbar %>
 			<div id="text">
 				<%= yield :edit_this_page_button %>
 				<%= yield  %>
 			</div>
+
+			
 			<div id="footer">
 				<div id="copyright">
 				<p>	ⓒ ConnectTeach</p>

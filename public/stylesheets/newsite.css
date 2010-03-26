@@ -1,0 +1,90 @@
+/* @override http://localhost:3000/stylesheets/newsite.css?1269590428 */
+h1, h2, h3, h4{
+  color: #0c7b6b;
+  font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+}
+h1 {
+  font-size: 28px;
+  font-weight: normal;
+  font-style: normal;
+}
+h3 {
+  font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+  background-color: #d1d3d4;
+}
+
+#header {
+  position: relative;  
+}
+#banner {
+  height: 223px;
+  margin: 0;
+  padding: 0;
+  background-image: url(../images/header.png);
+}
+#logo {
+  position: absolute;
+  left: 780px;
+  top: 26px;
+  height: 116px;
+  width: 157px;
+  background: url(../images/Logo.png) no-repeat;
+  visibility: hidden;
+}
+
+#details {
+  background-color: #ffcaa8;  
+}
+a:link,  a:visited,  a:active {
+  color: #000	;
+  text-decoration: none;
+}
+
+#main {
+  background: url(../images/topbar.png) no-repeat;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  width: 1024px;
+  overflow: hidden;
+}
+#text {
+  font-size: 14px;
+  color: #6e5973;
+  text-align: justify;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  margin: 0 25px 0 200px;
+}
+#text p {
+  top: 0;
+}
+#text.narrow {
+  width: 700px;
+}
+#text img.large {
+  width: 400px;
+  float: left;
+  margin-right: 20px;
+}
+ 
+#footer {
+  height: 28px;
+  background: url(../images/Footerbar.png) no-repeat center;
+  clear: both;
+  position: relative;
+}
+
+img {
+	border: 0px;
+}

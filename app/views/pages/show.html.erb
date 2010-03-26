@@ -8,7 +8,7 @@
 <% if signed_in? && current_user.admin? %>
 	<% content_for :edit_this_page_button do %>
 	  <% link_to (static_edit_path(@page.permalink)) do %>
-	  <div id="editbutton" class="button">
+	  <div id="editbutton" class="extrabutton">
 			<p>Edit this page</p>
 		</div>
 	  <% end %>
@@ -19,27 +19,27 @@
   <% if signed_in? %>
     <% if current_user.tutor_id %>
 	    <% link_to(:controller => '/tutors', :action => 'edit', :id => current_user.tutor_id) do %>	
-		  <div id="button1", class="button">
-		  	<p>Profile</p>
+		  <div id="button1", class="extrabutton">
+		  	<p>Edit my profile</p>
 		  </div>
 		  <% end %>
 		<% else %>
 		  <% link_to(:controller => '/tutors', :action => 'new') do %>	
-		  <div id="button1", class="button">
+		  <div id="button1", class="extrabutton">
 		  	<p>Profile</p>
 		  </div>
 		  <% end %>
 		<% end %>
 		<% if current_user.admin? %>
 		  <% link_to(:controller => '/tutors', :action => 'index') do %>	
-		  <div id="button2", class="button">
-		  	<p>Tutors</p>
+		  <div id="button2", class="extrabutton">
+		  	<p>List tutors</p>
 		  </div>
 		  <% end %>
 		<% end %>
   <% else %>
     <% link_to(:controller => 'clearance/sessions', :action => 'new') do %>
-    <div id="button1", class="button">
+    <div id="button1", class="extrabutton">
     	<p>Login</p>
     </div>
     <% end %>

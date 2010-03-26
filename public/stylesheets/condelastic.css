@@ -1,10 +1,12 @@
+/* @override http://localhost:3000/stylesheets/condelastic.css?1255628956 */
+
 body {margin: 0; padding: 0; }
 
 #wrapper {
   width: 99%;
   overflow: hidden;
-  max-width: 1000px;
-  min-width: 1000px;
+  max-width: 1024px;
+  min-width: 1024px;
   margin-right: auto;
   margin-left: auto;
 }

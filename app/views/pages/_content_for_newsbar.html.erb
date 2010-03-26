@@ -1,23 +1,76 @@
 <% content_for :newsbar do %>
-	<div id="news">
-		<h1>News</h1>
-		<% if signed_in? && current_user.admin? %>
-		  <% link_to (newsitems_path) do %>
-		  <div id="editnewsitemsbutton" class="button">
-				<p>Edit newsitems</p>
+	<div id="newsbar">	
+		<div id="login">
+			<div id="loginlogo">
 			</div>
-		  <% end %>
-		<% end %>
-		<% @newsitems.each do |newsitem| %>
-		  <% link_to  (newsitem_path(newsitem.id)) do %>
-				<div class="item">
-				  <div id="image">
-					  <%= image_tag (newsitem.photo.url(:small)) %>
-				  </div>
-				  <h3><%= newsitem.title %></h3>
-				  <%= textilize newsitem.English_content %>
+	    <div id=loginpanel>			
+				<% if signed_in? %>
+				  <% user=current_user %>
+					<div id="loggedinas">
+						<p>Logged in as: </p>
+					  <p><%= user.email %></p>
+					</div>
+					<% link_to(:controller => 'clearance/sessions', :action => 'destroy') do %>	
+					<div id="logoutbutton">
+						<p>Logout</p>
+					</div>
+					<% end %>
+				<% else %>
+					<% form_for :session, :url => session_path, :builder => TaggedBuilder do |form| %>
+					  <%= form.text_field :email %>  
+					  <%= form.password_field :password %>
+					  <p>
+						  <%= form.label :remember_me %>
+					    <%= form.check_box :remember_me %>
+					  </p>
+					  <%= form.submit "Sign in", :disable_with => "Please wait...", :class => "form_submit_button" %>
+					<% end %>
+					<% link_to(new_user_path) do %>
+					<div id="sign_up">
+						<p>Register</p>
+					</div>
+					<% end %>
+					<% link_to(new_password_path) do %>
+					<div id="new_password">
+						<p>Forgot password</p>
+					</div>
+					<% end %>
+				<% end %>
+				<div id="flash">
+					<p style="color: green">
+						<%= flash[:notice] %>
+						<%= flash[:sucess] %>
+					</p>
+					<p style="color: red">
+						<%= flash[:error] %>
+						<%= flash[:failure] %>
+					</p>
+			  </div>
+
+	    </div>
+		</div>
+		<div id="news">
+			<div id="newsheader">
+				<h1>News</h1>			
+			</div>
+			<% if signed_in? && current_user.admin? %>
+			  <% link_to (newsitems_path) do %>
+			  <div id="editnewsitemsbutton" class="extrabutton">
+					<p>Edit newsitems</p>
 				</div>
-		  <% end %>
-		<% end %>
+			  <% end %>
+			<% end %>
+			<% @newsitems.each do |newsitem| %>
+			  <% link_to  (newsitem_path(newsitem.id)) do %>
+					<div class="item">
+					  <div id="image">
+						  <%= image_tag (newsitem.photo.url(:small)) %>
+					  </div>
+					  <h3><%= newsitem.title %></h3>
+					  <%= textilize newsitem.English_content %>
+					</div>
+			  <% end %>
+			<% end %>
+		</div>
 	</div>
 <% end %>
