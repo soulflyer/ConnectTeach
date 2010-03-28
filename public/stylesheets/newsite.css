@@ -1,3 +1,5 @@
+/* @override http://localhost:3000/stylesheets/newsite.css?1269596486 */
+
 /* @override http://localhost:3000/stylesheets/newsite.css?1269590428 */
 h1, h2, h3, h4{
   color: #0c7b6b;
@@ -61,10 +63,12 @@ a:link,  a:visited,  a:active {
   font-size: 14px;
   color: #6e5973;
   text-align: justify;
-  padding: 0;
+  padding: 0 12px 0 0;
   position: absolute;
   top: 0;
-  margin: 0 25px 0 200px;
+  overflow: auto;
+  height: 400px;
+  margin: 15px 0 0 200px;
 }
 #text p {
   top: 0;
