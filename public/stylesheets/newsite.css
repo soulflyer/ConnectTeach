@@ -69,6 +69,7 @@ a:link,  a:visited,  a:active {
   overflow: auto;
   height: 400px;
   margin: 15px 0 0 200px;
+  width: 620px;
 }
 #text p {
   top: 0;
