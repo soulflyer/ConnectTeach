@@ -1,9 +1,9 @@
-/* @override http://localhost:3000/stylesheets/newsbar.css?1269592177 */
+/* @override http://localhost:3000/stylesheets/newsbar.css?1269847657 */
 
-/* @override http://localhost:3000/stylesheets/newsbar.css?1269590813 */
+/* @override http://localhost:3000/stylesheets/newsbar.css?1269594080 */
 
 #text {
-  margin-right: 260px;
+  width: 620px;
 }
 
 #newsbar {
@@ -65,8 +65,7 @@ div.item p {
   right: 200px;
 }
 a:hover #editnewsitemsbutton{
-  background: url(../images/HoverButtonLarge.png) no-repeat;
-}
+  }
 #image img {
   border: 0px;
 }

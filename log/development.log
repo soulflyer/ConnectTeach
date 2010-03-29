@@ -30297,3 +30297,185 @@ ActionController::RoutingError (No route matches "/photos/small/missing.png" wit
   
 
 Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing NewsitemsController#index (for 127.0.0.1 at 2010-03-29 14:10:07) [GET]
+  [4;36;1mNewsitem Load (2.3ms)[0m   [0;1mSELECT * FROM "newsitems" [0m
+Rendering template within layouts/application
+Rendering newsitems/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 217ms (View: 167, DB: 3) | 200 OK [http://localhost/newsitems]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-29 14:10:07) [GET]
+
+ActionController::RoutingError (No route matches "/photos/thumb/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-03-29 15:11:25) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPage Load (10.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 2) [0m
+  [4;35;1mNewsitem Load (0.6ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered pages/_content_for_newsbar (95.8ms)
+Completed in 140ms (View: 108, DB: 11) | 200 OK [http://localhost/pages/2]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-29 15:11:26) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-29 15:11:26) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-03-29 15:19:03) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;35;1mPage Load (9.8ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.6ms)[0m   [0;1mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (50.3ms)
+Completed in 89ms (View: 58, DB: 10) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-29 15:19:04) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2010-03-29 15:19:26) [POST]
+  Parameters: {"commit"=>"Sign in", "session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "email"=>"admin@connectteach.com"}, "action"=>"create", "authenticity_token"=>"RINowcwuWKk7pMGFpE2AhxpZFtllPWVu7ZkoYhwQVkY=", "controller"=>"clearance/sessions"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'admin@connectteach.com') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 67ms (DB: 0) | 302 Found [http://localhost/session]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-03-29 15:19:27) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.6ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered pages/_content_for_newsbar (16.5ms)
+Completed in 37ms (View: 23, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-29 15:19:27) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-29 15:19:27) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-03-29 15:19:32) [GET]
+  Parameters: {"permalink"=>"tutorinfo"}
+  [4;35;1mPage Load (20.0ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'tutorinfo') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.6ms)[0m   [0;1mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 49ms (View: 16, DB: 21) | 200 OK [http://localhost/tutorinfo]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-03-29 15:19:38) [GET]
+  Parameters: {"permalink"=>"courses"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'courses') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.6ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 28ms (View: 14, DB: 1) | 200 OK [http://localhost/courses]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-03-29 15:19:42) [GET]
+  Parameters: {"permalink"=>"clientinfo"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'clientinfo') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.6ms)[0m   [0;1mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 26ms (View: 13, DB: 1) | 200 OK [http://localhost/clientinfo]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-03-29 15:22:18) [GET]
+  Parameters: {"permalink"=>"courses"}
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'courses') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.6ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 28ms (View: 14, DB: 1) | 200 OK [http://localhost/courses]
+
+
+Processing PagesController#edit (for 127.0.0.1 at 2010-03-29 15:22:19) [GET]
+  Parameters: {"permalink"=>"courses"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'courses') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/edit
+Rendered pages/_page_form (22.2ms)
+Completed in 36ms (View: 27, DB: 0) | 200 OK [http://localhost/static/courses/edit]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-03-29 15:26:24) [GET]
+  Parameters: {"permalink"=>"courses"}
+  [4;36;1mPage Load (0.5ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'courses') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.6ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 106ms (View: 14, DB: 2) | 200 OK [http://localhost/courses]
+
+
+Processing PagesController#edit (for 127.0.0.1 at 2010-03-29 15:26:29) [GET]
+  Parameters: {"permalink"=>"courses"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'courses') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/edit
+Rendered pages/_page_form (10.2ms)
+Completed in 23ms (View: 16, DB: 0) | 200 OK [http://localhost/static/courses/edit]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-03-29 15:32:09) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.6ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered pages/_content_for_newsbar (16.4ms)
+Completed in 38ms (View: 24, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-29 15:32:09) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
