@@ -1,4 +1,4 @@
-/* @override http://localhost:3000/stylesheets/newsite.css?1269759705 */
+/* @override http://localhost:3000/stylesheets/newsite.css?1269851522 */
 h1, h2, h3, h4{
   color: #0c7b6b;
   font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
@@ -86,6 +86,9 @@ a:link,  a:visited,  a:active {
   background: url(../images/Footerbar.png) no-repeat center;
   clear: both;
   position: relative;
+}
+.title_picture {
+  margin-top: 12px;
 }
 
 img {

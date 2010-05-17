@@ -1,11 +1,11 @@
-/* @override http://localhost:3000/stylesheets/pagesform.css?1258544659 */
+/* @override http://localhost:3000/stylesheets/pagesform.css?1258608024 */
 
 form p {
-  width: 410px;
+  width: 380px;
   text-align: left;
 }
 textarea {
-  width:410px
+  width:380px
 }
 
 #left {
@@ -13,11 +13,12 @@ textarea {
   clear: both;
 }
 #right {
-  float: left;
+  float: right;
+  clear: none;
 }
 
 #text {
-  height: 600px;
+  height: 400px;
 }
 #textilehelp_button {
     top: 23px;
