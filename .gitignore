@@ -4,4 +4,6 @@ tmp/**/*
 public/images/flags
 public/images/flavours
 public/images/tutors
+public/images/newsitems
+public/images/titles
 db/*.sqlite3
