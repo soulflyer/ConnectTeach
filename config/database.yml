@@ -19,7 +19,7 @@ production:
   adapter: mysql
   encoding: utf8
   reconnect: false
-  database: jphuquoc_connectteach
+  database: jphuquoc_connectteach2
   pool: 5
   username: jphuquoc_connect
   password: geek

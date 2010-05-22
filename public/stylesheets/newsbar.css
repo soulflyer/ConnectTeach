@@ -1,6 +1,4 @@
-/* @override http://localhost:3000/stylesheets/newsbar.css?1269847657 */
-
-/* @override http://localhost:3000/stylesheets/newsbar.css?1269594080 */
+/* @override http://localhost:3000/stylesheets/newsbar.css?1269851590 */
 
 #text {
   width: 620px;
@@ -43,13 +41,27 @@ div.item p {
   font-size: xx-small;
 }
 
-#image {
+#news_item_image {
   width: 60px;
   height: 40px;
   background-image: url(../images/newspicshadow.png);
   padding: 0;
   float: left;
   margin: 0 8px 0 0;
+  overflow: hidden;
+}
+
+#news_item_image img {
+  border: 0px;
+}
+
+#news_item_text {
+  float: right;
+  width: 96px;
+  height: 40px;
+  overflow: hidden;
+  padding: 0 4px 0 0;
+  margin: 0;
 }
 #news h1,#news h2,#news h3,#news h4{
   color: #0c7b6b;
@@ -66,9 +78,6 @@ div.item p {
 }
 a:hover #editnewsitemsbutton{
   }
-#image img {
-  border: 0px;
-}
 #login {
   height: 120px;
 }
@@ -80,7 +89,7 @@ a:hover #editnewsitemsbutton{
   margin: 0 0 2px;
 }
 #loginpanel {
-  background: url(../images/loginpanelcorporate.png) no-repeat;
+  background: url(../images/login_orange.png) no-repeat;
   height: 105px;
   width: 171px;
   margin: 0 0 2px;

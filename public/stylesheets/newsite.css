@@ -1,4 +1,8 @@
-/* @override http://localhost:3000/stylesheets/newsite.css?1269851522 */
+/* @override http://localhost:3000/stylesheets/newsite.css?1274369120 */
+
+/* @override http://localhost:3000/stylesheets/newsite.css?1274368132 */
+
+/* @override http://localhost:3000/stylesheets/newsite.css?1274173237 */
 h1, h2, h3, h4{
   color: #0c7b6b;
   font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
@@ -41,6 +45,22 @@ body {
   visibility: hidden;
 }
 
+#english_flag {
+  position: absolute;
+  left: 898px;
+  top: 24px;
+  height: 18px;
+  width: 30px;
+  background: url(../images/English.png);
+}
+#vietnamese_flag {
+  position: absolute;
+  left: 861px;
+  top: 24px;
+  height: 18px;
+  width: 30px;
+  background: url(../images/Vietnamese.png) no-repeat;
+}
 #details {
   background-color: #ffcaa8;  
 }
@@ -83,7 +103,7 @@ a:link,  a:visited,  a:active {
  
 #footer {
   height: 28px;
-  background: url(../images/Footerbar.png) no-repeat center;
+  background: url(../images/footer_orange.png) no-repeat center;
   clear: both;
   position: relative;
 }

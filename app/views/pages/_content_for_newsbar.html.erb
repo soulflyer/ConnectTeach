@@ -63,11 +63,13 @@
 			<% @newsitems.each do |newsitem| %>
 			  <% link_to  (newsitem_path(newsitem.id)) do %>
 					<div class="item">
-					  <div id="image">
+					  <div id="news_item_image">
 						  <%= image_tag (newsitem.photo.url(:small)) %>
 					  </div>
-					  <h3><%= newsitem.title %></h3>
-					  <%= textilize newsitem.English_content %>
+					  <div id="news_item_text">
+						  <h3><%= newsitem.title %></h3>
+					    <%= textilize newsitem.English_content %>
+					  </div>
 					</div>
 			  <% end %>
 			<% end %>
