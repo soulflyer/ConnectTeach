@@ -50,7 +50,11 @@
   <% end %>
 <% end %>
 <% if @page.title_picture %>
-  <%= image_tag ("titles/"+@page.title_picture, :class => "title_picture") %>
+  <%= image_tag("titles/"+@page.title_picture, :class => "title_picture") %>
 <% end %>
 <%= @page.html %>
-<%= textilize @page.English_content %>
+<% if I18n.locale=="vn" %>
+  <%= textilize @page.Vietnamese_content %>
+<% else %>
+  <%= textilize @page.English_content %>
+<% end %>

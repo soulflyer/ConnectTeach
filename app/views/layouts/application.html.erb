@@ -23,10 +23,14 @@
 		<div id="header">
 			<div id="banner">
 			</div>
-			<div id="english_flag">
-			</div>
-			<div id="vietnamese_flag">
-			</div>
+      <% link_to (url_for(root_path).chop.chop+'en') do %>
+				<div id="english_flag">
+			  </div>
+			<% end %>
+			<% link_to (url_for(root_path).chop.chop+'vn') do %>
+  			<div id="vietnamese_flag">
+		  	</div>
+			<% end %>
 			<div id="logo">	
 			</div>			
 		</div>
@@ -88,6 +92,7 @@
 
 			
 			<div id="footer">
+				<p><%= I18n.t :hello %>, locale is: <%= I18n.locale %> poss locales: <%= I18n.backend.available_locales %></p>
 				<div id="copyright">
 				<p>	ⓒ ConnectTeach</p>
 				</div>
