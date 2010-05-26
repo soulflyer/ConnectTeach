@@ -1,3 +1,5 @@
+/* @override http://localhost:3000/stylesheets/condelastic.css?1269588309 */
+
 /* @override http://localhost:3000/stylesheets/condelastic.css?1255628956 */
 
 body {margin: 0; padding: 0; }
@@ -9,6 +11,10 @@ body {margin: 0; padding: 0; }
   min-width: 1024px;
   margin-right: auto;
   margin-left: auto;
+  height: 663px;
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
+  border-left: 2px solid #000;
 }
 
 /* star hacks. Only bad browsers are fooled (ie6 and down) */

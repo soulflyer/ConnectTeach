@@ -1,3 +1,5 @@
+/* @override http://localhost:3000/stylesheets/newsite.css?1274851021 */
+
 /* @override http://localhost:3000/stylesheets/newsite.css?1274844065 */
 
 /* @override http://localhost:3000/stylesheets/newsite.css?1274369120 */
@@ -31,7 +33,8 @@ body {
   height: 223px;
   margin: 0;
   padding: 0;
-  background-image: url(../images/header.png);
+  width: 1024px;
+  background: url(../images/header.png) no-repeat;
 }
 #logo {
   position: absolute;

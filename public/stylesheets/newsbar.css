@@ -1,3 +1,5 @@
+/* @override http://localhost:3000/stylesheets/newsbar.css?1274172622 */
+
 /* @override http://localhost:3000/stylesheets/newsbar.css?1269851590 */
 
 #text {
@@ -90,7 +92,7 @@ a:hover #editnewsitemsbutton{
 }
 #loginpanel {
   background: url(../images/login_orange.png) no-repeat;
-  height: 105px;
+  height: 98px;
   width: 171px;
   margin: 0 0 2px;
   float: right;
