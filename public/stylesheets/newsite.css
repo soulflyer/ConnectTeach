@@ -1,8 +1,6 @@
+/* @override http://localhost:3000/stylesheets/newsite.css?1274844065 */
+
 /* @override http://localhost:3000/stylesheets/newsite.css?1274369120 */
-
-/* @override http://localhost:3000/stylesheets/newsite.css?1274368132 */
-
-/* @override http://localhost:3000/stylesheets/newsite.css?1274173237 */
 h1, h2, h3, h4{
   color: #0c7b6b;
   font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
@@ -102,7 +100,7 @@ a:link,  a:visited,  a:active {
 }
  
 #footer {
-  height: 28px;
+  height: 29px;
   background: url(../images/footer_orange.png) no-repeat center;
   clear: both;
   position: relative;

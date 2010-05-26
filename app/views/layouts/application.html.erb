@@ -11,12 +11,12 @@
 	<%= stylesheet_link_tag 'newsite' %>
 	<%= stylesheet_link_tag 'sidemenu' %>
 	<%= stylesheet_link_tag 'footer' %>
-  <% if @stylesheet %>
+	<%= yield :newsbarcss %>
+	<% if @stylesheet %>
 	  <% for sh in @stylesheet %>
 	    <%= stylesheet_link_tag sh %>
 	  <% end %>
   <% end %>
-	<%= yield :newsbarcss %>
 </head>
 <body>
 	<div id="wrapper">
@@ -92,7 +92,6 @@
 
 			
 			<div id="footer">
-				<p><%= I18n.t :hello %>, locale is: <%= I18n.locale %> poss locales: <%= I18n.backend.available_locales %></p>
 				<div id="copyright">
 				<p>	ⓒ ConnectTeach</p>
 				</div>

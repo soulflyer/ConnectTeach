@@ -1,0 +1,30 @@
+/* @override http://localhost:3000/stylesheets/corporate.css?1274845206 */
+
+/* @override http://localhost:3000/stylesheets/corporate.css?1274844264 */
+#loginpanel {
+  background: url(../images/login_grey.png) no-repeat;
+}
+#footer {
+  background: url(../images/footer_grey.png) no-repeat center;
+}
+
+#homebutton {
+  background: url(../images/homebutton_corporate.png) no-repeat;
+
+}
+#clientbutton {
+  background: url(../images/clientbutton_corporate.png) no-repeat;
+}
+#tutorbutton {
+  background: url(../images/tutorsbutton_corporate.png) no-repeat;
+}
+#coursebutton {
+  background: url(../images/coursesbutton_corporate.png) no-repeat;
+}
+#aboutbutton {
+  background: url(../images/aboutusbutton_corporate.png) no-repeat;
+}
+#contactbutton {
+  background: url(../images/contactbutton_corporate.png) no-repeat;
+}
+

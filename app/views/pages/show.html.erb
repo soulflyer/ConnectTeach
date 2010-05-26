@@ -49,7 +49,7 @@
     <% end %>
   <% end %>
 <% end %>
-<% if @page.title_picture %>
+<% if !(@page.title_picture == "") %>
   <%= image_tag("titles/"+@page.title_picture, :class => "title_picture") %>
 <% end %>
 <%= @page.html %>
