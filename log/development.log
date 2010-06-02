@@ -39133,3 +39133,93 @@ ActionController::RoutingError (No route matches "/photos/small/missing.png" wit
   
 
 Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-02 15:59:38) [GET]
+  Parameters: {"permalink"=>"home", "locale"=>"en"}
+  [4;36;1mPage Load (33.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (9.6ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (537.6ms)
+Completed in 1245ms (View: 797, DB: 43) | 200 OK [http://localhost/?locale=en]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-02 15:59:40) [GET]
+  Parameters: {"permalink"=>"home", "locale"=>"en"}
+  [4;36;1mPage Load (0.5ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (1.0ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (193.5ms)
+Completed in 1709ms (View: 1653, DB: 1) | 200 OK [http://localhost/?locale=en]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 15:59:42) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-02 15:59:56) [GET]
+  Parameters: {"permalink"=>"corporate"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'corporate') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.7ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (19.0ms)
+Completed in 39ms (View: 27, DB: 1) | 200 OK [http://localhost/corporate]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 15:59:56) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-02 16:00:38) [GET]
+  Parameters: {"permalink"=>"corporate"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'corporate') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.6ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (112.2ms)
+Completed in 132ms (View: 120, DB: 1) | 200 OK [http://localhost/corporate]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 16:00:39) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 16:00:39) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-02 16:00:43) [GET]
+  Parameters: {"permalink"=>"home", "locale"=>"en"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.6ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (91.9ms)
+Completed in 113ms (View: 101, DB: 1) | 200 OK [http://localhost/?locale=en]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-02 16:00:43) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
