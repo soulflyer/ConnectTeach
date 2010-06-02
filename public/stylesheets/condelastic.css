@@ -1,3 +1,5 @@
+/* @override http://localhost:3000/stylesheets/condelastic.css?1274857103 */
+
 /* @override http://localhost:3000/stylesheets/condelastic.css?1269588309 */
 
 /* @override http://localhost:3000/stylesheets/condelastic.css?1255628956 */
@@ -19,7 +21,6 @@ body {margin: 0; padding: 0; }
 
 /* star hacks. Only bad browsers are fooled (ie6 and down) */
 * html #wrapper {
-  overflow: visible;
 }
 
 

@@ -39089,3 +39089,47 @@ ActionController::RoutingError (No route matches "/photos/small/missing.png" wit
   
 
 Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-05-27 03:01:06) [GET]
+  Parameters: {"permalink"=>"corporate"}
+  [4;36;1mPage Load (0.5ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'corporate') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.7ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (738.7ms)
+Completed in 4020ms (View: 1329, DB: 1) | 200 OK [http://localhost/corporate]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-27 03:01:12) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-01 19:35:34) [GET]
+  Parameters: {"permalink"=>"corporate"}
+  [4;36;1mPage Load (0.9ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'corporate') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.7ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (273.2ms)
+Completed in 498ms (View: 451, DB: 2) | 200 OK [http://localhost/corporate]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-01 19:35:35) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-01 19:35:35) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
