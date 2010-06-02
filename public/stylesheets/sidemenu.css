@@ -1,16 +1,12 @@
-/* @override http://localhost:3000/stylesheets/sidemenu.css?1274853425 */
-
-/* @override http://localhost:3000/stylesheets/sidemenu.css?1269850672 */
-
-/* @override http://localhost:3000/stylesheets/sidemenu.css?1269596734 */
+/* @override http://localhost:3000/stylesheets/sidemenu.css?1274854634 */
 
 #menu {
   width: 171px;
-  height: 400px;
+  height: 438px;
   float: none;
   background-color: #c5c7c8;
-  padding-bottom: 20010px;  /* X + padding-bottom */
-  margin-bottom: -20000px;  /* X */
+  padding-bottom: 0px;  /* X + padding-bottom */
+  margin-bottom: 0px;  /* X */
 }
 #menu a:link, #menu a:visited, #menu a:active {
   color: #462614;

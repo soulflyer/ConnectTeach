@@ -1,6 +1,4 @@
-/* @override http://localhost:3000/stylesheets/newsbar.css?1274172622 */
-
-/* @override http://localhost:3000/stylesheets/newsbar.css?1269851590 */
+/* @override http://localhost:3000/stylesheets/newsbar.css?1274856572 */
 
 #text {
   width: 620px;
@@ -12,8 +10,9 @@
   clear: none;
   margin: 0;
   background-color: #c5c7c8;  /* X + padding-bottom */
-  margin-bottom: -20000px;
-  padding: 1px 0 20010px;
+  margin-bottom: 0px;
+  padding: 1px 0 0px;
+  height: 438px;
 }
 #newsheader {
   background: url(../images/hotnews.png) no-repeat;
@@ -118,7 +117,7 @@ a:hover #editnewsitemsbutton{
 #logoutbutton {
 }
 #loginpanel input#session_email, #loginpanel input#session_password {
-  width: 100px;
+  width: 98px;
   float: right;
   height: 11px;
   clear: both;

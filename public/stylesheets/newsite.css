@@ -1,3 +1,5 @@
+/* @override http://localhost:3000/stylesheets/newsite.css?1274857336 */
+
 /* @override http://localhost:3000/stylesheets/newsite.css?1274851021 */
 
 /* @override http://localhost:3000/stylesheets/newsite.css?1274844065 */
@@ -78,6 +80,8 @@ a:link,  a:visited,  a:active {
   width: 1024px;
   overflow: hidden;
 }
+
+
 #text {
   font-size: 14px;
   color: #6e5973;
