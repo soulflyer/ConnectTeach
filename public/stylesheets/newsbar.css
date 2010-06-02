@@ -108,7 +108,10 @@ a:hover #editnewsitemsbutton{
   text-transform: uppercase;
 }
 #loginpanel label {
-  text-transform: uppercase;
+  text-transform:uppercase;
+  font-size: 8px;
+  margin: 0;
+  padding: 0;
 }
 #loggedinas {
 }
