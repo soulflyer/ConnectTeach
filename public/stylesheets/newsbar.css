@@ -121,12 +121,11 @@ a:hover #editnewsitemsbutton{
 }
 #loginpanel input#session_email, #loginpanel input#session_password {
   width: 98px;
-  float: right;
   height: 11px;
-  clear: both;
   padding: 0;
   margin: 0 4px 0 0;
   background-color: #e7e7e8;
+  float: right;
 }
 #loginpanel input#session_remember_me {
   float: right;
@@ -142,7 +141,6 @@ a:hover #editnewsitemsbutton{
   padding: 0;
   float: right;
   margin: 0 6px 0 8px;
-  clear: both;
 }
 .form_submit_button:hover {
 
