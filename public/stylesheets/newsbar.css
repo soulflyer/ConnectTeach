@@ -98,6 +98,7 @@ a:hover #editnewsitemsbutton{
   color: #fff;
   font-size: 9px;
   padding: 8px 0 0;
+  position: absolute;
 }
 #loginpanel p {
   padding: 0;
@@ -109,7 +110,6 @@ a:hover #editnewsitemsbutton{
 }
 #loginpanel label {
   text-transform:uppercase;
-  font-size: 8px;
   margin: 0;
   padding: 0;
 }
@@ -126,6 +126,14 @@ a:hover #editnewsitemsbutton{
   margin: 0 4px 0 0;
   background-color: #e7e7e8;
   float: right;
+  position: absolute;
+  right: 0;
+}
+#loginpanel input#session_email {
+  top: 12px;
+}
+#loginpanel input#session_password {
+  top: 30px;
 }
 #loginpanel input#session_remember_me {
   float: right;
