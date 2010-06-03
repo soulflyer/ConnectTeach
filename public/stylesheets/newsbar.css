@@ -139,16 +139,17 @@ a:hover #editnewsitemsbutton{
   right: 0;
 }
 #loginpanel input#session_email {
-  top: 10px;
+  top: 8px;
 }
 #loginpanel input#session_password {
-  top: 28px;
+  top: 26px;
 }
 #loginpanel input#session_remember_me {
   margin: 0 0 0 0;
   padding: 0;
   position: absolute;
   right: 60px;
+  top: 46px;
 }
 #loginpanel input.form_submit_button {
   background: url(../images/loginbutton.png) no-repeat;
