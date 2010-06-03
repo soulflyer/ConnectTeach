@@ -148,8 +148,8 @@ a:hover #editnewsitemsbutton{
   margin: 0 0 0 0;
   padding: 0;
   position: absolute;
-  right: 60px;
   top: 46px;
+  right: 82px;
 }
 #loginpanel input.form_submit_button {
   background: url(../images/loginbutton.png) no-repeat;
