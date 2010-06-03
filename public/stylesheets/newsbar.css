@@ -98,14 +98,16 @@ a:hover #editnewsitemsbutton{
   color: #fff;
   padding: 8px 0 0;
   position: absolute;
-  font-size: 7pt;
+  font: 9px mono;
 }
 #loginpanel p {
   padding: 0;
   margin: 7px 0 2px 6px;
+  text-transform: uppercase;
 }
 #loginpanel a {
   color: #fff;
+  text-transform: uppercase;
 }
 #loginpanel label {
   margin: 0;
