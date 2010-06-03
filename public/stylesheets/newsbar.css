@@ -14,11 +14,16 @@
   padding: 1px 0 0px;
   height: 438px;
 }
+#news {
+  position: absolute;
+  top: 140px;
+}
 #newsheader {
   background: url(../images/hotnews.png) no-repeat;
   margin: 0;
   padding: 0;
   clear: both;
+  position: relative;
 }
 #newsheader h1 {
   visibility: hidden;
@@ -98,7 +103,7 @@ a:hover #editnewsitemsbutton{
   color: #fff;
   padding: 8px 0 0;
   position: absolute;
-  font-size: 9px;
+  font-size: 8px;
 }
 #loginpanel p {
   padding: 0;
