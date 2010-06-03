@@ -135,14 +135,10 @@ a:hover #editnewsitemsbutton{
   margin: 0 4px 0 0;
   background-color: #e7e7e8;
   float: right;
-  position: absolute;
-  right: 0;
 }
 #loginpanel input#session_email {
-  top: 12px;
 }
 #loginpanel input#session_password {
-  top: 30px;
 }
 #loginpanel input#session_remember_me {
   margin: 0 0 0 0;
