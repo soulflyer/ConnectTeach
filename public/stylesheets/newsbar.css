@@ -1,4 +1,4 @@
-/* @override http://localhost:3000/stylesheets/newsbar.css?1274856572 */
+/* @override http://localhost:3000/stylesheets/newsbar.css?1275469012 */
 
 #text {
   width: 620px;
@@ -96,9 +96,9 @@ a:hover #editnewsitemsbutton{
   margin: 0 0 2px;
   float: right;
   color: #fff;
-  font-size: 9px;
   padding: 8px 0 0;
   position: absolute;
+  font-size: 7pt;
 }
 #loginpanel p {
   padding: 0;
@@ -106,10 +106,8 @@ a:hover #editnewsitemsbutton{
 }
 #loginpanel a {
   color: #fff;
-  text-transform: uppercase;
 }
 #loginpanel label {
-  text-transform:uppercase;
   margin: 0;
   padding: 0;
 }
