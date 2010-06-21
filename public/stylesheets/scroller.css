@@ -1,0 +1,55 @@
+/* @override http://localhost:3000/stylesheets/scroller.css?1276868202 */
+.Container {
+  position: absolute;
+  top: 50px; left: 100px;
+  width: 400px;
+  height: 200px;
+  background: #FFF url(../images/container_background.gif) no-repeat;
+}
+#Scroller { 
+  position: absolute; 
+  overflow: hidden;
+  width: 400px;
+  height: 360px;
+}
+#Scroller p {
+  margin: 0; padding: 10px 20px;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  text-indent: 20px;
+  color: #6F6048;
+}
+.Scroller-Container {
+  position: absolute;
+  top: 0px; left: 0px;
+}
+#Scrollbar-Container {
+  position: absolute;
+  top: 60px; left: 600px;
+}
+.Scrollbar-Up {
+  cursor: pointer;
+  position: absolute;
+  background: url(../images/up_arrow.png) no-repeat center;
+  width: 28px;
+  height: 25px;
+}
+.Scrollbar-Track {
+  width: 28px; height: 198px;
+  position: absolute;
+  top: 25px; left: 0px;
+  background: transparent url(../images/scrollbar.png) no-repeat center;
+}
+.Scrollbar-Handle {
+  width: 28px; height: 21px;
+  position: absolute;
+  background: url(../images/book.png) no-repeat;
+}
+.Scrollbar-Down {
+  cursor: pointer;
+  position: absolute;
+  background: url(../images/down_arrow.png) no-repeat center;
+  width: 28px;
+  height: 25px;
+  top: 223px;
+}

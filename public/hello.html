@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>Greeting</title>
+    <link href="/stylesheets/hello.css" media="screen" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="javascripts/jsScroller.js"></script>
+		<script type="text/javascript" src="javascripts/jsScrollbar.js"></script>
+		<script type="text/javascript">
+		var scroller  = null;
+		var scrollbar = null;
+		window.onload = function () {
+		  scroller  = new jsScroller(document.getElementById("Scroller"), 400, 200);
+		  scrollbar = new jsScrollbar (document.getElementById("Scrollbar-Container"), scroller, false);
+		}
+		</script>
+  </head>
+  <body>
+    <p>Hello, world!</p>
+		<div class="Container">
+		<div id="Scroller">
+		  <div class="Scroller-Container">
+				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec iaculis, ante et congue feugiat,
+				elit wisi commodo metus, ut commodo ligula enim ac justo. Pellentesque id ligula. Class aptent 
+				taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Phasellus vitae 
+				mi a elit dictum volutpat. Pellentesque nec arcu. Etiam blandit. Phasellus egestas dolor ut
+				lacus. Sed enim justo, sagittis ut, condimentum non, ullamcorper eu, neque. In hac habitasse
+				platea dictumst. Integer ipsum risus, sagittis ac, imperdiet ac, interdum sed, libero. Praesent
+				commodo. Mauris congue, urna eget hendrerit elementum, dolor ligula ultrices neque, in 
+				elementum ante erat et elit.
+				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec iaculis, ante et congue feugiat,
+				elit wisi commodo metus, ut commodo ligula enim ac justo. Pellentesque id ligula. Class aptent 
+				taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Phasellus vitae 
+				mi a elit dictum volutpat. Pellentesque nec arcu. Etiam blandit. Phasellus egestas dolor ut
+				lacus. Sed enim justo, sagittis ut, condimentum non, ullamcorper eu, neque. In hac habitasse
+				platea dictumst. Integer ipsum risus, sagittis ac, imperdiet ac, interdum sed, libero. Praesent
+				commodo. Mauris congue, urna eget hendrerit elementum, dolor ligula ultrices neque, in 
+				elementum ante erat et elit.
+				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec iaculis, ante et congue feugiat,
+				elit wisi commodo metus, ut commodo ligula enim ac justo. Pellentesque id ligula. Class aptent 
+				taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Phasellus vitae 
+				mi a elit dictum volutpat. Pellentesque nec arcu. Etiam blandit. Phasellus egestas dolor ut
+				lacus. Sed enim justo, sagittis ut, condimentum non, ullamcorper eu, neque. In hac habitasse
+				platea dictumst. Integer ipsum risus, sagittis ac, imperdiet ac, interdum sed, libero. Praesent
+				commodo. Mauris congue, urna eget hendrerit elementum, dolor ligula ultrices neque, in 
+				elementum ante erat et elit.
+		  </div>
+		</div>
+		</div>
+		<div id="Scrollbar-Container">
+			<div class="Scrollbar-Up"></div>
+			<div class="Scrollbar-Down"></div>
+	    <div class="Scrollbar-Track">
+		    <div class="Scrollbar-Handle"></div>
+	    </div>
+		</div>
+  </body>
+</html>

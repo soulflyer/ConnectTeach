@@ -1,8 +1,10 @@
+/* @override http://localhost:3000/stylesheets/sidemenu.css?1275464314 */
+
 /* @override http://localhost:3000/stylesheets/sidemenu.css?1274854634 */
 
 #menu {
   width: 171px;
-  height: 438px;
+  height: 400px;
   float: none;
   background-color: #c5c7c8;
   padding-bottom: 0px;  /* X + padding-bottom */

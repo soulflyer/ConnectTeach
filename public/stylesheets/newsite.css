@@ -1,10 +1,4 @@
-/* @override http://localhost:3000/stylesheets/newsite.css?1274857336 */
-
-/* @override http://localhost:3000/stylesheets/newsite.css?1274851021 */
-
-/* @override http://localhost:3000/stylesheets/newsite.css?1274844065 */
-
-/* @override http://localhost:3000/stylesheets/newsite.css?1274369120 */
+/* @override http://localhost:3000/stylesheets/newsite.css?1276868321 */
 h1, h2, h3, h4{
   color: #0c7b6b;
   font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
@@ -86,13 +80,13 @@ a:link,  a:visited,  a:active {
   font-size: 14px;
   color: #6e5973;
   text-align: justify;
-  padding: 0 12px 0 0;
   position: absolute;
   top: 0;
   overflow: auto;
-  height: 400px;
+  height: 360px;
   margin: 15px 0 0 200px;
   width: 800px;
+  padding-right: 25px;
 }
 #text p {
   top: 0;

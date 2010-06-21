@@ -1,3 +1,5 @@
+/* @override http://localhost:3000/stylesheets/condelastic.css?1275459597 */
+
 /* @override http://localhost:3000/stylesheets/condelastic.css?1274857103 */
 
 /* @override http://localhost:3000/stylesheets/condelastic.css?1269588309 */
@@ -13,7 +15,7 @@ body {margin: 0; padding: 0; }
   min-width: 1024px;
   margin-right: auto;
   margin-left: auto;
-  height: 663px;
+  height: 625px;
   border-right: 2px solid #000;
   border-bottom: 2px solid #000;
   border-left: 2px solid #000;

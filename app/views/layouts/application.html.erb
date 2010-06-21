@@ -7,6 +7,17 @@
 	<title>ConnectTeach </title>
 	<meta name="generator" content="TextMate http://macromates.com/">
 	<meta name="author" content="Iain Wood, railsiain.com">
+	<script type="text/javascript" src="javascripts/jsScroller.js"></script>
+	<script type="text/javascript" src="javascripts/jsScrollbar.js"></script>
+	<script type="text/javascript">
+	var scroller  = null;
+	var scrollbar = null;
+	window.onload = function () {
+	  scroller  = new jsScroller(document.getElementById("Scroller"), 400, 200);
+	  scrollbar = new jsScrollbar (document.getElementById("Scrollbar-Container"), scroller, false);
+	}
+	</script>
+	<%= stylesheet_link_tag 'scroller' %>
 	<%= stylesheet_link_tag 'condelastic' %>
 	<%= stylesheet_link_tag 'newsite' %>
 	<%= stylesheet_link_tag 'sidemenu' %>
@@ -87,7 +98,20 @@
 				
 			</div>
 			<div id="text">
-				<%= yield  %>
+        <div id="Container">
+	       <div id="Scroller">
+					<div class="Scroller-Container">
+					  <%= yield  %>
+					</div>
+         </div>
+       </div>
+			 <div id="Scrollbar-Container">
+				<div class="Scrollbar-Up"></div>
+				<div class="Scrollbar-Down"></div>
+		    <div class="Scrollbar-Track">
+			    <div class="Scrollbar-Handle"></div>
+		    </div>
+			</div>
 			</div>
 
 			

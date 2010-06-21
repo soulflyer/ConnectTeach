@@ -39223,3 +39223,2136 @@ ActionController::RoutingError (No route matches "/photos/small/missing.png" wit
   
 
 Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-07 22:24:42) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (29.6ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.7ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (330.8ms)
+Completed in 598ms (View: 540, DB: 30) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 22:24:43) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 22:34:22) [GET]
+
+ActionController::RoutingError (No route matches "/src/jsScroller.js" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 22:34:23) [GET]
+
+ActionController::RoutingError (No route matches "/src/jsScrollbar.js" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 22:36:20) [GET]
+
+ActionController::RoutingError (No route matches "/src/jsScrollbar.js" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 22:36:20) [GET]
+
+ActionController::RoutingError (No route matches "/src/jsScroller.js" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-07 22:36:34) [GET]
+  Parameters: {"permalink"=>"home", "locale"=>"en"}
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.7ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (19.3ms)
+Completed in 71ms (View: 45, DB: 1) | 200 OK [http://localhost/?locale=en]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 22:36:35) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 22:38:04) [GET]
+
+ActionController::RoutingError (No route matches "/src/jsScrollbar.js" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 22:38:04) [GET]
+
+ActionController::RoutingError (No route matches "/src/jsScroller.js" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 22:45:03) [GET]
+
+ActionController::RoutingError (No route matches "/src/jsScrollbar.js" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 22:45:03) [GET]
+
+ActionController::RoutingError (No route matches "/src/jsScroller.js" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 22:58:02) [GET]
+
+ActionController::RoutingError (No route matches "/src/jsScrollbar.js" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 22:58:02) [GET]
+
+ActionController::RoutingError (No route matches "/src/jsScroller.js" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 22:58:04) [GET]
+
+ActionController::RoutingError (No route matches "/src/jsScroller.js" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 22:58:04) [GET]
+
+ActionController::RoutingError (No route matches "/src/jsScrollbar.js" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 22:58:04) [GET]
+
+ActionController::RoutingError (No route matches "/src/jsScroller.js" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 22:58:04) [GET]
+
+ActionController::RoutingError (No route matches "/src/jsScrollbar.js" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 22:58:05) [GET]
+
+ActionController::RoutingError (No route matches "/src/jsScroller.js" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 22:58:05) [GET]
+
+ActionController::RoutingError (No route matches "/src/jsScrollbar.js" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:02:02) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/scrollbar_track.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:02:06) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/scrollbar_track.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:02:07) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/scrollbar_track.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:02:13) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/scrollbar_track.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:02:13) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/scrollbar_track.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:02:43) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/scrollbar_track.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:03:20) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/scrollbar_track.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:04:34) [GET]
+
+ActionController::RoutingError (No route matches "/src/jsScrollbar.js" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:04:34) [GET]
+
+ActionController::RoutingError (No route matches "/src/jsScroller.js" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:04:39) [GET]
+
+ActionController::RoutingError (No route matches "/src/jsScroller.js" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:04:39) [GET]
+
+ActionController::RoutingError (No route matches "/src/jsScrollbar.js" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:04:50) [GET]
+
+ActionController::RoutingError (No route matches "/src/jsScroller.js" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:04:50) [GET]
+
+ActionController::RoutingError (No route matches "/src/jsScrollbar.js" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:04:50) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/scrollbar_track.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:05:16) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/scrollbar_track.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:05:24) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/scrollbar_track.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:05:30) [GET]
+
+ActionController::RoutingError (No route matches "/src/jsScrollbar.js" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:05:30) [GET]
+
+ActionController::RoutingError (No route matches "/src/jsScroller.js" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:05:30) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/scrollbar_track.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:14:52) [GET]
+
+ActionController::RoutingError (No route matches "/src/jsScroller.js" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:14:52) [GET]
+
+ActionController::RoutingError (No route matches "/src/jsScrollbar.js" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:14:52) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/scrollbar_track.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:17:26) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/scrollbar_track.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:17:32) [GET]
+
+ActionController::RoutingError (No route matches "/src/jsScrollbar.js" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:17:32) [GET]
+
+ActionController::RoutingError (No route matches "/src/jsScroller.js" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:17:32) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/scrollbar_track.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:17:50) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/scrollbar_track.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:17:58) [GET]
+
+ActionController::RoutingError (No route matches "/src/jsScroller.js" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:17:58) [GET]
+
+ActionController::RoutingError (No route matches "/src/jsScrollbar.js" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:17:58) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/scrollbar_track.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:19:36) [GET]
+
+ActionController::RoutingError (No route matches "/src/jsScrollbar.js" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:19:36) [GET]
+
+ActionController::RoutingError (No route matches "/src/jsScroller.js" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:20:22) [GET]
+
+ActionController::RoutingError (No route matches "/src/jsScrollbar.js" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:20:22) [GET]
+
+ActionController::RoutingError (No route matches "/src/jsScroller.js" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:20:22) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/scrollbar_track.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:20:34) [GET]
+
+ActionController::RoutingError (No route matches "/src/jsScroller.js" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:20:34) [GET]
+
+ActionController::RoutingError (No route matches "/src/jsScrollbar.js" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:21:38) [GET]
+
+ActionController::RoutingError (No route matches "/src/jsScrollbar.js" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:21:38) [GET]
+
+ActionController::RoutingError (No route matches "/src/jsScroller.js" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:23:52) [GET]
+
+ActionController::RoutingError (No route matches "/src/jsScroller.js" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:23:52) [GET]
+
+ActionController::RoutingError (No route matches "/src/jsScrollbar.js" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:23:52) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/scrollbar_track.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:24:34) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/scrollbar_track.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:27:01) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/scrollbar_track.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:27:16) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/scrollbar_track.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:27:54) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/scrollbar_track.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:27:55) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/scrollbar_track.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:27:55) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/scrollbar_track.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:27:55) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/scrollbar_track.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:27:56) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/scrollbar_track.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:27:56) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/scrollbar_track.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:27:56) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/scrollbar_track.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:27:56) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/scrollbar_track.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:27:57) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/scrollbar_track.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:27:57) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/scrollbar_track.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:28:19) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/scrollbar_track.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:31:03) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/scrollbar_track.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:31:03) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/scrollbar_track.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:31:03) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/scrollbar_track.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:31:04) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/scrollbar_track.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:31:04) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/scrollbar_track.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:31:04) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/scrollbar_track.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:31:04) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/scrollbar_track.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:31:05) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/scrollbar_track.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:31:05) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/scrollbar_track.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:31:05) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/scrollbar_track.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:31:15) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/scrollbar_track.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:31:16) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/container_background.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:33:03) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/scrollbar_track.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:33:03) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/scrollbar_track.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:33:04) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/scrollbar_track.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:33:18) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/.images/scrollbar_track.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:33:18) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/..images/scrollbar_track.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:34:48) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/scrollbar_track.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:34:48) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/container_background.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:37:18) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/up_arrow.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:37:21) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/.images/up_arrow.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:37:21) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/..images/up_arrow.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:43:16) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/down_arrow.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:43:21) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/.images/down_arrow.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:43:21) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/..images/down_arrow.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:43:35) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/..images/down_arrow.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:43:41) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/..images/down_arrow.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:44:14) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/..images/down_arrow.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:44:29) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/..images/down_arrow.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:44:29) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/..images/down_arrow.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:44:32) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/..images/down_arrow.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:44:32) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/..images/down_arrow.gif" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 23:45:26) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-07 23:45:26) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (4.9ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.7ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (21.5ms)
+Completed in 379ms (View: 32, DB: 6) | 200 OK [http://localhost/]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-07 23:45:27) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.6ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (19.1ms)
+Completed in 40ms (View: 28, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-18 10:50:56) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (17.6ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.7ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (202.4ms)
+Completed in 299ms (View: 221, DB: 18) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 10:50:57) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-18 11:01:13) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (6.7ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.9ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (141.4ms)
+Completed in 350ms (View: 296, DB: 8) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 11:01:13) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-18 11:12:59) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (5.8ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.7ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (107.1ms)
+Completed in 304ms (View: 247, DB: 6) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 11:12:59) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-18 11:15:41) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.7ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (30.5ms)
+Completed in 124ms (View: 109, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 11:15:42) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 11:15:42) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-18 11:44:04) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (25.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.7ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (73.6ms)
+Completed in 244ms (View: 121, DB: 26) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 11:44:07) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 11:44:07) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-18 11:55:49) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (5.5ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.7ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (74.9ms)
+Completed in 151ms (View: 85, DB: 6) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 11:55:50) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 11:56:20) [GET]
+
+ActionController::RoutingError (No route matches "/images/b" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 11:56:20) [GET]
+
+ActionController::RoutingError (No route matches "/images/bo" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 11:56:20) [GET]
+
+ActionController::RoutingError (No route matches "/images/boo" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 11:56:20) [GET]
+
+ActionController::RoutingError (No route matches "/images/book" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 11:56:21) [GET]
+
+ActionController::RoutingError (No route matches "/images/book." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 11:56:21) [GET]
+
+ActionController::RoutingError (No route matches "/images/book.p" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 11:56:22) [GET]
+
+ActionController::RoutingError (No route matches "/images/book.pn" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 12:10:21) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-18 12:10:21) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (5.5ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.7ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (30.3ms)
+Completed in 91ms (View: 40, DB: 6) | 200 OK [http://localhost/]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-18 12:10:21) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.6ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (19.7ms)
+Completed in 45ms (View: 31, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 12:10:23) [GET]
+
+ActionController::RoutingError (No route matches "/im" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 12:10:23) [GET]
+
+ActionController::RoutingError (No route matches "/ima" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 12:10:23) [GET]
+
+ActionController::RoutingError (No route matches "/imag" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 12:10:23) [GET]
+
+ActionController::RoutingError (No route matches "/image" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 12:10:23) [GET]
+
+ActionController::RoutingError (No route matches "/images" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 12:10:43) [GET]
+
+ActionController::RoutingError (No route matches "/images/" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 12:10:44) [GET]
+
+ActionController::RoutingError (No route matches "/images/s" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 12:10:44) [GET]
+
+ActionController::RoutingError (No route matches "/images/sc" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 12:10:44) [GET]
+
+ActionController::RoutingError (No route matches "/images/scr" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 12:10:45) [GET]
+
+ActionController::RoutingError (No route matches "/images/scro" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 12:10:45) [GET]
+
+ActionController::RoutingError (No route matches "/images/scrol" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 12:10:45) [GET]
+
+ActionController::RoutingError (No route matches "/images/scroll" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 12:10:45) [GET]
+
+ActionController::RoutingError (No route matches "/images/scrollb" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 12:10:46) [GET]
+
+ActionController::RoutingError (No route matches "/images/scrollba" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 12:10:46) [GET]
+
+ActionController::RoutingError (No route matches "/images/scrollbar" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 12:10:47) [GET]
+
+ActionController::RoutingError (No route matches "/images/scrollbar." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 12:10:47) [GET]
+
+ActionController::RoutingError (No route matches "/images/scrollbar.p" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 12:10:48) [GET]
+
+ActionController::RoutingError (No route matches "/images/scrollbar.pn" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-18 19:15:51) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (5.9ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.6ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (102.3ms)
+Completed in 168ms (View: 112, DB: 7) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 19:15:52) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 19:15:52) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-18 19:26:39) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (5.8ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.7ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (35.1ms)
+Completed in 110ms (View: 56, DB: 6) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 19:26:42) [GET]
+
+ActionController::RoutingError (No route matches "/im" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 19:26:42) [GET]
+
+ActionController::RoutingError (No route matches "/ima" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 19:26:42) [GET]
+
+ActionController::RoutingError (No route matches "/imag" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 19:26:42) [GET]
+
+ActionController::RoutingError (No route matches "/image" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 19:26:43) [GET]
+
+ActionController::RoutingError (No route matches "/images" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 19:26:43) [GET]
+
+ActionController::RoutingError (No route matches "/images/" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 19:26:46) [GET]
+
+ActionController::RoutingError (No route matches "/images/u" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 19:26:47) [GET]
+
+ActionController::RoutingError (No route matches "/images/up" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 19:26:48) [GET]
+
+ActionController::RoutingError (No route matches "/images/up_" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 19:26:48) [GET]
+
+ActionController::RoutingError (No route matches "/images/up_a" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 19:26:49) [GET]
+
+ActionController::RoutingError (No route matches "/images/up_ar" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 19:26:49) [GET]
+
+ActionController::RoutingError (No route matches "/images/up_arr" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 19:26:49) [GET]
+
+ActionController::RoutingError (No route matches "/images/up_arro" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 19:26:49) [GET]
+
+ActionController::RoutingError (No route matches "/images/up_arrow" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 19:26:50) [GET]
+
+ActionController::RoutingError (No route matches "/images/up_arrow." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 19:26:52) [GET]
+
+ActionController::RoutingError (No route matches "/images/up_arrow.p" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 19:26:53) [GET]
+
+ActionController::RoutingError (No route matches "/images/up_arrow.pn" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 19:27:26) [GET]
+
+ActionController::RoutingError (No route matches "/images/up_arrow.g" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 19:27:26) [GET]
+
+ActionController::RoutingError (No route matches "/images/up_arrow.gi" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 19:36:44) [GET]
+
+ActionController::RoutingError (No route matches "/images/d_arrow.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 19:36:44) [GET]
+
+ActionController::RoutingError (No route matches "/images/do_arrow.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 19:36:45) [GET]
+
+ActionController::RoutingError (No route matches "/images/dow_arrow.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-18 19:38:46) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.7ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (18.1ms)
+Completed in 41ms (View: 27, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 19:38:46) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 19:38:47) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-18 19:41:36) [GET]
+  Parameters: {"permalink"=>"about", "locale"=>"en"}
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'about') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.7ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Completed in 21ms (View: 7, DB: 1) | 200 OK [http://localhost/about?locale=en]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-18 19:41:41) [GET]
+  Parameters: {"permalink"=>"tutorinfo", "locale"=>"en"}
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'tutorinfo') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.6ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Completed in 22ms (View: 9, DB: 1) | 200 OK [http://localhost/tutorinfo?locale=en]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-18 19:41:48) [GET]
+  Parameters: {"permalink"=>"courses", "locale"=>"en"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'courses') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.6ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Completed in 103ms (View: 91, DB: 1) | 200 OK [http://localhost/courses?locale=en]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-18 19:41:50) [GET]
+  Parameters: {"permalink"=>"clientinfo", "locale"=>"en"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'clientinfo') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.6ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Completed in 22ms (View: 9, DB: 1) | 200 OK [http://localhost/clientinfo?locale=en]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-18 19:41:52) [GET]
+  Parameters: {"permalink"=>"contact", "locale"=>"en"}
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'contact') LIMIT 1[0m
+  [4;35;1mNewsitem Load (1.2ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Completed in 22ms (View: 8, DB: 2) | 200 OK [http://localhost/contact?locale=en]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-18 19:42:32) [GET]
+  Parameters: {"permalink"=>"courses", "locale"=>"en"}
+  [4;36;1mPage Load (6.6ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'courses') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.9ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Completed in 402ms (View: 16, DB: 8) | 200 OK [http://localhost/courses?locale=en]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-18 19:42:35) [GET]
+  Parameters: {"permalink"=>"clientinfo", "locale"=>"en"}
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'clientinfo') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.9ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Completed in 21ms (View: 8, DB: 1) | 200 OK [http://localhost/clientinfo?locale=en]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-18 19:42:43) [GET]
+  Parameters: {"permalink"=>"courses", "locale"=>"en"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'courses') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.6ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Completed in 19ms (View: 7, DB: 1) | 200 OK [http://localhost/courses?locale=en]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-18 19:42:48) [GET]
+  Parameters: {"permalink"=>"clientinfo", "locale"=>"en"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'clientinfo') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.8ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Completed in 19ms (View: 7, DB: 1) | 200 OK [http://localhost/clientinfo?locale=en]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-18 19:42:53) [GET]
+  Parameters: {"permalink"=>"corporate"}
+  [4;36;1mPage Load (0.5ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'corporate') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.6ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (19.6ms)
+Completed in 42ms (View: 28, DB: 1) | 200 OK [http://localhost/corporate]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 19:42:54) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-18 19:43:15) [GET]
+  Parameters: {"permalink"=>"home", "locale"=>"en"}
+  [4;36;1mPage Load (354.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.7ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (20.2ms)
+Completed in 399ms (View: 31, DB: 355) | 200 OK [http://localhost/?locale=en]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 19:43:15) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-18 19:43:19) [GET]
+  Parameters: {"permalink"=>"clientinfo", "locale"=>"en"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'clientinfo') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.6ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Completed in 21ms (View: 7, DB: 1) | 200 OK [http://localhost/clientinfo?locale=en]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-18 19:43:21) [GET]
+  Parameters: {"permalink"=>"corporate"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'corporate') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.6ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (100.9ms)
+Completed in 121ms (View: 108, DB: 1) | 200 OK [http://localhost/corporate]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 19:43:21) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-18 19:44:16) [GET]
+  Parameters: {"permalink"=>"clientinfo", "locale"=>"en"}
+  [4;36;1mPage Load (0.5ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'clientinfo') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.7ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Completed in 32ms (View: 7, DB: 1) | 200 OK [http://localhost/clientinfo?locale=en]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-18 19:44:18) [GET]
+  Parameters: {"permalink"=>"corporate"}
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'corporate') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.7ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (20.7ms)
+Completed in 43ms (View: 30, DB: 1) | 200 OK [http://localhost/corporate]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 19:44:18) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 20:02:59) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-18 20:02:59) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (5.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (1.1ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (25.4ms)
+Completed in 70ms (View: 36, DB: 6) | 200 OK [http://localhost/]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-18 20:03:00) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.5ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.6ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (19.9ms)
+Completed in 131ms (View: 116, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 20:03:00) [GET]
+
+ActionController::RoutingError (No route matches "/i" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 20:03:00) [GET]
+
+ActionController::RoutingError (No route matches "/im" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 20:03:01) [GET]
+
+ActionController::RoutingError (No route matches "/ima" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 20:03:01) [GET]
+
+ActionController::RoutingError (No route matches "/imag" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 20:03:01) [GET]
+
+ActionController::RoutingError (No route matches "/image" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 20:03:02) [GET]
+
+ActionController::RoutingError (No route matches "/images" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 20:03:03) [GET]
+
+ActionController::RoutingError (No route matches "/images/" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 20:03:03) [GET]
+
+ActionController::RoutingError (No route matches "/images/c" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 20:03:04) [GET]
+
+ActionController::RoutingError (No route matches "/images/co" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 20:03:04) [GET]
+
+ActionController::RoutingError (No route matches "/images/cor" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 20:03:04) [GET]
+
+ActionController::RoutingError (No route matches "/images/corp" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 20:03:04) [GET]
+
+ActionController::RoutingError (No route matches "/images/corpo" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 20:03:05) [GET]
+
+ActionController::RoutingError (No route matches "/images/corpor" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 20:03:05) [GET]
+
+ActionController::RoutingError (No route matches "/images/corpora" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 20:03:05) [GET]
+
+ActionController::RoutingError (No route matches "/images/corporat" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 20:03:06) [GET]
+
+ActionController::RoutingError (No route matches "/images/corporate" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 20:03:06) [GET]
+
+ActionController::RoutingError (No route matches "/images/corporate_" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 20:03:08) [GET]
+
+ActionController::RoutingError (No route matches "/images/corporate_b" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 20:03:08) [GET]
+
+ActionController::RoutingError (No route matches "/images/corporate_ba" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 20:03:09) [GET]
+
+ActionController::RoutingError (No route matches "/images/corporate_bac" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 20:03:09) [GET]
+
+ActionController::RoutingError (No route matches "/images/corporate_back" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 20:03:10) [GET]
+
+ActionController::RoutingError (No route matches "/images/corporate_backr" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 20:03:10) [GET]
+
+ActionController::RoutingError (No route matches "/images/corporate_backro" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 20:03:10) [GET]
+
+ActionController::RoutingError (No route matches "/images/corporate_backrou" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 20:03:11) [GET]
+
+ActionController::RoutingError (No route matches "/images/corporate_backroun" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 20:03:11) [GET]
+
+ActionController::RoutingError (No route matches "/images/corporate_backrounf" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 20:03:13) [GET]
+
+ActionController::RoutingError (No route matches "/images/corporate_backroun" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 20:03:13) [GET]
+
+ActionController::RoutingError (No route matches "/images/corporate_backround" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 20:03:13) [GET]
+
+ActionController::RoutingError (No route matches "/images/corporate_backround." with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 20:03:15) [GET]
+
+ActionController::RoutingError (No route matches "/images/corporate_backround.p" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 20:03:15) [GET]
+
+ActionController::RoutingError (No route matches "/images/corporate_backround.pn" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 20:03:15) [GET]
+
+ActionController::RoutingError (No route matches "/images/corporate_backround.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 20:04:04) [GET]
+
+ActionController::RoutingError (No route matches "/images/corporate_backround.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-18 20:13:20) [GET]
+  Parameters: {"permalink"=>"corporate"}
+  [4;36;1mPage Load (0.8ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'corporate') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.6ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (18.7ms)
+Completed in 46ms (View: 26, DB: 1) | 200 OK [http://localhost/corporate]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 20:13:21) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 20:13:21) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-18 20:14:49) [GET]
+  Parameters: {"permalink"=>"corporate"}
+  [4;36;1mPage Load (0.8ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'corporate') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.7ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (18.6ms)
+Completed in 52ms (View: 27, DB: 2) | 200 OK [http://localhost/corporate]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 20:14:50) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 20:14:50) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-18 20:34:48) [GET]
+  Parameters: {"permalink"=>"corporate"}
+  [4;36;1mPage Load (0.8ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'corporate') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.8ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (76.4ms)
+Completed in 117ms (View: 87, DB: 2) | 200 OK [http://localhost/corporate]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 20:34:50) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 20:34:50) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-18 20:36:45) [GET]
+  Parameters: {"permalink"=>"corporate"}
+  [4;36;1mPage Load (0.9ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'corporate') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.9ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (35.8ms)
+Completed in 92ms (View: 48, DB: 2) | 200 OK [http://localhost/corporate]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 20:36:46) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-18 20:36:46) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-21 11:41:28) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (5.5ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.7ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (241.0ms)
+Completed in 507ms (View: 453, DB: 6) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-21 11:41:30) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-21 11:42:39) [GET]
+  Parameters: {"permalink"=>"corporate"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'corporate') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.7ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (17.8ms)
+Completed in 39ms (View: 26, DB: 1) | 200 OK [http://localhost/corporate]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-21 11:42:39) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-21 11:42:50) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.7ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (94.5ms)
+Completed in 117ms (View: 104, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-21 11:42:51) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-21 11:54:42) [GET]
+  Parameters: {"permalink"=>"home"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (1.0ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (17.7ms)
+Completed in 39ms (View: 27, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-21 11:54:42) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-21 11:54:42) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)

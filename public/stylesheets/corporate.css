@@ -1,3 +1,7 @@
+/* @override http://localhost:3000/stylesheets/corporate.css?1274853343 */
+
+/* @override http://localhost:3000/stylesheets/corporate.css?1274853343 */
+
 /* @override http://localhost:3000/stylesheets/corporate.css?1274845206 */
 
 /* @override http://localhost:3000/stylesheets/corporate.css?1274844264 */
@@ -26,5 +30,20 @@
 }
 #contactbutton {
   background: url(../images/contactbutton_corporate.png) no-repeat;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+#Scroller { 
+  position: absolute; 
+  overflow: hidden;
+  width: 575px;
+  height: 232px;
+  background: url(../images/corporate_background.png) no-repeat;
+  top: 70px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+#Scroller p {
+  color: #000;
 }
 
