@@ -12,15 +12,9 @@
   	<%= f.label "Add newsbar" %>
 	  <%= f.check_box :news %>
 	</p>
-	<p>
-		<%= f.text_field "title_picture" %>
-	</p>
-	<div id="left">
-		<%= f.text_area :English_content %>
-	</div>
-	<div id="right">
-		<%= f.text_area :Vietnamese_content %>
-	</div>
+	<%= f.text_field "title_picture" %>
+	<%= f.text_area :English_content %>
+	<%= f.text_area :Vietnamese_content %>
   <div id="dont_edit">
 		<h3>Be careful about editing anything below here!</h3>
 		<%= f.text_field :permalink %>

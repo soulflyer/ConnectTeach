@@ -1,24 +1,25 @@
-/* @override http://localhost:3000/stylesheets/pagesform.css?1258608024 */
+/* @override http://localhost:3000/stylesheets/pagesform.css?1277132720 */
 
-form p {
+/* @override http://localhost:3000/stylesheets/pagesform.css?1274093061 */
+
+
+form.edit_page p {
   width: 380px;
   text-align: left;
-}
-textarea {
-  width:380px
+  clear: left;
+  margin: 10;
+  padding: 0;
 }
 
-#left {
-  float: left;
-  clear: both;
+form {
 }
-#right {
-  float: right;
-  clear: none;
+textarea {
+  width:580px;
+  height: 200px;
+  clear: both;
 }
 
 #text {
-  height: 400px;
 }
 #textilehelp_button {
     top: 23px;
@@ -35,9 +36,7 @@ textarea {
   padding: 0;
   float: left;
 }
-form p {
-  clear: both;
-}
+
 #dont_edit {
   clear: both;
 }
@@ -46,7 +45,7 @@ form p {
 }
 #dont_edit p{
   float: left;
-  clear: none;
+  clear: both;
   margin: 0;
   padding: 0;
 }
