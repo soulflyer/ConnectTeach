@@ -1,3 +1,7 @@
 <% @stylesheet = "pagesform" %>
 <% @header = "Editing #{@page.permalink} page" %>
+<% content_for :newsbarcss do %>
+	<%= stylesheet_link_tag 'newsbar' %>
+<% end %>
+<%= render :partial => 'content_for_newsbar' %>
 <%= render :partial => 'page_form' %>

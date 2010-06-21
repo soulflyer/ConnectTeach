@@ -42719,3 +42719,650 @@ ActionController::RoutingError (No route matches "/static/home/javascripts/jsScr
   
 
 Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing PagesController#edit (for 127.0.0.1 at 2010-06-22 00:47:47) [GET]
+  Parameters: {"permalink"=>"home", "locale"=>"en"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/edit
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #63 of app/views/pages/_content_for_newsbar.html.erb:
+60: 				</div>
+61: 			  <% end %>
+62: 			<% end %>
+63: 			<% @newsitems.each do |newsitem| %>
+64: 			  <% link_to  (newsitem_path(newsitem.id)) do %>
+65: 					<div class="item">
+66: 					  <div id="news_item_image">
+
+    app/views/pages/_content_for_newsbar.html.erb:63
+    app/views/pages/_content_for_newsbar.html.erb:1
+    app/views/pages/edit.html.erb:6
+
+Rendering /Users/iain/Sites/connectteach/public/500.html (500 Error)
+rendering section "request"
+Rendered /Users/iain/Sites/connectteach/vendor/plugins/exception_notification/lib/../views/exception_notifier/_request (1.3ms)
+Rendered /Users/iain/Sites/connectteach/vendor/plugins/exception_notification/lib/../views/exception_notifier/_title (20.0ms)
+rendering section "session"
+Rendered /Users/iain/Sites/connectteach/vendor/plugins/exception_notification/lib/../views/exception_notifier/_session (10.4ms)
+Rendered /Users/iain/Sites/connectteach/vendor/plugins/exception_notification/lib/../views/exception_notifier/_title (0.2ms)
+rendering section "environment"
+Rendered /Users/iain/Sites/connectteach/vendor/plugins/exception_notification/lib/../views/exception_notifier/_environment (91.5ms)
+Rendered /Users/iain/Sites/connectteach/vendor/plugins/exception_notification/lib/../views/exception_notifier/_title (0.3ms)
+rendering section "backtrace"
+Rendered /Users/iain/Sites/connectteach/vendor/plugins/exception_notification/lib/../views/exception_notifier/_backtrace (23.9ms)
+Rendered /Users/iain/Sites/connectteach/vendor/plugins/exception_notification/lib/../views/exception_notifier/_title (0.2ms)
+Sent mail to error@connectteach.com
+
+Date: Tue, 22 Jun 2010 00:47:48 +0700
+From: error@connectteach.com
+To: error@connectteach.com
+Subject: [CONNECTTEACH] pages#edit (ActionView::TemplateError) "You have a nil object when you didn't expect it!\nYou might have expected an instance of Array.\nThe error occurred while evaluating
+	nil.each"
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+A ActionView::TemplateError occurred in pages#edit:
+
+  You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each
+  On line #63 of app/views/pages/_content_for_newsbar.html.erb
+
+    60: 				</div>
+    61: 			  <% end %>
+    62: 			<% end %>
+    63: 			<% @newsitems.each do |newsitem| %>
+    64: 			  <% link_to  (newsitem_path(newsitem.id)) do %>
+    65: 					<div class="item">
+    66: 					  <div id="news_item_image">
+
+    app/views/pages/_content_for_newsbar.html.erb:63
+    app/views/pages/_content_for_newsbar.html.erb:1
+    app/views/pages/edit.html.erb:6
+
+-------------------------------
+Request:
+-------------------------------
+
+  * URL       : http://localhost:3000/static/home/edit?locale=en
+  * IP address: 127.0.0.1
+  * Parameters: {"permalink"=>"home", "action"=>"edit", "locale"=>"en", "controller"=>"pages"}
+  * Rails root: /Users/iain/Sites/connectteach
+
+-------------------------------
+Session:
+-------------------------------
+
+  * session id: nil
+  * data: nil
+
+-------------------------------
+Environment:
+-------------------------------
+
+  * GATEWAY_INTERFACE                           : CGI/1.2
+  * HTTP_ACCEPT                                 : application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+  * HTTP_ACCEPT_ENCODING                        : gzip, deflate
+  * HTTP_ACCEPT_LANGUAGE                        : en-gb
+  * HTTP_CACHE_CONTROL                          : max-age=0
+  * HTTP_CONNECTION                             : keep-alive
+  * HTTP_COOKIE                                 : _ConnectTeach_session=BAh7BzoQX2NzcmZfdG9rZW4iMUYyYzlzeVkxU01XYllialpLVXRzN01oVVNjcExQSUFnK1JrWlNEcStvS0E9Og9zZXNzaW9uX2lkIiU4YjM2Y2QzY2RiNjA1ODNiN2RiNjMxNDllOWZiMDhjZg%3D%3D--a973768951ac258e1615936744734de3b839aafe
+  * HTTP_HOST                                   : localhost:3000
+  * HTTP_REFERER                                : http://localhost:3000/?locale=en
+  * HTTP_USER_AGENT                             : Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_3; en-gb) AppleWebKit/531.22.7 (KHTML, like Gecko) Version/4.0.5 Safari/531.22.7
+  * HTTP_VERSION                                : HTTP/1.1
+  * PATH_INFO                                   : /static/home/edit
+  * QUERY_STRING                                : locale=en
+  * REMOTE_ADDR                                 : 127.0.0.1
+  * REQUEST_METHOD                              : GET
+  * REQUEST_PATH                                : /static/home/edit
+  * REQUEST_URI                                 : /static/home/edit?locale=en
+  * SCRIPT_NAME                                 : 
+  * SERVER_NAME                                 : localhost
+  * SERVER_PORT                                 : 3000
+  * SERVER_PROTOCOL                             : HTTP/1.1
+  * SERVER_SOFTWARE                             : Mongrel 1.1.5
+  * action_controller.request.path_parameters   : permalinkhomeactioneditcontrollerpages
+  * action_controller.request.query_parameters  : localeen
+  * action_controller.request.request_parameters: 
+  * action_controller.rescue.request            : #<ActionController::Request:0x103280d58>
+  * action_controller.rescue.response           : #<ActionController::Response:0x103280470>
+  * rack.errors                                 : #<IO:0x100163b80>
+  * rack.input                                  : #<StringIO:0x10330ed10>
+  * rack.multiprocess                           : false
+  * rack.multithread                            : false
+  * rack.request.cookie_hash                    : _ConnectTeach_sessionBAh7BzoQX2NzcmZfdG9rZW4iMUYyYzlzeVkxU01XYllialpLVXRzN01oVVNjcExQSUFnK1JrWlNEcStvS0E9Og9zZXNzaW9uX2lkIiU4YjM2Y2QzY2RiNjA1ODNiN2RiNjMxNDllOWZiMDhjZg==--a973768951ac258e1615936744734de3b839aafe
+  * rack.request.cookie_string                  : _ConnectTeach_session=BAh7BzoQX2NzcmZfdG9rZW4iMUYyYzlzeVkxU01XYllialpLVXRzN01oVVNjcExQSUFnK1JrWlNEcStvS0E9Og9zZXNzaW9uX2lkIiU4YjM2Y2QzY2RiNjA1ODNiN2RiNjMxNDllOWZiMDhjZg%3D%3D--a973768951ac258e1615936744734de3b839aafe
+  * rack.request.query_hash                     : localeen
+  * rack.request.query_string                   : locale=en
+  * rack.run_once                               : false
+  * rack.session                                : _csrf_tokenF2c9syY1SMWbYbjZKUts7MhUScpLPIAg+RkZSDq+oKA=session_id8b36cd3cdb60583b7db63149e9fb08cf
+  * rack.session.options                        : path/key_session_iddomainexpire_afterid8b36cd3cdb60583b7db63149e9fb08cfhttponlytrue
+  * rack.url_scheme                             : http
+  * rack.version                                : 10
+  
+  * Process: 956
+  * Server : soulflyer
+
+-------------------------------
+Backtrace:
+-------------------------------
+
+  On line #63 of app/views/pages/_content_for_newsbar.html.erb
+  
+      60: 				</div>
+      61: 			  <% end %>
+      62: 			<% end %>
+      63: 			<% @newsitems.each do |newsitem| %>
+      64: 			  <% link_to  (newsitem_path(newsitem.id)) do %>
+      65: 					<div class="item">
+      66: 					  <div id="news_item_image">
+  
+      app/views/pages/_content_for_newsbar.html.erb:63
+      app/views/pages/_content_for_newsbar.html.erb:1
+      app/views/pages/edit.html.erb:6
+
+
+
+
+Processing PagesController#edit (for 127.0.0.1 at 2010-06-22 00:58:08) [GET]
+  Parameters: {"permalink"=>"home", "locale"=>"en"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.6ms)[0m   [0;1mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/edit
+Rendered pages/_content_for_newsbar (19.7ms)
+Rendered pages/_page_form (6.5ms)
+Completed in 47ms (View: 35, DB: 1) | 200 OK [http://localhost/static/home/edit?locale=en]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-22 00:58:08) [GET]
+
+ActionController::RoutingError (No route matches "/static/home/javascripts/jsScroller.js" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-22 00:58:08) [GET]
+
+ActionController::RoutingError (No route matches "/static/home/javascripts/jsScrollbar.js" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-22 00:58:08) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-22 00:58:08) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing PagesController#edit (for 127.0.0.1 at 2010-06-22 01:02:05) [GET]
+  Parameters: {"permalink"=>"home", "locale"=>"en"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.6ms)[0m   [0;1mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/edit
+Rendered pages/_content_for_newsbar (17.3ms)
+Rendered pages/_page_form (82.4ms)
+Completed in 119ms (View: 107, DB: 1) | 200 OK [http://localhost/static/home/edit?locale=en]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-22 01:02:05) [GET]
+
+ActionController::RoutingError (No route matches "/static/home/javascripts/jsScroller.js" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-22 01:02:05) [GET]
+
+ActionController::RoutingError (No route matches "/static/home/javascripts/jsScrollbar.js" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-22 01:02:05) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-22 01:02:05) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-22 01:02:09) [GET]
+  Parameters: {"permalink"=>"tutorinfo", "locale"=>"en"}
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'tutorinfo') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.6ms)[0m   [0;1mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (17.5ms)
+Completed in 122ms (View: 32, DB: 1) | 200 OK [http://localhost/tutorinfo?locale=en]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-22 01:02:09) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2010-06-22 01:02:15) [POST]
+  Parameters: {"commit"=>"Sign in", "session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "email"=>"iain@railsiain.com"}, "action"=>"create", "authenticity_token"=>"F2c9syY1SMWbYbjZKUts7MhUScpLPIAg+RkZSDq+oKA=", "controller"=>"clearance/sessions", "locale"=>"en"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'iain@railsiain.com') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering sessions/new (unauthorized)
+Completed in 118ms (View: 39, DB: 0) | 401 Unauthorized [http://localhost/session?locale=en]
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2010-06-22 01:02:27) [POST]
+  Parameters: {"commit"=>"Sign in", "session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "email"=>"iain@railsiain.com"}, "action"=>"create", "authenticity_token"=>"F2c9syY1SMWbYbjZKUts7MhUScpLPIAg+RkZSDq+oKA=", "controller"=>"clearance/sessions", "locale"=>"en"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'iain@railsiain.com') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering sessions/new (unauthorized)
+Completed in 105ms (View: 94, DB: 0) | 401 Unauthorized [http://localhost/session?locale=en]
+
+
+Processing Clearance::PasswordsController#new (for 127.0.0.1 at 2010-06-22 01:02:36) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/passwords", "locale"=>"en"}
+Rendering template within layouts/application
+Rendering passwords/new
+Completed in 23ms (View: 21, DB: 0) | 200 OK [http://localhost/passwords/new?locale=en]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-22 01:02:36) [GET]
+
+ActionController::RoutingError (No route matches "/passwords/javascripts/jsScroller.js" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-22 01:02:36) [GET]
+
+ActionController::RoutingError (No route matches "/passwords/javascripts/jsScrollbar.js" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-22 01:02:39) [GET]
+  Parameters: {"permalink"=>"home", "locale"=>"en"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.6ms)[0m   [0;1mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (17.9ms)
+Completed in 39ms (View: 27, DB: 1) | 200 OK [http://localhost/?locale=en]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-22 01:02:39) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2010-06-22 01:02:58) [POST]
+  Parameters: {"commit"=>"Sign in", "session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "email"=>"iain@soulflyer.co.uk"}, "action"=>"create", "authenticity_token"=>"F2c9syY1SMWbYbjZKUts7MhUScpLPIAg+RkZSDq+oKA=", "controller"=>"clearance/sessions", "locale"=>"en"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'iain@soulflyer.co.uk') LIMIT 1[0m
+Redirected to http://localhost:3000/?locale=en
+Completed in 13ms (DB: 0) | 302 Found [http://localhost/session?locale=en]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-22 01:02:58) [GET]
+  Parameters: {"permalink"=>"home", "locale"=>"en"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.6ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 20) LIMIT 1[0m
+Rendered pages/_content_for_newsbar (16.4ms)
+Completed in 37ms (View: 25, DB: 1) | 200 OK [http://localhost/?locale=en]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-22 01:02:59) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-22 01:02:59) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-22 01:03:18) [GET]
+  Parameters: {"permalink"=>"home", "locale"=>"en"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.9ms)[0m   [0;1mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 20) LIMIT 1[0m
+Rendered pages/_content_for_newsbar (17.8ms)
+Completed in 39ms (View: 26, DB: 2) | 200 OK [http://localhost/?locale=en]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-22 01:03:18) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-22 01:03:24) [GET]
+  Parameters: {"permalink"=>"about", "locale"=>"en"}
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'about') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.7ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 20) LIMIT 1[0m
+Rendered pages/_content_for_newsbar (17.3ms)
+Completed in 113ms (View: 24, DB: 1) | 200 OK [http://localhost/about?locale=en]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-22 01:03:24) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-22 01:03:27) [GET]
+  Parameters: {"permalink"=>"tutorinfo", "locale"=>"en"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'tutorinfo') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.6ms)[0m   [0;1mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 20) LIMIT 1[0m
+Rendered pages/_content_for_newsbar (16.0ms)
+Completed in 36ms (View: 24, DB: 1) | 200 OK [http://localhost/tutorinfo?locale=en]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-22 01:03:27) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-22 01:03:28) [GET]
+  Parameters: {"permalink"=>"courses", "locale"=>"en"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'courses') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.6ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 20) LIMIT 1[0m
+Rendered pages/_content_for_newsbar (17.3ms)
+Completed in 37ms (View: 24, DB: 1) | 200 OK [http://localhost/courses?locale=en]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-22 01:03:28) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-22 01:03:30) [GET]
+  Parameters: {"permalink"=>"clientinfo", "locale"=>"en"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'clientinfo') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.6ms)[0m   [0;1mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 20) LIMIT 1[0m
+Rendered pages/_content_for_newsbar (15.9ms)
+Completed in 35ms (View: 23, DB: 1) | 200 OK [http://localhost/clientinfo?locale=en]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-22 01:03:30) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-22 01:03:32) [GET]
+  Parameters: {"permalink"=>"contact", "locale"=>"en"}
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'contact') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.6ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 20) LIMIT 1[0m
+Rendered pages/_content_for_newsbar (17.1ms)
+Completed in 37ms (View: 24, DB: 1) | 200 OK [http://localhost/contact?locale=en]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-22 01:03:32) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing Clearance::SessionsController#destroy (for 127.0.0.1 at 2010-06-22 01:03:39) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"clearance/sessions", "locale"=>"en"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 20) LIMIT 1[0m
+Redirected to http://localhost:3000/session/new?locale=en
+Completed in 14ms (DB: 0) | 302 Found [http://localhost/clearance/sessions/destroy?locale=en]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2010-06-22 01:03:39) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions", "locale"=>"en"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 98ms (View: 95, DB: 0) | 200 OK [http://localhost/session/new?locale=en]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-22 01:03:39) [GET]
+
+ActionController::RoutingError (No route matches "/session/javascripts/jsScroller.js" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-22 01:03:39) [GET]
+
+ActionController::RoutingError (No route matches "/session/javascripts/jsScrollbar.js" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-22 01:03:42) [GET]
+  Parameters: {"permalink"=>"home", "locale"=>"en"}
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.6ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (17.8ms)
+Completed in 39ms (View: 26, DB: 1) | 200 OK [http://localhost/?locale=en]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-22 01:03:42) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2010-06-22 01:03:56) [POST]
+  Parameters: {"commit"=>"Sign in", "session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "email"=>"iain@soulflyer.co.uk"}, "action"=>"create", "authenticity_token"=>"KBtlZ/8OUopKxaEymqe5RPStbfdRZ8IVClNfszch7J0=", "controller"=>"clearance/sessions", "locale"=>"en"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'iain@soulflyer.co.uk') LIMIT 1[0m
+Redirected to http://localhost:3000/?locale=en
+Completed in 95ms (DB: 0) | 302 Found [http://localhost/session?locale=en]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-22 01:03:57) [GET]
+  Parameters: {"permalink"=>"home", "locale"=>"en"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.7ms)[0m   [0;1mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 20) LIMIT 1[0m
+Rendered pages/_content_for_newsbar (16.2ms)
+Completed in 38ms (View: 25, DB: 1) | 200 OK [http://localhost/?locale=en]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-22 01:03:57) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-22 01:03:57) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing Clearance::SessionsController#destroy (for 127.0.0.1 at 2010-06-22 01:07:13) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"clearance/sessions", "locale"=>"en"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 20) LIMIT 1[0m
+Redirected to http://localhost:3000/session/new?locale=en
+Completed in 14ms (DB: 0) | 302 Found [http://localhost/clearance/sessions/destroy?locale=en]
+
+
+Processing Clearance::SessionsController#new (for 127.0.0.1 at 2010-06-22 01:07:13) [GET]
+  Parameters: {"action"=>"new", "controller"=>"clearance/sessions", "locale"=>"en"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 17ms (View: 15, DB: 0) | 200 OK [http://localhost/session/new?locale=en]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-22 01:07:13) [GET]
+
+ActionController::RoutingError (No route matches "/session/javascripts/jsScroller.js" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-22 01:07:13) [GET]
+
+ActionController::RoutingError (No route matches "/session/javascripts/jsScrollbar.js" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-22 01:07:16) [GET]
+  Parameters: {"permalink"=>"home", "locale"=>"en"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.6ms)[0m   [0;1mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (94.7ms)
+Completed in 116ms (View: 104, DB: 1) | 200 OK [http://localhost/?locale=en]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-22 01:07:16) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2010-06-22 01:07:31) [POST]
+  Parameters: {"commit"=>"Sign in", "session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "email"=>"admin@connectteach"}, "action"=>"create", "authenticity_token"=>"hOKdIRHmvAeZJDjV+Ndy6/F5/vYYWOpP5VvW0/A82JA=", "controller"=>"clearance/sessions", "locale"=>"en"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'admin@connectteach') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering sessions/new (unauthorized)
+Completed in 26ms (View: 14, DB: 0) | 401 Unauthorized [http://localhost/session?locale=en]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-22 01:07:36) [GET]
+  Parameters: {"permalink"=>"home", "locale"=>"en"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;35;1mNewsitem Load (0.6ms)[0m   [0mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_content_for_newsbar (17.8ms)
+Completed in 39ms (View: 27, DB: 1) | 200 OK [http://localhost/?locale=en]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-22 01:07:36) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing Clearance::SessionsController#create (for 127.0.0.1 at 2010-06-22 01:07:51) [POST]
+  Parameters: {"commit"=>"Sign in", "session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "email"=>"admin@connectteach.com"}, "action"=>"create", "authenticity_token"=>"hOKdIRHmvAeZJDjV+Ndy6/F5/vYYWOpP5VvW0/A82JA=", "controller"=>"clearance/sessions", "locale"=>"en"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'admin@connectteach.com') LIMIT 1[0m
+Redirected to http://localhost:3000/?locale=en
+Completed in 13ms (DB: 0) | 302 Found [http://localhost/session?locale=en]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-06-22 01:07:51) [GET]
+  Parameters: {"permalink"=>"home", "locale"=>"en"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."permalink" = 'home') LIMIT 1[0m
+  [4;36;1mNewsitem Load (0.6ms)[0m   [0;1mSELECT * FROM "newsitems" ORDER BY created_at DESC LIMIT 3[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered pages/_content_for_newsbar (16.5ms)
+Completed in 38ms (View: 26, DB: 1) | 200 OK [http://localhost/?locale=en]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-22 01:07:51) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-22 01:07:51) [GET]
+
+ActionController::RoutingError (No route matches "/photos/small/missing.png" with {:method=>:get}):
+  
+
+Rendering /Users/iain/Sites/connectteach/public/404.html (404 Not Found)

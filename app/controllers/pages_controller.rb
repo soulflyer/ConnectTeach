@@ -49,6 +49,7 @@ class PagesController < ApplicationController
     else
       @page = Page.find(params[:id])
     end
+    @newsitems = Newsitem.all(:limit => 3, :order => "created_at DESC")
   end
 
   # POST /pages
